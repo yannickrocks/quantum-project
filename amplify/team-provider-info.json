@@ -10,6 +10,14 @@
             "StackName": "amplify-quantumproject-dev-192434",
             "StackId": "arn:aws:cloudformation:eu-west-2:713780582485:stack/amplify-quantumproject-dev-192434/be33e390-db36-11ea-9a67-02727b7ff4ba",
             "AmplifyAppId": "d310z3y35i3vmg"
+        },
+        "categories": {
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "d310z3y35i3vmg",
+                    "type": "cicd"
+                }
+            }
         }
     }
 }
