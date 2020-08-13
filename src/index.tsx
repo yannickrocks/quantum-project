@@ -4,11 +4,12 @@ import './index.css';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as serviceWorker from './serviceWorker';
+import { SupportedBrowserWrapper } from 'src/components/supported-browser-wrapper';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <SupportedBrowserWrapper>
     <App />
-  </React.StrictMode>,
+  </SupportedBrowserWrapper>,
   document.getElementById('root')
 );
 
