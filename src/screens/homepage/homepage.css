@@ -1,0 +1,41 @@
+.figureLogo {
+    width: 400px;
+    margin-top: 70px;
+    margin: 0 auto;
+}
+
+.figureLogo__image {
+    width:100%;
+}
+
+.welcomeText {
+    margin-top: -20px;
+    text-align: center;
+    color: #FF7D25;
+    font-size: 40px;
+}
+
+.description {
+    margin: 0 auto;
+    width: 40%;
+    text-align: center;
+    font: Regular var(--unnamed-font-size-22)/var(--unnamed-line-spacing-26) var(--unnamed-font-family-itc-serif-gothic-std);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-292b50);
+    text-align: center;
+    font: Regular 22px/26px ITC Serif Gothic Std;
+    letter-spacing: 0px;
+    color: #292B50;
+}
+
+.launch {
+    width: 200px;
+    margin: 0 auto;
+}
+
+.launchButton {
+    width: 100%; 
+    border-radius: 15px;
+}
+
+

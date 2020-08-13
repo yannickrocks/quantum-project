@@ -1,0 +1,3 @@
+export const HomePageText1 = "Congratulations on becoming Outer Wild's Ventures' newest astronaut.";
+export const HomePageText2 = "You have everything you need to begin your journey, and don't forget to use the tools you have at your disposal. This site's code contains the answers you need by necessity, but to progression of that sort would rob you of the lessons you learn along the way.";
+export const HomePageText3 = "Good Luck.";
