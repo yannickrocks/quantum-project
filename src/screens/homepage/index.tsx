@@ -3,6 +3,7 @@ import OuterWildsLogo from 'src/assets/Outerwilds-Logo_web.png';
 // import HomePageText from 'src/assets/Homepage-text_web.png';
 import { HomePageText1, HomePageText2, HomePageText3, HomePageText4 } from 'src/assets/Texts/Constants';
 import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
 import "./homepage.css";
 
 const HomePage: React.FC = () => {
@@ -30,7 +31,9 @@ const HomePage: React.FC = () => {
                 <br/>
                 <br/>
                 <div className="launch">
-                    <Button className="launchButton" variant="success">Launch</Button>{' '}
+                    <Link className="launch__link" to={`/puzzle1`}>
+                        <Button className="launchButton" variant="success">Launch</Button>{' '}
+                    </Link>
                 </div>
             </div>
         </div>
