@@ -1,6 +1,6 @@
 import React from 'react';
 import OuterWildsLogo from 'src/assets/Outerwilds-Logo_web.png';
-import HomePageText from 'src/assets/Homepage-text_web.png';
+// import HomePageText from 'src/assets/Homepage-text_web.png';
 import { HomePageText1, HomePageText2, HomePageText3, HomePageText4 } from 'src/assets/Texts/Constants';
 import Button from 'react-bootstrap/Button';
 import "./homepage.css";
