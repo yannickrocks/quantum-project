@@ -31,7 +31,7 @@ const HomePage: React.FC = () => {
                 <br/>
                 <br/>
                 <div className="launch">
-                    <Link className="launch__link" to={`/puzzle1`}>
+                    <Link className="launch__link" to={`/22minutes`}>
                         <Button className="launchButton" variant="success">Launch</Button>{' '}
                     </Link>
                 </div>

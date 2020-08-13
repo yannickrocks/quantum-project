@@ -9,7 +9,7 @@ const App: React.FC = () => {
     <Router>
       <Switch>
         <Route path="/" exact component={HomePage}></Route>
-        <Route path="/puzzle1" exact component={Puzzle1}></Route>
+        <Route path="/22minutes" exact component={Puzzle1}></Route>
       </Switch>
     </Router>
   );
