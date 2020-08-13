@@ -1,0 +1,53 @@
+{
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+        "react", "jsx-a11y", "import", "@typescript-eslint", "prettier", "react-perf", "react-hooks"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 2018, // Allows for the parsing of modern ECMAScript features
+        "sourceType": "module", // Allows for the use of imports
+        "project": "tsconfig.json"
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+            // Tells eslint-plugin-react to automatically detect the version of React to use
+        }
+    },
+    "extends": [
+        "plugin:react-perf/all", "plugin:prettier/recommended"],
+    "rules": {
+        "camelcase": 0,
+        "class-methods-use-this": 0,
+        "import/prefer-default-export": 0,
+        "no-multiple-empty-lines": [
+            1,
+            {
+                "max": 1
+            }
+        ],
+        "no-underscore-dangle": 0,
+        "no-unused-expressions": 0,
+        "no-useless-computed-key": "warn",
+        "prettier/prettier": "warn",
+        "react-hooks/exhaustive-deps": "warn",
+        "react-hooks/rules-of-hooks": "error",
+        "react/forbid-prop-types": 0,
+        "react/jsx-curly-brace-presence": 0,
+        "react/jsx-filename-extension": [
+            0,
+            {
+                "extensions": [
+                    ".js"
+                ]
+            }
+        ],
+        "react/no-array-index-key": 0,
+        "react/no-string-refs": 0,
+        "react/no-unused-prop-types": 0,
+        "react/self-closing-comp": [
+            "error"
+        ]
+    }
+}

@@ -1,17 +1,15 @@
 import React from 'react';
 import './App.css';
-import OuterWildsLogo from 'src/assets/Outerwilds-Logo_web.png';
+import HomePage from 'src/screens/homepage';
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={OuterWildsLogo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/" exact component={HomePage}></Route>
+      </Switch>
+    </Router>
   );
 }
 
