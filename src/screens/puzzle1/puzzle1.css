@@ -1,0 +1,16 @@
+.background {
+   position: fixed;
+   top: 0;
+   left: 0;
+}
+
+.puzzle1 {
+    margin: 0 auto;
+    position: relative;
+}
+
+.puzzle1__text {
+    position: absolute;
+    width: 60%;
+    transform: translate(35%, 10%);
+}
