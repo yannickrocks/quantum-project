@@ -22,7 +22,6 @@
     text-align: center;
     color: #FF7D25;
     font-size: 40px;
-    font-family: 'Gothic A1', sans-serif;
     font-weight: 700;
 }
 
@@ -32,18 +31,31 @@
     text-align: center;
     letter-spacing: 0px;
     color: #292B50;
-    font-family: 'Gothic A1', sans-serif;
     font-weight: 500;
 }
 
 .launch {
-    width: 200px;
+    width: 250px;
     margin: 0 auto;
 }
 
 .launchButton {
     width: 100%; 
     border-radius: 15px;
+    font-weight: 600;
 }
 
 
+@media only screen and (max-width: 1500px) {
+    .figureLogo {
+        width: 350px;
+    }
+
+    .welcomeText {
+        font-size: 35px;
+    }
+
+    .description {
+        width: 80%;
+    }
+}

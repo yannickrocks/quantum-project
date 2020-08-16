@@ -5,7 +5,7 @@ import './puzzle1.css';
 
 const Puzzle1: React.FC = () => {
     return (
-        <div>
+        <div className="22Minutes">
             <img className="background" src={Background} alt="Background" />
             <figure className="puzzle1">
                 <img className="puzzle1__text" src={Minutes22} alt="22 minutes" />      
