@@ -4,13 +4,73 @@
    left: 0;
 }
 
+.p-22-minutes {
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+ 
+/* 
 .puzzle1 {
     margin: 0 auto;
     position: relative;
 }
 
-.puzzle1__text {
+.puzzle1__image {
     position: absolute;
     width: 60%;
     transform: translate(35%, 10%);
+} */
+
+.puzzle1__planet {
+    position: absolute;
+}
+
+.row__player {
+    margin:0 auto;
+}
+
+.puzzle1Heading {
+    position: absolute;
+    margin-top: 40px;
+    color: #FF7D25;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.whiteText {
+    margin-top: 80px;
+    text-align: left;
+    color: #FFFFFF;
+    font-size: 18px;
+}
+
+.react-player {
+    position: absolute;
+    margin-top: 50px;
+}
+
+.greyPlanets {
+    width:100px;
+}
+
+@media only screen and (max-width: 1500px) {
+    .puzzle1__planet {
+        width: 75%;
+    }
+
+    .puzzle1Heading {
+        position: absolute;
+        color: #FF7D25;
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    .whiteText {
+        font-size: 13px;
+    }
+
+    .react-player{
+        width: 200px;
+    }
 }

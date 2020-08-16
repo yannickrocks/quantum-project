@@ -1,6 +1,4 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'src/App.css';
 import HomePage from 'src/screens/homepage';
 import Puzzle1 from 'src/screens/puzzle1';
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';

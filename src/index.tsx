@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { SupportedBrowserWrapper } from 'src/components/supported-browser-wrapper';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'src/App.css';
 
 ReactDOM.render(
   <SupportedBrowserWrapper>
