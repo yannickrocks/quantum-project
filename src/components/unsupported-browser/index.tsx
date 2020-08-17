@@ -1,4 +1,4 @@
-import OuterWildsLogo from 'src/assets/Outerwilds-Logo_web.png';
+import OuterWildsLogo from 'src/assets/Misc/Outerwilds-Logo_web.png';
 import React from 'react';
 import css from './style.module.css';
 
