@@ -15,14 +15,14 @@ import './puzzle1.css';
 
 const Puzzle1: React.FC = () => {
    return (
-        <div className="p-22-minutes"> 
+        <div>
             <img className="background" src={Background} alt="Background" />
-            <Container fluid>
+            <Container fluid className="p-22-minutes">
                 {/* <figure className="puzzle1">
                     <img className="puzzle1__image" src={Minutes22} alt="22 minutes" />      
                 </figure> */}
                 <Row>
-                    <Col md={{ span: 6, offset: 2 }}>
+                    <Col xs={12} md={8}>
                         <h2 className="puzzle1Heading">22 Minutes</h2>
                         <div className="whiteText">
                             {Minutes22Text1}
@@ -32,21 +32,20 @@ const Puzzle1: React.FC = () => {
                             {Minutes22Text3}
                         </div>
                     </Col>
-                    <Col sm={3}>
+                    <Col xs={6} md={4} className="timberHearst">
                         <Figure>
                             <Figure.Image 
                                 className="puzzle1__planet"
                                 src={TimberHeath}
                                 alt="Timber Heath"
-                                width="100%"
                             />
                         </Figure>
                     </Col>
                 </Row>
                 <Row>
-                    <Col sm={12} md={{ span: 6, offset: 4 }}>
+                    <Col className="youtubeVideo">
                         <ReactPlayer className="react-player" url="https://www.youtube.com/watch?v=dQw4w9WgXcQ" 
-                            controls={true} width="500px" height="280px" />
+                            controls={true} width="70%" height="100%" />
                     </Col>
                 </Row>
                 <Row className="greyPlanets">                        

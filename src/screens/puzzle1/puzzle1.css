@@ -5,8 +5,8 @@
 }
 
 .p-22-minutes {
-    margin: 0 auto;
     margin-top: 20px;
+    width: 1300px !important;
 }
  
 /* 
@@ -21,9 +21,8 @@
     transform: translate(35%, 10%);
 } */
 
-
-.row__player {
-    margin:0 auto;
+.timberHearst {
+    text-align: right;
 }
 
 .puzzle1Heading {
@@ -40,28 +39,34 @@
     font-size: 18px;
 }
 
+.youtubeVideo {
+    margin-top:20px;
+}
+
 .react-player {
-    margin-top: -20px;
+    margin: 0 auto;
 }
 
 .greyPlanets {
-    /* width: 70%; */
-    text-align: center;
+    max-width: 1000px !important;
 }
 
-.greyPlanets__img {
-    width: 120px;
+.greyPlanets__planet {
+    padding: 0 !important;
+    margin: 15px !important;
+    max-width: calc(16.666667%  - 30px) !important ;
 }
 
 .greyPlanets__input {
-    width: 100px;
+    width:100%;
     border-radius: 6px;
     border: none;
+    text-align: center;
 }
 
 @media only screen and (max-width: 1500px) {
-    .puzzle1__planet {
-        width: 75%;
+    .p-22-minutes {
+        width: 800px !important;
     }
 
     .puzzle1Heading {
@@ -75,15 +80,16 @@
         font-size: 13px;
     }
 
-    .react-player{
-        width: 200px;
+    .youtubeVideo {
+        width: 250px !important;
+        height: 320px !important;
+    }
+
+    .greyPlanets {
+        max-width: 1000px !important;
     }
 
     .greyPlanets__planet{
-        width: 90px;
-    }
-    
-    .greyPlanets__input {
-        width: 70px;
+        width: 70%;
     }
 }
