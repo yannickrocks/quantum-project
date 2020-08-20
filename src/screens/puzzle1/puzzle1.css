@@ -5,24 +5,13 @@
 }
 
 .p-22-minutes {
-    margin-top: 20px;
-    width: 1300px !important;
-}
- 
-/* 
-.puzzle1 {
+    width: 1050px !important;
     margin: 0 auto;
-    position: relative;
 }
 
-.puzzle1__image {
-    position: absolute;
-    width: 60%;
-    transform: translate(35%, 10%);
-} */
-
-.timberHearst {
-    text-align: right;
+.puzzle1Message {
+    height: 280px;
+    width: 250px;
 }
 
 .puzzle1Heading {
@@ -32,23 +21,22 @@
     font-weight: 700;
 }
 
-.whiteText {
-    margin-top: 80px;
+.puzzle1WhiteText {
     text-align: left;
     color: #FFFFFF;
-    font-size: 18px;
+    font-size: 15px;
 }
 
-.youtubeVideo {
-    margin-top:20px;
-}
-
-.react-player {
-    margin: 0 auto;
+.puzzle1__figure {
+    text-align: right;
+    margin: revert;
+    margin-left: -20px;
+    height: 280px;
+    width: 300px;
 }
 
 .greyPlanets {
-    max-width: 1000px !important;
+    width: 90%;
 }
 
 .greyPlanets__planet {
@@ -66,30 +54,20 @@
 
 @media only screen and (max-width: 1500px) {
     .p-22-minutes {
-        width: 800px !important;
+        width: 1000px !important;
     }
 
     .puzzle1Heading {
-        position: absolute;
         color: #FF7D25;
         font-size: 30px;
         font-weight: 700;
     }
 
-    .whiteText {
+    .puzzle1__figure {
+        width: 250px;
+    }
+
+    .puzzle1WhiteText {
         font-size: 13px;
-    }
-
-    .youtubeVideo {
-        width: 250px !important;
-        height: 320px !important;
-    }
-
-    .greyPlanets {
-        max-width: 1000px !important;
-    }
-
-    .greyPlanets__planet{
-        width: 70%;
     }
 }

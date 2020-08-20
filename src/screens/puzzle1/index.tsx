@@ -1,16 +1,15 @@
 import React from 'react';
-import Background from 'src/assets/Misc/background.png';
-// import Minutes22 from 'src/assets/22mins-top_web.png';
-import TimberHeath from 'src/assets/Misc/Timber-Hearth_web.png'
-// import GBrittleHollow from 'src/assets/Planet Icons/Grey/BH-Grey_web.png';
-import GreyPlanet from 'src/components/grey-planets';
-import { Minutes22Text1 , Minutes22Text2, Minutes22Text3 } from 'src/assets/Texts/Constants';
-import ReactPlayer from 'react-player';
 import Container from 'react-bootstrap/container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Figure from 'react-bootstrap/Figure';
+import Button from 'react-bootstrap/Button';
+import Background from 'src/assets/Misc/background.png';
+import TimberHeath from 'src/assets/Misc/Timber-Hearth_web.png';
+import GreyPlanet from 'src/components/grey-planets';
 import { GreyPlanetList } from 'src/assets/Planet Icons/greyPlanetsList';
+import { Minutes22Text1 , Minutes22Text2, Minutes22Text3 } from 'src/assets/Texts/Constants';
+import ResponsivePlayer from 'src/components/ResponsivePlayer';
 import './puzzle1.css';
 
 const Puzzle1: React.FC = () => {
@@ -18,22 +17,19 @@ const Puzzle1: React.FC = () => {
         <div>
             <img className="background" src={Background} alt="Background" />
             <Container fluid className="p-22-minutes">
-                {/* <figure className="puzzle1">
-                    <img className="puzzle1__image" src={Minutes22} alt="22 minutes" />      
-                </figure> */}
                 <Row>
-                    <Col xs={12} md={8}>
+                    <Col xs={12} md={8} className="puzzleMessage">
                         <h2 className="puzzle1Heading">22 Minutes</h2>
-                        <div className="whiteText">
+                        <div className="puzzle1WhiteText">
                             {Minutes22Text1}
-                            <br/><br/>
+                            <br/><br/>  
                             {Minutes22Text2}
                             <br/><br/>  
                             {Minutes22Text3}
                         </div>
                     </Col>
-                    <Col xs={6} md={4} className="timberHearst">
-                        <Figure>
+                    <Col xs={6} md={4}>
+                        <Figure className="puzzle1__figure">
                             <Figure.Image 
                                 className="puzzle1__planet"
                                 src={TimberHeath}
@@ -42,18 +38,23 @@ const Puzzle1: React.FC = () => {
                         </Figure>
                     </Col>
                 </Row>
-                <Row>
-                    <Col className="youtubeVideo">
-                        <ReactPlayer className="react-player" url="https://www.youtube.com/watch?v=dQw4w9WgXcQ" 
-                            controls={true} width="70%" height="100%" />
+                <Row className="puzzle1__rowPlayer">
+                    <Col></Col>
+                    <Col xs={6}>
+                        <ResponsivePlayer url="https://www.youtube.com/watch?v=dQw4w9WgXcQ"/>
                     </Col>
+                    <Col></Col>
                 </Row>
-                <Row className="greyPlanets">                        
+                <Row className="greyPlanets">
                     {GreyPlanetList.map(item => (
                         <GreyPlanet src={item} />
                     ))}
                 </Row>
-                {/* Add buttons */}
+                <Row>
+                    <Col>
+                        <Button>Reset</Button>
+                    </Col>
+                </Row>
             </Container>
         </div>
     )

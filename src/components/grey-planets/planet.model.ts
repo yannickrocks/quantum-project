@@ -1,3 +1,3 @@
-export type GreyPlanetModel = {
+export type GreyPlanetProps = {
     src : string
 }

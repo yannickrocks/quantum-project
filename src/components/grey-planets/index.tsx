@@ -1,9 +1,9 @@
 import React from 'react';
 import Col from 'react-bootstrap/Col';
 import Figure from 'react-bootstrap/Figure';
-import { GreyPlanetModel } from 'src/components/grey-planets/planet.model.ts';
+import { GreyPlanetProps } from 'src/components/grey-planets/planet.model.ts';
 
-const GreyPlanet: React.FC<GreyPlanetModel> = ({src}) => {
+const GreyPlanet: React.FC<GreyPlanetProps> = ({src}) => {
 
     return (
         <Col className="greyPlanets__planet" xs={2}>
