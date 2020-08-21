@@ -63,7 +63,10 @@ const Puzzle1: React.FC = () => {
                         </Button>
                     </Col>
                     <Col xs={2}>
-                        <Button className="buttons__proceed" type="input">Proceed</Button>
+                        <Button className="buttons__proceed" 
+                                type="input">
+                            Proceed
+                        </Button>                        
                     </Col>
                 </Row>
             </Container>
