@@ -50,9 +50,20 @@ const Puzzle1: React.FC = () => {
                         <GreyPlanet src={item} />
                     ))}
                 </Row>
-                <Row>
-                    <Col>
-                        <Button>Reset</Button>
+                <Row className="buttons">
+                    <Col xs={2}></Col>
+                    <Col xs={2}></Col>
+                    <Col xs={2}></Col>
+                    <Col xs={2}></Col>
+                    <Col xs={2}>
+                        <Button className="buttons__reset" 
+                                type="reset"
+                                href="/22minutes">
+                            Reset
+                        </Button>
+                    </Col>
+                    <Col xs={2}>
+                        <Button className="buttons__proceed" type="input">Proceed</Button>
                     </Col>
                 </Row>
             </Container>

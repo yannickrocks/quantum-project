@@ -52,6 +52,24 @@
     text-align: center;
 }
 
+.buttons {
+    width: 90%;
+}
+
+.buttons__reset {
+    width: 100%;
+    background-color: #B75053 !important;
+    font-size: 14px !important;
+    font-weight: 800 !important;
+}
+
+.buttons__proceed {
+    width: 100%;
+    background-color: #388861 !important;
+    font-size: 14px !important;
+    font-weight: 800 !important;
+}
+
 @media only screen and (max-width: 1500px) {
     .p-22-minutes {
         width: 1000px !important;
