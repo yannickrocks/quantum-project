@@ -12,10 +12,10 @@ import PGiantsDeep from 'src/assets/Planet Icons/Purple/GD-Purple_web.png';
 import PDarkBramble from 'src/assets/Planet Icons/Purple/DB-Purple_web.png';
 
 export const PlanetList = [
-    { src: GSun, answerSrc: PSun, planet: "Sun"},
-    { src: GTwins, answerSrc: PTwins, planet: "Twins"},
-    { src: GTimberHearth, answerSrc: PTimberHearth, planet: "TimberHearth"},
-    { src: GBrittleHollow, answerSrc: PBrittleHollow, planet: "BrittleHollow"},
-    { src: GGiantsDeep, answerSrc: PGiantsDeep, planet: "GiantsDeep"},
-    { src: GDarkBramble, answerSrc: PDarkBramble, planet: "DarkBramble"}
+    { src: GSun, answerSrc: PSun, planet: "Sun", code: 1111},
+    { src: GTwins, answerSrc: PTwins, planet: "Twins", code: 2222},
+    { src: GTimberHearth, answerSrc: PTimberHearth, planet: "TimberHearth", code: 3333},
+    { src: GBrittleHollow, answerSrc: PBrittleHollow, planet: "BrittleHollow", code: 4444},
+    { src: GGiantsDeep, answerSrc: PGiantsDeep, planet: "GiantsDeep", code: 5555},
+    { src: GDarkBramble, answerSrc: PDarkBramble, planet: "DarkBramble", code: 666}
 ]
