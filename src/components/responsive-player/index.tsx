@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
-import { ResponsivePlayerProps } from 'src/components/ResponsivePlayer/responsivePlayer.model';
+import { ResponsivePlayerProps } from 'src/components/responsive-player/responsivePlayer.model';
 import './responsivePlayer.css';
 
 const ResponsivePlayer: React.FC<ResponsivePlayerProps> = ({ url }) => {

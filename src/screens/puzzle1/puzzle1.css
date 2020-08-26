@@ -75,7 +75,7 @@
     padding: 10px;
 }
 
-@media only screen and (max-width: 1500px) {
+@media only screen and (max-width: 1400px) {
     .p-22-minutes {
         width: 1000px !important;
     }
