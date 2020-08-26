@@ -6,13 +6,14 @@ import Figure from 'react-bootstrap/Figure';
 import Button from 'react-bootstrap/Button';
 import Background from 'src/assets/Misc/background.png';
 import TimberHeath from 'src/assets/Misc/Timber-Hearth_web.png';
-import GreyPlanet from 'src/components/grey-planets';
-import { GreyPlanetList } from 'src/assets/Planet Icons/greyPlanetsList';
+import Planet from 'src/components/planets';
+import { PlanetList } from 'src/assets/Planet Icons/PlanetsList';
 import { Minutes22Text1 , Minutes22Text2, Minutes22Text3 } from 'src/assets/Texts/Constants';
 import ResponsivePlayer from 'src/components/ResponsivePlayer';
 import './puzzle1.css';
 
 const Puzzle1: React.FC = () => {
+
    return (
         <div>
             <img className="background" src={Background} alt="Background" />
@@ -45,9 +46,11 @@ const Puzzle1: React.FC = () => {
                     </Col>
                     <Col></Col>
                 </Row>
-                <Row className="greyPlanets">
-                    {GreyPlanetList.map(item => (
-                        <GreyPlanet src={item} />
+                <Row className="planets">
+                    {PlanetList.map(item => (
+                        <Planet src={item.src} 
+                                answerSrc={item.answerSrc} 
+                                planetId={item.planet} />
                     ))}
                 </Row>
                 <Row className="buttons">

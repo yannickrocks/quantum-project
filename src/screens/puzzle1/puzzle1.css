@@ -36,17 +36,17 @@
     width: 300px;
 }
 
-.greyPlanets {
+.planets {
     width: 90%;
 }
 
-.greyPlanets__planet {
+.planets__planet {
     padding: 0 !important;
     margin: 15px !important;
     max-width: calc(16.666667%  - 30px) !important ;
 }
 
-.greyPlanets__input {
+.planets__input {
     width:100%;
     border-radius: 6px;
     border: none;
@@ -63,6 +63,7 @@
     background-color: #B75053 !important;
     font-size: 14px !important;
     font-weight: 800 !important;
+    padding: 10px;
 }
 
 .buttons__proceed {
@@ -71,6 +72,7 @@
     background-color: #388861 !important;
     font-size: 14px !important;
     font-weight: 800 !important;
+    padding: 10px;
 }
 
 @media only screen and (max-width: 1500px) {
