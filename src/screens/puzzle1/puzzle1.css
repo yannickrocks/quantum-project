@@ -1,100 +1,107 @@
 .background {
-   position: fixed;
-   top: 0;
-   left: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .p-22-minutes {
-    width: 1050px !important;
-    margin: 0 auto;
+  width: 1500px !important;
+  margin: 0 auto;
 }
 
 .puzzle1Message {
-    height: 280px;
-    width: 250px;
+  height: 280px;
+  width: 250px;
 }
 
 .puzzle1Heading {
-    margin-top: 40px;
-    color: #FF7D25;
-    font-size: 30px;
-    font-weight: 700;
+  margin-top: 40px;
+  color: #ff7d25;
+  font-size: 30px;
+  font-weight: 700;
 }
 
 .puzzle1WhiteText {
-    text-align: left;
-    color: #FFFFFF;
-    font-size: 15px;
-    font-weight: 600 !important;
+  text-align: left;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600 !important;
 }
 
 .puzzle1__figure {
-    text-align: right;
-    margin: revert;
-    margin-left: -20px;
-    height: 280px;
-    width: 300px;
+  text-align: right;
+  margin: revert;
+  margin-left: -20px;
+  height: 280px;
+  width: 300px;
 }
 
 .planets {
-    width: 90%;
+  width: 90%;
 }
 
 .planets__planet {
-    padding: 0 !important;
-    margin: 15px !important;
-    max-width: calc(16.666667%  - 30px) !important ;
+  padding: 0 !important;
+  margin: 15px !important;
+  max-width: calc(16.666667% - 30px) !important ;
 }
 
 .planets__input {
-    width:100%;
-    border-radius: 6px;
-    border: none;
-    text-align: center;
+  width: 100%;
+  border-radius: 6px;
+  border: none;
+  text-align: center;
 }
 
-.planets__input:focus{
-    outline:none
+.planets__input:focus {
+  outline: none;
 }
 
 .buttons {
-    width: 90%;
+  width: 90%;
 }
 
 .buttons__reset {
-    width: 100%;
-    border: none !important;
-    background-color: #B75053 !important;
-    font-size: 14px !important;
-    font-weight: 800 !important;
-    padding: 10px;
+  width: 100%;
+  border: none !important;
+  background-color: #b75053 !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  padding: 10px;
 }
 
 .buttons__proceed {
-    width: 100%;
-    border: none !important;
-    background-color: #388861 !important;
-    font-size: 14px !important;
-    font-weight: 800 !important;
-    padding: 10px;
+  width: 100%;
+  border: none !important;
+  background-color: #388861 !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  padding: 10px;
+}
+
+@media only screen and (max-width: 1600px) {
+  .p-22-minutes {
+    width: 1200px !important;
+    margin: 0 auto;
+  }
 }
 
 @media only screen and (max-width: 1480px) {
-    .p-22-minutes {
-        width: 900px !important;
-    }
+  .p-22-minutes {
+    width: 900px !important;
+  }
 
-    .puzzle1Heading {
-        color: #FF7D25;
-        font-size: 30px;
-        font-weight: 700;
-    }
+  .puzzle1Heading {
+    color: #ff7d25;
+    font-size: 30px;
+    font-weight: 700;
+  }
 
-    .puzzle1__figure {
-        width: 250px;
-    }
+  .puzzle1__figure {
+    width: 250px;
+  }
 
-    .puzzle1WhiteText {
-        font-size: 13px;
-    }
+  .puzzle1WhiteText {
+    font-size: 13px;
+  }
 }

@@ -1,7 +1,7 @@
-import React from 'react';
-import HomePage from 'src/screens/homepage';
-import Puzzle1 from 'src/screens/puzzle1';
-import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import React from "react";
+import HomePage from "src/screens/homepage";
+import Puzzle1 from "src/screens/puzzle1";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const App: React.FC = () => {
   return (
@@ -12,6 +12,6 @@ const App: React.FC = () => {
       </Switch>
     </Router>
   );
-}
+};
 
 export default App;

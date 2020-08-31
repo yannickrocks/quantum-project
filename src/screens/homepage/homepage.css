@@ -1,61 +1,60 @@
 .figureLogo {
-    width: 400px;
-    margin-top: 70px;
-    margin: 0 auto;
+  width: 400px;
+  margin-top: 70px;
+  margin: 0 auto;
 }
 
 .figureLogo__logo {
-    width:100%;
+  width: 100%;
 }
 
 .figureMessage {
-    width: 1000px;
-    margin: 0 auto;
+  width: 1000px;
+  margin: 0 auto;
 }
 
 .figureMessage__message {
-    width: 100%;
+  width: 100%;
 }
 
 .welcomeText {
-    margin-top: -20px;
-    text-align: center;
-    color: #FF7D25;
-    font-size: 40px;
-    font-weight: 700;
+  margin-top: -20px;
+  text-align: center;
+  color: #ff7d25;
+  font-size: 40px;
+  font-weight: 700;
 }
 
 .description {
-    margin: 0 auto;
-    width: 40%;
-    text-align: center;
-    letter-spacing: 0px;
-    color: #292B50;
-    font-weight: 500;
+  margin: 0 auto;
+  width: 60%;
+  text-align: center;
+  letter-spacing: 0px;
+  color: #292b50;
+  font-weight: 500;
 }
 
 .launch {
-    width: 250px;
-    margin: 0 auto;
+  width: 250px;
+  margin: 0 auto;
 }
 
 .launchButton {
-    width: 100%; 
-    border-radius: 15px;
-    font-weight: 600;
+  width: 100%;
+  border-radius: 15px;
+  font-weight: 600;
 }
 
-
 @media only screen and (max-width: 1500px) {
-    .figureLogo {
-        width: 350px;
-    }
+  .figureLogo {
+    width: 350px;
+  }
 
-    .welcomeText {
-        font-size: 35px;
-    }
+  .welcomeText {
+    font-size: 35px;
+  }
 
-    .description {
-        width: 80%;
-    }
+  .description {
+    width: 80%;
+  }
 }
