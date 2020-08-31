@@ -7,7 +7,7 @@ import Button from 'react-bootstrap/Button';
 import Background from 'src/assets/Misc/background.png';
 import TimberHeath from 'src/assets/Misc/Timber-Hearth_web.png';
 import Planet from 'src/components/planets';
-import { PlanetList } from 'src/assets/Planet Icons/PlanetsList';
+import { PlanetList } from 'src/assets/Planets/PlanetsList';
 import { Minutes22Text1 , Minutes22Text2, Minutes22Text3 } from 'src/assets/Texts/Constants';
 import ResponsivePlayer from 'src/components/responsive-player';
 import './puzzle1.css';

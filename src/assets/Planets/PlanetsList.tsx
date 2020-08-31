@@ -17,5 +17,5 @@ export const PlanetList = [
     { src: GTimberHearth, answerSrc: PTimberHearth, planet: "TimberHearth", code: 3333},
     { src: GBrittleHollow, answerSrc: PBrittleHollow, planet: "BrittleHollow", code: 4444},
     { src: GGiantsDeep, answerSrc: PGiantsDeep, planet: "GiantsDeep", code: 5555},
-    { src: GDarkBramble, answerSrc: PDarkBramble, planet: "DarkBramble", code: 666}
+    { src: GDarkBramble, answerSrc: PDarkBramble, planet: "DarkBramble", code: 6666}
 ]

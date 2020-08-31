@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Col from 'react-bootstrap/Col';
 import Figure from 'react-bootstrap/Figure';
 import { PlanetProps } from 'src/components/planets/planet.model';
-import { PlanetList } from 'src/assets/Planet Icons/PlanetsList';
+import { PlanetList } from 'src/assets/Planets/PlanetsList';
 
 const Planet: React.FC<PlanetProps> = ({src, answerSrc, planetId }) => {  
         const [showPurplePlanet, setPlanetFlag] = useState(false);
