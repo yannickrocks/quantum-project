@@ -1,7 +1,6 @@
 import React from "react";
 import Col from "react-bootstrap/Col";
 import Figure from "react-bootstrap/Figure";
-import { PlanetList } from "src/assets/Planets/PlanetsList";
 
 type PlanetProps = {
   src: string;

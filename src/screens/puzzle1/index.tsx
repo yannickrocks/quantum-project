@@ -32,6 +32,14 @@ const Puzzle1: React.FC = () => {
     (code, index) => code === PlanetList[index].code
   );
 
+  const resetInputs = () => {
+    setPlanetCodes(
+      planetCodes.map(() => {
+        return "";
+      })
+    );
+  };
+
   return (
     <>
       <img className="background" src={Background} alt="Background" />
@@ -86,7 +94,11 @@ const Puzzle1: React.FC = () => {
           <Col xs={2}></Col>
           <Col xs={2}></Col>
           <Col xs={2}>
-            <Button className="buttons__reset" type="reset" href="/22minutes">
+            <Button
+              className="buttons__reset"
+              type="reset"
+              onClick={resetInputs}
+            >
               Reset
             </Button>
           </Col>
