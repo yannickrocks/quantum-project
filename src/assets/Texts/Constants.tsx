@@ -20,3 +20,10 @@ const Minutes22Text3 =
   "Thankfully, I know that isn't the case. I would have seen the signs; like, oh I don't know.. the sun turning red. Or more supernovae than usual. Like that one there! and that one, ...and that one. Maybe I should check my notes.";
 
 export const Minutes22Text = [Minutes22Text1, Minutes22Text2, Minutes22Text3];
+
+const WanderingMoonText1 =
+  "How curious, there appears to be a celestial body that roams freely amongst its friends in this solar system.";
+const WanderingMoonText2 =
+  "How refreshing it is to find new anomalies to study along our nomadic journey... provided, that is, we can work around its apparent natural state of a quantum superposition.";
+
+export const WanderingMoonText = [WanderingMoonText1, WanderingMoonText2];

@@ -8,6 +8,7 @@ type PlanetProps = {
   planetId: string;
   planetCode: string;
   correctCode: string;
+  name: string;
   onPlanetCodeChange(value: string): void;
 };
 
@@ -17,6 +18,7 @@ const Planet: React.FC<PlanetProps> = ({
   planetId,
   planetCode,
   correctCode,
+  name,
   onPlanetCodeChange,
 }) => {
   const showPurplePlanet = planetCode === correctCode;
@@ -26,17 +28,17 @@ const Planet: React.FC<PlanetProps> = ({
   };
 
   return (
-    <Col className="planets__planet" xs={2} key={planetId}>
-      <Figure className="planets__figure">
+    <Col xs={8} md={6} className={name + "__planets__planet"} key={planetId}>
+      <Figure className={name + "__planets__figure"}>
         <Figure.Image
-          className="planets__img"
+          className={name + "__planets__img"}
           src={showPurplePlanet ? answerSrc : src}
         />
       </Figure>
-      <div className="planets__div">
+      <div className={name + "__planets__div"}>
         <input
           id={planetId}
-          className="planets__input"
+          className={name + "__planets__input"}
           maxLength={4}
           pattern="[0-9]*"
           placeholder="0000"

@@ -6,7 +6,7 @@ import Figure from "react-bootstrap/Figure";
 import Button from "react-bootstrap/Button";
 import Background from "src/assets/Misc/background.png";
 import TimberHeath from "src/assets/Misc/Timber-Hearth_web.png";
-import Planet from "src/screens/puzzle1/planets";
+import Planet from "src/components/planets";
 import { PlanetList } from "src/assets/Planets/PlanetsList";
 import { Minutes22Text } from "src/assets/Texts/Constants";
 import ResponsivePlayer from "src/components/responsive-player";
@@ -44,8 +44,8 @@ const Puzzle1: React.FC = () => {
     <>
       <img className="background" src={Background} alt="Background" />
       <Container fluid className="p-22-minutes">
-        <Row>
-          <Col xs={12} md={8} className="puzzleMessage">
+        <Row className="puzzle1__details justify-content-md-center">
+          <Col xs={8} md={6} className="puzzle1Message">
             <h2 className="puzzle1Heading">22 Minutes</h2>
             <div className="puzzle1WhiteText">
               {Minutes22Text.map((item) => (
@@ -67,16 +67,15 @@ const Puzzle1: React.FC = () => {
             </Figure>
           </Col>
         </Row>
-        <Row className="puzzle1__rowPlayer">
-          <Col></Col>
-          <Col xs={6}>
+        <Row className="puzzle1__rowPlayer justify-content-md-center">
+          <Col xs={8} md={6}>
             <ResponsivePlayer url="https://www.youtube.com/watch?v=dQw4w9WgXcQ" />
           </Col>
-          <Col></Col>
         </Row>
-        <Row className="planets">
+        <Row className="justify-content-md-center puzzle1__planets ">
           {PlanetList.map((item, index) => (
             <Planet
+              name="puzzle1"
               src={item.src}
               answerSrc={item.answerSrc}
               planetId={item.planet}
@@ -104,7 +103,11 @@ const Puzzle1: React.FC = () => {
           </Col>
           <Col xs={2}>
             {showProceedButton && (
-              <Button className="buttons__proceed" type="input">
+              <Button
+                className="buttons__proceed"
+                type="input"
+                href="/wanderingmoon"
+              >
                 Proceed
               </Button>
             )}
