@@ -2,7 +2,6 @@ import React from "react";
 import OuterWildsLogo from "src/assets/Misc/Outerwilds-Logo_web.png";
 import { HomePageText } from "src/assets/Texts/Constants";
 import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom";
 import "./homepage.css";
 
 const HomePage: React.FC = () => {
@@ -21,13 +20,15 @@ const HomePage: React.FC = () => {
             <br />
           </>
         ))}
-
         <div className="launch">
-          <Link className="launch__link" to={`/22minutes`}>
-            <Button className="launchButton" variant="success">
-              Launch
-            </Button>{" "}
-          </Link>
+          <Button
+            className="launchButton"
+            variant="success"
+            href="/22minutes"
+            size="lg"
+          >
+            Launch
+          </Button>{" "}
         </div>
       </div>
     </div>

@@ -57,7 +57,7 @@ const Puzzle1: React.FC = () => {
               ))}
             </div>
           </Col>
-          <Col xs={6} md={4}>
+          <Col xs={4} md={2}>
             <Figure className="puzzle1__figure">
               <Figure.Image
                 className="puzzle1__planet"
@@ -88,27 +88,27 @@ const Puzzle1: React.FC = () => {
           ))}
         </Row>
         <Row className="buttons">
-          <Col xs={2}></Col>
-          <Col xs={2}></Col>
-          <Col xs={2}></Col>
-          <Col xs={2}></Col>
-          <Col xs={2}>
-            <Button
-              className="buttons__reset"
-              type="reset"
-              onClick={resetInputs}
-            >
-              Reset
-            </Button>
-          </Col>
-          <Col xs={2}>
-            {showProceedButton && (
+          <Col xs={4} md={2}></Col>
+          <Col xs={4} md={2}></Col>
+          <Col xs={4} md={2}></Col>
+          <Col xs={4} md={2}></Col>
+          <Col xs={4} md={2}></Col>
+          <Col xs={4} md={2}>
+            {showProceedButton ? (
               <Button
                 className="buttons__proceed"
                 type="input"
                 href="/wanderingmoon"
               >
                 Proceed
+              </Button>
+            ) : (
+              <Button
+                className="buttons__reset"
+                type="reset"
+                onClick={resetInputs}
+              >
+                Reset
               </Button>
             )}
           </Col>

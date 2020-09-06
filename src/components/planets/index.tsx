@@ -28,7 +28,7 @@ const Planet: React.FC<PlanetProps> = ({
   };
 
   return (
-    <Col xs={8} md={6} className={name + "__planets__planet"} key={planetId}>
+    <Col className={name + "__planets__planet"} xs={4} md={2} key={planetId}>
       <Figure className={name + "__planets__figure"}>
         <Figure.Image
           className={name + "__planets__img"}

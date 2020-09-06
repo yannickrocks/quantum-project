@@ -78,16 +78,15 @@ const puzzle2: React.FC = () => {
             </Figure>
           </Col>
         </Row>
-        <Row className="puzzle2__rowPlayer">
-          <Col></Col>
-          <Col xs={6}>
+        <Row className="puzzle2__rowPlayer justify-content-md-center">
+          <Col xs={6} md={6}>
             <ResponsivePlayer url="https://www.youtube.com/watch?v=dQw4w9WgXcQ" />
           </Col>
-          <Col></Col>
         </Row>
         <Row className="planets justify-content-md-center">
           {/* {PlanetList.map((item, index) => (
             <Planet
+              name="puzzle2"
               src={item.src}
               answerSrc={item.answerSrc}
               planetId={item.planet}
