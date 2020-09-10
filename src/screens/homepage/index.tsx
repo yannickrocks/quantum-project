@@ -28,7 +28,7 @@ const HomePage: React.FC = () => {
             size="lg"
           >
             Launch
-          </Button>{" "}
+          </Button>
         </div>
       </div>
     </div>
