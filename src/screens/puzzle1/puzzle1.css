@@ -90,21 +90,30 @@
   }
 }
 
-@media only screen and (max-width: 1600px) {
+@media only screen and (max-width: 1700px) {
   .p-22-minutes {
     width: 1600px !important;
   }
+  .puzzle1Heading {
+    font-size: 30px;
+  }
+
+  .puzzle1__figure {
+    width: 200px;
+  }
+
+  .puzzle1WhiteText {
+    font-size: 12px;
+  }
 }
 
-@media only screen and (max-width: 1350px) {
+@media only screen and (max-width: 1480px) {
   .p-22-minutes {
     width: 1200px !important;
   }
 
   .puzzle1Heading {
-    color: #ff7d25;
-    font-size: 30px;
-    font-weight: 700;
+    font-size: 25px;
   }
 
   .puzzle1__figure {
@@ -113,5 +122,23 @@
 
   .puzzle1WhiteText {
     font-size: 13px;
+  }
+}
+
+@media only screen and (max-width: 1350px) {
+  .p-22-minutes {
+    width: 800px !important;
+  }
+
+  .puzzle1Heading {
+    font-size: 20px;
+  }
+
+  .puzzle1__figure {
+    width: 150px;
+  }
+
+  .puzzle1WhiteText {
+    font-size: 10px;
   }
 }
