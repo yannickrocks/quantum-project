@@ -15,14 +15,14 @@
   height: 350px;
 }
 
-.puzzle1Heading {
+.puzzle1__heading {
   margin-top: 40px;
   color: #ff7d25;
   font-size: 40px;
   font-weight: 700;
 }
 
-.puzzle1WhiteText {
+.puzzle1__whiteText {
   text-align: left;
   color: #ffffff;
   font-size: 16px;
@@ -59,14 +59,14 @@
   outline: none;
 }
 
-.buttons {
+.puzzle1__buttons {
   width: 70%;
   margin-right: auto !important;
   margin-left: auto !important;
   padding: 0 !important;
 }
 
-.buttons__reset {
+.puzzle1__buttons__reset {
   width: 100%;
   border: none !important;
   background-color: #b75053 !important;
@@ -75,7 +75,7 @@
   padding: 10px;
 }
 
-.buttons__proceed {
+.puzzle1__buttons__proceed {
   width: 100%;
   border: none !important;
   background-color: #388861 !important;
@@ -94,7 +94,7 @@
   .p-22-minutes {
     width: 1600px !important;
   }
-  .puzzle1Heading {
+  .puzzle1__heading {
     font-size: 30px;
   }
 
@@ -102,7 +102,7 @@
     width: 200px;
   }
 
-  .puzzle1WhiteText {
+  .puzzle1__whiteText {
     font-size: 12px;
   }
 }
@@ -112,7 +112,7 @@
     width: 1200px !important;
   }
 
-  .puzzle1Heading {
+  .puzzle1__heading {
     font-size: 25px;
   }
 
@@ -120,7 +120,7 @@
     width: 250px;
   }
 
-  .puzzle1WhiteText {
+  .puzzle1__whiteText {
     font-size: 13px;
   }
 }
@@ -130,7 +130,7 @@
     width: 800px !important;
   }
 
-  .puzzle1Heading {
+  .puzzle1__heading {
     font-size: 20px;
   }
 
@@ -138,7 +138,7 @@
     width: 150px;
   }
 
-  .puzzle1WhiteText {
+  .puzzle1__whiteText {
     font-size: 10px;
   }
 }

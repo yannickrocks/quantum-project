@@ -45,9 +45,9 @@ const Puzzle1: React.FC = () => {
       <img className="background" src={Background} alt="Background" />
       <Container fluid className="p-22-minutes">
         <Row className="puzzle1__details justify-content-md-center">
-          <Col xs={8} md={6} className="puzzle1Message">
-            <h2 className="puzzle1Heading">22 Minutes</h2>
-            <div className="puzzle1WhiteText">
+          <Col xs={8} md={6}>
+            <h2 className="puzzle1__heading">22 Minutes</h2>
+            <div className="puzzle1__whiteText">
               {Minutes22Text.map((item) => (
                 <>
                   {item}
@@ -67,12 +67,12 @@ const Puzzle1: React.FC = () => {
             </Figure>
           </Col>
         </Row>
-        <Row className="puzzle1__rowPlayer justify-content-md-center">
+        <Row className="justify-content-md-center">
           <Col xs={8} md={6}>
             <ResponsivePlayer url="https://www.youtube.com/watch?v=dQw4w9WgXcQ" />
           </Col>
         </Row>
-        <Row className="justify-content-md-center puzzle1__planets ">
+        <Row className="puzzle1__planets justify-content-md-center">
           {PlanetList.map((item, index) => (
             <Planet
               name="puzzle1"
@@ -87,7 +87,7 @@ const Puzzle1: React.FC = () => {
             />
           ))}
         </Row>
-        <Row className="buttons">
+        <Row className="puzzle1__buttons">
           <Col xs={4} md={2}></Col>
           <Col xs={4} md={2}></Col>
           <Col xs={4} md={2}></Col>
@@ -96,7 +96,7 @@ const Puzzle1: React.FC = () => {
           <Col xs={4} md={2}>
             {showProceedButton ? (
               <Button
-                className="buttons__proceed"
+                className="puzzle1__buttons__proceed"
                 type="input"
                 href="/wanderingmoon"
               >
@@ -104,7 +104,7 @@ const Puzzle1: React.FC = () => {
               </Button>
             ) : (
               <Button
-                className="buttons__reset"
+                className="puzzle1__buttons__reset"
                 type="reset"
                 onClick={resetInputs}
               >

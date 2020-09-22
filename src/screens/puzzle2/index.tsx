@@ -13,44 +13,43 @@ import { WanderingMoonText } from "src/assets/Texts/Constants";
 import ResponsivePlayer from "src/components/responsive-player";
 import "./puzzle2.css";
 
-const puzzle2: React.FC = () => {
-  // const [planetCodes, setPlanetCodes] = useState(
-  //   Array(PlanetList.length).fill("")
-  // );
+const Puzzle2: React.FC = () => {
+  const [planetCodes, setPlanetCodes] = useState(
+    Array(PlanetList.length).fill("")
+  );
 
-  // const handleCodesChangePerPlanet = (value: string, indexToChange: number) => {
-  //   setPlanetCodes(
-  //     planetCodes.map((planetCode, index) => {
-  //       if (index === indexToChange) {
-  //         return value;
-  //       }
-  //       return planetCode;
-  //     })
-  //   );
-  // };
+  const handleCodesChangePerPlanet = (value: string, indexToChange: number) => {
+    setPlanetCodes(
+      planetCodes.map((planetCode, index) => {
+        if (index === indexToChange) {
+          return value;
+        }
+        return planetCode;
+      })
+    );
+  };
 
-  const showProceedButton = true;
   const showWithMoon = true;
-  // const showProceedButton = planetCodes.every(
-  //   (code, index) => code === PlanetList[index].code
-  // );
+  const showProceedButton = planetCodes.every(
+    (code, index) => code === PlanetList[index].code
+  );
 
-  // const resetInputs = () => {
-  //   setPlanetCodes(
-  //     planetCodes.map(() => {
-  //       return "";
-  //     })
-  //   );
-  // };
+  const resetInputs = () => {
+    setPlanetCodes(
+      planetCodes.map(() => {
+        return "";
+      })
+    );
+  };
 
   return (
     <>
       <img className="background" src={Background} alt="Background" />
       <Container fluid className="p-wanderingmoon">
-        <Row className="justify-content-md-center">
-          <Col xs={6} md={5} className="puzzle2Message">
-            <h2 className="puzzle2Heading">The Wandering Moon</h2>
-            <div className="puzzle2WhiteText">
+        <Row className="puzzle2__details justify-content-md-center">
+          <Col xs={8} md={6}>
+            <h2 className="puzzle2__heading">The Wandering Moon</h2>
+            <div className="puzzle2__whiteText">
               {WanderingMoonText.map((item) => (
                 <>
                   {item}
@@ -60,7 +59,7 @@ const puzzle2: React.FC = () => {
               ))}
             </div>
           </Col>
-          <Col xs={6} md={4}>
+          <Col xs={4} md={2}>
             <Figure className="puzzle2__figure">
               {showWithMoon ? (
                 <Figure.Image
@@ -78,13 +77,13 @@ const puzzle2: React.FC = () => {
             </Figure>
           </Col>
         </Row>
-        <Row className="puzzle2__rowPlayer justify-content-md-center">
-          <Col xs={6} md={6}>
+        <Row className="justify-content-md-center">
+          <Col xs={8} md={6}>
             <ResponsivePlayer url="https://www.youtube.com/watch?v=dQw4w9WgXcQ" />
           </Col>
         </Row>
-        <Row className="planets justify-content-md-center">
-          {/* {PlanetList.map((item, index) => (
+        <Row className="puzzle2__planets justify-content-md-center">
+          {PlanetList.map((item, index) => (
             <Planet
               name="puzzle2"
               src={item.src}
@@ -96,26 +95,29 @@ const puzzle2: React.FC = () => {
                 handleCodesChangePerPlanet(value, index);
               }}
             />
-          ))} */}
+          ))}
         </Row>
-        <Row className="buttons">
-          <Col xs={2}></Col>
-          <Col xs={2}></Col>
-          <Col xs={2}></Col>
-          <Col xs={2}></Col>
-          <Col xs={2}>
-            <Button
-              className="buttons__reset"
-              type="reset"
-              // onClick={resetInputs}
-            >
-              Reset
-            </Button>
-          </Col>
-          <Col xs={2}>
-            {showProceedButton && (
-              <Button className="buttons__proceed" type="input">
+        <Row className="puzzle2__buttons">
+          <Col xs={4} md={2}></Col>
+          <Col xs={4} md={2}></Col>
+          <Col xs={4} md={2}></Col>
+          <Col xs={4} md={2}></Col>
+          <Col xs={4} md={2}>
+            {showProceedButton ? (
+              <Button
+                className="puzzle2__buttons__proceed"
+                type="input"
+                href="/finalvoyage"
+              >
                 Proceed
+              </Button>
+            ) : (
+              <Button
+                className="puzzle2__buttons__reset"
+                type="reset"
+                onClick={resetInputs}
+              >
+                Reset
               </Button>
             )}
           </Col>
@@ -125,4 +127,4 @@ const puzzle2: React.FC = () => {
   );
 };
 
-export default puzzle2;
+export default Puzzle2;
