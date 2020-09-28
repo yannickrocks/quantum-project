@@ -7,39 +7,38 @@ import Button from "react-bootstrap/Button";
 import Background from "src/assets/Misc/background.png";
 import ArmsOutStretchNoMoon from "src/assets/Misc/Arms-Outstretched_web.png";
 import ArmsOutStretchWithMoon from "src/assets/Misc/Arms-Outstretched-full_web.png";
-import Planet from "src/components/planets";
+import QuantumPlanet from "src/components/quantum-planets";
 import { PlanetList } from "src/assets/Planets/PlanetsList";
 import { WanderingMoonText } from "src/assets/Texts/Constants";
 import ResponsivePlayer from "src/components/responsive-player";
 import "./puzzle2.css";
 
 const Puzzle2: React.FC = () => {
-  const [planetCodes, setPlanetCodes] = useState(
-    Array(PlanetList.length).fill("")
-  );
+  const [planetCodes, setPlanetCodes] = useState(Array());
+  const correctOrderOfClicking = [0, 2, 1, 3, 5, 4];
 
-  const handleCodesChangePerPlanet = (value: string, indexToChange: number) => {
-    setPlanetCodes(
-      planetCodes.map((planetCode, index) => {
-        if (index === indexToChange) {
-          return value;
-        }
-        return planetCode;
-      })
-    );
+  const addOrRemoveFromAnwserArray = (indexToChange: number) => {
+    const exists = planetCodes.find((index) => index === indexToChange);
+    if (exists !== indexToChange) {
+      const newArray = [...planetCodes, indexToChange];
+      setPlanetCodes(newArray);
+    } else {
+      const indexValue = planetCodes.indexOf(indexToChange);
+      var newArray = [
+        ...planetCodes.slice(0, indexValue),
+        ...planetCodes.slice(indexValue + 1),
+      ];
+      setPlanetCodes(newArray);
+    }
   };
 
-  const showWithMoon = true;
-  const showProceedButton = planetCodes.every(
-    (code, index) => code === PlanetList[index].code
+  const showMoon = false;
+  const showProceedButton = correctOrderOfClicking.every(
+    (code, index) => code === planetCodes[index]
   );
 
   const resetInputs = () => {
-    setPlanetCodes(
-      planetCodes.map(() => {
-        return "";
-      })
-    );
+    setPlanetCodes([]);
   };
 
   return (
@@ -47,7 +46,7 @@ const Puzzle2: React.FC = () => {
       <img className="background" src={Background} alt="Background" />
       <Container fluid className="p-wanderingmoon">
         <Row className="puzzle2__details justify-content-md-center">
-          <Col xs={8} md={6}>
+          <Col xs={6} md={4}>
             <h2 className="puzzle2__heading">The Wandering Moon</h2>
             <div className="puzzle2__whiteText">
               {WanderingMoonText.map((item) => (
@@ -61,16 +60,16 @@ const Puzzle2: React.FC = () => {
           </Col>
           <Col xs={4} md={2}>
             <Figure className="puzzle2__figure">
-              {showWithMoon ? (
+              {showMoon ? (
                 <Figure.Image
-                  className="puzzle2__planet"
-                  src={ArmsOutStretchNoMoon}
+                  className="puzzle2__armsOut"
+                  src={ArmsOutStretchWithMoon}
                   alt="Arms Stretch Out No Moon"
                 />
               ) : (
                 <Figure.Image
-                  className="puzzle2__planet"
-                  src={ArmsOutStretchWithMoon}
+                  className="puzzle2__armsOut"
+                  src={ArmsOutStretchNoMoon}
                   alt="Arms Stretch Out No Moon"
                 />
               )}
@@ -78,26 +77,28 @@ const Puzzle2: React.FC = () => {
           </Col>
         </Row>
         <Row className="justify-content-md-center">
-          <Col xs={8} md={6}>
+          <Col xs={7} md={5}>
             <ResponsivePlayer url="https://www.youtube.com/watch?v=dQw4w9WgXcQ" />
           </Col>
         </Row>
         <Row className="puzzle2__planets justify-content-md-center">
           {PlanetList.map((item, index) => (
-            <Planet
+            <QuantumPlanet
               name="puzzle2"
               src={item.src}
               answerSrc={item.answerSrc}
               planetId={item.planet}
-              planetCode={planetCodes[index]}
-              correctCode={item.code}
-              onPlanetCodeChange={(value: string) => {
-                handleCodesChangePerPlanet(value, index);
+              hasBeenClickedOn={planetCodes.includes(index)}
+              greyQuantumMoon={item.QuantumMoon.Grey}
+              purpleQuantumMoon={item.QuantumMoon.Purple}
+              onPlanetCodeChange={() => {
+                addOrRemoveFromAnwserArray(index);
               }}
             />
           ))}
         </Row>
         <Row className="puzzle2__buttons">
+          <Col xs={4} md={2}></Col>
           <Col xs={4} md={2}></Col>
           <Col xs={4} md={2}></Col>
           <Col xs={4} md={2}></Col>

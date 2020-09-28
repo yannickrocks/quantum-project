@@ -31,10 +31,9 @@
 }
 
 .puzzle2__figure {
-  text-align: right;
-  margin: revert;
   margin-left: -20px;
-  width: 320px;
+  width: 400px;
+  margin-top: -40px;
 }
 
 .puzzle2__planets {
@@ -49,15 +48,9 @@
   max-width: calc(16.666667% - 30px) !important;
 }
 
-.puzzle2__planets__input {
-  width: 100%;
-  border-radius: 6px;
-  border: none;
-  text-align: center;
-}
-
-.puzzle2__planets__input:focus {
-  outline: none;
+.puzzle2__planets__moon {
+  width: 50%;
+  margin-left: 50px;
 }
 
 .puzzle2__buttons {
@@ -87,7 +80,11 @@
 
 @media only screen and (max-width: 1900px) {
   .p-wanderingmoon {
-    width: 1900px !important;
+    width: 1800px !important;
+  }
+
+  .puzzle2__planets__moon {
+    margin-left: 40px;
   }
 }
 
@@ -101,6 +98,7 @@
 
   .puzzle2__figure {
     width: 200px;
+    margin-top: 30px;
   }
 
   .puzzle2__whiteText {

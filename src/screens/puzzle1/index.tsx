@@ -29,7 +29,7 @@ const Puzzle1: React.FC = () => {
   };
 
   const showProceedButton = planetCodes.every(
-    (code, index) => code === PlanetList[index].code
+    (code, index) => code === PlanetList[index].puzzle1code
   );
 
   const resetInputs = () => {
@@ -68,7 +68,7 @@ const Puzzle1: React.FC = () => {
           </Col>
         </Row>
         <Row className="justify-content-md-center">
-          <Col xs={8} md={6}>
+          <Col xs={7} md={5}>
             <ResponsivePlayer url="https://www.youtube.com/watch?v=dQw4w9WgXcQ" />
           </Col>
         </Row>
@@ -80,7 +80,7 @@ const Puzzle1: React.FC = () => {
               answerSrc={item.answerSrc}
               planetId={item.planet}
               planetCode={planetCodes[index]}
-              correctCode={item.code}
+              correctCode={item.puzzle1code}
               onPlanetCodeChange={(value: string) => {
                 handleCodesChangePerPlanet(value, index);
               }}
