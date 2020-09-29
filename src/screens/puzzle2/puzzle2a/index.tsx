@@ -6,22 +6,32 @@ import Figure from "react-bootstrap/Figure";
 import Button from "react-bootstrap/Button";
 import Background from "src/assets/Misc/background.png";
 import ArmsOutStretchNoMoon from "src/assets/Misc/Arms-Outstretched_web.png";
-import ArmsOutStretchWithMoon from "src/assets/Misc/Arms-Outstretched-full_web.png";
 import QuantumPlanet from "src/components/quantum-planets";
 import { PlanetList } from "src/assets/Planets/PlanetsList";
-import { WanderingMoonText } from "src/assets/Texts/Constants";
+import {
+  WanderingMoonText,
+  WanderingMoonIncorrect,
+  WanderingMoonAlmostCorrect,
+} from "src/assets/Texts/Constants";
 import ResponsivePlayer from "src/components/responsive-player";
-import "./puzzle2.css";
+import "../puzzle2.css";
 
 const Puzzle2: React.FC = () => {
   const [planetCodes, setPlanetCodes] = useState(Array());
+  const [showMoon, setShowMoon] = useState(Array());
+  const [displayIncorrectMessage, setDisplayIncorrectMessage] = useState(false);
+  const [displayTrackingMessage, setDisplayTrackingMessage] = useState(false);
   const correctOrderOfClicking = [0, 2, 1, 3, 5, 4];
+  const page = "pageA";
 
   const addOrRemoveFromAnwserArray = (indexToChange: number) => {
     const exists = planetCodes.find((index) => index === indexToChange);
     if (exists !== indexToChange) {
       const newArray = [...planetCodes, indexToChange];
       setPlanetCodes(newArray);
+
+      const moonArray = [indexToChange];
+      setShowMoon(moonArray);
     } else {
       const indexValue = planetCodes.indexOf(indexToChange);
       var newArray = [
@@ -32,13 +42,17 @@ const Puzzle2: React.FC = () => {
     }
   };
 
-  const showMoon = false;
-  const showProceedButton = correctOrderOfClicking.every(
-    (code, index) => code === planetCodes[index]
-  );
+  const checkAnswers = (event: React.MouseEvent<HTMLElement>) => {
+    correctOrderOfClicking.every((code, index) => code === planetCodes[index])
+      ? setDisplayTrackingMessage(true)
+      : setDisplayIncorrectMessage(true);
+  };
 
   const resetInputs = () => {
     setPlanetCodes([]);
+    setShowMoon([]);
+    setDisplayIncorrectMessage(false);
+    setDisplayTrackingMessage(false);
   };
 
   return (
@@ -60,19 +74,11 @@ const Puzzle2: React.FC = () => {
           </Col>
           <Col xs={4} md={2}>
             <Figure className="puzzle2__figure">
-              {showMoon ? (
-                <Figure.Image
-                  className="puzzle2__armsOut"
-                  src={ArmsOutStretchWithMoon}
-                  alt="Arms Stretch Out No Moon"
-                />
-              ) : (
-                <Figure.Image
-                  className="puzzle2__armsOut"
-                  src={ArmsOutStretchNoMoon}
-                  alt="Arms Stretch Out No Moon"
-                />
-              )}
+              <Figure.Image
+                className="puzzle2__armsOut"
+                src={ArmsOutStretchNoMoon}
+                alt="Arms Stretch Out No Moon"
+              />
             </Figure>
           </Col>
         </Row>
@@ -86,11 +92,10 @@ const Puzzle2: React.FC = () => {
             <QuantumPlanet
               name="puzzle2"
               src={item.src}
-              answerSrc={item.answerSrc}
               planetId={item.planet}
-              hasBeenClickedOn={planetCodes.includes(index)}
+              hasBeenClickedOn={showMoon.includes(index)}
               greyQuantumMoon={item.QuantumMoon.Grey}
-              purpleQuantumMoon={item.QuantumMoon.Purple}
+              pageAorB={page}
               onPlanetCodeChange={() => {
                 addOrRemoveFromAnwserArray(index);
               }}
@@ -98,29 +103,39 @@ const Puzzle2: React.FC = () => {
           ))}
         </Row>
         <Row className="puzzle2__buttons">
-          <Col xs={4} md={2}></Col>
-          <Col xs={4} md={2}></Col>
-          <Col xs={4} md={2}></Col>
-          <Col xs={4} md={2}></Col>
-          <Col xs={4} md={2}></Col>
-          <Col xs={4} md={2}>
-            {showProceedButton ? (
-              <Button
-                className="puzzle2__buttons__proceed"
-                type="input"
-                href="/finalvoyage"
-              >
-                Proceed
-              </Button>
+          <Col xs={16} md={8}>
+            {displayTrackingMessage ? (
+              <div className="puzzle2__almostCorrectText">
+                {WanderingMoonAlmostCorrect}
+              </div>
             ) : (
-              <Button
-                className="puzzle2__buttons__reset"
-                type="reset"
-                onClick={resetInputs}
-              >
-                Reset
-              </Button>
+              <></>
             )}
+            {displayIncorrectMessage ? (
+              <div className="puzzle2__incorrectText">
+                {WanderingMoonIncorrect}
+              </div>
+            ) : (
+              <></>
+            )}
+          </Col>
+          <Col xs={4} md={2}>
+            <Button
+              className="puzzle2__buttons__reset"
+              type="reset"
+              onClick={resetInputs}
+            >
+              Reset
+            </Button>
+          </Col>
+          <Col xs={4} md={2}>
+            <Button
+              className="puzzle2__buttons__proceed"
+              type="input"
+              onClick={checkAnswers}
+            >
+              Check
+            </Button>
           </Col>
         </Row>
       </Container>

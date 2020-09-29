@@ -78,6 +78,21 @@
   padding: 10px;
 }
 
+.puzzle2__correctText {
+  color: #388861;
+  font-weight: 800;
+}
+
+.puzzle2__almostCorrectText {
+  color: #5341ae;
+  font-weight: 800;
+}
+
+.puzzle2__incorrectText {
+  color: #b75053;
+  font-weight: 800;
+}
+
 @media only screen and (max-width: 1900px) {
   .p-wanderingmoon {
     width: 1800px !important;

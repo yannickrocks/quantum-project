@@ -27,3 +27,10 @@ const WanderingMoonText2 =
   "How refreshing it is to find new anomalies to study along our nomadic journey... provided, that is, we can work around its apparent natural state of a quantum superposition.";
 
 export const WanderingMoonText = [WanderingMoonText1, WanderingMoonText2];
+
+export const WanderingMoonIncorrect = "Tracking information incorrect.";
+export const WanderingMoonCorrect =
+  "Tracking informatiom correct. Quantum moon located.";
+
+export const WanderingMoonAlmostCorrect =
+  "Tracking Information correct but location of quantum moon remains unknown.";
