@@ -16,9 +16,13 @@ import {
 import ResponsivePlayer from "src/components/responsive-player";
 import "../puzzle2.css";
 
-const Puzzle2: React.FC = () => {
-  const [planetCodes, setPlanetCodes] = useState(Array());
-  const [showMoon, setShowMoon] = useState(Array());
+type Puzzle2aProps = {
+  increaseCounter(): void;
+};
+
+const Puzzle2: React.FC<Puzzle2aProps> = ({ increaseCounter }) => {
+  const [planetCodes, setPlanetCodes] = useState<Array<number>>([]);
+  const [showMoon, setShowMoon] = useState<Array<number>>([]);
   const [displayIncorrectMessage, setDisplayIncorrectMessage] = useState(false);
   const [displayTrackingMessage, setDisplayTrackingMessage] = useState(false);
   const correctOrderOfClicking = [0, 2, 1, 3, 5, 4];
@@ -46,6 +50,14 @@ const Puzzle2: React.FC = () => {
     correctOrderOfClicking.every((code, index) => code === planetCodes[index])
       ? setDisplayTrackingMessage(true)
       : setDisplayIncorrectMessage(true);
+  };
+
+  const refresh = () => {
+    setDisplayIncorrectMessage(false);
+    setDisplayTrackingMessage(false);
+    setPlanetCodes([]);
+    setShowMoon([]);
+    increaseCounter();
   };
 
   return (
@@ -115,8 +127,8 @@ const Puzzle2: React.FC = () => {
           <Col xs={4} md={2}>
             <Button
               className="puzzle2__buttons__reset"
-              type="reset"
-              href="/wanderingmoon"
+              // href="/wanderingmoon"
+              onClick={refresh}
             >
               Refresh
             </Button>
