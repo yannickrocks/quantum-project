@@ -48,13 +48,6 @@ const Puzzle2: React.FC = () => {
       : setDisplayIncorrectMessage(true);
   };
 
-  const resetInputs = () => {
-    setPlanetCodes([]);
-    setShowMoon([]);
-    setDisplayIncorrectMessage(false);
-    setDisplayTrackingMessage(false);
-  };
-
   return (
     <>
       <img className="background" src={Background} alt="Background" />
@@ -123,9 +116,9 @@ const Puzzle2: React.FC = () => {
             <Button
               className="puzzle2__buttons__reset"
               type="reset"
-              onClick={resetInputs}
+              href="/wanderingmoon"
             >
-              Reset
+              Refresh
             </Button>
           </Col>
           <Col xs={4} md={2}>
