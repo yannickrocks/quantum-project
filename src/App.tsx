@@ -3,6 +3,7 @@ import HomePage from "src/screens/homepage";
 import Puzzle1 from "src/screens/puzzle1";
 import Puzzle2a from "src/screens/puzzle2/puzzle2a";
 import Puzzle2b from "src/screens/puzzle2/puzzle2b";
+import Puzzle3 from "src/screens/puzzle3";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const App: React.FC = () => {
@@ -18,7 +19,6 @@ const App: React.FC = () => {
           <Route path="/wanderingmoon" exact>
             <Puzzle2a
               increaseCounter={() => {
-                console.log(counter);
                 var newCounter = counter + 1;
                 return setCounter(newCounter);
               }}
@@ -28,7 +28,6 @@ const App: React.FC = () => {
           <Route path="/wanderingmoon" exact>
             <Puzzle2a
               increaseCounter={() => {
-                console.log(counter);
                 var newCounter = counter + 1;
                 return setCounter(newCounter);
               }}
@@ -38,13 +37,13 @@ const App: React.FC = () => {
           <Route path="/wanderingmoon" exact>
             <Puzzle2b
               increaseCounter={() => {
-                console.log(counter);
                 var newCounter = counter + 1;
                 return setCounter(newCounter);
               }}
             />
           </Route>
         )}
+        <Route path="/finalvoyage" exact component={Puzzle3}></Route>
       </Switch>
     </Router>
   );

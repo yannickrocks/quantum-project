@@ -4,64 +4,69 @@
   left: 0;
 }
 
-.p-wanderingmoon {
+.finalVoyage {
   width: 2250px !important;
   margin: 0 auto;
 }
 
-.puzzle2__details {
+.puzzle3__details {
   padding: 10px;
   width: 100%;
   height: 350px;
-  margin-top: 40px;
-  margin-bottom: -50px;
 }
 
-.puzzle2__heading {
+.puzzle3__heading {
   margin-top: 40px;
-  color: #5341ae;
+  color: #b75053;
   font-size: 40px;
   font-weight: 700;
 }
 
-.puzzle2__whiteText {
+.puzzle3__whiteText {
   text-align: left;
   color: #ffffff;
   font-size: 16px;
   font-weight: 600 !important;
 }
 
-.puzzle2__figure {
+.puzzle3__figure {
+  text-align: right;
+  margin: revert;
   margin-left: -20px;
-  width: 400px;
-  margin-top: -40px;
+  width: 320px;
 }
 
-.puzzle2__planets {
+.puzzle3__warps {
   width: 70%;
   margin-right: auto !important;
   margin-left: auto !important;
 }
 
-.puzzle2__planets__planet {
+.puzzle3__planets__planet {
   padding: 0 !important;
   margin: 15px !important;
   max-width: calc(16.666667% - 30px) !important;
 }
 
-.puzzle2__planets__moon {
-  width: 50%;
-  margin-left: 50px;
+.puzzle3__planets__input {
+  width: 100%;
+  border-radius: 6px;
+  border: none;
+  text-align: center;
 }
 
-.puzzle2__buttons {
+.puzzle3__planets__input:focus {
+  outline: none;
+}
+
+.puzzle3__buttons {
   width: 70%;
   margin-right: auto !important;
   margin-left: auto !important;
   padding: 0 !important;
 }
 
-.puzzle2__buttons__reset {
+.puzzle3__buttons__reset {
   width: 100%;
   border: none !important;
   background-color: #b75053 !important;
@@ -70,7 +75,7 @@
   padding: 10px;
 }
 
-.puzzle2__buttons__proceed {
+.puzzle3__buttons__proceed {
   width: 100%;
   border: none !important;
   background-color: #388861 !important;
@@ -79,81 +84,61 @@
   padding: 10px;
 }
 
-.puzzle2__correctText {
-  color: #388861;
-  font-weight: 800;
-}
-
-.puzzle2__almostCorrectText {
-  color: #5341ae;
-  font-weight: 800;
-}
-
-.puzzle2__incorrectText {
-  color: #b75053;
-  font-weight: 800;
-}
-
 @media only screen and (max-width: 1900px) {
-  .p-wanderingmoon {
+  .finalVoyage {
     width: 1800px !important;
-  }
-
-  .puzzle2__planets__moon {
-    margin-left: 40px;
   }
 }
 
 @media only screen and (max-width: 1700px) {
-  .p-wanderingmoon {
+  .finalVoyage {
     width: 1600px !important;
   }
-  .puzzle2__heading {
+  .puzzle3__heading {
     font-size: 30px;
   }
 
-  .puzzle2__figure {
+  .puzzle3__figure {
     width: 200px;
-    margin-top: 30px;
   }
 
-  .puzzle2__whiteText {
+  .puzzle3__whiteText {
     font-size: 12px;
   }
 }
 
 @media only screen and (max-width: 1480px) {
-  .p-wanderingmoon {
+  .finalVoyage {
     width: 1200px !important;
   }
 
-  .puzzle2__heading {
+  .puzzle3__heading {
     font-size: 25px;
   }
 
-  .puzzle2__figure {
+  .puzzle3__figure {
     width: 250px;
   }
 
-  .puzzle2__whiteText {
+  .puzzle3__whiteText {
     font-size: 13px;
   }
 }
 
 @media only screen and (max-width: 1350px) {
-  .p-wanderingmoon {
+  .finalVoyage {
     width: 800px !important;
   }
 
-  .puzzle1Heading {
+  .puzzle3__heading {
     font-size: 20px;
   }
 
-  .puzzle1__figure {
-    width: 250px;
+  .puzzle3__figure {
+    width: 150px;
   }
 
-  .puzzle1WhiteText {
+  .puzzle3__whiteText {
     font-size: 10px;
   }
 }
