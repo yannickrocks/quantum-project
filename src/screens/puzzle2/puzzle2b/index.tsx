@@ -46,7 +46,7 @@ const Puzzle2: React.FC<Puzzle2bProps> = ({ increaseCounter }) => {
     }
   };
 
-  const checkAnswers = (event: React.MouseEvent<HTMLElement>) => {
+  const checkAnswers = () => {
     correctOrderOfClicking.every((code, index) => code === planetCodes[index])
       ? setDisplayCorrectMessage(true)
       : setDisplayIncorrectMessage(true);
