@@ -9,6 +9,7 @@ import Statue from "src/assets/Misc/Statue-Awakened_web.png";
 import Warp1 from "src/assets/Misc/Warp-terminal-1_web.png";
 import { FinalVoyageText } from "src/assets/Texts/Constants";
 import ResponsivePlayer from "src/components/responsive-player";
+import CountDown from "src/components/countdown";
 import "./puzzle3.css";
 
 const Puzzle3: React.FC = () => {
@@ -44,33 +45,30 @@ const Puzzle3: React.FC = () => {
             <ResponsivePlayer url="https://www.youtube.com/watch?v=dQw4w9WgXcQ" />
           </Col>
         </Row>
-        <Row className="puzzle3__warps justify-content-md-center">
-          <Figure>
-            <Figure.Image src={Warp1} />
-          </Figure>
-        </Row>
+        <Row className="puzzle3__warps justify-content-md-center"></Row>
         <Row className="puzzle3__buttons">
-          <Col xs={4} md={2}></Col>
+          <Col xs={4} md={2}>
+            <Button
+              className="puzzle3__buttons__reset"
+              type="reset"
+              // onClick={resetInputs}
+            >
+              Reset
+            </Button>
+          </Col>
           <Col xs={4} md={2}></Col>
           <Col xs={4} md={2}></Col>
           <Col xs={4} md={2}></Col>
           <Col xs={4} md={2}></Col>
           <Col xs={4} md={2}>
-            <Button
+            {/* <Button
               className="puzzle3__buttons__proceed"
               type="input"
               href="/wanderingmoon"
             >
               Proceed
-            </Button>
-            {/*             
-              <Button
-                className="puzzle3__buttons__reset"
-                type="reset"
-                onClick={resetInputs}
-              >
-                Reset
-              </Button> */}
+            </Button> */}
+            <CountDown />
           </Col>
         </Row>
       </Container>
