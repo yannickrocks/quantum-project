@@ -82,10 +82,10 @@ const Puzzle3: React.FC = () => {
               Reset
             </Button>
           </Col>
-          <Col xs={4} md={2}></Col>
-          <Col xs={4} md={2}></Col>
-          <Col xs={4} md={2}></Col>
-          <Col xs={4} md={2}></Col>
+          <Col xs={9} md={7}></Col>
+          <Col xs={4} md={2}>
+            <CountDown />
+          </Col>
           <Col xs={4} md={2}>
             {/* <Button
               className="puzzle3__buttons__proceed"
@@ -94,7 +94,6 @@ const Puzzle3: React.FC = () => {
             >
               Proceed
             </Button> */}
-            <CountDown />
           </Col>
         </Row>
       </Container>

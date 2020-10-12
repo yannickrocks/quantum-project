@@ -42,6 +42,9 @@
 
 .puzzle3__warps {
   margin-top: 10px;
+  width: 70%;
+  margin-right: auto !important;
+  margin-left: auto !important;
 }
 
 .puzzle3__warps__col {
@@ -50,7 +53,7 @@
 
 .puzzle3__warps__launch {
   width: 30%;
-  margin-left: -100px;
+  margin-left: -50px;
 }
 
 .puzzle3__buttons {
