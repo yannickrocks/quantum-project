@@ -2,21 +2,34 @@ import React, { useState, useEffect } from "react";
 import "./countdown.css";
 
 const CountDown: React.FC = () => {
-  const [minutes, setMinutes] = useState(21);
-  const [seconds, setSeconds] = useState(59);
+  const [minutes, setMinutes] = useState("22");
+  const [seconds, setSeconds] = useState("00");
 
   useEffect(() => {
     const timer = setInterval(() => {
-      if (seconds > 0) {
-        setSeconds(seconds - 1);
+      const secondsInNumber = parseInt(seconds);
+      if (secondsInNumber > 0) {
+        if (secondsInNumber < 11) {
+          const allowZeroLead = (secondsInNumber - 1)
+            .toString()
+            .padStart(2, "0");
+          setSeconds(allowZeroLead);
+        } else {
+          setSeconds((secondsInNumber - 1).toString());
+        }
       }
 
-      if (seconds === 0) {
-        if (minutes === 0) {
+      if (secondsInNumber === 0) {
+        const minutesInNumber = parseInt(minutes);
+        if (minutesInNumber === 0) {
           clearInterval(timer);
         } else {
-          setMinutes(minutes - 1);
-          setSeconds(59);
+          if (minutesInNumber < 11) {
+            setMinutes((minutesInNumber - 1).toString().padStart(2, "0"));
+          } else {
+            setMinutes((minutesInNumber - 1).toString());
+          }
+          setSeconds("59");
         }
       }
     }, 1000);

@@ -33,30 +33,24 @@
   text-align: right;
   margin: revert;
   margin-left: -20px;
-  width: 320px;
+  width: 300px;
+}
+
+.videoPlayer {
+  margin-top: -50px;
 }
 
 .puzzle3__warps {
-  width: 70%;
-  margin-right: auto !important;
-  margin-left: auto !important;
+  margin-top: 10px;
 }
 
-.puzzle3__planets__planet {
+.puzzle3__warps__col {
   padding: 0 !important;
-  margin: 15px !important;
-  max-width: calc(16.666667% - 30px) !important;
 }
 
-.puzzle3__planets__input {
-  width: 100%;
-  border-radius: 6px;
-  border: none;
-  text-align: center;
-}
-
-.puzzle3__planets__input:focus {
-  outline: none;
+.puzzle3__warps__launch {
+  width: 30%;
+  margin-left: -100px;
 }
 
 .puzzle3__buttons {

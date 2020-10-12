@@ -65,7 +65,7 @@ const Puzzle2: React.FC<Puzzle2aProps> = ({ increaseCounter }) => {
       <img className="background" src={Background} alt="Background" />
       <Container fluid className="p-wanderingmoon">
         <Row className="puzzle2__details justify-content-md-center">
-          <Col xs={6} md={4}>
+          <Col xs={8} md={6}>
             <h2 className="puzzle2__heading">The Wandering Moon</h2>
             <div className="puzzle2__whiteText">
               {WanderingMoonText.map((item) => (
