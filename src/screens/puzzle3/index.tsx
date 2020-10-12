@@ -66,7 +66,7 @@ const Puzzle3: React.FC = () => {
             </Figure>
           </Col>
           <Col xs={1} />
-          <Col className="puzzle3__warps__col" xs={4} md={2}>
+          <Col xs={4} md={2}>
             <Figure className="puzzle3__warps__launch">
               <Figure.Image src={Launch1} />
             </Figure>
