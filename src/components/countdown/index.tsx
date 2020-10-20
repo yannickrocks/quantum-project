@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./countdown.css";
 
 const CountDown: React.FC = () => {
-  const [minutes, setMinutes] = useState("22");
+  const [hours, setHours] = useState("22");
+  const [minutes, setMinutes] = useState("00");
   const [seconds, setSeconds] = useState("00");
 
   useEffect(() => {
@@ -21,10 +22,14 @@ const CountDown: React.FC = () => {
 
       if (secondsInNumber === 0) {
         const minutesInNumber = parseInt(minutes);
-        if (minutesInNumber === 0) {
+        const hoursInNumber = parseInt(hours);
+        if (minutesInNumber === 0 && hoursInNumber === 0) {
           clearInterval(timer);
         } else {
-          if (minutesInNumber < 11) {
+          if (minutesInNumber === 0 && hoursInNumber > 0) {
+            setMinutes("59");
+            setHours((hoursInNumber - 1).toString().padStart(2, "0"));
+          } else if (minutesInNumber < 11) {
             setMinutes((minutesInNumber - 1).toString().padStart(2, "0"));
           } else {
             setMinutes((minutesInNumber - 1).toString());
@@ -35,12 +40,12 @@ const CountDown: React.FC = () => {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [minutes, seconds]);
+  }, [hours, minutes, seconds]);
 
   return (
     <>
       <div className="timer">
-        {minutes}: {seconds}
+        {hours} : {minutes} : {seconds}
       </div>
     </>
   );
