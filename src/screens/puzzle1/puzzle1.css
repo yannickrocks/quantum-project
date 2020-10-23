@@ -86,13 +86,13 @@
 
 @media only screen and (max-width: 1900px) {
   .p-22-minutes {
-    width: 1800px !important;
+    width: 1580px !important;
   }
 }
 
 @media only screen and (max-width: 1700px) {
   .p-22-minutes {
-    width: 1600px !important;
+    width: 1400px !important;
   }
   .puzzle1__heading {
     font-size: 30px;

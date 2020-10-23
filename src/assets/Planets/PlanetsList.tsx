@@ -18,7 +18,7 @@ export const PlanetList = [
     src: GSun,
     answerSrc: PSun,
     planet: "Sun",
-    puzzle1code: "1111",
+    puzzle1code: "2200",
     QuantumMoon: {
       Grey: GQuantumMoon,
       Purple: PQuantumMoon,
@@ -28,7 +28,7 @@ export const PlanetList = [
     src: GTwins,
     answerSrc: PTwins,
     planet: "Twins",
-    puzzle1code: "2222",
+    puzzle1code: "1905",
     QuantumMoon: {
       Grey: GQuantumMoon,
       Purple: PQuantumMoon,
@@ -38,7 +38,7 @@ export const PlanetList = [
     src: GTimberHearth,
     answerSrc: PTimberHearth,
     planet: "TimberHearth",
-    puzzle1code: "3333",
+    puzzle1code: "1128",
     QuantumMoon: {
       Grey: GQuantumMoon,
       Purple: PQuantumMoon,
@@ -48,7 +48,7 @@ export const PlanetList = [
     src: GBrittleHollow,
     answerSrc: PBrittleHollow,
     planet: "BrittleHollow",
-    puzzle1code: "4444",
+    puzzle1code: "0431",
     QuantumMoon: {
       Grey: GQuantumMoon,
       Purple: PQuantumMoon,
@@ -58,7 +58,7 @@ export const PlanetList = [
     src: GGiantsDeep,
     answerSrc: PGiantsDeep,
     planet: "GiantsDeep",
-    puzzle1code: "5555",
+    puzzle1code: "0626",
     QuantumMoon: {
       Grey: GQuantumMoon,
       Purple: PQuantumMoon,
@@ -68,7 +68,7 @@ export const PlanetList = [
     src: GDarkBramble,
     answerSrc: PDarkBramble,
     planet: "DarkBramble",
-    puzzle1code: "6666",
+    puzzle1code: "1308",
     QuantumMoon: {
       Grey: GQuantumMoon,
       Purple: PQuantumMoon,
