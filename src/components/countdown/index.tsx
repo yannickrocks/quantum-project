@@ -45,7 +45,7 @@ const CountDown: React.FC = () => {
   return (
     <>
       <div className="timer">
-        {hours} : {minutes} : {seconds}
+        {hours}:{minutes}:{seconds}
       </div>
     </>
   );
