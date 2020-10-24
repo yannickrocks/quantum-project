@@ -27,7 +27,7 @@ const App: React.FC = () => {
               }}
             />
           </Route>
-        ) : randomPicker > 25 ? (
+        ) : randomPicker > 16 ? (
           <Route path="/wanderingmoon" exact>
             <Puzzle2a
               increaseCounter={() => {

@@ -26,8 +26,10 @@ const Puzzle2: React.FC<Puzzle2aProps> = ({ increaseCounter }) => {
   const adjustedPlanetList = PlanetList.filter((x) => x.planet !== "Sun");
   const [planetCodes, setPlanetCodes] = useState<Array<number>>([]);
   const [showMoon, setShowMoon] = useState<Array<number>>([]);
+  const [showRefreshButton, setRefreshToggle] = useState(false);
   const [displayIncorrectMessage, setDisplayIncorrectMessage] = useState(false);
   const [displayTrackingMessage, setDisplayTrackingMessage] = useState(false);
+
   const page = "pageA";
 
   const addOrRemoveFromAnwserArray = (indexToChange: number) => {
@@ -53,6 +55,15 @@ const Puzzle2: React.FC<Puzzle2aProps> = ({ increaseCounter }) => {
     correctOrderOfClicking.every((code, index) => code === planetCodes[index])
       ? setDisplayTrackingMessage(true)
       : setDisplayIncorrectMessage(true);
+
+    setRefreshToggle(true);
+  };
+
+  const reset = () => {
+    setDisplayIncorrectMessage(false);
+    setDisplayTrackingMessage(false);
+    setPlanetCodes([]);
+    setShowMoon([]);
   };
 
   const refresh = () => {
@@ -128,11 +139,19 @@ const Puzzle2: React.FC<Puzzle2aProps> = ({ increaseCounter }) => {
                 <></>
               )}
             </Col>
-            <Col xs={4} md={2}>
-              <Button className="puzzle2__buttons__reset" onClick={refresh}>
-                Refresh
-              </Button>
-            </Col>
+            {showRefreshButton ? (
+              <Col xs={4} md={2}>
+                <Button className="puzzle2__buttons__reset" onClick={refresh}>
+                  Refresh
+                </Button>
+              </Col>
+            ) : (
+              <Col xs={4} md={2}>
+                <Button className="puzzle2__buttons__reset" onClick={reset}>
+                  Reset
+                </Button>
+              </Col>
+            )}
             <Col xs={4} md={2}>
               <Button
                 className="puzzle2__buttons__proceed"
