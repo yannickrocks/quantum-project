@@ -20,10 +20,10 @@ import "../puzzle2.css";
 
 type Puzzle2aProps = {
   increaseCounter(): void;
-  counter: number;
 };
 
-const Puzzle2: React.FC<Puzzle2aProps> = ({ increaseCounter, counter }) => {
+const Puzzle2: React.FC<Puzzle2aProps> = ({ increaseCounter }) => {
+  const adjustedPlanetList = PlanetList.filter((x) => x.planet !== "Sun");
   const [planetCodes, setPlanetCodes] = useState<Array<number>>([]);
   const [showMoon, setShowMoon] = useState<Array<number>>([]);
   const [displayIncorrectMessage, setDisplayIncorrectMessage] = useState(false);
@@ -35,6 +35,7 @@ const Puzzle2: React.FC<Puzzle2aProps> = ({ increaseCounter, counter }) => {
     if (exists !== indexToChange) {
       const newArray = [...planetCodes, indexToChange];
       setPlanetCodes(newArray);
+      console.log(newArray);
 
       const moonArray = [indexToChange];
       setShowMoon(moonArray);
@@ -96,23 +97,19 @@ const Puzzle2: React.FC<Puzzle2aProps> = ({ increaseCounter, counter }) => {
             </Col>
           </Row>
           <Row className="puzzle2__planets justify-content-md-center">
-            {PlanetList.map((item, index) =>
-              item.planet !== "Sun" ? (
-                <QuantumPlanet
-                  name="puzzle2"
-                  src={item.src}
-                  planetId={item.planet}
-                  hasBeenClickedOn={showMoon.includes(index)}
-                  greyQuantumMoon={item.QuantumMoon.Grey}
-                  pageAorB={page}
-                  onPlanetCodeChange={() => {
-                    addOrRemoveFromAnwserArray(index);
-                  }}
-                />
-              ) : (
-                ""
-              )
-            )}
+            {adjustedPlanetList.map((item, index) => (
+              <QuantumPlanet
+                name="puzzle2"
+                src={item.src}
+                planetId={item.planet}
+                hasBeenClickedOn={showMoon.includes(index)}
+                greyQuantumMoon={item.QuantumMoon.Grey}
+                pageAorB={page}
+                onPlanetCodeChange={() => {
+                  addOrRemoveFromAnwserArray(index);
+                }}
+              />
+            ))}
           </Row>
           <Row className="puzzle2__buttons">
             <Col xs={16} md={8}>

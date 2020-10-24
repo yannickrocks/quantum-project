@@ -25,7 +25,6 @@ const App: React.FC = () => {
                 var newCounter = counter + 1;
                 return setCounter(newCounter);
               }}
-              counter={counter}
             />
           </Route>
         ) : randomPicker > 25 ? (
@@ -35,7 +34,6 @@ const App: React.FC = () => {
                 var newCounter = counter + 1;
                 return setCounter(newCounter);
               }}
-              counter={counter}
             />
           </Route>
         ) : (

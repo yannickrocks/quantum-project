@@ -14,8 +14,10 @@ import FadeIn from "react-fade-in";
 import "./puzzle1.css";
 
 const Puzzle1: React.FC = () => {
+  const adjustedPlanetList = PlanetList.filter((x) => x.planet !== "Eye");
+
   const [planetCodes, setPlanetCodes] = useState(
-    Array(PlanetList.length).fill("")
+    Array(adjustedPlanetList.length).fill("")
   );
 
   const handleCodesChangePerPlanet = (value: string, indexToChange: number) => {
@@ -30,7 +32,7 @@ const Puzzle1: React.FC = () => {
   };
 
   const showProceedButton = planetCodes.every(
-    (code, index) => code === PlanetList[index].puzzle1code
+    (code, index) => code === adjustedPlanetList[index].puzzle1code
   );
 
   const resetInputs = () => {
@@ -75,23 +77,19 @@ const Puzzle1: React.FC = () => {
             </Col>
           </Row>
           <Row className="puzzle1__planets justify-content-md-center">
-            {PlanetList.map((item, index) =>
-              item.planet !== "Eye" ? (
-                <Planet
-                  name="puzzle1"
-                  src={item.src}
-                  answerSrc={item.answerSrc}
-                  planetId={item.planet}
-                  planetCode={planetCodes[index]}
-                  correctCode={item.puzzle1code}
-                  onPlanetCodeChange={(value: string) => {
-                    handleCodesChangePerPlanet(value, index);
-                  }}
-                />
-              ) : (
-                ""
-              )
-            )}
+            {adjustedPlanetList.map((item, index) => (
+              <Planet
+                name="puzzle1"
+                src={item.src}
+                answerSrc={item.answerSrc}
+                planetId={item.planet}
+                planetCode={planetCodes[index]}
+                correctCode={item.puzzle1code}
+                onPlanetCodeChange={(value: string) => {
+                  handleCodesChangePerPlanet(value, index);
+                }}
+              />
+            ))}
           </Row>
           <Row className="puzzle1__buttons">
             <Col xs={4} md={2}></Col>

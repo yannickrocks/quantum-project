@@ -23,6 +23,7 @@ type Puzzle2bProps = {
 };
 
 const Puzzle2: React.FC<Puzzle2bProps> = ({ increaseCounter }) => {
+  const adjustedPlanetList = PlanetList.filter((x) => x.planet !== "Sun");
   const [planetCodes, setPlanetCodes] = useState<Array<number>>([]);
   const [showMoon, setShowMoon] = useState<Array<number>>([]);
   const [displayIncorrectMessage, setDisplayIncorrectMessage] = useState(false);
@@ -95,24 +96,20 @@ const Puzzle2: React.FC<Puzzle2bProps> = ({ increaseCounter }) => {
             </Col>
           </Row>
           <Row className="puzzle2__planets justify-content-md-center">
-            {PlanetList.map((item, index) =>
-              item.planet !== "Sun" ? (
-                <QuantumPlanet
-                  name="puzzle2"
-                  src={item.src}
-                  answerSrc={item.answerSrc}
-                  planetId={item.planet}
-                  hasBeenClickedOn={showMoon.includes(index)}
-                  purpleQuantumMoon={item.QuantumMoon.Purple}
-                  pageAorB={page}
-                  onPlanetCodeChange={() => {
-                    addOrRemoveFromAnwserArray(index);
-                  }}
-                />
-              ) : (
-                ""
-              )
-            )}
+            {adjustedPlanetList.map((item, index) => (
+              <QuantumPlanet
+                name="puzzle2"
+                src={item.src}
+                answerSrc={item.answerSrc}
+                planetId={item.planet}
+                hasBeenClickedOn={showMoon.includes(index)}
+                purpleQuantumMoon={item.QuantumMoon.Purple}
+                pageAorB={page}
+                onPlanetCodeChange={() => {
+                  addOrRemoveFromAnwserArray(index);
+                }}
+              />
+            ))}
           </Row>
           <Row className="puzzle2__buttons">
             <Col xs={16} md={8}>
