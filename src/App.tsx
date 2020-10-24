@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import HomePage from "src/screens/homepage";
 import Puzzle1 from "src/screens/puzzle1";
 import Puzzle2a from "src/screens/puzzle2/puzzle2a";
+import Puzzle2Opener from "src/screens/puzzle2/opener";
 import Puzzle2b from "src/screens/puzzle2/puzzle2b";
 import Puzzle3 from "src/screens/puzzle3";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -14,7 +15,8 @@ const App: React.FC = () => {
     <Router>
       <Switch>
         <Route path="/" exact component={HomePage}></Route>
-        <Route path="/22minutes" exact component={Puzzle1}></Route>
+        <Route path="/22minutes" exact component={Puzzle1} />
+        <Route path="/WakeUp" exact component={Puzzle2Opener} />
         {counter < 1 ? (
           <Route path="/wanderingmoon" exact>
             <Puzzle2a

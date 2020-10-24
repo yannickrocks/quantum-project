@@ -98,7 +98,7 @@ const Puzzle1: React.FC = () => {
               <Button
                 className="puzzle1__buttons__proceed"
                 type="input"
-                href="/wanderingmoon"
+                href="/WakeUp"
               >
                 Proceed
               </Button>

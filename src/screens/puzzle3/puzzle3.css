@@ -83,13 +83,13 @@
 
 @media only screen and (max-width: 1900px) {
   .finalVoyage {
-    width: 1800px !important;
+    width: 1550px !important;
   }
 }
 
 @media only screen and (max-width: 1700px) {
   .finalVoyage {
-    width: 1600px !important;
+    width: 1400px !important;
   }
   .puzzle3__heading {
     font-size: 30px;
@@ -114,7 +114,7 @@
   }
 
   .puzzle3__figure {
-    width: 250px;
+    width: 180px;
   }
 
   .puzzle3__whiteText {

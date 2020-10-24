@@ -4,6 +4,21 @@
   left: 0;
 }
 
+.puzzle2__Mask {
+  margin-top: 150px;
+}
+
+.puzzle2__wakeUp {
+  width: 100%;
+  margin-right: auto !important;
+  margin-left: auto !important;
+  background-color: #5341ae !important;
+  border: none !important;
+  font-size: 20px !important;
+  font-weight: 800 !important;
+  padding: 50px;
+}
+
 .p-wanderingmoon {
   width: 2250px !important;
   margin: 0 auto;
@@ -105,7 +120,7 @@
 
 @media only screen and (max-width: 1700px) {
   .p-wanderingmoon {
-    width: 1600px !important;
+    width: 1400px !important;
   }
   .puzzle2__heading {
     font-size: 30px;
@@ -131,11 +146,11 @@
   }
 
   .puzzle2__figure {
-    width: 250px;
+    width: 180px;
   }
 
   .puzzle2__whiteText {
-    font-size: 13px;
+    font-size: 11px;
   }
 }
 
@@ -149,7 +164,7 @@
   }
 
   .puzzle1__figure {
-    width: 250px;
+    width: 150px;
   }
 
   .puzzle1WhiteText {
