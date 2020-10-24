@@ -23,7 +23,12 @@ const WanderingMoonText1 =
   "How curious, there appears to be a celestial body that roams freely amongst its friends in this solar system.";
 const WanderingMoonText2 =
   "How refreshing it is to find new anomalies to study along our nomadic journey... provided, that is, we can work around its apparent natural state of a quantum superposition.";
-export const WanderingMoonText = [WanderingMoonText1, WanderingMoonText2];
+const WanderingMoonText3 = "Refreshing, yes. Straightforward, not so much.";
+export const WanderingMoonText = [
+  WanderingMoonText1,
+  WanderingMoonText2,
+  WanderingMoonText3,
+];
 
 export const WanderingMoonIncorrect = "Tracking information incorrect.";
 export const WanderingMoonCorrect =
