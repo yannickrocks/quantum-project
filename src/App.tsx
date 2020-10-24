@@ -4,6 +4,7 @@ import Puzzle1 from "src/screens/puzzle1";
 import Puzzle2a from "src/screens/puzzle2/puzzle2a";
 import Puzzle2Opener from "src/screens/puzzle2/opener";
 import Puzzle2b from "src/screens/puzzle2/puzzle2b";
+import Puzzle3Opener from "src/screens/puzzle3/opener";
 import Puzzle3 from "src/screens/puzzle3";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -47,6 +48,7 @@ const App: React.FC = () => {
             />
           </Route>
         )}
+        <Route path="/WakeUpAgain" exact component={Puzzle3Opener} />
         <Route path="/finalvoyage" exact component={Puzzle3}></Route>
       </Switch>
     </Router>

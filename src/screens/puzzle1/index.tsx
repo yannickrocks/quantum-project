@@ -44,7 +44,7 @@ const Puzzle1: React.FC = () => {
   return (
     <>
       <img className="background" src={Background} alt="Background" />
-      <FadeIn delay={600} transitionDuration={700}>
+      <FadeIn delay={600} transitionDuration={2000}>
         <Container fluid className="p-22-minutes">
           <Row className="puzzle1__details justify-content-md-center">
             <Col xs={8} md={6}>
@@ -76,7 +76,7 @@ const Puzzle1: React.FC = () => {
           </Row>
           <Row className="puzzle1__planets justify-content-md-center">
             {PlanetList.map((item, index) =>
-              item.planet != "Eye" ? (
+              item.planet !== "Eye" ? (
                 <Planet
                   name="puzzle1"
                   src={item.src}

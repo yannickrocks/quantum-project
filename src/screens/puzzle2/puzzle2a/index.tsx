@@ -12,6 +12,7 @@ import {
   WanderingMoonText,
   WanderingMoonIncorrect,
   WanderingMoonAlmostCorrect,
+  correctOrderOfClicking,
 } from "src/assets/Texts/Constants";
 import ResponsivePlayer from "src/components/responsive-player";
 import FadeIn from "react-fade-in";
@@ -27,7 +28,6 @@ const Puzzle2: React.FC<Puzzle2aProps> = ({ increaseCounter, counter }) => {
   const [showMoon, setShowMoon] = useState<Array<number>>([]);
   const [displayIncorrectMessage, setDisplayIncorrectMessage] = useState(false);
   const [displayTrackingMessage, setDisplayTrackingMessage] = useState(false);
-  const correctOrderOfClicking = [0, 2, 1, 3, 5, 4];
   const page = "pageA";
 
   const addOrRemoveFromAnwserArray = (indexToChange: number) => {
@@ -65,7 +65,7 @@ const Puzzle2: React.FC<Puzzle2aProps> = ({ increaseCounter, counter }) => {
   return (
     <>
       <img className="background" src={Background} alt="Background" />
-      <FadeIn delay={600}>
+      <FadeIn delay={600} transitionDuration={2000}>
         <Container fluid className="p-wanderingmoon">
           <Row className="puzzle2__details justify-content-md-center">
             <Col xs={8} md={6}>
@@ -97,7 +97,7 @@ const Puzzle2: React.FC<Puzzle2aProps> = ({ increaseCounter, counter }) => {
           </Row>
           <Row className="puzzle2__planets justify-content-md-center">
             {PlanetList.map((item, index) =>
-              item.planet != "Sun" ? (
+              item.planet !== "Sun" ? (
                 <QuantumPlanet
                   name="puzzle2"
                   src={item.src}
@@ -132,11 +132,7 @@ const Puzzle2: React.FC<Puzzle2aProps> = ({ increaseCounter, counter }) => {
               )}
             </Col>
             <Col xs={4} md={2}>
-              <Button
-                className="puzzle2__buttons__reset"
-                // href="/wanderingmoon"
-                onClick={refresh}
-              >
+              <Button className="puzzle2__buttons__reset" onClick={refresh}>
                 Refresh
               </Button>
             </Col>

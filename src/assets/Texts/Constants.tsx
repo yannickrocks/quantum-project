@@ -42,3 +42,5 @@ export const FinalVoyageText = [
   FinalVoyageText2,
   FinalVoyageText3,
 ];
+
+export const correctOrderOfClicking = [1, 3, 2, 4, 6, 5];

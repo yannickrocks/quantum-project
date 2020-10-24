@@ -4,6 +4,21 @@
   left: 0;
 }
 
+.puzzle3__Mask {
+  margin-top: 150px;
+}
+
+.puzzle3__wakeUp {
+  width: 100%;
+  margin-right: auto !important;
+  margin-left: auto !important;
+  background-color: #b75053 !important;
+  border: none !important;
+  font-size: 20px !important;
+  font-weight: 800 !important;
+  padding: 50px;
+}
+
 .finalVoyage {
   width: 2250px !important;
   margin: 0 auto;

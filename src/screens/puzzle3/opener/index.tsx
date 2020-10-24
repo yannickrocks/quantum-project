@@ -7,17 +7,17 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Background from "src/assets/Misc/background.png";
 import Mask from "src/assets/Misc/Mask.png";
-import "../puzzle2.css";
+import "../puzzle3.css";
 
-const Puzzle2Opener: React.FC = () => {
+const Puzzle3Opener: React.FC = () => {
   return (
     <>
       <img className="background" src={Background} alt="Background" />
       <FadeIn delay={600} transitionDuration={1000}>
-        <Container fluid className="p-wanderingmoon">
+        <Container fluid className="finalVoyage">
           <Row className="justify-content-md-center">
             <Col xs={6} md={4}>
-              <Figure className="puzzle2__Mask">
+              <Figure className="puzzle3__Mask">
                 <Figure.Image src={Mask} alt="Mask Puzzle 2"></Figure.Image>
               </Figure>
             </Col>
@@ -25,9 +25,9 @@ const Puzzle2Opener: React.FC = () => {
           <Row className="justify-content-md-center">
             <Col xs={5} md={3}>
               <Button
-                className="puzzle2__wakeUp"
+                className="puzzle3__wakeUp"
                 type="input"
-                href="/wanderingmoon"
+                href="/finalvoyage"
               >
                 Wake up
               </Button>
@@ -39,4 +39,4 @@ const Puzzle2Opener: React.FC = () => {
   );
 };
 
-export default Puzzle2Opener;
+export default Puzzle3Opener;
