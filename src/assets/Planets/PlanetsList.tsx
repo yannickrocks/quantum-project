@@ -1,4 +1,5 @@
 import GSun from "src/assets/Planets/Grey/Sun-Grey_web.png";
+import GEye from "src/assets/Planets/Grey/Eye-Grey_web.png";
 import GTwins from "src/assets/Planets/Grey/Twins-Grey_web.png";
 import GTimberHearth from "src/assets/Planets/Grey/TH-Grey_web.png";
 import GBrittleHollow from "src/assets/Planets/Grey/BH-Grey_web.png";
@@ -6,6 +7,7 @@ import GGiantsDeep from "src/assets/Planets/Grey/GD-Grey_web.png";
 import GDarkBramble from "src/assets/Planets/Grey/DB-Grey_web.png";
 import GQuantumMoon from "src/assets/Planets/Grey/QM-Grey_web.png";
 import PSun from "src/assets/Planets/Purple/Sun-Purple_web.png";
+import PEye from "src/assets/Planets/Purple/Eye-Purple_web.png";
 import PTwins from "src/assets/Planets/Purple/Twins-Purple_web.png";
 import PTimberHearth from "src/assets/Planets/Purple/TH-Purple_web.png";
 import PBrittleHollow from "src/assets/Planets/Purple/BH-Purple_web.png";
@@ -19,6 +21,16 @@ export const PlanetList = [
     answerSrc: PSun,
     planet: "Sun",
     puzzle1code: "2200",
+    QuantumMoon: {
+      Grey: GQuantumMoon,
+      Purple: PQuantumMoon,
+    },
+  },
+  {
+    src: GEye,
+    answerSrc: PEye,
+    planet: "Eye",
+    puzzle1code: "0",
     QuantumMoon: {
       Grey: GQuantumMoon,
       Purple: PQuantumMoon,

@@ -30,21 +30,6 @@ const Puzzle2: React.FC<Puzzle2aProps> = ({ increaseCounter, counter }) => {
   const correctOrderOfClicking = [0, 2, 1, 3, 5, 4];
   const page = "pageA";
 
-  // const handlerUserKeyPress = useCallback((event) => {
-  //   const { key, keyCode } = event;
-  //   if (key === "f") {
-  //     console.log(key);
-  //   }
-  // }, []);
-
-  // useEffect(() => {
-  //   window.addEventListener("keydown", handlerUserKeyPress);
-
-  //   return () => {
-  //     window.removeEventListener("keydown", handlerUserKeyPress);
-  //   };
-  // }, [handlerUserKeyPress]);
-
   const addOrRemoveFromAnwserArray = (indexToChange: number) => {
     const exists = planetCodes.find((index) => index === indexToChange);
     if (exists !== indexToChange) {
@@ -111,19 +96,23 @@ const Puzzle2: React.FC<Puzzle2aProps> = ({ increaseCounter, counter }) => {
             </Col>
           </Row>
           <Row className="puzzle2__planets justify-content-md-center">
-            {PlanetList.map((item, index) => (
-              <QuantumPlanet
-                name="puzzle2"
-                src={item.src}
-                planetId={item.planet}
-                hasBeenClickedOn={showMoon.includes(index)}
-                greyQuantumMoon={item.QuantumMoon.Grey}
-                pageAorB={page}
-                onPlanetCodeChange={() => {
-                  addOrRemoveFromAnwserArray(index);
-                }}
-              />
-            ))}
+            {PlanetList.map((item, index) =>
+              item.planet != "Sun" ? (
+                <QuantumPlanet
+                  name="puzzle2"
+                  src={item.src}
+                  planetId={item.planet}
+                  hasBeenClickedOn={showMoon.includes(index)}
+                  greyQuantumMoon={item.QuantumMoon.Grey}
+                  pageAorB={page}
+                  onPlanetCodeChange={() => {
+                    addOrRemoveFromAnwserArray(index);
+                  }}
+                />
+              ) : (
+                ""
+              )
+            )}
           </Row>
           <Row className="puzzle2__buttons">
             <Col xs={16} md={8}>
