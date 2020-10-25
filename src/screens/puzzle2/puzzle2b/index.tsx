@@ -26,6 +26,7 @@ const Puzzle2: React.FC<Puzzle2bProps> = ({ increaseCounter }) => {
   const adjustedPlanetList = PlanetList.filter((x) => x.planet !== "Sun");
   const [planetCodes, setPlanetCodes] = useState<Array<number>>([]);
   const [showMoon, setShowMoon] = useState<Array<number>>([]);
+  const [showRefreshButton2b, setRefreshToggle2b] = useState(false);
   const [displayIncorrectMessage, setDisplayIncorrectMessage] = useState(false);
   const [displayCorrectMessage, setDisplayCorrectMessage] = useState(false);
   const page = "pageB";
@@ -52,14 +53,19 @@ const Puzzle2: React.FC<Puzzle2bProps> = ({ increaseCounter }) => {
     correctOrderOfClicking.every((code, index) => code === planetCodes[index])
       ? setDisplayCorrectMessage(true)
       : setDisplayIncorrectMessage(true);
+    setRefreshToggle2b(true);
   };
 
-  const refresh = () => {
+  const reset = () => {
     setDisplayIncorrectMessage(false);
     setDisplayCorrectMessage(false);
     setPlanetCodes([]);
     setShowMoon([]);
+  };
+
+  const refresh = () => {
     increaseCounter();
+    window.location.reload(false);
   };
 
   return (
@@ -128,11 +134,19 @@ const Puzzle2: React.FC<Puzzle2bProps> = ({ increaseCounter }) => {
                 <></>
               )}
             </Col>
-            <Col xs={4} md={2}>
-              <Button className="puzzle2__buttons__reset" onClick={refresh}>
-                Refresh
-              </Button>
-            </Col>
+            {showRefreshButton2b ? (
+              <Col xs={4} md={2}>
+                <Button className="puzzle2__buttons__reset" onClick={refresh}>
+                  Refresh
+                </Button>
+              </Col>
+            ) : (
+              <Col xs={4} md={2}>
+                <Button className="puzzle2__buttons__reset" onClick={reset}>
+                  Reset
+                </Button>
+              </Col>
+            )}
             <Col xs={4} md={2}>
               {!displayCorrectMessage ? (
                 <Button
