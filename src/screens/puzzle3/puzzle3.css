@@ -78,6 +78,10 @@
   padding: 0 !important;
 }
 
+.puzzle3__countdown {
+  margin-left: 10px;
+}
+
 .puzzle3__buttons__reset {
   width: 100%;
   border: none !important;
@@ -85,6 +89,7 @@
   font-size: 14px !important;
   font-weight: 800 !important;
   padding: 10px;
+  margin-left: 30px;
 }
 
 .puzzle3__buttons__proceed {

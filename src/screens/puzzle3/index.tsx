@@ -75,6 +75,7 @@ const Puzzle3: React.FC = () => {
             </Col>
           </Row>
           <Row className="puzzle3__buttons">
+            <Col xs={3} md={2}></Col>
             <Col xs={4} md={2}>
               <Button
                 className="puzzle3__buttons__reset"
@@ -84,19 +85,20 @@ const Puzzle3: React.FC = () => {
                 Reset
               </Button>
             </Col>
-            <Col xs={9} md={7}></Col>
-            <Col xs={4} md={2}>
+            <Col xs={4} md={2}></Col>
+            <Col xs={4} md={2}></Col>
+            <Col className="puzzle3__countdown" xs={4} md={2}>
               <CountDown />
             </Col>
-            <Col xs={4} md={2}>
-              {/* <Button
+            {/* <Col xs={4} md={2}>
+              <Button
               className="puzzle3__buttons__proceed"
               type="input"
               href="/wanderingmoon"
             >
               Proceed
-            </Button> */}
-            </Col>
+            </Button>
+            </Col> */}
           </Row>
         </Container>
       </FadeIn>

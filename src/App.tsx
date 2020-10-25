@@ -18,7 +18,7 @@ const App: React.FC = () => {
         <Route path="/" exact component={HomePage}></Route>
         <Route path="/22minutes" exact component={Puzzle1} />
         <Route path="/WakeUp" exact component={Puzzle2Opener} />
-        {randomPicker > 16 ? (
+        {randomPicker > 25 ? (
           <Route path="/wanderingmoon" exact>
             <Puzzle2a
               increaseCounter={() => {
