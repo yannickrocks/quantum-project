@@ -14,11 +14,12 @@ import { FinalVoyageText } from "src/assets/Texts/Constants";
 import ResponsivePlayer from "src/components/responsive-player";
 import CountDown from "src/components/countdown";
 import FadeIn from "react-fade-in";
+import { CookiesProvider } from "react-cookie";
 import "./puzzle3.css";
 
 const Puzzle3: React.FC = () => {
   return (
-    <>
+    <CookiesProvider>
       <img className="background" src={Background} alt="Background" />
       <FadeIn delay={600} transitionDuration={2000}>
         <Container fluid className="finalVoyage">
@@ -102,7 +103,7 @@ const Puzzle3: React.FC = () => {
           </Row>
         </Container>
       </FadeIn>
-    </>
+    </CookiesProvider>
   );
 };
 
