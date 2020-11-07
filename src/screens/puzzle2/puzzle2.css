@@ -4,24 +4,12 @@
   left: 0;
 }
 
-.puzzle2__Mask {
-  margin-top: 150px;
-}
-
-.puzzle2__wakeUp {
-  width: 100%;
-  margin-right: auto !important;
-  margin-left: auto !important;
-  background-color: #5341ae !important;
-  border: none !important;
-  font-size: 20px !important;
-  font-weight: 800 !important;
-  padding: 10px;
-}
-
 .p-wanderingmoon {
   width: 1700px !important;
   margin: 0 auto;
+  top: 800;
+  left: 0;
+  align-items: "center";
 }
 
 .puzzle2__details {
