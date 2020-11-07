@@ -1,3 +1,4 @@
+import moment from "moment";
 import React, { useState, useEffect } from "react";
 import { useCookies } from "react-cookie";
 import "./countdown.css";
@@ -6,21 +7,32 @@ const CountDown: React.FC = () => {
   const [hours, setHours] = useState("22");
   const [minutes, setMinutes] = useState("00");
   const [seconds, setSeconds] = useState("00");
-  const [cookies, setCookie] = useCookies(["finalPuzzle"]);
-  const cookieExpires = new Date();
-  cookieExpires.setHours(cookieExpires.getHours() + 22);
+  const [endCookie, setEndCookie] = useCookies(["CountDownCrumble"]);
+
   useEffect(() => {
-    console.log(Object.keys(cookies).length);
-    if (Object.keys(cookies).length !== 0) {
-      const cookieTimer = cookies["finalPuzzle"].split(":");
-      setHours(cookieTimer[0]);
-      setMinutes(cookieTimer[1]);
-      setSeconds(cookieTimer[2]);
+    if (Object.keys(endCookie).length !== 0) {
+      const cookieEnd = moment(endCookie["CountDownCrumble"]);
+
+      const timeRemaining = moment.duration(cookieEnd.diff(moment()));
+
+      console.log(cookieEnd);
+      console.log(
+        timeRemaining.hours() +
+          ":" +
+          timeRemaining.minutes() +
+          ":" +
+          timeRemaining.seconds()
+      );
+
+      setHours(timeRemaining.hours().toString());
+      setMinutes(timeRemaining.minutes().toString());
+      setSeconds(timeRemaining.seconds().toString());
     } else {
-      console.log("Made it New");
-      setCookie("finalPuzzle", "22:00:00", {
+      const cookieExpires = moment().add(22, "h");
+
+      setEndCookie("CountDownCrumble", cookieExpires, {
         path: "/finalvoyage",
-        expires: cookieExpires,
+        expires: cookieExpires.toDate(),
       });
     }
   }, []);
@@ -56,10 +68,6 @@ const CountDown: React.FC = () => {
           setSeconds("59");
         }
       }
-      setCookie("finalPuzzle", `${hours}:${minutes}:${seconds}`, {
-        path: "/finalvoyage",
-        expires: cookieExpires,
-      });
     }, 1000);
 
     return () => clearInterval(timer);
