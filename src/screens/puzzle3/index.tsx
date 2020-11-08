@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -10,7 +10,7 @@ import Warp1 from "src/assets/Warp-Purples/WarpCore_1.png";
 import Warp2 from "src/assets/Warp-Purples/WarpCore_2.png";
 import Warp3 from "src/assets/Warp-Purples/WarpCore_3.png";
 import Launch1 from "src/assets/Warp-Purples/Launch_1.png";
-// import LaunchGif from "src/assets/Warp-Purples/launch.gif";
+import LaunchGif from "src/assets/Warp-Purples/launch.gif";
 import { FinalVoyageText } from "src/assets/Texts/Constants";
 import ResponsivePlayer from "src/components/responsive-player";
 import CountDown from "src/components/countdown";
@@ -19,6 +19,12 @@ import { CookiesProvider } from "react-cookie";
 import "./puzzle3.css";
 
 const Puzzle3: React.FC = () => {
+  const [showGif, setGifFlag] = useState(false);
+
+  const handleChange = () => {
+    setGifFlag(!showGif);
+  };
+
   return (
     <CookiesProvider>
       <img className="background" src={Background} alt="Background" />
@@ -71,8 +77,8 @@ const Puzzle3: React.FC = () => {
             </Col>
             <Col xs={1} />
             <Col xs={4} md={2}>
-              <Figure className="puzzle3__warps__launch">
-                <Figure.Image src={Launch1} />
+              <Figure className="puzzle3__warps__launch" onClick={handleChange}>
+                <Figure.Image src={showGif ? LaunchGif : Launch1} />
               </Figure>
             </Col>
           </Row>
