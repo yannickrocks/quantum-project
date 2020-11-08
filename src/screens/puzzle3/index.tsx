@@ -10,6 +10,7 @@ import Warp1 from "src/assets/Warp-Purples/WarpCore_1.png";
 import Warp2 from "src/assets/Warp-Purples/WarpCore_2.png";
 import Warp3 from "src/assets/Warp-Purples/WarpCore_3.png";
 import Launch1 from "src/assets/Warp-Purples/Launch_1.png";
+// import LaunchGif from "src/assets/Warp-Purples/launch.gif";
 import { FinalVoyageText } from "src/assets/Texts/Constants";
 import ResponsivePlayer from "src/components/responsive-player";
 import CountDown from "src/components/countdown";

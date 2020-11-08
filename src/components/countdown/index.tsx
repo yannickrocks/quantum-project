@@ -9,20 +9,10 @@ const CountDown: React.FC = () => {
   const [seconds, setSeconds] = useState("00");
   const [endCookie, setEndCookie] = useCookies(["CountDownCrumble"]);
 
-  useEffect(() => {
+  const addNewCookieOrSetTimer = () => {
     if (Object.keys(endCookie).length !== 0) {
       const cookieEnd = moment(endCookie["CountDownCrumble"]);
-
       const timeRemaining = moment.duration(cookieEnd.diff(moment()));
-
-      console.log(cookieEnd);
-      console.log(
-        timeRemaining.hours() +
-          ":" +
-          timeRemaining.minutes() +
-          ":" +
-          timeRemaining.seconds()
-      );
 
       setHours(timeRemaining.hours().toString());
       setMinutes(timeRemaining.minutes().toString());
@@ -35,7 +25,9 @@ const CountDown: React.FC = () => {
         expires: cookieExpires.toDate(),
       });
     }
-  }, []);
+  };
+
+  useEffect(addNewCookieOrSetTimer, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
