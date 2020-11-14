@@ -1,13 +1,11 @@
 import React from "react";
-import Col from "react-bootstrap/Col";
-import Figure from "react-bootstrap/Figure";
+import "./quantumPlanets.css";
 
 type QuantumPlanetProps = {
   src: string;
   answerSrc?: string;
   correctCode?: string;
   planetId: string;
-  name: string;
   hasBeenClickedOn: boolean;
   greyQuantumMoon?: string;
   purpleQuantumMoon?: string;
@@ -23,7 +21,6 @@ const Planet: React.FC<QuantumPlanetProps> = ({
   greyQuantumMoon,
   purpleQuantumMoon,
   pageAorB,
-  name,
   onPlanetCodeChange,
 }) => {
   const handleChange = (event: React.MouseEvent<HTMLElement>) => {
@@ -33,36 +30,39 @@ const Planet: React.FC<QuantumPlanetProps> = ({
   const isPageA = pageAorB === "pageA";
 
   return (
-    <Col className={name + "__planets__planet"} xs={4} md={2} key={planetId}>
+    <li key={planetId}>
       {isPageA ? (
-        <Figure className={name + "__planets__figure"} onClick={handleChange}>
-          <Figure.Image className={name + "__planets__img"} src={src} />
+        <figure className="puzzle2__planets__figure" onClick={handleChange}>
+          <img className="puzzle2__planets__img" src={src} alt={planetId} />
           {hasBeenClickedOn ? (
-            <Figure.Image
-              className={name + "__planets__moon"}
+            <img
+              className="puzzle2__planets__moon"
               src={greyQuantumMoon}
+              alt="QuantumMoom"
             />
           ) : (
             ""
           )}
-        </Figure>
+        </figure>
       ) : (
-        <Figure className={name + "__planets__figure"} onClick={handleChange}>
-          <Figure.Image
-            className={name + "__planets__img"}
+        <figure className="puzzle2__planets__figure" onClick={handleChange}>
+          <img
+            className="puzzle2__planets__img"
             src={hasBeenClickedOn ? answerSrc : src}
+            alt={planetId}
           />
           {hasBeenClickedOn ? (
-            <Figure.Image
-              className={name + "__planets__moon"}
+            <img
+              className="puzzle2__planets__moon"
               src={purpleQuantumMoon}
+              alt={"QuantumMoom"}
             />
           ) : (
             ""
           )}
-        </Figure>
+        </figure>
       )}
-    </Col>
+    </li>
   );
 };
 

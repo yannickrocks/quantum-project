@@ -13,7 +13,7 @@ const HomePage: React.FC = () => {
           <img className="figureLogo__logo" src={OuterWildsLogo} alt="logo" />
         </figure>
         <h2 className="welcomeText">Welcome, Astronaut</h2>
-        <div className="description">
+        <p className="description">
           <br />
           {HomePageText.map((item) => (
             <>
@@ -22,16 +22,11 @@ const HomePage: React.FC = () => {
               <br />
             </>
           ))}
-          <div className="launch">
-            <Button
-              className="launchButton"
-              variant="success"
-              href="/22minutes"
-              size="lg"
-            >
-              Launch
-            </Button>
-          </div>
+        </p>
+        <div className="launch">
+          <a className="launchButton" href="/22minutes">
+            Launch
+          </a>
         </div>
       </div>
     </FadeIn>

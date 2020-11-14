@@ -1,3 +1,8 @@
+.homepage {
+  margin: 0 auto;
+  width: 80%;
+}
+
 .figureLogo {
   width: 550px;
   margin-top: 70px;
@@ -10,7 +15,6 @@
 
 .figureMessage {
   width: 1500px;
-  margin: 0 auto;
 }
 
 .figureMessage__message {
@@ -18,7 +22,6 @@
 }
 
 .welcomeText {
-  margin-top: -20px;
   text-align: center;
   color: #ff7d25;
   font-size: 60px;
@@ -26,8 +29,9 @@
 }
 
 .description {
+  margin-bottom: 50px;
   margin: 0 auto;
-  width: 60%;
+  width: 70%;
   text-align: center;
   letter-spacing: 0px;
   color: #292b50;
@@ -36,56 +40,26 @@
 }
 
 .launch {
-  width: 550px;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
 
 .launchButton {
-  width: 100%;
-  border-radius: 15px;
-  font-weight: 600;
+  width: 420px;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  background-color: #388861;
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 800;
+  padding: 20px;
+  text-align: center;
+  margin-top: 5px;
 }
 
-@media only screen and (max-width: 1900px) {
-  .figureLogo {
-    width: 350px;
-  }
-  .welcomeText {
-    font-size: 40px;
-  }
-
-  .description {
-    width: 50%;
-    font-size: 18px;
-  }
-}
-
-@media only screen and (max-width: 1700px) {
-  .figureLogo {
-    width: 50px;
-  }
-
-  .welcomeText {
-    font-size: 35px;
-  }
-
-  .description {
-    width: 50%;
-    font-size: 16px;
-  }
-}
-
-@media only screen and (max-width: 1500px) {
-  .figureLogo {
-    width: 250px;
-  }
-
-  .welcomeText {
-    font-size: 35px;
-  }
-
-  .description {
-    width: 50%;
-    font-size: 15px;
-  }
+.launchButton:hover {
+  background-color: #1f5c3e;
+  color: #ffffff;
+  text-decoration: none;
 }

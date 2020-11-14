@@ -1,6 +1,5 @@
 import React from "react";
-import Col from "react-bootstrap/Col";
-import Figure from "react-bootstrap/Figure";
+import "./planets.css";
 
 type PlanetProps = {
   src: string;
@@ -8,7 +7,6 @@ type PlanetProps = {
   planetId: string;
   planetCode: string;
   correctCode: string;
-  name: string;
   onPlanetCodeChange(value: string): void;
 };
 
@@ -18,35 +16,32 @@ const Planet: React.FC<PlanetProps> = ({
   planetId,
   planetCode,
   correctCode,
-  name,
   onPlanetCodeChange,
 }) => {
   const showPurplePlanet = planetCode === correctCode;
-
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     onPlanetCodeChange(event.currentTarget.value);
   };
 
   return (
-    <Col className={name + "__planets__planet"} xs={4} md={2} key={planetId}>
-      <Figure className={name + "__planets__figure"}>
-        <Figure.Image
-          className={name + "__planets__img"}
+    <li key={planetId}>
+      <figure className="puzzle1__planets__figure">
+        <img
+          className="puzzle1__planets__img"
           src={showPurplePlanet ? answerSrc : src}
+          alt={planetId}
         />
-      </Figure>
-      <div className={name + "__planets__div"}>
-        <input
-          id={planetId}
-          className={name + "__planets__input"}
-          maxLength={4}
-          pattern="[0-9]*"
-          placeholder="0000"
-          value={planetCode}
-          onChange={handleChange}
-        />
-      </div>
-    </Col>
+      </figure>
+      <input
+        id={planetId}
+        className="puzzle1__planets__input"
+        maxLength={4}
+        pattern="[0-9]*"
+        placeholder="0000"
+        value={planetCode}
+        onChange={handleChange}
+      />
+    </li>
   );
 };
 

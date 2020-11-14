@@ -30,11 +30,11 @@ export const WanderingMoonText = [
   WanderingMoonText3,
 ];
 
-export const WanderingMoonIncorrect = "Tracking information incorrect.";
+export const WanderingMoonIncorrect = "Tracking information incorrect";
 export const WanderingMoonCorrect =
-  "Tracking informatiom correct. Quantum moon located.";
+  "Tracking informatiom correct. Quantum moon located";
 export const WanderingMoonAlmostCorrect =
-  "Tracking Information correct but location of quantum moon remains unknown.";
+  "Tracking Information correct but location of quantum moon remains unknown";
 
 const FinalVoyageText1 =
   "The ancient machines' warp core rests in your hand. You know where you need to take it, but there's only a limited time to ascertain your true destination's coordinates.";

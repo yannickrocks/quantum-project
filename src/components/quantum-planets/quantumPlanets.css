@@ -1,0 +1,14 @@
+.puzzle2__planets__figure {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.puzzle2__planets__img {
+  width: 100%;
+}
+
+.puzzle2__planets__moon {
+  width: 50%;
+  margin: 0 auto;
+}

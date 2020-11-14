@@ -1,9 +1,4 @@
 import React, { useState } from "react";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Figure from "react-bootstrap/Figure";
-import Button from "react-bootstrap/Button";
 import Background from "src/assets/Misc/background.png";
 import ArmsOutStretchNoMoon from "src/assets/Misc/Arms-Outstretched_web.png";
 import QuantumPlanet from "src/components/quantum-planets";
@@ -14,7 +9,6 @@ import {
   WanderingMoonAlmostCorrect,
   correctOrderOfClicking,
 } from "src/assets/Texts/Constants";
-import ResponsivePlayer from "src/components/responsive-player";
 import FadeIn from "react-fade-in";
 import "../puzzle2.css";
 
@@ -74,11 +68,11 @@ const Puzzle2: React.FC<Puzzle2aProps> = ({ increaseCounter }) => {
     <>
       <img className="background" src={Background} alt="Background" />
       <FadeIn delay={600} transitionDuration={2000}>
-        <Container fluid className="p-wanderingmoon">
-          <Row className="puzzle2__details justify-content-md-center">
-            <Col xs={8} md={6}>
+        <div className="p-wanderingmoon">
+          <div className="puzzle2__detailsAndImage">
+            <div className="puzzle2__details">
               <h2 className="puzzle2__heading">The Wandering Moon</h2>
-              <div className="puzzle2__whiteText">
+              <p className="puzzle2__whiteText">
                 {WanderingMoonText.map((item) => (
                   <>
                     {item}
@@ -86,27 +80,28 @@ const Puzzle2: React.FC<Puzzle2aProps> = ({ increaseCounter }) => {
                     <br />
                   </>
                 ))}
-              </div>
-            </Col>
-            <Col xs={4} md={2}>
-              <Figure className="puzzle2__figure">
-                <Figure.Image
-                  className="puzzle2__armsOut"
-                  src={ArmsOutStretchNoMoon}
-                  alt="Arms Stretch Out No Moon"
-                />
-              </Figure>
-            </Col>
-          </Row>
-          <Row className="justify-content-md-center">
-            <Col xs={7} md={5}>
-              <ResponsivePlayer url="https://www.youtube.com/watch?v=dQw4w9WgXcQ" />
-            </Col>
-          </Row>
-          <Row className="puzzle2__planets justify-content-md-center">
+              </p>
+            </div>
+            <figure className="puzzle2__figure">
+              <img
+                className="puzzle2__figure__armsOut"
+                src={ArmsOutStretchNoMoon}
+                alt="Arms Stretch Out No Moon"
+              />
+            </figure>
+          </div>
+          <div className="puzzle2__video">
+            <iframe
+              title="puzzle2a"
+              width="640"
+              height="360"
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              allow="accelerometer1; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            />
+          </div>
+          <ul className="puzzle2__planets">
             {adjustedPlanetList.map((item, index) => (
               <QuantumPlanet
-                name="puzzle2"
                 src={item.src}
                 planetId={item.planet}
                 hasBeenClickedOn={showMoon.includes(index)}
@@ -117,46 +112,38 @@ const Puzzle2: React.FC<Puzzle2aProps> = ({ increaseCounter }) => {
                 }}
               />
             ))}
-          </Row>
-          <Row className="puzzle2__buttons">
-            <Col xs={16} md={8}>
-              {displayTrackingMessage ? (
-                <div className="puzzle2__almostCorrectText">
-                  {WanderingMoonAlmostCorrect}
-                </div>
-              ) : (
-                <></>
-              )}
-              {displayIncorrectMessage ? (
-                <div className="puzzle2__incorrectText">
-                  {WanderingMoonIncorrect}
-                </div>
-              ) : (
-                <></>
-              )}
-            </Col>
-            <Col xs={4} md={2}>
-              {showRefreshButton ? (
-                <Button className="puzzle2__buttons__reset" onClick={refresh}>
-                  Refresh
-                </Button>
-              ) : (
-                <Button className="puzzle2__buttons__reset" onClick={reset}>
-                  Reset
-                </Button>
-              )}
-            </Col>
-            <Col xs={4} md={2}>
-              <Button
-                className="puzzle2__buttons__proceed"
-                type="input"
-                onClick={checkAnswers}
-              >
-                Check
-              </Button>
-            </Col>
-          </Row>
-        </Container>
+          </ul>
+          <div className="puzzle2__buttons">
+            {displayTrackingMessage ? (
+              <p className="puzzle2__almostCorrectText">
+                {WanderingMoonAlmostCorrect}
+              </p>
+            ) : (
+              <></>
+            )}
+            {displayIncorrectMessage ? (
+              <p className="puzzle2__incorrectText">{WanderingMoonIncorrect}</p>
+            ) : (
+              <></>
+            )}
+            {showRefreshButton ? (
+              <button className="puzzle2__buttons__reset" onClick={refresh}>
+                Refresh
+              </button>
+            ) : (
+              <button className="puzzle2__buttons__reset" onClick={reset}>
+                Reset
+              </button>
+            )}
+            <button
+              className="puzzle2__buttons__proceed"
+              onClick={checkAnswers}
+            >
+              Check
+            </button>
+          </div>
+          <div className="puzzle2__text"></div>
+        </div>
       </FadeIn>
     </>
   );

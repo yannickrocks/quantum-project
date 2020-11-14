@@ -1,9 +1,4 @@
 import React, { useState } from "react";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Figure from "react-bootstrap/Figure";
-import Button from "react-bootstrap/Button";
 import Background from "src/assets/Misc/background.png";
 import ArmsOutStretchWithMoon from "src/assets/Misc/Arms-Outstretched-full_web.png";
 import QuantumPlanet from "src/components/quantum-planets";
@@ -14,7 +9,6 @@ import {
   WanderingMoonCorrect,
   correctOrderOfClicking,
 } from "src/assets/Texts/Constants";
-import ResponsivePlayer from "src/components/responsive-player";
 import FadeIn from "react-fade-in";
 import "../puzzle2.css";
 
@@ -72,11 +66,11 @@ const Puzzle2: React.FC<Puzzle2bProps> = ({ increaseCounter }) => {
     <>
       <img className="background" src={Background} alt="Background" />
       <FadeIn delay={600} transitionDuration={2000}>
-        <Container fluid className="p-wanderingmoon">
-          <Row className="puzzle2__details justify-content-md-center">
-            <Col xs={8} md={6}>
+        <div className="p-wanderingmoon">
+          <div className="puzzle2__detailsAndImage">
+            <div className="puzzle2__details">
               <h2 className="puzzle2__heading">The Wandering Moon</h2>
-              <div className="puzzle2__whiteText">
+              <p className="puzzle2__whiteText">
                 {WanderingMoonText.map((item) => (
                   <>
                     {item}
@@ -84,27 +78,28 @@ const Puzzle2: React.FC<Puzzle2bProps> = ({ increaseCounter }) => {
                     <br />
                   </>
                 ))}
-              </div>
-            </Col>
-            <Col xs={4} md={2}>
-              <Figure className="puzzle2__figure">
-                <Figure.Image
-                  className="puzzle2__armsOut"
-                  src={ArmsOutStretchWithMoon}
-                  alt="Arms Stretch Out No Moon"
-                />
-              </Figure>
-            </Col>
-          </Row>
-          <Row className="justify-content-md-center">
-            <Col xs={7} md={5}>
-              <ResponsivePlayer url="https://www.youtube.com/watch?v=dQw4w9WgXcQ" />
-            </Col>
-          </Row>
-          <Row className="puzzle2__planets justify-content-md-center">
+              </p>
+            </div>
+            <figure className="puzzle2__figure">
+              <img
+                className="puzzle2__figure__armsOut"
+                src={ArmsOutStretchWithMoon}
+                alt="Arms Stretch Out with Moon"
+              />
+            </figure>
+          </div>
+          <div className="puzzle2__video">
+            <iframe
+              title="puzzle2b"
+              width="640"
+              height="360"
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              allow="accelerometer1; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            />
+          </div>
+          <ul className="puzzle2__planets">
             {adjustedPlanetList.map((item, index) => (
               <QuantumPlanet
-                name="puzzle2"
                 src={item.src}
                 answerSrc={item.answerSrc}
                 planetId={item.planet}
@@ -116,58 +111,41 @@ const Puzzle2: React.FC<Puzzle2bProps> = ({ increaseCounter }) => {
                 }}
               />
             ))}
-          </Row>
-          <Row className="puzzle2__buttons">
-            <Col xs={16} md={8}>
-              {displayCorrectMessage ? (
-                <div className="puzzle2__correctText">
-                  {WanderingMoonCorrect}
-                </div>
-              ) : (
-                <></>
-              )}
-              {displayIncorrectMessage ? (
-                <div className="puzzle2__incorrectText">
-                  {WanderingMoonIncorrect}
-                </div>
-              ) : (
-                <></>
-              )}
-            </Col>
-            {showRefreshButton2b ? (
-              <Col xs={4} md={2}>
-                <Button className="puzzle2__buttons__reset" onClick={refresh}>
-                  Refresh
-                </Button>
-              </Col>
+          </ul>
+          <div className="puzzle2__buttons">
+            {displayCorrectMessage ? (
+              <p className="puzzle2__correctText">{WanderingMoonCorrect}</p>
             ) : (
-              <Col xs={4} md={2}>
-                <Button className="puzzle2__buttons__reset" onClick={reset}>
-                  Reset
-                </Button>
-              </Col>
+              <></>
             )}
-            <Col xs={4} md={2}>
-              {!displayCorrectMessage ? (
-                <Button
-                  className="puzzle2__buttons__proceed"
-                  type="input"
-                  onClick={checkAnswers}
-                >
-                  Check
-                </Button>
-              ) : (
-                <Button
-                  className="puzzle2__buttons__proceed"
-                  type="input"
-                  href="/WakeUpAgain"
-                >
-                  Proceed
-                </Button>
-              )}
-            </Col>
-          </Row>
-        </Container>
+            {displayIncorrectMessage ? (
+              <p className="puzzle2__incorrectText">{WanderingMoonIncorrect}</p>
+            ) : (
+              <></>
+            )}
+            {showRefreshButton2b ? (
+              <button className="puzzle2__buttons__reset" onClick={refresh}>
+                Refresh
+              </button>
+            ) : (
+              <button className="puzzle2__buttons__reset" onClick={reset}>
+                Reset
+              </button>
+            )}
+            {!displayCorrectMessage ? (
+              <button
+                className="puzzle2__buttons__proceed"
+                onClick={checkAnswers}
+              >
+                Check
+              </button>
+            ) : (
+              <a className="puzzle2__buttons__proceed" href="/WakeUpAgain">
+                Proceed
+              </a>
+            )}
+          </div>
+        </div>
       </FadeIn>
     </>
   );
