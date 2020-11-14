@@ -2,7 +2,6 @@ import React from "react";
 import FadeIn from "react-fade-in";
 import OuterWildsLogo from "src/assets/Misc/Outerwilds-Logo_web.png";
 import { HomePageText } from "src/assets/Texts/Constants";
-import Button from "react-bootstrap/Button";
 import "./homepage.css";
 
 const HomePage: React.FC = () => {
