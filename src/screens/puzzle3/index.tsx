@@ -115,15 +115,6 @@ const Puzzle3: React.FC = () => {
             <div className="puzzle3__countdown">
               <CountDown />
             </div>
-            {/* <Col xs={4} md={2}>
-              <Button
-              className="puzzle3__buttons__proceed"
-              type="input"
-              href="/wanderingmoon"
-            >
-              Proceed
-            </Button>
-            </Col> */}
           </div>
         </div>
       </FadeIn>
