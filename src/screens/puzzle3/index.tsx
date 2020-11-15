@@ -51,7 +51,7 @@ const Puzzle3: React.FC = () => {
               title="puzzle3"
               width="640"
               height="360"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              src="https://www.youtube.com/embed/6Z5xqBUmkoI"
               allow="accelerometer1; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             />
           </div>
@@ -72,7 +72,10 @@ const Puzzle3: React.FC = () => {
               </figure>
             </li>
             <li>
-              <figure className="puzzle3__warps__img" onClick={handleChange}>
+              <figure
+                className="puzzle3__launch__figure"
+                onClick={handleChange}
+              >
                 <img
                   className="puzzle3__launch__img"
                   src={showGif ? LaunchGif : Launch1}

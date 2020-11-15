@@ -30,6 +30,7 @@
   color: #5341ae;
   font-size: 40px;
   font-weight: 700;
+  margin-bottom: 0;
 }
 
 .puzzle2__whiteText {
@@ -106,7 +107,6 @@ iframe {
   color: #ffffff;
   font-size: 14px;
   font-weight: 800;
-  padding: 10px;
   text-align: center;
   height: 35px;
   margin-left: 35px;

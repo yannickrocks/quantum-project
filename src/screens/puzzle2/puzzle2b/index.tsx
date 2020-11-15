@@ -93,7 +93,7 @@ const Puzzle2: React.FC<Puzzle2bProps> = ({ increaseCounter }) => {
               title="puzzle2b"
               width="640"
               height="360"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              src="https://www.youtube.com/embed/6Z5xqBUmkoI"
               allow="accelerometer1; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             />
           </div>
