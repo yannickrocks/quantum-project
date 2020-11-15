@@ -5,6 +5,7 @@ import Planet from "src/components/planets";
 import { PlanetList } from "src/assets/Planets/PlanetsList";
 import { Minutes22Text } from "src/assets/Texts/Constants";
 import FadeIn from "react-fade-in";
+import { motion } from "framer-motion";
 import "./puzzle1.css";
 
 const Puzzle1: React.FC = () => {
@@ -88,9 +89,14 @@ const Puzzle1: React.FC = () => {
           </ul>
           <div className="puzzle1__buttons">
             {showProceedButton ? (
-              <a className="puzzle1__buttons__proceed" href="/WakeUp">
+              <motion.a
+                className="puzzle1__buttons__proceed"
+                href="/WakeUp"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+              >
                 Proceed
-              </a>
+              </motion.a>
             ) : (
               <button className="puzzle1__buttons__reset" onClick={resetInputs}>
                 Reset

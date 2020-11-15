@@ -10,6 +10,7 @@ import {
   correctOrderOfClicking,
 } from "src/assets/Texts/Constants";
 import FadeIn from "react-fade-in";
+import { motion } from "framer-motion";
 import "../puzzle2.css";
 
 type Puzzle2aProps = {
@@ -126,9 +127,14 @@ const Puzzle2: React.FC<Puzzle2aProps> = ({ increaseCounter }) => {
               <></>
             )}
             {showRefreshButton ? (
-              <button className="puzzle2__buttons__reset" onClick={refresh}>
+              <motion.button
+                className="puzzle2__buttons__reset"
+                onClick={refresh}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+              >
                 Refresh
-              </button>
+              </motion.button>
             ) : (
               <button className="puzzle2__buttons__reset" onClick={reset}>
                 Reset
