@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import "./quantumPlanets.css";
 
 type QuantumPlanetProps = {
@@ -30,7 +31,11 @@ const Planet: React.FC<QuantumPlanetProps> = ({
   const isPageA = pageAorB === "pageA";
 
   return (
-    <li key={planetId}>
+    <motion.li
+      key={planetId}
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
+    >
       {isPageA ? (
         <figure className="puzzle2__planets__figure" onClick={handleChange}>
           <img className="puzzle2__planets__img" src={src} alt={planetId} />
@@ -62,7 +67,7 @@ const Planet: React.FC<QuantumPlanetProps> = ({
           )}
         </figure>
       )}
-    </li>
+    </motion.li>
   );
 };
 

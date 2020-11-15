@@ -14,9 +14,17 @@ const CountDown: React.FC = () => {
       const cookieEnd = moment(endCookie["CountDownCrumble"]);
       const timeRemaining = moment.duration(cookieEnd.diff(moment()));
 
-      setHours(timeRemaining.hours().toString());
-      setMinutes(timeRemaining.minutes().toString());
-      setSeconds(timeRemaining.seconds().toString());
+      timeRemaining.hours() < 10
+        ? setHours(timeRemaining.hours().toString().padStart(2, "0"))
+        : setHours(timeRemaining.hours().toString());
+
+      timeRemaining.minutes() < 10
+        ? setMinutes(timeRemaining.minutes().toString().padStart(2, "0"))
+        : setMinutes(timeRemaining.minutes().toString());
+
+      timeRemaining.seconds() < 10
+        ? setSeconds(timeRemaining.seconds().toString().padStart(2, "0"))
+        : setSeconds(timeRemaining.seconds().toString());
     } else {
       const cookieExpires = moment().add(22, "h");
 

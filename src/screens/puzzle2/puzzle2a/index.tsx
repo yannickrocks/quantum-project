@@ -30,7 +30,6 @@ const Puzzle2: React.FC<Puzzle2aProps> = ({ increaseCounter }) => {
     if (exists !== indexToChange) {
       const newArray = [...planetCodes, indexToChange];
       setPlanetCodes(newArray);
-      console.log(newArray);
 
       const moonArray = [indexToChange];
       setShowMoon(moonArray);

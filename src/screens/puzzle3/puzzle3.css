@@ -74,6 +74,14 @@ iframe {
 .puzzle3__warps__figure {
   width: 100%;
   margin: 0 auto;
+  position: relative;
+}
+
+.puzzle3__ball__img {
+  position: absolute;
+  width: 30%;
+  top: 7%;
+  left: 51%;
 }
 
 .puzzle3__warps__img {
