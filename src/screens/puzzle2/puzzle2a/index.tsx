@@ -141,7 +141,7 @@ const Puzzle2: React.FC<Puzzle2aProps> = ({ increaseCounter }) => {
               </button>
             )}
             <button
-              className="puzzle2__buttons__proceed"
+              className="puzzle2__buttons__checkAnswers"
               onClick={checkAnswers}
             >
               Check

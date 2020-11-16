@@ -1,0 +1,41 @@
+.puzzle3__warps__figure {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.puzzle3__dropZoneNode__img1 {
+  position: absolute;
+  width: 13%;
+  top: 18%;
+  left: 59%;
+}
+
+.puzzle3__dropZoneNode__img2 {
+  position: absolute;
+  width: 13%;
+  top: 43%;
+  left: 74%;
+}
+
+.puzzle3__ball__img {
+  position: absolute;
+  width: 30%;
+  top: 33%;
+  left: 36%;
+}
+
+.puzzle3__warps__img {
+  width: 100%;
+}
+
+.puzzle3__launch__figure {
+  width: 100%;
+  margin-left: 30px;
+  margin-top: 0;
+}
+
+.puzzle3__launch__img {
+  width: auto;
+  height: 185px;
+}

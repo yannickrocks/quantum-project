@@ -99,6 +99,27 @@ iframe {
   text-decoration: none;
 }
 
+.puzzle2__buttons__checkAnswers {
+  width: 15%;
+  border: none;
+  border-radius: 6px;
+  background-color: #388861;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 800;
+  text-align: center;
+  height: 35px;
+  margin-left: 35px;
+  margin-top: 5px;
+  text-decoration: none;
+}
+
+.puzzle2__buttons__checkAnswers:hover {
+  background-color: #1f5c3e;
+  color: #ffffff;
+  text-decoration: none;
+}
+
 .puzzle2__buttons__proceed {
   width: 15%;
   border: none;
@@ -111,6 +132,8 @@ iframe {
   height: 35px;
   margin-left: 35px;
   margin-top: 5px;
+  text-decoration: none;
+  line-height: 35px;
 }
 
 .puzzle2__buttons__proceed:hover {

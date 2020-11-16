@@ -29,12 +29,7 @@ const App: React.FC = () => {
           </Route>
         ) : (
           <Route path="/wanderingmoon" exact>
-            <Puzzle2b
-              increaseCounter={() => {
-                var newCounter = counter + 1;
-                return setCounter(newCounter);
-              }}
-            />
+            <Puzzle2b />
           </Route>
         )}
         <Route path="/WakeUpAgain" exact component={Puzzle3Opener} />

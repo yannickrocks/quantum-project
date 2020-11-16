@@ -102,10 +102,11 @@ iframe {
   color: #ffffff;
   font-size: 14px;
   font-weight: 800;
-  padding: 10px;
   text-align: center;
   height: 35px;
   margin-top: 5px;
+  text-decoration: none;
+  line-height: 33px;
 }
 
 .puzzle1__buttons__proceed:hover {

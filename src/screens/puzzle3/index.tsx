@@ -6,12 +6,11 @@ import Warp2 from "src/assets/Warp-Purples/WarpCore_2.png";
 import Warp3 from "src/assets/Warp-Purples/WarpCore_3.png";
 import Launch1 from "src/assets/Warp-Purples/Launch_1.png";
 import LaunchGif from "src/assets/Warp-Purples/launch.gif";
-import Ball from "src/assets/Warp-Purples/PurpleBall.png";
 import { FinalVoyageText } from "src/assets/Texts/Constants";
 import CountDown from "src/components/countdown";
 import FadeIn from "react-fade-in";
 import { CookiesProvider } from "react-cookie";
-import { motion } from "framer-motion";
+import Warp from "src/components/warps";
 import "./puzzle3.css";
 
 const Puzzle3: React.FC = () => {
@@ -58,38 +57,13 @@ const Puzzle3: React.FC = () => {
           </div>
           <ul>
             <li>
-              <figure className="puzzle3__warps__figure">
-                {/* DropZones */}
-                <motion.img
-                  drag
-                  dragConstraints={{
-                    left: -80,
-                    right: 40,
-                    top: 0,
-                    bottom: 100,
-                  }}
-                  dragElastic={1}
-                  onDrag={(event, info) =>
-                    console.log(info.point.x, info.point.y)
-                  }
-                  className="puzzle3__ball__img"
-                  src={Ball}
-                  alt="Ball 1"
-                />
-                <img className="puzzle3__warps__img" src={Warp1} alt="Warp 1" />
-              </figure>
+              <Warp src={Warp1} name="Warp 1" />
             </li>
             <li>
-              <figure className="puzzle3__warps__figure">
-                <img className="puzzle3__ball__img" src={Ball} alt="Ball 2" />
-                <img className="puzzle3__warps__img" src={Warp2} alt="Warp 2" />
-              </figure>
+              <Warp src={Warp2} name="Warp 2" />
             </li>
             <li>
-              <figure className="puzzle3__warps__figure">
-                <img className="puzzle3__ball__img" src={Ball} alt="Ball 3" />
-                <img className="puzzle3__warps__img" src={Warp3} alt="Warp 2" />
-              </figure>
+              <Warp src={Warp3} name="Warp 3" />
             </li>
             <li>
               <figure

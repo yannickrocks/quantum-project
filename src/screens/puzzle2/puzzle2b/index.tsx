@@ -13,11 +13,7 @@ import FadeIn from "react-fade-in";
 import { motion } from "framer-motion";
 import "../puzzle2.css";
 
-type Puzzle2bProps = {
-  increaseCounter(): void;
-};
-
-const Puzzle2: React.FC<Puzzle2bProps> = ({ increaseCounter }) => {
+const Puzzle2: React.FC = () => {
   const adjustedPlanetList = PlanetList.filter((x) => x.planet !== "Sun");
   const [planetCodes, setPlanetCodes] = useState<Array<number>>([]);
   const [showMoon, setShowMoon] = useState<Array<number>>([]);
@@ -59,7 +55,6 @@ const Puzzle2: React.FC<Puzzle2bProps> = ({ increaseCounter }) => {
   };
 
   const refresh = () => {
-    increaseCounter();
     window.location.reload(false);
   };
 
@@ -140,15 +135,20 @@ const Puzzle2: React.FC<Puzzle2bProps> = ({ increaseCounter }) => {
             )}
             {!displayCorrectMessage ? (
               <button
-                className="puzzle2__buttons__proceed"
+                className="puzzle2__buttons__checkAnswers"
                 onClick={checkAnswers}
               >
                 Check
               </button>
             ) : (
-              <a className="puzzle2__buttons__proceed" href="/WakeUpAgain">
+              <motion.a
+                className="puzzle2__buttons__proceed"
+                href="/WakeUpAgain"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+              >
                 Proceed
-              </a>
+              </motion.a>
             )}
           </div>
         </div>
