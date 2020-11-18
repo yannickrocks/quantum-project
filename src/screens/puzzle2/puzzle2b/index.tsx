@@ -89,7 +89,7 @@ const Puzzle2: React.FC = () => {
               title="puzzle2b"
               width="640"
               height="360"
-              src="https://www.youtube.com/embed/6Z5xqBUmkoI"
+              src="https://www.youtube.com/embed/DA6TJTVH7W8"
               allow="accelerometer1; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             />
           </div>

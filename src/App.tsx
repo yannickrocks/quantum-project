@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import HomePage from "src/screens/homepage";
 import Puzzle1 from "src/screens/puzzle1";
 import Puzzle2a from "src/screens/puzzle2/puzzle2a";
@@ -10,7 +10,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const App: React.FC = () => {
   const randomPicker = Math.floor(Math.random() * 100);
-  const [counter, setCounter] = useState(0);
 
   return (
     <Router>
@@ -18,14 +17,9 @@ const App: React.FC = () => {
         <Route path="/" exact component={HomePage}></Route>
         <Route path="/22minutes" exact component={Puzzle1} />
         <Route path="/WakeUp" exact component={Puzzle2Opener} />
-        {randomPicker > 25 ? (
+        {randomPicker > 15 ? (
           <Route path="/wanderingmoon" exact>
-            <Puzzle2a
-              increaseCounter={() => {
-                var newCounter = counter + 1;
-                return setCounter(newCounter);
-              }}
-            />
+            <Puzzle2a />
           </Route>
         ) : (
           <Route path="/wanderingmoon" exact>

@@ -13,11 +13,7 @@ import FadeIn from "react-fade-in";
 import { motion } from "framer-motion";
 import "../puzzle2.css";
 
-type Puzzle2aProps = {
-  increaseCounter(): void;
-};
-
-const Puzzle2: React.FC<Puzzle2aProps> = ({ increaseCounter }) => {
+const Puzzle2: React.FC = () => {
   const adjustedPlanetList = PlanetList.filter((x) => x.planet !== "Sun");
   const [planetCodes, setPlanetCodes] = useState<Array<number>>([]);
   const [showMoon, setShowMoon] = useState<Array<number>>([]);
@@ -60,7 +56,6 @@ const Puzzle2: React.FC<Puzzle2aProps> = ({ increaseCounter }) => {
   };
 
   const refresh = () => {
-    increaseCounter();
     window.location.reload(false);
   };
 
@@ -95,7 +90,7 @@ const Puzzle2: React.FC<Puzzle2aProps> = ({ increaseCounter }) => {
               title="puzzle2a"
               width="640"
               height="360"
-              src="https://www.youtube.com/embed/6Z5xqBUmkoI"
+              src="https://www.youtube.com/embed/DA6TJTVH7W8"
               allow="accelerometer1; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             />
           </div>
