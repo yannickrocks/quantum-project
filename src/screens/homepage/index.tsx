@@ -4,7 +4,7 @@ import OuterWildsLogo from "src/assets/Misc/Outerwilds-Logo_web.png";
 import { HomePageText } from "src/assets/Texts/Constants";
 import "./homepage.css";
 
-const HomePage: React.FC = () => {
+const HomePage = () => {
   return (
     <FadeIn delay={600} transitionDuration={2000}>
       <div className="homepage">

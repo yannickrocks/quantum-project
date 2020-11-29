@@ -13,7 +13,7 @@ import FadeIn from "react-fade-in";
 import { motion } from "framer-motion";
 import "../puzzle2.css";
 
-const Puzzle2: React.FC = () => {
+const Puzzle2 = () => {
   const adjustedPlanetList = PlanetList.filter((x) => x.planet !== "Sun");
   const [planetCodes, setPlanetCodes] = useState<Array<number>>([]);
   const [showMoon, setShowMoon] = useState<Array<number>>([]);

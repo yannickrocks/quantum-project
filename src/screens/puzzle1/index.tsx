@@ -8,7 +8,7 @@ import FadeIn from "react-fade-in";
 import { motion } from "framer-motion";
 import "./puzzle1.css";
 
-const Puzzle1: React.FC = () => {
+const Puzzle1 = () => {
   const adjustedPlanetList = PlanetList.filter((x) => x.planet !== "Eye");
 
   const [planetCodes, setPlanetCodes] = useState(

@@ -13,7 +13,7 @@ import { CookiesProvider } from "react-cookie";
 import Warp from "src/components/warps";
 import "./puzzle3.css";
 
-const Puzzle3: React.FC = () => {
+const Puzzle3 = () => {
   const [showGif, setGifFlag] = useState(false);
 
   const handleChange = () => {

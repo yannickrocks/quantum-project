@@ -4,7 +4,7 @@ import Background from "src/assets/Misc/backgroundZaps.png";
 import Mask from "src/assets/Misc/Mask.png";
 import "./opener2.css";
 
-const Puzzle3Opener: React.FC = () => {
+const Puzzle3Opener = () => {
   return (
     <>
       <img className="background" src={Background} alt="Background" />

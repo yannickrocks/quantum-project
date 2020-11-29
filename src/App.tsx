@@ -8,7 +8,7 @@ import Puzzle3Opener from "src/screens/puzzle3/opener";
 import Puzzle3 from "src/screens/puzzle3";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-const App: React.FC = () => {
+const App = () => {
   const randomPicker = Math.floor(Math.random() * 100);
 
   return (
