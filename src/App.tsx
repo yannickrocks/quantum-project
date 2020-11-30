@@ -7,6 +7,9 @@ import Puzzle2b from "src/screens/puzzle2/puzzle2b";
 import Puzzle3Opener from "src/screens/puzzle3/opener";
 import Puzzle3 from "src/screens/puzzle3";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Congratulations from "./screens/congratulations";
+import Failure from "./screens/failure";
+import Credits from "./screens/credits";
 
 const App = () => {
   const randomPicker = Math.floor(Math.random() * 100);
@@ -27,7 +30,10 @@ const App = () => {
           </Route>
         )}
         <Route path="/WakeUpAgain" exact component={Puzzle3Opener} />
-        <Route path="/finalvoyage" exact component={Puzzle3}></Route>
+        <Route path="/finalvoyage" exact component={Puzzle3} />
+        <Route path="/congratulations" exact component={Congratulations} />
+        <Route path="/failure" exact component={Failure} />
+        <Route path="/credits" exact component={Credits} />
       </Switch>
     </Router>
   );

@@ -1,0 +1,57 @@
+.background {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+}
+
+.credits {
+  text-align: center;
+  margin-top: 150px;
+}
+
+.credits__title {
+  color: #ff7d25;
+  font-size: 70px;
+}
+
+.credits__video {
+  width: 100%;
+}
+
+.credits__mvps {
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.credits__josh__title {
+  color: #5341ae;
+  font-size: 32px;
+}
+
+.credits__details--margin {
+  margin-left: 5px;
+  margin-right: 5px;
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.credits__details--margin:hover {
+  color: #5341ae;
+}
+
+.credits__details {
+  color: #ffffff;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.credits__yan__title {
+  color: #388861;
+  font-size: 32px;
+}
