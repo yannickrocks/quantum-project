@@ -45,8 +45,8 @@ const Puzzle1 = () => {
         <div className="p-22-minutes">
           <div className="puzzle1__detailsAndImage">
             <div className="puzzle1__details">
-              <h2 className="puzzle1__heading">22 Minutes</h2>
-              <p className="puzzle1__whiteText">
+              <h2>22 Minutes</h2>
+              <p>
                 {Minutes22Text.map((item) => (
                   <>
                     {item}
@@ -57,11 +57,7 @@ const Puzzle1 = () => {
               </p>
             </div>
             <figure className="puzzle1__figure">
-              <img
-                className="puzzle1__figure__planet"
-                src={TimberHeath}
-                alt="Timber Heath"
-              />
+              <img src={TimberHeath} alt="Timber Heath" />
             </figure>
           </div>
           <div className="puzzle1__video">
@@ -90,7 +86,7 @@ const Puzzle1 = () => {
           <div className="puzzle1__buttons">
             {showProceedButton ? (
               <motion.a
-                className="puzzle1__buttons__proceed"
+                className="puzzle1__buttons--proceed"
                 href="/WakeUp"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -98,7 +94,7 @@ const Puzzle1 = () => {
                 Proceed
               </motion.a>
             ) : (
-              <button className="puzzle1__buttons__reset" onClick={resetInputs}>
+              <button className="puzzle1__buttons--reset" onClick={resetInputs}>
                 Reset
               </button>
             )}

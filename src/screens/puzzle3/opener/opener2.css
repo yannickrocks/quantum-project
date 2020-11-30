@@ -12,7 +12,7 @@
   margin: 150px auto auto auto;
 }
 
-.puzzle3__figure__mask__img {
+.puzzle3__figure__mask img {
   width: 100%;
 }
 
@@ -21,7 +21,7 @@
   justify-content: center;
 }
 
-.puzzle3__wakeUp {
+.puzzle3__opener__button a {
   margin: 0 auto;
   text-align: center;
   color: #ffffff;
@@ -36,7 +36,7 @@
   background-color: #b75053;
 }
 
-.puzzle3__wakeUp:hover {
+.puzzle3__opener__button a:hover {
   background-color: #6d1919;
   color: #ffffff;
   text-decoration: none;

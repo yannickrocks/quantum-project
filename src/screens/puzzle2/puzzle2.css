@@ -25,7 +25,7 @@
   padding-top: 50px;
 }
 
-.puzzle2__heading {
+.puzzle2__details h2 {
   margin-top: 40px;
   color: #5341ae;
   font-size: 40px;
@@ -33,7 +33,7 @@
   margin-bottom: 0;
 }
 
-.puzzle2__whiteText {
+.puzzle2__details p {
   text-align: left;
   color: #ffffff;
   font-size: 16px;
@@ -44,7 +44,7 @@
   width: 30%;
 }
 
-.puzzle2__figure__armsOut {
+.puzzle2__figure img {
   width: 100%;
 }
 
@@ -70,17 +70,13 @@ iframe {
   max-width: 15%;
 }
 
-.puzzle2__text {
-  width: 60%;
-}
-
 .puzzle2__buttons {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
 }
 
-.puzzle2__buttons__reset {
+.puzzle2__buttons--reset {
   width: 15%;
   border: none;
   border-radius: 6px;
@@ -93,13 +89,13 @@ iframe {
   margin-top: 5px;
 }
 
-.puzzle2__buttons__reset:hover {
+.puzzle2__buttons--reset:hover {
   background-color: #8a2c2f;
   color: #ffffff;
   text-decoration: none;
 }
 
-.puzzle2__buttons__checkAnswers {
+.puzzle2__buttons--checkAnswers {
   width: 15%;
   border: none;
   border-radius: 6px;
@@ -114,13 +110,13 @@ iframe {
   text-decoration: none;
 }
 
-.puzzle2__buttons__checkAnswers:hover {
+.puzzle2__buttons--checkAnswers:hover {
   background-color: #1f5c3e;
   color: #ffffff;
   text-decoration: none;
 }
 
-.puzzle2__buttons__proceed {
+.puzzle2__buttons--proceed {
   width: 15%;
   border: none;
   border-radius: 6px;
@@ -136,25 +132,25 @@ iframe {
   line-height: 35px;
 }
 
-.puzzle2__buttons__proceed:hover {
+.puzzle2__buttons--proceed:hover {
   background-color: #1f5c3e;
   color: #ffffff;
   text-decoration: none;
 }
 
-.puzzle2__almostCorrectText {
+.puzzle2__buttons--almostCorrectText {
   color: #5341ae;
   font-weight: 800;
   margin-right: auto;
 }
 
-.puzzle2__incorrectText {
+.puzzle2__buttons--incorrectText {
   color: #b75053;
   font-weight: 800;
   margin-right: auto;
 }
 
-.puzzle2__correctText {
+.puzzle2--correctText {
   color: #388861;
   font-weight: 800;
   margin-right: auto;

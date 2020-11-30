@@ -25,7 +25,7 @@
   flex-direction: column;
 }
 
-.puzzle1__heading {
+.puzzle1__details h2 {
   margin-top: 40px;
   color: #ff7d25;
   font-size: 40px;
@@ -33,7 +33,7 @@
   margin-bottom: 0;
 }
 
-.puzzle1__whiteText {
+.puzzle1__details p {
   text-align: left;
   color: #ffffff;
   font-size: 16px;
@@ -44,7 +44,7 @@
   width: 30%;
 }
 
-.puzzle1__figure__planet {
+.puzzle1__figure img {
   width: 100%;
 }
 
@@ -75,7 +75,7 @@ iframe {
   justify-content: flex-end;
 }
 
-.puzzle1__buttons__reset {
+.puzzle1__buttons--reset {
   width: 15%;
   border: none;
   border-radius: 6px;
@@ -88,13 +88,13 @@ iframe {
   margin-top: 5px;
 }
 
-.puzzle1__buttons__reset:hover {
+.puzzle1__buttons--reset:hover {
   background-color: #8a2c2f;
   color: #ffffff;
   text-decoration: none;
 }
 
-.puzzle1__buttons__proceed {
+.puzzle1__buttons--proceed {
   width: 15%;
   border: none;
   border-radius: 6px;
@@ -109,7 +109,7 @@ iframe {
   line-height: 33px;
 }
 
-.puzzle1__buttons__proceed:hover {
+.puzzle1__buttons--proceed:hover {
   background-color: #1f5c3e;
   color: #ffffff;
   text-decoration: none;

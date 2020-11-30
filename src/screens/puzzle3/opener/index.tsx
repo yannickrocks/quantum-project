@@ -11,16 +11,10 @@ const Puzzle3Opener = () => {
       <FadeIn delay={600} transitionDuration={1000}>
         <div className="puzzle3__opener">
           <figure className="puzzle3__figure__mask">
-            <img
-              className="puzzle3__figure__mask__img"
-              src={Mask}
-              alt="Mask Puzzle 3"
-            />
+            <img src={Mask} alt="Mask Puzzle 3" />
           </figure>
           <div className="puzzle3__opener__button">
-            <a className="puzzle3__wakeUp" href="/finalvoyage">
-              Wake up
-            </a>
+            <a href="/finalvoyage">Wake up</a>
           </div>
         </div>
       </FadeIn>

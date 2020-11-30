@@ -41,9 +41,22 @@ const Puzzle2 = () => {
   };
 
   const checkAnswers = () => {
-    correctOrderOfClicking.every((code, index) => code === planetCodes[index])
-      ? setDisplayCorrectMessage(true)
-      : setDisplayIncorrectMessage(true);
+    if (planetCodes.length === correctOrderOfClicking.length) {
+      correctOrderOfClicking.every((code, index) => {
+        if (code === planetCodes[index]) {
+          setDisplayCorrectMessage(true);
+          setDisplayIncorrectMessage(false);
+          return true;
+        } else {
+          setDisplayIncorrectMessage(true);
+          return false;
+        }
+      });
+    } else {
+      setDisplayIncorrectMessage(true);
+      return false;
+    }
+
     setRefreshToggle2b(true);
   };
 
@@ -65,8 +78,8 @@ const Puzzle2 = () => {
         <div className="p-wanderingmoon">
           <div className="puzzle2__detailsAndImage">
             <div className="puzzle2__details">
-              <h2 className="puzzle2__heading">The Wandering Moon</h2>
-              <p className="puzzle2__whiteText">
+              <h2>The Wandering Moon</h2>
+              <p>
                 {WanderingMoonText.map((item) => (
                   <>
                     {item}
@@ -78,7 +91,6 @@ const Puzzle2 = () => {
             </div>
             <figure className="puzzle2__figure">
               <img
-                className="puzzle2__figure__armsOut"
                 src={ArmsOutStretchWithMoon}
                 alt="Arms Stretch Out with Moon"
               />
@@ -110,18 +122,20 @@ const Puzzle2 = () => {
           </ul>
           <div className="puzzle2__buttons">
             {displayCorrectMessage ? (
-              <p className="puzzle2__correctText">{WanderingMoonCorrect}</p>
+              <p className="puzzle2--correctText">{WanderingMoonCorrect}</p>
             ) : (
               <></>
             )}
             {displayIncorrectMessage ? (
-              <p className="puzzle2__incorrectText">{WanderingMoonIncorrect}</p>
+              <p className="puzzle2__buttons--incorrectText">
+                {WanderingMoonIncorrect}
+              </p>
             ) : (
               <></>
             )}
             {showRefreshButton2b ? (
               <motion.button
-                className="puzzle2__buttons__reset"
+                className="puzzle2__buttons--reset"
                 onClick={refresh}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -129,20 +143,20 @@ const Puzzle2 = () => {
                 Refresh
               </motion.button>
             ) : (
-              <button className="puzzle2__buttons__reset" onClick={reset}>
+              <button className="puzzle2__buttons--reset" onClick={reset}>
                 Reset
               </button>
             )}
             {!displayCorrectMessage ? (
               <button
-                className="puzzle2__buttons__checkAnswers"
+                className="puzzle2__buttons--checkAnswers"
                 onClick={checkAnswers}
               >
                 Check
               </button>
             ) : (
               <motion.a
-                className="puzzle2__buttons__proceed"
+                className="puzzle2__buttons--proceed"
                 href="/WakeUpAgain"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}

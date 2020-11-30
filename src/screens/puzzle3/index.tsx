@@ -27,8 +27,8 @@ const Puzzle3 = () => {
         <div className="finalVoyage">
           <div className="puzzle3__detailsAndImage">
             <div className="puzzle3__details">
-              <h2 className="puzzle3__heading">The final voyage</h2>
-              <div className="puzzle3__whiteText">
+              <h2>The final voyage</h2>
+              <p>
                 {FinalVoyageText.map((item) => (
                   <>
                     {item}
@@ -36,14 +36,10 @@ const Puzzle3 = () => {
                     <br />
                   </>
                 ))}
-              </div>
+              </p>
             </div>
             <figure className="puzzle3__figure">
-              <img
-                className="puzzle3__figure__statue"
-                src={Statue}
-                alt="Statue"
-              />
+              <img src={Statue} alt="Statue" />
             </figure>
           </div>
           <div className="puzzle3__video">

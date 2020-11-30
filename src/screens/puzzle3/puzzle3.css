@@ -25,7 +25,7 @@
   flex-direction: column;
 }
 
-.puzzle3__heading {
+.puzzle3__details h2 {
   margin-top: 40px;
   color: #b75053;
   font-size: 40px;
@@ -33,7 +33,7 @@
   margin-bottom: 15px;
 }
 
-.puzzle3__whiteText {
+.puzzle3__details p {
   text-align: left;
   color: #ffffff;
   font-size: 16px;
@@ -45,7 +45,7 @@
   margin: 0;
 }
 
-.puzzle3__figure__statue {
+.puzzle3__figure img {
   width: 100%;
   margin-top: 70px;
 }
