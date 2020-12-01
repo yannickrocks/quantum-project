@@ -16,6 +16,7 @@ import {
   WarpList3,
   CorrectWarpList,
 } from "src/assets/WarpLists";
+import { motion } from "framer-motion";
 
 const Puzzle3 = () => {
   const [showGif, setGifFlag] = useState(false);
@@ -133,28 +134,45 @@ const Puzzle3 = () => {
             />
           </div>
           <ul>
-            <li>
+            <motion.li
+              key="Warp 1"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
               <Warp
                 src={warp1}
                 name="Warp 1"
                 changeImage={(value: string) => handleWarpClick(value, "Warp1")}
               />
-            </li>
-            <li>
+            </motion.li>
+
+            <motion.li
+              key="Warp 2"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
               <Warp
                 src={warp2}
                 name="Warp 2"
                 changeImage={(value: string) => handleWarpClick(value, "Warp2")}
               />
-            </li>
-            <li>
+            </motion.li>
+            <motion.li
+              key="Warp 3"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
               <Warp
                 src={warp3}
                 name="Warp 3"
                 changeImage={(value: string) => handleWarpClick(value, "Warp3")}
               />
-            </li>
-            <li>
+            </motion.li>
+            <motion.li
+              key="Launch"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
               <figure
                 className="puzzle3__launch__figure"
                 onClick={handleChange}
@@ -165,11 +183,11 @@ const Puzzle3 = () => {
                   onClick={checkAnswers}
                 />
               </figure>
-            </li>
+            </motion.li>
           </ul>
           <div className="puzzle3__buttons">
             <button
-              className="puzzle3__buttons__reset"
+              className="puzzle3__buttons--reset"
               type="reset"
               onClick={resetInputs}
             >
