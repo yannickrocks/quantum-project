@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Background from "src/assets/Misc/background.png";
 import ArmsOutStretchNoMoon from "src/assets/Misc/Arms-Outstretched_web.png";
 import QuantumPlanet from "src/components/quantum-planets";
-import { PlanetList } from "src/assets/Planets/PlanetsList";
+import { PlanetList } from "src/assets/PlanetsList";
 import {
   WanderingMoonText,
   WanderingMoonIncorrect,

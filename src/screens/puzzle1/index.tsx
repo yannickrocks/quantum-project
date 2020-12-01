@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Background from "src/assets/Misc/background.png";
 import TimberHeath from "src/assets/Misc/Timber-Hearth_web.png";
 import Planet from "src/components/planets";
-import { PlanetList } from "src/assets/Planets/PlanetsList";
+import { PlanetList } from "src/assets/PlanetsList";
 import { Minutes22Text } from "src/assets/Texts/Constants";
 import FadeIn from "react-fade-in";
 import { motion } from "framer-motion";

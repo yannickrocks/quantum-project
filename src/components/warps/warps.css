@@ -2,30 +2,10 @@
   width: 100%;
   margin: 0 auto;
   position: relative;
+  cursor: pointer;
 }
 
-.puzzle3__dropZoneNode__img1 {
-  position: absolute;
-  width: 13%;
-  top: 18%;
-  left: 59%;
-}
-
-.puzzle3__dropZoneNode__img2 {
-  position: absolute;
-  width: 13%;
-  top: 43%;
-  left: 74%;
-}
-
-.puzzle3__ball__img {
-  position: absolute;
-  width: 30%;
-  top: 33%;
-  left: 36%;
-}
-
-.puzzle3__warps__img {
+.puzzle3__warps__figure img {
   width: 100%;
 }
 
@@ -35,7 +15,7 @@
   margin-top: 0;
 }
 
-.puzzle3__launch__img {
+.puzzle3__launch__figure img {
   width: auto;
   height: 185px;
 }

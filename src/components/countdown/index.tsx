@@ -3,7 +3,11 @@ import React, { useState, useEffect } from "react";
 import { useCookies } from "react-cookie";
 import "./countdown.css";
 
-const CountDown: React.FC = () => {
+type CountDownProps = {
+  checkTimer(value: string): void;
+};
+
+const CountDown: React.FC<CountDownProps> = ({ checkTimer }) => {
   const [hours, setHours] = useState("22");
   const [minutes, setMinutes] = useState("00");
   const [seconds, setSeconds] = useState("00");
@@ -69,9 +73,9 @@ const CountDown: React.FC = () => {
         }
       }
     }, 1000);
-
+    checkTimer(hours + minutes + seconds);
     return () => clearInterval(timer);
-  }, [hours, minutes, seconds]);
+  }, [hours, minutes, seconds, checkTimer]);
 
   return (
     <>
