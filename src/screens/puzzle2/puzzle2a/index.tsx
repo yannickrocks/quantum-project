@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import Background from "src/assets/Misc/background.png";
 import ArmsOutStretchNoMoon from "src/assets/Misc/Arms-Outstretched_web.png";
 import QuantumPlanet from "src/components/quantum-planets";
-import { PlanetList } from "src/assets/PlanetsList";
+import { PlanetList, correctOrderOfClicking } from "src/assets/PlanetsList";
 import {
   WanderingMoonText,
   WanderingMoonIncorrect,
   WanderingMoonAlmostCorrect,
-  correctOrderOfClicking,
 } from "src/assets/Texts/Constants";
 import FadeIn from "react-fade-in";
 import { motion } from "framer-motion";
@@ -23,21 +22,11 @@ const Puzzle2 = () => {
   const page = "pageA";
 
   const addOrRemoveFromAnwserArray = (indexToChange: number) => {
-    const exists = planetCodes.find((index) => index === indexToChange);
-    if (exists !== indexToChange) {
-      const newArray = [...planetCodes, indexToChange];
-      setPlanetCodes(newArray);
+    const newArray = [...planetCodes, indexToChange];
+    setPlanetCodes(newArray);
 
-      const moonArray = [indexToChange];
-      setShowMoon(moonArray);
-    } else {
-      const indexValue = planetCodes.indexOf(indexToChange);
-      var newArray = [
-        ...planetCodes.slice(0, indexValue),
-        ...planetCodes.slice(indexValue + 1),
-      ];
-      setPlanetCodes(newArray);
-    }
+    const moonArray = [indexToChange];
+    setShowMoon(moonArray);
   };
 
   const checkAnswers = () => {

@@ -87,3 +87,30 @@ export const PlanetList = [
     },
   },
 ];
+
+export const correctOrderOfClicking = [
+  4,
+  2,
+  1,
+  4,
+  3,
+  1,
+  5,
+  2,
+  4,
+  1,
+  3,
+  4,
+  2,
+  5,
+  3,
+  4,
+  2,
+  1,
+  4,
+  3,
+  5,
+  0,
+];
+// GD, Timber, Twins, GD, BH, Twins, Bramble, Timber, GD, Twins, BH, GD, Timber,
+// Bramble, BH, GD, Timber, Twins, GD, BH, Bramble, Eye.
