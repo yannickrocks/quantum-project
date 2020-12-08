@@ -44,7 +44,7 @@ const Credits = () => {
             <div className="credits__yan">
               <h2 className="credits__yan__title">Yannick Mermet</h2>
               <p className="credits__details">
-                Website Code, Puzzle implementation, Third thing
+                Website Code and Puzzle implementation
               </p>
               <a
                 className="credits__details--margin"
