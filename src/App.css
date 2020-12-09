@@ -1,14 +1,29 @@
-@import url("https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;800&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;800&display=swap"); */
 
 .App {
   text-align: center;
 }
 
+@font-face {
+  font-family: "ITC Serif Gothic";
+  font-style: normal;
+  src: local("SerifGothicStd"),
+    url(./fonts/SerifGothicStd.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "ITC serif gothic";
+  font-style: normal;
+  font-weight: bold;
+  src: local("SerifGothicStd ExtraBold"), local("SerifGothicStd-ExtraBold"),
+    url(./fonts/SerifGothicStd-ExtraBold.otf) format("opentype");
+}
+
 body {
-  font-family: "Itc serif gothic lt", "Palatino Linotype", sans-serif;
+  font-family: "ITC Serif Gothic";
   margin: 0;
 }
 
 input {
-  font: 400 13.3333px "Gothic A1";
+  font: 400 13.3333px "ITC Serif Gothic";
 }
