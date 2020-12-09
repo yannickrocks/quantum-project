@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "ITC Serif Gothic";
+  font-style: normal;
+  src: local("SerifGothicStd"),
+    url(./fonts/SerifGothicStd.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "ITC serif gothic";
+  font-style: normal;
+  font-weight: bold;
+  src: local("SerifGothicStd ExtraBold"), local("SerifGothicStd-ExtraBold"),
+    url(./fonts/SerifGothicStd-ExtraBold.otf) format("opentype");
+}
