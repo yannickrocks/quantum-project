@@ -5,10 +5,14 @@
 }
 
 body {
-  font-family: "Itc serif gothic";
+  font-family: "AndroclesOpti-Regular";
   margin: 0;
 }
 
+h2 {
+  font-family: "AndroclesOpti-Heavy";
+}
+
 input {
-  font: 400 13.3333px "Itc serif gothic";
+  font: 400 13.3333px "AndroclesOpti-Regular";
 }
