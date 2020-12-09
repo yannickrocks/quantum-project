@@ -1,4 +1,3 @@
-import Warp1NotFilled from "src/assets/Warp-Purples/WarpCore_1.png";
 import Op1 from "src/assets/Warp-Purples/Warp_Options/1.png";
 import Op2 from "src/assets/Warp-Purples/Warp_Options/2.png";
 import Op3 from "src/assets/Warp-Purples/Warp_Options/3.png";

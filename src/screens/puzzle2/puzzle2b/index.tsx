@@ -146,7 +146,7 @@ const Puzzle2 = () => {
             ) : (
               <motion.a
                 className="puzzle2__buttons--proceed"
-                href="/WakeUpAgain"
+                href="/wakeupagain"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
               >

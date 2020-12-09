@@ -87,7 +87,7 @@ const Puzzle1 = () => {
             {showProceedButton ? (
               <motion.a
                 className="puzzle1__buttons--proceed"
-                href="/WakeUp"
+                href="/wakeup"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
               >

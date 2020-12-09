@@ -19,7 +19,7 @@ const App = () => {
       <Switch>
         <Route path="/" exact component={HomePage}></Route>
         <Route path="/22minutes" exact component={Puzzle1} />
-        <Route path="/WakeUp" exact component={Puzzle2Opener} />
+        <Route path="/wakeup" exact component={Puzzle2Opener} />
         {randomPicker > 15 ? (
           <Route path="/wanderingmoon" exact>
             <Puzzle2a />
@@ -29,7 +29,7 @@ const App = () => {
             <Puzzle2b />
           </Route>
         )}
-        <Route path="/WakeUpAgain" exact component={Puzzle3Opener} />
+        <Route path="/wakeupagain" exact component={Puzzle3Opener} />
         <Route path="/finalvoyage" exact component={Puzzle3} />
         <Route path="/congratulations" exact component={Congratulations} />
         <Route path="/failure" exact component={Failure} />

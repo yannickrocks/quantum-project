@@ -10,8 +10,6 @@ type WarpProps = {
 };
 
 const Warp: React.FC<WarpProps> = ({ src, name, warp, changeImage }) => {
-  const whichWarp = () => {};
-
   return (
     <figure
       className="puzzle3__warps__figure"
