@@ -35,6 +35,7 @@ const Puzzle2 = () => {
         if (code === planetCodes[index]) {
           setDisplayCorrectMessage(true);
           setDisplayIncorrectMessage(false);
+          setRefreshToggle2b(true);
           return true;
         } else {
           setDisplayIncorrectMessage(true);
@@ -45,8 +46,6 @@ const Puzzle2 = () => {
       setDisplayIncorrectMessage(true);
       return false;
     }
-
-    setRefreshToggle2b(true);
   };
 
   const reset = () => {
@@ -97,6 +96,7 @@ const Puzzle2 = () => {
           <ul className="puzzle2__planets">
             {adjustedPlanetList.map((item, index) => (
               <QuantumPlanet
+                key={index}
                 src={item.src}
                 answerSrc={item.answerSrc}
                 planetId={item.planet}

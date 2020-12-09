@@ -15,6 +15,16 @@
   margin-top: 0;
 }
 
+.puzzle3__warps__figure--back {
+  position: relative;
+}
+
+.puzzle3__warps__figure--coord {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .puzzle3__launch__figure img {
   width: auto;
   height: 185px;

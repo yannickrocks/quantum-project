@@ -1,5 +1,6 @@
 import React from "react";
 import "./warps.css";
+import Warp1NotFilled from "src/assets/Warp-Purples/WarpCore_1.png";
 
 type WarpProps = {
   src: string;
@@ -14,7 +15,12 @@ const Warp: React.FC<WarpProps> = ({ src, name, changeImage }) => {
       id={name}
       onClick={() => changeImage(src)}
     >
-      <img src={src} alt={name} />
+      <img
+        className="puzzle3__warps__figure--back"
+        src={Warp1NotFilled}
+        alt="BackWarp"
+      />
+      <img className="puzzle3__warps__figure--coord" src={src} alt={name} />
     </figure>
   );
 };

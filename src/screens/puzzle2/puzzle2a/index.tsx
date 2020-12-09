@@ -93,6 +93,7 @@ const Puzzle2 = () => {
           <ul className="puzzle2__planets">
             {adjustedPlanetList.map((item, index) => (
               <QuantumPlanet
+                key={index}
                 src={item.src}
                 planetId={item.planet}
                 hasBeenClickedOn={showMoon.includes(index)}
