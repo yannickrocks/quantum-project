@@ -31,7 +31,7 @@ import Op29 from "src/assets/Warp-Purples/Warp_Options/29.png";
 import Op30 from "src/assets/Warp-Purples/Warp_Options/30.png";
 
 const warpCoordinatesImages = [
-  Warp1NotFilled,
+  "",
   Op1,
   Op2,
   Op3,

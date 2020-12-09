@@ -4,6 +4,9 @@ import Statue from "src/assets/Misc/Statue-Awakened_web.png";
 import Launch1 from "src/assets/Warp-Purples/Launch_1.png";
 import LaunchGif from "src/assets/Warp-Purples/launch.gif";
 import { FinalVoyageText } from "src/assets/Texts/Constants";
+import Warp1NotFilled from "src/assets/Warp-Purples/WarpCore_1.png";
+import Warp2NotFilled from "src/assets/Warp-Purples/WarpCore_2.png";
+import Warp3NotFilled from "src/assets/Warp-Purples/WarpCore_3.png";
 import CountDown from "src/components/countdown";
 import FadeIn from "react-fade-in";
 import { CookiesProvider } from "react-cookie";
@@ -142,6 +145,7 @@ const Puzzle3 = () => {
               <Warp
                 src={warp1}
                 name="Warp 1"
+                warp={Warp1NotFilled}
                 changeImage={(value: string) => handleWarpClick(value, "Warp1")}
               />
             </motion.li>
@@ -154,6 +158,7 @@ const Puzzle3 = () => {
               <Warp
                 src={warp2}
                 name="Warp 2"
+                warp={Warp2NotFilled}
                 changeImage={(value: string) => handleWarpClick(value, "Warp2")}
               />
             </motion.li>
@@ -165,6 +170,7 @@ const Puzzle3 = () => {
               <Warp
                 src={warp3}
                 name="Warp 3"
+                warp={Warp3NotFilled}
                 changeImage={(value: string) => handleWarpClick(value, "Warp3")}
               />
             </motion.li>
