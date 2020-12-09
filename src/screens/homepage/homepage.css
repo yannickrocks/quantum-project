@@ -4,7 +4,7 @@
 }
 
 .figureLogo {
-  width: 550px;
+  width: 400px;
   margin-top: 70px;
   margin: 0 auto;
 }
@@ -26,6 +26,7 @@
   color: #ff7d25;
   font-size: 60px;
   font-weight: 700;
+  margin: 0;
 }
 
 .description {
