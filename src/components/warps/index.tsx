@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 import "./warps.css";
 
@@ -21,7 +22,13 @@ const Warp: React.FC<WarpProps> = ({ src, name, warp, changeImage }) => {
       {src === "" ? (
         ""
       ) : (
-        <img className="puzzle3__warps__figure--coord" src={src} alt={name} />
+        <motion.img
+          className="puzzle3__warps__figure--coord"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          src={src}
+          alt={name}
+        />
       )}
     </figure>
   );

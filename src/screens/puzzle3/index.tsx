@@ -137,43 +137,31 @@ const Puzzle3 = () => {
             />
           </div>
           <ul>
-            <motion.li
-              key="Warp 1"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
+            <li key="Warp 1">
               <Warp
                 src={warp1}
                 name="Warp 1"
                 warp={Warp1NotFilled}
                 changeImage={(value: string) => handleWarpClick(value, "Warp1")}
               />
-            </motion.li>
+            </li>
 
-            <motion.li
-              key="Warp 2"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
+            <li key="Warp 2">
               <Warp
                 src={warp2}
                 name="Warp 2"
                 warp={Warp2NotFilled}
                 changeImage={(value: string) => handleWarpClick(value, "Warp2")}
               />
-            </motion.li>
-            <motion.li
-              key="Warp 3"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
+            </li>
+            <li key="Warp 3">
               <Warp
                 src={warp3}
                 name="Warp 3"
                 warp={Warp3NotFilled}
                 changeImage={(value: string) => handleWarpClick(value, "Warp3")}
               />
-            </motion.li>
+            </li>
             <motion.li
               key="Launch"
               whileHover={{ scale: 1.1 }}
