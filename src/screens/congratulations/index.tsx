@@ -8,7 +8,7 @@ const Congratulations = () => {
     <>
       <img className="background" src={Background} alt="Background" />
       <div className="congratulations">
-        <FadeIn delay={600} transitionDuration={2000}>
+        <FadeIn delay={1500} transitionDuration={2000}>
           <div className="congratulations__video">
             <iframe
               title="congratulations"

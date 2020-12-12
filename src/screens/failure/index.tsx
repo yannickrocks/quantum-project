@@ -8,7 +8,7 @@ const Failure = () => {
     <>
       <img className="background" src={Background} alt="Background" />
       <div className="failure">
-        <FadeIn delay={600} transitionDuration={2000}>
+        <FadeIn delay={1500} transitionDuration={2000}>
           <div className="failure__video">
             <iframe
               title="failure"
