@@ -27,8 +27,9 @@ const Puzzle3 = () => {
   const [warp1, setWarp1] = useState(WarpList1[0]);
   const [warp2, setWarp2] = useState(WarpList2[0]);
   const [warp3, setWarp3] = useState(WarpList3[0]);
+  const audio = new Audio("/Nomai_Warp_01.wav");
 
-  const handleChange = () => {
+  const handleLaunchClick = () => {
     setGifFlag(!showGif);
   };
 
@@ -81,6 +82,7 @@ const Puzzle3 = () => {
 
   const checkAnswers = () => {
     setTimeout(() => {
+      audio.play();
       const warp1Index = WarpList1.findIndex((element) => element === warp1);
       const warp2Index = WarpList2.findIndex((element) => element === warp2);
       const warp3Index = WarpList3.findIndex((element) => element === warp3);
@@ -96,7 +98,7 @@ const Puzzle3 = () => {
         : history.push({
             pathname: "/terriblefate",
           });
-    }, 2000);
+    }, 2500);
   };
 
   const resetInputs = () => {
@@ -169,7 +171,7 @@ const Puzzle3 = () => {
             >
               <figure
                 className="puzzle3__launch__figure"
-                onClick={handleChange}
+                onClick={handleLaunchClick}
               >
                 <img
                   src={showGif ? LaunchGif : Launch1}

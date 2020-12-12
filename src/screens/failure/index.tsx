@@ -12,8 +12,8 @@ const Failure = () => {
           <div className="failure__video">
             <iframe
               title="failure"
-              width="750"
-              height="470"
+              width="950"
+              height="500"
               src="https://www.youtube.com/embed/uFjxs7ENhi4?autoplay=1"
               allow="accelerometer1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             />
