@@ -14,7 +14,7 @@ const Congratulations = () => {
               title="congratulations"
               width="950"
               height="500"
-              src="https://www.youtube.com/embed/OOjbSrUIAe4"
+              src="https://www.youtube.com/embed/OOjbSrUIAe4?autoplay=1"
               allow="accelerometer1; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             />
           </div>
