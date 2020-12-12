@@ -27,7 +27,8 @@ const Puzzle3 = () => {
   const [warp1, setWarp1] = useState(WarpList1[0]);
   const [warp2, setWarp2] = useState(WarpList2[0]);
   const [warp3, setWarp3] = useState(WarpList3[0]);
-  const audio = new Audio("/Nomai_Warp_01.wav");
+  let warpSound = require("src/assets/Nomai_Warp_01.wav");
+  const audio = new Audio(warpSound);
 
   const handleLaunchClick = () => {
     setGifFlag(!showGif);
