@@ -12,8 +12,8 @@ const Congratulations = () => {
           <div className="congratulations__video">
             <iframe
               title="congratulations"
-              width="970"
-              height="540"
+              width="750"
+              height="470"
               src="https://www.youtube.com/embed/6Z5xqBUmkoI"
               allow="accelerometer1; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             />

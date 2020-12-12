@@ -12,10 +12,10 @@ const Failure = () => {
           <div className="failure__video">
             <iframe
               title="failure"
-              width="970"
-              height="540"
-              src="https://www.youtube.com/embed/6Z5xqBUmkoI"
-              allow="accelerometer1; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              width="750"
+              height="470"
+              src="https://www.youtube.com/embed/uFjxs7ENhi4?autoplay=1"
+              allow="accelerometer1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             />
           </div>
         </FadeIn>

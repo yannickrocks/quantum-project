@@ -91,10 +91,10 @@ const Puzzle3 = () => {
       );
       isCorrect
         ? history.push({
-            pathname: "/congratulations",
+            pathname: "/consciousobserver",
           })
         : history.push({
-            pathname: "/failure",
+            pathname: "/terriblefate",
           });
     }, 2000);
   };
@@ -132,7 +132,7 @@ const Puzzle3 = () => {
               title="puzzle3"
               width="640"
               height="360"
-              src="https://www.youtube.com/embed/6Z5xqBUmkoI"
+              src="https://www.youtube.com/embed/zV2yu1X8eOw"
               allow="accelerometer1; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             />
           </div>

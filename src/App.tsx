@@ -31,8 +31,8 @@ const App = () => {
         )}
         <Route path="/wakeupagain" exact component={Puzzle3Opener} />
         <Route path="/finalvoyage" exact component={Puzzle3} />
-        <Route path="/congratulations" exact component={Congratulations} />
-        <Route path="/failure" exact component={Failure} />
+        <Route path="/consciousobserver" exact component={Congratulations} />
+        <Route path="/terriblefate" exact component={Failure} />
         <Route path="/credits" exact component={Credits} />
       </Switch>
     </Router>
