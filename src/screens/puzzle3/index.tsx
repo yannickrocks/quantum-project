@@ -33,7 +33,16 @@ const Puzzle3 = () => {
   const handleLaunchClick = () => {
     setGifFlag(!showGif);
     setTimeout(() => {
-      warpSound.play();
+      const audioPromise = warpSound.play();
+      if (audioPromise !== undefined) {
+        audioPromise
+          .then((response) => {
+            return response;
+          })
+          .catch((err) => {
+            console.info(err);
+          });
+      }
     }, 2000);
   };
 
@@ -117,7 +126,7 @@ const Puzzle3 = () => {
         <div className="finalVoyage">
           <div className="puzzle3__detailsAndImage">
             <div className="puzzle3__details">
-              <h2>The final voyage</h2>
+              <h2>The Final Voyage</h2>
               <p>
                 {FinalVoyageText.map((item) => (
                   <>
