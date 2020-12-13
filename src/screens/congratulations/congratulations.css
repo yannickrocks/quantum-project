@@ -16,28 +16,37 @@
   width: 100%;
 }
 
-.congratulations__button {
+.credits__mvps {
+  width: 40%;
   display: flex;
-  justify-content: center;
-}
-
-.congratulations__credits {
+  flex-direction: row;
+  justify-content: space-between;
   margin: 0 auto;
-  text-align: center;
-  color: #ffffff;
-  font-size: 25px;
-  font-weight: 800;
-  border: none;
-  border-radius: 15px;
-  margin-top: 50px;
-  padding: 20px;
-  width: 420px;
-  text-decoration: none;
-  background-color: #5341ae;
 }
 
-.congratulations__credits:hover {
-  background-color: #271c5a;
+.credits__josh__title {
+  color: #5341ae;
+  font-size: 32px;
+}
+
+.credits__details--margin {
+  margin-left: 5px;
+  margin-right: 5px;
   color: #ffffff;
+  font-size: 18px;
+}
+
+.credits__details--margin:hover {
+  color: #5341ae;
+}
+
+.credits__details {
+  color: #ffffff;
+  font-size: 18px;
   text-decoration: none;
+}
+
+.credits__yan__title {
+  color: #388861;
+  font-size: 32px;
 }
