@@ -22,7 +22,7 @@ export const Minutes22Text = [Minutes22Text1, Minutes22Text2, Minutes22Text3];
 const WanderingMoonText1 =
   "How curious! There appears to be a celestial body that roams freely amongst its friends in this solar system.";
 const WanderingMoonText2 =
-  "How refreshing it is to find new anomalies to study along our nomadic journey... provided, that is, we can work around its’ apparent natural state of a quantum superposition.";
+  "How refreshing it is to find new anomalies to study along our nomadic journey... provided, that is, we can work around our new friend's apparent natural state of a quantum superposition.";
 const WanderingMoonText3 = "Refreshing, yes. Straightforward, not so much.";
 export const WanderingMoonText = [
   WanderingMoonText1,

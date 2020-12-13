@@ -73,6 +73,10 @@ iframe {
   width: 185px;
 }
 
+.puzzle3__launch__figure:hover {
+  cursor: pointer;
+}
+
 .puzzle3__buttons {
   display: flex;
   flex-direction: row;

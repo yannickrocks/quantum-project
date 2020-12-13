@@ -19,7 +19,6 @@ import {
   WarpList3,
   CorrectWarpList,
 } from "src/assets/WarpLists";
-import { motion } from "framer-motion";
 import sound from "src/assets/Nomai_Warp_01.wav";
 
 const Puzzle3 = () => {
@@ -28,25 +27,12 @@ const Puzzle3 = () => {
   const [warp1, setWarp1] = useState(WarpList1[0]);
   const [warp2, setWarp2] = useState(WarpList2[0]);
   const [warp3, setWarp3] = useState(WarpList3[0]);
+  const history = useHistory();
   const warpSound = new Audio(sound);
 
-  const handleLaunchClick = () => {
-    setGifFlag(!showGif);
-    setTimeout(() => {
-      const audioPromise = warpSound.play();
-      if (audioPromise !== undefined) {
-        audioPromise
-          .then((response) => {
-            return response;
-          })
-          .catch((err) => {
-            console.info(err);
-          });
-      }
-    }, 2000);
-  };
-
-  const history = useHistory();
+  useEffect(() => {
+    warpSound.load();
+  }, [warpSound]);
 
   useEffect(() => {
     const handleCountdown = (time: string) => {
@@ -93,24 +79,42 @@ const Puzzle3 = () => {
     }
   };
 
-  const checkAnswers = () => {
-    setTimeout(() => {
-      const warp1Index = WarpList1.findIndex((element) => element === warp1);
-      const warp2Index = WarpList2.findIndex((element) => element === warp2);
-      const warp3Index = WarpList3.findIndex((element) => element === warp3);
-      const inputArray = [warp1Index, warp2Index, warp3Index];
+  const playSound = () => {
+    const audioPromise = warpSound.play();
+    if (audioPromise !== undefined) {
+      audioPromise
+        .then((response) => {
+          return response;
+        })
+        .catch((err) => {
+          console.info(err);
+        });
+    }
+  };
 
-      var isCorrect = CorrectWarpList.every(
-        (code, index) => code === inputArray[index]
-      );
-      isCorrect
-        ? history.push({
-            pathname: "/consciousobserver",
-          })
-        : history.push({
-            pathname: "/terriblefate",
-          });
-    }, 2000);
+  const checkAnswers = () => {
+    const warp1Index = WarpList1.findIndex((element) => element === warp1);
+    const warp2Index = WarpList2.findIndex((element) => element === warp2);
+    const warp3Index = WarpList3.findIndex((element) => element === warp3);
+
+    if (warp1Index !== 0 && warp2Index !== 0 && warp3Index !== 0) {
+      setGifFlag(!showGif);
+
+      setTimeout(() => {
+        const inputArray = [warp1Index, warp2Index, warp3Index];
+        playSound();
+        var isCorrect = CorrectWarpList.every(
+          (code, index) => code === inputArray[index]
+        );
+        isCorrect
+          ? history.push({
+              pathname: "/consciousobserver",
+            })
+          : history.push({
+              pathname: "/terriblefate",
+            });
+      }, 2000);
+    }
   };
 
   const resetInputs = () => {
@@ -176,22 +180,15 @@ const Puzzle3 = () => {
                 changeImage={(value: string) => handleWarpClick(value, "Warp3")}
               />
             </li>
-            <motion.li
-              key="Launch"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <figure
-                className="puzzle3__launch__figure"
-                onClick={handleLaunchClick}
-              >
+            <li key="Launch">
+              <figure className="puzzle3__launch__figure">
                 <img
                   src={showGif ? LaunchGif : Launch1}
                   alt="Launch 1"
                   onClick={checkAnswers}
                 />
               </figure>
-            </motion.li>
+            </li>
           </ul>
           <div className="puzzle3__buttons">
             <button

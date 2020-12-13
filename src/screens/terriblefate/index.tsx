@@ -19,7 +19,7 @@ const TerribleFate = () => {
             />
           </div>
         </FadeIn>
-        <FadeIn delay={60000} transitionDuration={2000}>
+        <FadeIn delay={65000} transitionDuration={2000}>
           <div className="failure__button">
             <a className="failure__credits" href="/finalvoyage">
               One more loop?

@@ -39,18 +39,32 @@ const ConsciousObserver = () => {
                 >
                   Design Portfolio
                 </a>
+                |
+                <a
+                  className="credits__details--margin"
+                  href="https://www.instagram.com/joshan_meow"
+                >
+                  Instagram
+                </a>
               </div>
             </div>
             <div className="credits__yan">
               <h2 className="credits__yan__title">Yannick Mermet</h2>
               <p className="credits__details">
-                Website Code and Puzzle implementation
+                Website Code and Puzzle Implementation
               </p>
               <a
                 className="credits__details--margin"
                 href="https://github.com/yannickrocks"
               >
                 Coding Portfolio
+              </a>
+              |
+              <a
+                className="credits__details--margin"
+                href="https://www.instagram.com/adventuresofyan"
+              >
+                Instagram
               </a>
             </div>
           </div>
