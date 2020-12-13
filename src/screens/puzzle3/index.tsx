@@ -77,6 +77,7 @@ const Puzzle3 = () => {
   };
 
   const checkAnswers = () => {
+    console.log(sound);
     const warp1Index = WarpList1.findIndex((element) => element === warp1);
     const warp2Index = WarpList2.findIndex((element) => element === warp2);
     const warp3Index = WarpList3.findIndex((element) => element === warp3);
