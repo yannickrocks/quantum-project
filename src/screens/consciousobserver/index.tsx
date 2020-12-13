@@ -1,14 +1,14 @@
 import React from "react";
 import FadeIn from "react-fade-in";
 import Background from "src/assets/Misc/background.png";
-import "./congratulations.css";
+import "./consciousobserver.css";
 
-const Congratulations = () => {
+const ConsciousObserver = () => {
   return (
     <>
       <img className="background" src={Background} alt="Background" />
-      <div className="congratulations">
-        <FadeIn delay={1500} transitionDuration={2000}>
+      <FadeIn delay={1500} transitionDuration={2000}>
+        <div className="congratulations">
           <div className="congratulations__video">
             <iframe
               title="congratulations"
@@ -54,10 +54,10 @@ const Congratulations = () => {
               </a>
             </div>
           </div>
-        </FadeIn>
-      </div>
+        </div>
+      </FadeIn>
     </>
   );
 };
 
-export default Congratulations;
+export default ConsciousObserver;

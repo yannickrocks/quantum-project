@@ -1,9 +1,9 @@
 import React from "react";
 import FadeIn from "react-fade-in";
 import Background from "src/assets/Misc/background.png";
-import "./failure.css";
+import "./terriblefate.css";
 
-const Failure = () => {
+const TerribleFate = () => {
   return (
     <>
       <img className="background" src={Background} alt="Background" />
@@ -31,4 +31,4 @@ const Failure = () => {
   );
 };
 
-export default Failure;
+export default TerribleFate;
