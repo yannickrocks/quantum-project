@@ -20,6 +20,7 @@ import {
   CorrectWarpList,
 } from "src/assets/WarpLists";
 import sound from "src/assets/Nomai_Warp_01.wav";
+import useSound from "use-sound";
 
 const Puzzle3 = () => {
   const [showGif, setGifFlag] = useState(false);
@@ -27,12 +28,8 @@ const Puzzle3 = () => {
   const [warp1, setWarp1] = useState(WarpList1[0]);
   const [warp2, setWarp2] = useState(WarpList2[0]);
   const [warp3, setWarp3] = useState(WarpList3[0]);
+  const [play] = useSound(sound);
   const history = useHistory();
-  const warpSound = new Audio(sound);
-
-  useEffect(() => {
-    warpSound.load();
-  }, [warpSound]);
 
   useEffect(() => {
     const handleCountdown = (time: string) => {
@@ -79,19 +76,6 @@ const Puzzle3 = () => {
     }
   };
 
-  const playSound = () => {
-    const audioPromise = warpSound.play();
-    if (audioPromise !== undefined) {
-      audioPromise
-        .then((response) => {
-          return response;
-        })
-        .catch((err) => {
-          console.info(err);
-        });
-    }
-  };
-
   const checkAnswers = () => {
     const warp1Index = WarpList1.findIndex((element) => element === warp1);
     const warp2Index = WarpList2.findIndex((element) => element === warp2);
@@ -102,7 +86,7 @@ const Puzzle3 = () => {
 
       setTimeout(() => {
         const inputArray = [warp1Index, warp2Index, warp3Index];
-        playSound();
+        play();
         var isCorrect = CorrectWarpList.every(
           (code, index) => code === inputArray[index]
         );
