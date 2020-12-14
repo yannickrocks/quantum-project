@@ -19,7 +19,6 @@ import FadeIn from "react-fade-in";
 import { useHistory } from "react-router-dom";
 import { CookiesProvider } from "react-cookie";
 import useSound from "use-sound";
-import warpSound from "../../assets/nomaiWarp.mp3";
 import "./puzzle3.css";
 
 const Puzzle3 = () => {
@@ -28,7 +27,8 @@ const Puzzle3 = () => {
   const [warp1, setWarp1] = useState(WarpList1[0]);
   const [warp2, setWarp2] = useState(WarpList2[0]);
   const [warp3, setWarp3] = useState(WarpList3[0]);
-  const [play, { sound }] = useSound("./nomaiWarp.mp3", {
+
+  const [play] = useSound("/sounds/nomaiWarp.mp3", {
     volume: 0.5,
     soundEnabled: true,
   });
@@ -79,7 +79,7 @@ const Puzzle3 = () => {
     }
   };
 
-  const checkAnswers = () => {
+  const checkAnswers = async () => {
     const warp1Index = WarpList1.findIndex((element) => element === warp1);
     const warp2Index = WarpList2.findIndex((element) => element === warp2);
     const warp3Index = WarpList3.findIndex((element) => element === warp3);
@@ -88,10 +88,9 @@ const Puzzle3 = () => {
       setGifFlag(!showGif);
 
       setTimeout(() => {
+        play();
         const inputArray = [warp1Index, warp2Index, warp3Index];
 
-        sound.play();
-        play();
         var isCorrect = CorrectWarpList.every(
           (code, index) => code === inputArray[index]
         );
@@ -195,12 +194,7 @@ const Puzzle3 = () => {
               />
             </div>
           </div>
-          <audio controls>
-            <source src={"./nomaiWarp.mp3"}></source>
-          </audio>
-          <audio controls>
-            <source src={warpSound}></source>
-          </audio>
+          <audio controls id="warpAudio" src={"/sounds/nomaiWarp.mp3"} />
         </div>
       </FadeIn>
     </CookiesProvider>
