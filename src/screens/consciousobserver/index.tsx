@@ -1,6 +1,6 @@
 import React from "react";
 import FadeIn from "react-fade-in";
-import Background from "src/assets/Misc/background.png";
+import Background from "../../assets/Misc/background.png";
 import "./consciousobserver.css";
 
 const ConsciousObserver = () => {

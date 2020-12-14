@@ -1,13 +1,16 @@
 import React, { useState } from "react";
-import Background from "src/assets/Misc/background.png";
-import ArmsOutStretchWithMoon from "src/assets/Misc/Arms-Outstretched-full_web.png";
-import QuantumPlanet from "src/components/quantum-planets";
-import { PlanetList, correctOrderOfClicking } from "src/assets/PlanetsList";
+import Background from "../../../assets/Misc/background.png";
+import ArmsOutStretchWithMoon from "../../../assets/Misc/Arms-Outstretched-full_web.png";
+import QuantumPlanet from "../../../components/quantum-planets";
+import {
+  PlanetList,
+  correctOrderOfClicking,
+} from "../../../assets/PlanetsList";
 import {
   WanderingMoonText,
   WanderingMoonIncorrect,
   WanderingMoonCorrect,
-} from "src/assets/Texts/Constants";
+} from "../../../assets/Texts/Constants";
 import FadeIn from "react-fade-in";
 import { motion } from "framer-motion";
 import "../puzzle2.css";

@@ -1,7 +1,7 @@
 import React from "react";
 import FadeIn from "react-fade-in";
-import Background from "src/assets/Misc/backgroundZaps.png";
-import Mask from "src/assets/Misc/Mask.png";
+import Background from "../../../assets/Misc/backgroundZaps.png";
+import Mask from "../../../assets/Misc/Mask.png";
 import "./opener2.css";
 
 const Puzzle3Opener = () => {

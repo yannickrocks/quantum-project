@@ -1,19 +1,19 @@
-import GSun from "src/assets/Planets/Grey/Sun-Grey_web.png";
-import GEye from "src/assets/Planets/Grey/Eye-Grey_web.png";
-import GTwins from "src/assets/Planets/Grey/Twins-Grey_web.png";
-import GTimberHearth from "src/assets/Planets/Grey/TH-Grey_web.png";
-import GBrittleHollow from "src/assets/Planets/Grey/BH-Grey_web.png";
-import GGiantsDeep from "src/assets/Planets/Grey/GD-Grey_web.png";
-import GDarkBramble from "src/assets/Planets/Grey/DB-Grey_web.png";
-import GQuantumMoon from "src/assets/Planets/Grey/QM-Grey_web.png";
-import PSun from "src/assets/Planets/Purple/Sun-Purple_web.png";
-import PEye from "src/assets/Planets/Purple/Eye-Purple_web.png";
-import PTwins from "src/assets/Planets/Purple/Twins-Purple_web.png";
-import PTimberHearth from "src/assets/Planets/Purple/TH-Purple_web.png";
-import PBrittleHollow from "src/assets/Planets/Purple/BH-Purple_web.png";
-import PGiantsDeep from "src/assets/Planets/Purple/GD-Purple_web.png";
-import PDarkBramble from "src/assets/Planets/Purple/DB-Purple_web.png";
-import PQuantumMoon from "src/assets/Planets/Purple/QM-Purple_web.png";
+import GSun from "./Planets/Grey/Sun-Grey_web.png";
+import GEye from "./Planets/Grey/Eye-Grey_web.png";
+import GTwins from "./Planets/Grey/Twins-Grey_web.png";
+import GTimberHearth from "./Planets/Grey/TH-Grey_web.png";
+import GBrittleHollow from "./Planets/Grey/BH-Grey_web.png";
+import GGiantsDeep from "./Planets/Grey/GD-Grey_web.png";
+import GDarkBramble from "./Planets/Grey/DB-Grey_web.png";
+import GQuantumMoon from "./Planets/Grey/QM-Grey_web.png";
+import PSun from "./Planets/Purple/Sun-Purple_web.png";
+import PEye from "./Planets/Purple/Eye-Purple_web.png";
+import PTwins from "./Planets/Purple/Twins-Purple_web.png";
+import PTimberHearth from "./Planets/Purple/TH-Purple_web.png";
+import PBrittleHollow from "./Planets/Purple/BH-Purple_web.png";
+import PGiantsDeep from "./Planets/Purple/GD-Purple_web.png";
+import PDarkBramble from "./Planets/Purple/DB-Purple_web.png";
+import PQuantumMoon from "./Planets/Purple/QM-Purple_web.png";
 
 export const PlanetList = [
   {

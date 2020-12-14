@@ -2,9 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import { SupportedBrowserWrapper } from "src/components/supported-browser-wrapper";
-import "src/index.css";
-import "src/App.css";
+import { SupportedBrowserWrapper } from "./components/supported-browser-wrapper";
+import "./index.css";
+import "./App.css";
 
 ReactDOM.render(
   <SupportedBrowserWrapper>

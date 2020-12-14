@@ -1,26 +1,25 @@
 import React, { useEffect, useState } from "react";
-import Background from "src/assets/Misc/background.png";
-import Statue from "src/assets/Misc/Statue-Awakened_web.png";
-import Launch1 from "src/assets/Warp-Purples/Launch_1.png";
-import LaunchGif from "src/assets/Warp-Purples/launch.gif";
-import { FinalVoyageText } from "src/assets/Texts/Constants";
-import Warp1NotFilled from "src/assets/Warp-Purples/WarpCore_1.png";
-import Warp2NotFilled from "src/assets/Warp-Purples/WarpCore_2.png";
-import Warp3NotFilled from "src/assets/Warp-Purples/WarpCore_3.png";
-import CountDown from "src/components/countdown";
-import FadeIn from "react-fade-in";
-import { CookiesProvider } from "react-cookie";
-import Warp from "src/components/warps";
-import "./puzzle3.css";
-import { useHistory } from "react-router-dom";
+import Background from "../../assets/Misc/background.png";
+import Statue from "../../assets/Misc/Statue-Awakened_web.png";
+import Launch1 from "../../assets/Warp-Purples/Launch_1.png";
+import LaunchGif from "../../assets/Warp-Purples/launch.gif";
+import { FinalVoyageText } from "../../assets/Texts/Constants";
+import Warp1NotFilled from "../../assets/Warp-Purples/WarpCore_1.png";
+import Warp2NotFilled from "../../assets/Warp-Purples/WarpCore_2.png";
+import Warp3NotFilled from "../../assets/Warp-Purples/WarpCore_3.png";
+import CountDown from "../../components/countdown";
+import Warp from "../../components/warps";
 import {
   WarpList1,
   WarpList2,
   WarpList3,
   CorrectWarpList,
-} from "src/assets/WarpLists";
-import sound from "src/assets/NomaiWarp.wav";
+} from "../../assets/WarpLists";
+import FadeIn from "react-fade-in";
+import { useHistory } from "react-router-dom";
+import { CookiesProvider } from "react-cookie";
 import useSound from "use-sound";
+import "./puzzle3.css";
 
 const Puzzle3 = () => {
   const [showGif, setGifFlag] = useState(false);

@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@craco/craco": "^5.6.4",
     "@types/node": "^12.0.0",
     "@types/react-router-dom": "^5.1.5",
     "detect-browser": "^5.1.1",
@@ -21,10 +20,10 @@
     "use-sound": "^2.0.1"
   },
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test",
-    "eject": "craco eject",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
     "typecheck": "tsc"
   },
   "eslintConfig": {
@@ -45,7 +44,6 @@
   "devDependencies": {
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
-    "@types/react-fade-in": "^0.1.0",
-    "craco-alias": "^2.1.1"
+    "@types/react-fade-in": "^0.1.0"
   }
 }

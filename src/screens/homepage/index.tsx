@@ -1,7 +1,7 @@
 import React from "react";
 import FadeIn from "react-fade-in";
-import OuterWildsLogo from "src/assets/Misc/Outerwilds-Logo_web.png";
-import { HomePageText } from "src/assets/Texts/Constants";
+import OuterWildsLogo from "../../assets/Misc/Outerwilds-Logo_web.png";
+import { HomePageText } from "../../assets/Texts/Constants";
 import "./homepage.css";
 
 const HomePage = () => {
