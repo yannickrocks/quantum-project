@@ -19,6 +19,7 @@ import FadeIn from "react-fade-in";
 import { useHistory } from "react-router-dom";
 import { CookiesProvider } from "react-cookie";
 import useSound from "use-sound";
+import warpSound from "../../assets/nomaiWarp.mp3";
 import "./puzzle3.css";
 
 const Puzzle3 = () => {
@@ -196,6 +197,9 @@ const Puzzle3 = () => {
           </div>
           <audio controls>
             <source src={"./nomaiWarp.mp3"}></source>
+          </audio>
+          <audio controls>
+            <source src={warpSound}></source>
           </audio>
         </div>
       </FadeIn>
