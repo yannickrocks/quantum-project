@@ -80,7 +80,7 @@ const CountDown: React.FC<CountDownProps> = ({ checkTimer }) => {
   return (
     <>
       <div className="timer">
-        {hours}:{minutes}:{seconds}
+        {hours}:{minutes}
       </div>
     </>
   );
