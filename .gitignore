@@ -8,5 +8,6 @@
 # production
 /build
 
-#netlify
-/.netlify
+
+# Local Netlify folder
+.netlify
