@@ -191,6 +191,9 @@ const Puzzle3 = () => {
               />
             </div>
           </div>
+          <audio controls>
+            <source src={process.env.PUBLIC_URL + "/NomaiWarp.mp3"}></source>
+          </audio>
         </div>
       </FadeIn>
     </CookiesProvider>
