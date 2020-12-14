@@ -19,6 +19,7 @@ import FadeIn from "react-fade-in";
 import { useHistory } from "react-router-dom";
 import { CookiesProvider } from "react-cookie";
 import useSound from "use-sound";
+import warpSound from "../../assets/NomaiWarp.mp3";
 import "./puzzle3.css";
 
 const Puzzle3 = () => {
@@ -27,7 +28,7 @@ const Puzzle3 = () => {
   const [warp1, setWarp1] = useState(WarpList1[0]);
   const [warp2, setWarp2] = useState(WarpList2[0]);
   const [warp3, setWarp3] = useState(WarpList3[0]);
-  const [play] = useSound(process.env.PUBLIC_URL + "/NomaiWarp.mp3", {
+  const [play] = useSound(warpSound, {
     volume: 0.5,
   });
   const history = useHistory();
@@ -192,7 +193,7 @@ const Puzzle3 = () => {
             </div>
           </div>
           <audio controls>
-            <source src={process.env.PUBLIC_URL + "/NomaiWarp.mp3"}></source>
+            <source src={warpSound}></source>
           </audio>
         </div>
       </FadeIn>
