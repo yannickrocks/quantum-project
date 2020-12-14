@@ -195,7 +195,6 @@ const Puzzle3 = () => {
               />
             </div>
           </div>
-          <audio controls id="warpAudio" src={warpSound} />
         </div>
       </FadeIn>
     </CookiesProvider>
