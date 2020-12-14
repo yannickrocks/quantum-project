@@ -41,7 +41,8 @@
 }
 
 .puzzle1__figure {
-  width: 30%;
+  width: 25%;
+  margin-top: 80px;
 }
 
 .puzzle1__figure img {
