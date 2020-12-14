@@ -15,7 +15,7 @@ const TerribleFate = () => {
               width="950"
               height="500"
               src="https://www.youtube.com/embed/uFjxs7ENhi4?autoplay=1"
-              allow="accelerometer1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allow="accelerometer1; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             />
           </div>
         </FadeIn>
