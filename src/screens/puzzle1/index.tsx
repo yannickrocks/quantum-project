@@ -67,6 +67,8 @@ const Puzzle1 = () => {
               height="360"
               src="https://www.youtube.com/embed/6Z5xqBUmkoI"
               allow="accelerometer1; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              frameBorder="0"
+              allowFullScreen
             />
           </div>
           <ul>

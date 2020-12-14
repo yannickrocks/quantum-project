@@ -28,7 +28,7 @@ const Puzzle3 = () => {
   const [warp1, setWarp1] = useState(WarpList1[0]);
   const [warp2, setWarp2] = useState(WarpList2[0]);
   const [warp3, setWarp3] = useState(WarpList3[0]);
-  const [play] = useSound(process.env.PUBLIC_URL + "/NomaiWarp.wav", {
+  const [play] = useSound(process.env.PUBLIC_URL + "/NomaiWarp.mp3", {
     volume: 0.5,
   });
   const history = useHistory();
@@ -137,7 +137,9 @@ const Puzzle3 = () => {
               width="640"
               height="360"
               src="https://www.youtube.com/embed/zV2yu1X8eOw"
-              allow="accelerometer1; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allow="accelerometer1; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
+              frameBorder="0"
+              allowFullScreen
             />
           </div>
           <ul>

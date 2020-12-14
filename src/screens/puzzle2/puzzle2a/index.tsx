@@ -88,6 +88,8 @@ const Puzzle2 = () => {
               height="360"
               src="https://www.youtube.com/embed/DA6TJTVH7W8"
               allow="accelerometer1; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              frameBorder="0"
+              allowFullScreen
             />
           </div>
           <ul className="puzzle2__planets">
