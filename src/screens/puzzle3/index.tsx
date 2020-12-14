@@ -102,7 +102,7 @@ const Puzzle3 = () => {
           : history.push({
               pathname: "/terriblefate",
             });
-      }, 2500);
+      }, 3000);
     }
   };
 
