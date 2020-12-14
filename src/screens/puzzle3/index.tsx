@@ -49,29 +49,29 @@ const Puzzle3 = () => {
   const handleWarpClick = (value: string, warptype: string) => {
     switch (warptype) {
       case "Warp1": {
-        const index = WarpList1.findIndex((element) => element === value);
-        if (index + 1 === WarpList1.length) {
+        const index = WarpList1.findIndex((element) => element === value) + 1;
+        if (index === WarpList1.length) {
           setWarp1(WarpList1[0]);
         } else {
-          setWarp1(WarpList1[index + 1]);
+          setWarp1(WarpList1[index]);
         }
         break;
       }
       case "Warp2": {
-        const index = WarpList2.findIndex((element) => element === value);
-        if (index + 1 === WarpList2.length) {
+        const index = WarpList2.findIndex((element) => element === value) + 1;
+        if (index === WarpList2.length) {
           setWarp2(WarpList2[0]);
         } else {
-          setWarp2(WarpList2[index + 1]);
+          setWarp2(WarpList2[index]);
         }
         break;
       }
       case "Warp3": {
-        const index = WarpList3.findIndex((element) => element === value);
-        if (index + 1 === WarpList3.length) {
+        const index = WarpList3.findIndex((element) => element === value) + 1;
+        if (index === WarpList3.length) {
           setWarp3(WarpList3[0]);
         } else {
-          setWarp3(WarpList3[index + 1]);
+          setWarp3(WarpList3[index]);
         }
         break;
       }
@@ -102,7 +102,7 @@ const Puzzle3 = () => {
           : history.push({
               pathname: "/terriblefate",
             });
-      }, 5000);
+      }, 2500);
     }
   };
 
