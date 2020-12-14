@@ -27,8 +27,9 @@ const Puzzle3 = () => {
   const [warp1, setWarp1] = useState(WarpList1[0]);
   const [warp2, setWarp2] = useState(WarpList2[0]);
   const [warp3, setWarp3] = useState(WarpList3[0]);
-  const [play] = useSound("./NomaiWarp.mp3", {
+  const [play, { sound }] = useSound("./nomaiWarp.mp3", {
     volume: 0.5,
+    soundEnabled: true,
   });
   const history = useHistory();
 
@@ -87,6 +88,8 @@ const Puzzle3 = () => {
 
       setTimeout(() => {
         const inputArray = [warp1Index, warp2Index, warp3Index];
+
+        sound.play();
         play();
         var isCorrect = CorrectWarpList.every(
           (code, index) => code === inputArray[index]
@@ -142,7 +145,7 @@ const Puzzle3 = () => {
             />
           </div>
           <ul>
-            <li key="Warp 1">
+            <li key="Warp1Com">
               <Warp
                 src={warp1}
                 name="Warp 1"
@@ -151,7 +154,7 @@ const Puzzle3 = () => {
               />
             </li>
 
-            <li key="Warp 2">
+            <li key="Warp2Com">
               <Warp
                 src={warp2}
                 name="Warp 2"
@@ -159,7 +162,7 @@ const Puzzle3 = () => {
                 changeImage={(value: string) => handleWarpClick(value, "Warp2")}
               />
             </li>
-            <li key="Warp 3">
+            <li key="Warp3Com">
               <Warp
                 src={warp3}
                 name="Warp 3"
@@ -192,7 +195,7 @@ const Puzzle3 = () => {
             </div>
           </div>
           <audio controls>
-            <source src={"./NomaiWarp.mp3"}></source>
+            <source src={"./nomaiWarp.mp3"}></source>
           </audio>
         </div>
       </FadeIn>
