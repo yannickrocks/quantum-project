@@ -19,7 +19,7 @@ import {
   WarpList3,
   CorrectWarpList,
 } from "src/assets/WarpLists";
-import sound from "src/assets/Nomai_Warp_01.wav";
+import sound from "src/assets/NomaiWarp.wav";
 import useSound from "use-sound";
 
 const Puzzle3 = () => {
@@ -77,7 +77,6 @@ const Puzzle3 = () => {
   };
 
   const checkAnswers = () => {
-    console.log(sound);
     const warp1Index = WarpList1.findIndex((element) => element === warp1);
     const warp2Index = WarpList2.findIndex((element) => element === warp2);
     const warp3Index = WarpList3.findIndex((element) => element === warp3);
