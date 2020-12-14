@@ -1,5 +1,3 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## OuterWilds Spin-off Puzzle
 
 This game is a spin off the amazing game known as [Outer Wilds](https://www.mobiusdigitalgames.com/outer-wilds.html)
@@ -10,4 +8,11 @@ Please enjoy the work we have created, because we know we have.
 
 Go on an adventure, and roam free...
 
-The offical website is [HERE](https://outerwilds1128.com/)
+Our Puzzle website is just right [HERE](https://outerwilds1128.com/)
+
+---
+
+Technologies used:
+
+- React Hooks
+- Typescript
