@@ -28,7 +28,9 @@ const Puzzle3 = () => {
   const [warp1, setWarp1] = useState(WarpList1[0]);
   const [warp2, setWarp2] = useState(WarpList2[0]);
   const [warp3, setWarp3] = useState(WarpList3[0]);
-  const [play] = useSound(sound);
+  const [play] = useSound(process.env.PUBLIC_URL + "/NomaiWarp.wav", {
+    volume: 0.5,
+  });
   const history = useHistory();
 
   useEffect(() => {
