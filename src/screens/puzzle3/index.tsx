@@ -32,8 +32,6 @@ const Puzzle3 = () => {
   });
   const history = useHistory();
 
-  let audio = new AudioContext();
-
   useEffect(() => {
     const handleCountdown = (time: string) => {
       if (parseInt(time) === 0) {
@@ -89,7 +87,6 @@ const Puzzle3 = () => {
 
       setTimeout(() => {
         const inputArray = [warp1Index, warp2Index, warp3Index];
-        audio.resume();
         play();
         var isCorrect = CorrectWarpList.every(
           (code, index) => code === inputArray[index]
