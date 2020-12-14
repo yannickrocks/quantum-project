@@ -2,15 +2,12 @@ import React, { useState } from "react";
 import Background from "../../../assets/Misc/background.png";
 import ArmsOutStretchNoMoon from "../../../assets/Misc/Arms-Outstretched_web.png";
 import QuantumPlanet from "../../../components/quantum-planets";
-import {
-  PlanetList,
-  correctOrderOfClicking,
-} from "../../../assets/PlanetsList";
+import { PlanetList, correctOrderOfClicking } from "../../../utils/PlanetsList";
 import {
   WanderingMoonText,
   WanderingMoonIncorrect,
   WanderingMoonAlmostCorrect,
-} from "../../../assets/Texts/Constants";
+} from "../../../utils/Constants";
 import FadeIn from "react-fade-in";
 import { motion } from "framer-motion";
 import "../puzzle2.css";

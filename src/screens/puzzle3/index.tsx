@@ -3,7 +3,7 @@ import Background from "../../assets/Misc/background.png";
 import Statue from "../../assets/Misc/Statue-Awakened_web.png";
 import Launch1 from "../../assets/Warp-Purples/Launch_1.png";
 import LaunchGif from "../../assets/Warp-Purples/launch.gif";
-import { FinalVoyageText } from "../../assets/Texts/Constants";
+import { FinalVoyageText } from "../../utils/Constants";
 import Warp1NotFilled from "../../assets/Warp-Purples/WarpCore_1.png";
 import Warp2NotFilled from "../../assets/Warp-Purples/WarpCore_2.png";
 import Warp3NotFilled from "../../assets/Warp-Purples/WarpCore_3.png";
@@ -14,7 +14,7 @@ import {
   WarpList2,
   WarpList3,
   CorrectWarpList,
-} from "../../assets/WarpLists";
+} from "../../utils/WarpLists";
 import FadeIn from "react-fade-in";
 import { useHistory } from "react-router-dom";
 import { CookiesProvider } from "react-cookie";
