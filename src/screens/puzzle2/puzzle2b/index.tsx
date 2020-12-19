@@ -4,7 +4,6 @@ import ArmsOutStretchWithMoon from "../../../assets/Misc/Arms-Outstretched-full_
 import QuantumPlanet from "../../../components/quantum-planets";
 import { PlanetList, correctOrderOfClicking } from "../../../utils/PlanetsList";
 import {
-  WanderingMoonText,
   WanderingMoonIncorrect,
   WanderingMoonCorrect,
 } from "../../../utils/Constants";
