@@ -4,13 +4,13 @@ import ArmsOutStretchNoMoon from "../../../assets/Misc/Arms-Outstretched_web.png
 import QuantumPlanet from "../../../components/quantum-planets";
 import { PlanetList, correctOrderOfClicking } from "../../../utils/PlanetsList";
 import {
-  WanderingMoonText,
   WanderingMoonIncorrect,
   WanderingMoonAlmostCorrect,
 } from "../../../utils/Constants";
 import FadeIn from "react-fade-in";
 import { motion } from "framer-motion";
 import "../puzzle2.css";
+import NomaiWithText from "../../../components/nomai-text";
 
 const Puzzle2 = () => {
   const adjustedPlanetList = PlanetList.filter((x) => x.planet !== "Sun");
@@ -65,18 +65,7 @@ const Puzzle2 = () => {
       <FadeIn delay={600} transitionDuration={2000}>
         <div className="p-wanderingmoon">
           <div className="puzzle2__detailsAndImage">
-            <div className="puzzle2__details">
-              <h2>The Wandering Moon</h2>
-              <p>
-                {WanderingMoonText.map((item) => (
-                  <>
-                    {item}
-                    <br />
-                    <br />
-                  </>
-                ))}
-              </p>
-            </div>
+            <NomaiWithText />
             <figure className="puzzle2__figure">
               <img src={ArmsOutStretchNoMoon} alt="Arms Stretch Out No Moon" />
             </figure>

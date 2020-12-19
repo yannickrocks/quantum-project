@@ -50,3 +50,14 @@
   color: #388861;
   font-size: 32px;
 }
+
+.credits__details--marginYan {
+  margin-left: 5px;
+  margin-right: 5px;
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.credits__details--marginYan:hover {
+  color: #388861;
+}

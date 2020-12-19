@@ -25,6 +25,17 @@
   padding-top: 50px;
 }
 
+.puzzle2__details--row {
+  display: flex;
+  flex-direction: row;
+}
+
+.puzzle2__details img {
+  width: 5%;
+  margin-bottom: 0;
+  margin-right: 10px;
+}
+
 .puzzle2__details h2 {
   margin-top: 40px;
   color: #5341ae;
@@ -33,7 +44,7 @@
   margin-bottom: 0;
 }
 
-.puzzle2__details p {
+.puzzle2__details div {
   text-align: left;
   color: #ffffff;
   font-size: 16px;

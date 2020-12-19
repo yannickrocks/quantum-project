@@ -18,56 +18,59 @@ const ConsciousObserver = () => {
               allow="accelerometer1; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             />
           </div>
-
-          <div className="credits__mvps">
-            <div className="credits__josh">
-              <h2 className="credits__josh__title">Josh Lane-Trumper</h2>
-              <p className="credits__details">
-                Artwork, Puzzle and Web Design, Videography
-              </p>
-              <div className="credits__details">
-                <a
-                  className="credits__details--margin"
-                  href="https://www.artstation.com/joshtrumper"
-                >
-                  Artwork Portfolio
-                </a>
-                |
-                <a
-                  className="credits__details--margin"
-                  href="https://www.behance.net/JoshTrumper"
-                >
-                  Design Portfolio
-                </a>
-                |
-                <a
-                  className="credits__details--margin"
-                  href="https://www.instagram.com/joshan_meow"
-                >
-                  Instagram
-                </a>
+          <FadeIn delay={165000} transitionDuration={2000}>
+            <div className="credits__mvps">
+              <div className="credits__josh">
+                <h2 className="credits__josh__title">Josh Lane-Trumper</h2>
+                <p className="credits__details">
+                  Artwork, Puzzle and Web Design, Videography
+                </p>
+                <div className="credits__details">
+                  <a
+                    className="credits__details--margin"
+                    href="https://www.artstation.com/joshtrumper"
+                  >
+                    Artwork Portfolio
+                  </a>
+                  |
+                  <a
+                    className="credits__details--margin"
+                    href="https://www.behance.net/JoshTrumper"
+                  >
+                    Design Portfolio
+                  </a>
+                  |
+                  <a
+                    className="credits__details--margin"
+                    href="https://www.instagram.com/joshan_meow"
+                  >
+                    Instagram
+                  </a>
+                </div>
+              </div>
+              <div className="credits__yan">
+                <h2 className="credits__yan__title">Yannick Mermet</h2>
+                <p className="credits__details">
+                  Website Code and Puzzle Implementation{" "}
+                </p>
+                <div className="credits__details">
+                  <a
+                    className="credits__details--marginYan"
+                    href="https://github.com/yannickrocks"
+                  >
+                    Coding Portfolio
+                  </a>
+                  |
+                  <a
+                    className="credits__details--marginYan"
+                    href="https://www.instagram.com/adventuresofyan"
+                  >
+                    Instagram
+                  </a>
+                </div>
               </div>
             </div>
-            <div className="credits__yan">
-              <h2 className="credits__yan__title">Yannick Mermet</h2>
-              <p className="credits__details">
-                Website Code and Puzzle Implementation
-              </p>
-              <a
-                className="credits__details--margin"
-                href="https://github.com/yannickrocks"
-              >
-                Coding Portfolio
-              </a>
-              |
-              <a
-                className="credits__details--margin"
-                href="https://www.instagram.com/adventuresofyan"
-              >
-                Instagram
-              </a>
-            </div>
-          </div>
+          </FadeIn>
         </div>
       </FadeIn>
     </>
