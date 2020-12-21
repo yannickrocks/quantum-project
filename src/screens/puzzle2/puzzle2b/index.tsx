@@ -43,6 +43,7 @@ const Puzzle2 = () => {
         }
       });
     } else {
+      setDisplayCorrectMessage(false);
       setDisplayIncorrectMessage(true);
       return false;
     }

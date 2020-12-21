@@ -42,6 +42,7 @@ const Puzzle2 = () => {
         }
       });
     } else {
+      setDisplayTrackingMessage(false);
       setDisplayIncorrectMessage(true);
       return false;
     }
