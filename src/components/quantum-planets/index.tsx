@@ -1,6 +1,7 @@
-import React from "react";
-import { motion } from "framer-motion";
-import "./quantumPlanets.css";
+import React from 'react';
+import { motion } from 'framer-motion';
+import './quantumPlanets.css';
+import styles from './quantumPlanets.styles';
 
 type QuantumPlanetProps = {
   src: string;
@@ -28,42 +29,43 @@ const Planet: React.FC<QuantumPlanetProps> = ({
     onPlanetCodeChange((event.currentTarget as any).index);
   };
 
-  const isPageA = pageAorB === "pageA";
+  const isPageA = pageAorB === 'pageA';
 
   return (
     <motion.li
+      className={styles.li}
       key={planetId}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
     >
       {isPageA ? (
-        <figure className="puzzle2__planets__figure" onClick={handleChange}>
-          <img className="puzzle2__planets__img" src={src} alt={planetId} />
+        <figure className={styles.planets__figure} onClick={handleChange}>
+          <img className={styles.planets__img} src={src} alt={planetId} />
           {hasBeenClickedOn ? (
             <img
-              className="puzzle2__planets__moon"
+              className={styles.planets__moon}
               src={greyQuantumMoon}
-              alt="QuantumMoom"
+              alt='QuantumMoon'
             />
           ) : (
-            ""
+            ''
           )}
         </figure>
       ) : (
-        <figure className="puzzle2__planets__figure" onClick={handleChange}>
+        <figure className={styles.planets__figure} onClick={handleChange}>
           <img
-            className="puzzle2__planets__img"
+            className={styles.planets__img}
             src={hasBeenClickedOn ? answerSrc : src}
             alt={planetId}
           />
           {hasBeenClickedOn ? (
             <img
-              className="puzzle2__planets__moon"
+              className={styles.planets__moon}
               src={purpleQuantumMoon}
-              alt={"QuantumMoom"}
+              alt={'QuantumMoon'}
             />
           ) : (
-            ""
+            ''
           )}
         </figure>
       )}

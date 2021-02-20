@@ -1,27 +1,27 @@
-import React, { useState } from "react";
-import Background from "../../../assets/Misc/background.png";
-import ArmsOutStretchNoMoon from "../../../assets/Misc/Arms-Outstretched_web.png";
-import QuantumPlanet from "../../../components/quantum-planets";
-import { PlanetList, correctOrderOfClicking } from "../../../utils/PlanetsList";
+import React, { useState } from 'react';
+import Background from '../../../assets/Misc/background.png';
+import ArmsOutStretchNoMoon from '../../../assets/Misc/Arms-Outstretched_web.png';
+import QuantumPlanet from '../../../components/quantum-planets';
+import { PlanetList, correctOrderOfClicking } from '../../../utils/PlanetsList';
 import {
   WanderingMoonIncorrect,
   WanderingMoonAlmostCorrect,
-} from "../../../utils/Constants";
-import FadeIn from "react-fade-in";
-import { motion } from "framer-motion";
-import "../puzzle2.css";
-import NomaiWithText from "../../../components/nomai-text";
+} from '../../../utils/Constants';
+import FadeIn from 'react-fade-in';
+import { motion } from 'framer-motion';
+import NomaiWithText from '../../../components/nomai-text';
+import styles from '../puzzle2.styles';
 
 const Puzzle2 = () => {
-  const adjustedPlanetList = PlanetList.filter((x) => x.planet !== "Sun");
+  const adjustedPlanetList = PlanetList.filter((x) => x.planet !== 'Sun');
   const [planetCodes, setPlanetCodes] = useState<Array<number>>([]);
   const [showMoon, setShowMoon] = useState<Array<number>>([]);
   const [showRefreshButton, setRefreshToggle] = useState(false);
   const [displayIncorrectMessage, setDisplayIncorrectMessage] = useState(false);
   const [displayTrackingMessage, setDisplayTrackingMessage] = useState(false);
-  const page = "pageA";
+  const page = 'pageA';
 
-  const addOrRemoveFromAnwserArray = (indexToChange: number) => {
+  const addOrRemoveFromAnswerArray = (indexToChange: number) => {
     const newArray = [...planetCodes, indexToChange];
     setPlanetCodes(newArray);
 
@@ -62,51 +62,56 @@ const Puzzle2 = () => {
 
   return (
     <>
-      <img className="background" src={Background} alt="Background" />
+      <img className={styles.background} src={Background} alt='Background' />
       <FadeIn delay={600} transitionDuration={2000}>
-        <div className="p-wanderingmoon">
-          <div className="puzzle2__detailsAndImage">
+        <div className={styles.pWanderingmoon}>
+          <div className={styles.detailsAndImageDiv}>
             <NomaiWithText />
-            <figure className="puzzle2__figure">
-              <img src={ArmsOutStretchNoMoon} alt="Arms Stretch Out No Moon" />
+            <figure className={styles.figure}>
+              <img
+                className={styles.figure_img}
+                src={ArmsOutStretchNoMoon}
+                alt='Arms Stretch Out No Moon'
+              />
             </figure>
           </div>
-          <div className="puzzle2__video">
+          <div className={styles.video}>
             <iframe
-              title="puzzle2a"
-              width="640"
-              height="360"
-              src="https://www.youtube.com/embed/DA6TJTVH7W8"
-              allow="accelerometer1; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              frameBorder="0"
+              className={styles.iframe}
+              title='puzzle2a'
+              width='640'
+              height='360'
+              src='https://www.youtube.com/embed/DA6TJTVH7W8'
+              allow='accelerometer1; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+              frameBorder='0'
               allowFullScreen
             />
           </div>
-          <ul className="puzzle2__planets">
+          <ul className={styles.quantumPlanets_ul}>
             {adjustedPlanetList.map((item, index) => (
               <QuantumPlanet
                 key={index}
-                src={item.src}
+                src={item.standardImg}
                 planetId={item.planet}
                 hasBeenClickedOn={showMoon.includes(index)}
                 greyQuantumMoon={item.QuantumMoon.Grey}
                 pageAorB={page}
                 onPlanetCodeChange={() => {
-                  addOrRemoveFromAnwserArray(index);
+                  addOrRemoveFromAnswerArray(index);
                 }}
               />
             ))}
           </ul>
-          <div className="puzzle2__buttons">
+          <div className={styles.buttons}>
             {displayTrackingMessage ? (
-              <p className="puzzle2__buttons--almostCorrectText">
+              <p className={styles.buttons__almostCorrectText}>
                 {WanderingMoonAlmostCorrect}
               </p>
             ) : (
               <></>
             )}
             {displayIncorrectMessage ? (
-              <p className="puzzle2__buttons--incorrectText">
+              <p className={styles.buttons__incorrectText}>
                 {WanderingMoonIncorrect}
               </p>
             ) : (
@@ -114,7 +119,7 @@ const Puzzle2 = () => {
             )}
             {showRefreshButton ? (
               <motion.button
-                className="puzzle2__buttons--reset"
+                className={styles.buttons__reset}
                 onClick={refresh}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -122,12 +127,12 @@ const Puzzle2 = () => {
                 Refresh
               </motion.button>
             ) : (
-              <button className="puzzle2__buttons--reset" onClick={reset}>
+              <button className={styles.buttons__reset} onClick={reset}>
                 Reset
               </button>
             )}
             <button
-              className="puzzle2__buttons--checkAnswers"
+              className={styles.buttons__checkAnswers}
               onClick={checkAnswers}
             >
               Check

@@ -1,27 +1,27 @@
-import React, { useState } from "react";
-import Background from "../../../assets/Misc/background.png";
-import ArmsOutStretchWithMoon from "../../../assets/Misc/Arms-Outstretched-full_web.png";
-import QuantumPlanet from "../../../components/quantum-planets";
-import { PlanetList, correctOrderOfClicking } from "../../../utils/PlanetsList";
+import React, { useState } from 'react';
+import Background from '../../../assets/Misc/background.png';
+import ArmsOutStretchWithMoon from '../../../assets/Misc/Arms-Outstretched-full_web.png';
+import QuantumPlanet from '../../../components/quantum-planets';
+import { PlanetList, correctOrderOfClicking } from '../../../utils/PlanetsList';
 import {
   WanderingMoonIncorrect,
   WanderingMoonCorrect,
-} from "../../../utils/Constants";
-import FadeIn from "react-fade-in";
-import { motion } from "framer-motion";
-import "../puzzle2.css";
-import NomaiWithText from "../../../components/nomai-text";
+} from '../../../utils/Constants';
+import FadeIn from 'react-fade-in';
+import { motion } from 'framer-motion';
+import NomaiWithText from '../../../components/nomai-text';
+import styles from '../puzzle2.styles';
 
 const Puzzle2 = () => {
-  const adjustedPlanetList = PlanetList.filter((x) => x.planet !== "Sun");
+  const adjustedPlanetList = PlanetList.filter((x) => x.planet !== 'Sun');
   const [planetCodes, setPlanetCodes] = useState<Array<number>>([]);
   const [showMoon, setShowMoon] = useState<Array<number>>([]);
   const [showRefreshButton2b, setRefreshToggle2b] = useState(false);
   const [displayIncorrectMessage, setDisplayIncorrectMessage] = useState(false);
   const [displayCorrectMessage, setDisplayCorrectMessage] = useState(false);
-  const page = "pageB";
+  const page = 'pageB';
 
-  const addOrRemoveFromAnwserArray = (indexToChange: number) => {
+  const addOrRemoveFromAnswerArray = (indexToChange: number) => {
     const newArray = [...planetCodes, indexToChange];
     setPlanetCodes(newArray);
 
@@ -62,53 +62,55 @@ const Puzzle2 = () => {
 
   return (
     <>
-      <img className="background" src={Background} alt="Background" />
+      <img className={styles.background} src={Background} alt='Background' />
       <FadeIn delay={600} transitionDuration={2000}>
-        <div className="p-wanderingmoon">
-          <div className="puzzle2__detailsAndImage">
+        <div className={styles.pWanderingmoon}>
+          <div className={styles.detailsAndImageDiv}>
             <NomaiWithText />
-            <figure className="puzzle2__figure">
+            <figure className={styles.figure}>
               <img
+                className={styles.figure_img}
                 src={ArmsOutStretchWithMoon}
-                alt="Arms Stretch Out with Moon"
+                alt='Arms Stretch Out with Moon'
               />
             </figure>
           </div>
-          <div className="puzzle2__video">
+          <div className={styles.video}>
             <iframe
-              title="puzzle2b"
-              width="640"
-              height="360"
-              src="https://www.youtube.com/embed/DA6TJTVH7W8"
-              allow="accelerometer1; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              frameBorder="0"
+              className={styles.iframe}
+              title='puzzle2b'
+              width='640'
+              height='360'
+              src='https://www.youtube.com/embed/DA6TJTVH7W8'
+              allow='accelerometer1; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+              frameBorder='0'
               allowFullScreen
             />
           </div>
-          <ul className="puzzle2__planets">
+          <ul className={styles.quantumPlanets_ul}>
             {adjustedPlanetList.map((item, index) => (
               <QuantumPlanet
                 key={index}
-                src={item.src}
+                src={item.standardImg}
                 answerSrc={item.answerSrc}
                 planetId={item.planet}
                 hasBeenClickedOn={showMoon.includes(index)}
                 purpleQuantumMoon={item.QuantumMoon.Purple}
                 pageAorB={page}
                 onPlanetCodeChange={() => {
-                  addOrRemoveFromAnwserArray(index);
+                  addOrRemoveFromAnswerArray(index);
                 }}
               />
             ))}
           </ul>
-          <div className="puzzle2__buttons">
+          <div className={styles.buttons}>
             {displayCorrectMessage ? (
-              <p className="puzzle2--correctText">{WanderingMoonCorrect}</p>
+              <p className={styles.correctText}>{WanderingMoonCorrect}</p>
             ) : (
               <></>
             )}
             {displayIncorrectMessage ? (
-              <p className="puzzle2__buttons--incorrectText">
+              <p className={styles.buttons__incorrectText}>
                 {WanderingMoonIncorrect}
               </p>
             ) : (
@@ -116,7 +118,7 @@ const Puzzle2 = () => {
             )}
             {showRefreshButton2b ? (
               <motion.button
-                className="puzzle2__buttons--reset"
+                className={styles.buttons__reset}
                 onClick={refresh}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -124,21 +126,21 @@ const Puzzle2 = () => {
                 Refresh
               </motion.button>
             ) : (
-              <button className="puzzle2__buttons--reset" onClick={reset}>
+              <button className={styles.buttons__reset} onClick={reset}>
                 Reset
               </button>
             )}
             {!displayCorrectMessage ? (
               <button
-                className="puzzle2__buttons--checkAnswers"
+                className={styles.buttons__checkAnswers}
                 onClick={checkAnswers}
               >
                 Check
               </button>
             ) : (
               <motion.a
-                className="puzzle2__buttons--proceed"
-                href="/wakeupagain"
+                className={styles.buttons__proceed}
+                href='/wakeupagain'
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
               >

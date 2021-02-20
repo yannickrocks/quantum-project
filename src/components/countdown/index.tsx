@@ -1,7 +1,7 @@
 import moment from "moment";
 import React, { useState, useEffect } from "react";
 import { useCookies } from "react-cookie";
-import "./countdown.css";
+import styles from "./countdown.styles";
 
 type CountDownProps = {
   checkTimer(value: string): void;
@@ -79,7 +79,7 @@ const CountDown: React.FC<CountDownProps> = ({ checkTimer }) => {
 
   return (
     <>
-      <div className="timer">
+      <div className={styles.timer}>
         {hours}:{minutes}
       </div>
     </>

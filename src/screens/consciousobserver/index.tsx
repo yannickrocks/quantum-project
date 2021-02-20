@@ -1,69 +1,73 @@
-import React from "react";
-import FadeIn from "react-fade-in";
-import Background from "../../assets/Misc/background.png";
-import "./consciousobserver.css";
+import React from 'react';
+import FadeIn from 'react-fade-in';
+import Background from '../../assets/Misc/background.png';
+import styles from './consciousObserver.styles';
 
 const ConsciousObserver = () => {
   return (
     <>
-      <img className="background" src={Background} alt="Background" />
+      <img className={styles.background} src={Background} alt='Background' />
       <FadeIn delay={1500} transitionDuration={2000}>
-        <div className="congratulations">
-          <div className="congratulations__video">
+        <div className={styles.congratulations}>
+          <div className={styles.congratulations__video}>
             <iframe
-              title="congratulations"
-              width="950"
-              height="500"
-              src="https://www.youtube.com/embed/OOjbSrUIAe4?autoplay=1"
-              allow="accelerometer1; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              className={styles.iframe}
+              title='congratulations'
+              width='950'
+              height='500'
+              src='https://www.youtube.com/embed/OOjbSrUIAe4?autoplay=1'
+              allow='accelerometer1; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
             />
           </div>
-          <FadeIn delay={165000} transitionDuration={2000}>
-            <div className="credits__mvps">
-              <div className="credits__josh">
-                <h2 className="credits__josh__title">Josh Lane-Trumper</h2>
-                <p className="credits__details">
+          {/* 165000 */}
+          <FadeIn delay={200} transitionDuration={2000}>
+            <div className={styles.credits__mvps}>
+              <div className='credits__josh'>
+                <h2 className={styles.credits__josh__title}>
+                  Josh Lane-Trumper
+                </h2>
+                <p className={styles.credits__details}>
                   Artwork, Puzzle and Web Design, Videography
                 </p>
-                <div className="credits__details">
+                <div className={styles.credits__details}>
                   <a
-                    className="credits__details--margin"
-                    href="https://www.artstation.com/joshtrumper"
+                    className={styles.credits__details__margin}
+                    href='https://www.artstation.com/joshtrumper'
                   >
                     Artwork Portfolio
                   </a>
                   |
                   <a
-                    className="credits__details--margin"
-                    href="https://www.behance.net/JoshTrumper"
+                    className={styles.credits__details__margin}
+                    href='https://www.behance.net/JoshTrumper'
                   >
                     Design Portfolio
                   </a>
                   |
                   <a
-                    className="credits__details--margin"
-                    href="https://www.instagram.com/joshan_meow"
+                    className={styles.credits__details__margin}
+                    href='https://www.instagram.com/joshan_meow'
                   >
                     Instagram
                   </a>
                 </div>
               </div>
-              <div className="credits__yan">
-                <h2 className="credits__yan__title">Yannick Mermet</h2>
-                <p className="credits__details">
-                  Website Code and Puzzle Implementation{" "}
+              <div className='credits__yan'>
+                <h2 className={styles.credits__yan__title}>Yannick Mermet</h2>
+                <p className={styles.credits__details}>
+                  Website Code and Puzzle Implementation{' '}
                 </p>
-                <div className="credits__details">
+                <div className={styles.credits__details}>
                   <a
-                    className="credits__details--marginYan"
-                    href="https://github.com/yannickrocks"
+                    className={styles.credits__details__marginYan}
+                    href='https://github.com/yannickrocks'
                   >
                     Coding Portfolio
                   </a>
                   |
                   <a
-                    className="credits__details--marginYan"
-                    href="https://www.instagram.com/adventuresofyan"
+                    className={styles.credits__details__marginYan}
+                    href='https://www.instagram.com/adventuresofyan'
                   >
                     Instagram
                   </a>

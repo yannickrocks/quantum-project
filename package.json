@@ -17,6 +17,7 @@
     "react-scripts": "^3.4.3",
     "react-use-keypress": "^1.0.1",
     "typescript": "~3.7.2",
+    "typestyle": "^2.1.0",
     "use-sound": "^2.0.1"
   },
   "scripts": {

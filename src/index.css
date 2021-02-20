@@ -1,36 +1,21 @@
-/* @font-face {
-  font-family: "Itc serif gothic";
-  font-style: normal;
-  src: local("SerifGothicStd"),
-    url(./fonts/SerifGothicStd.otf) format("opentype");
-}
-
 @font-face {
-  font-family: "Itc serif gothic";
-  font-style: normal;
-  font-weight: bold;
-  src: local("SerifGothicStd ExtraBold"), local("SerifGothicStd-ExtraBold"),
-    url(./fonts/SerifGothicStd-ExtraBold.otf) format("opentype");
-} */
-
-@font-face {
-  font-family: "AndroclesOpti-Regular";
-  src: url(./fonts/AndroclesOpti-Regular.ttf.woff) format("woff"),
+  font-family: 'AndroclesOpti-Regular';
+  src: url(./fonts/AndroclesOpti-Regular.ttf.woff) format('woff'),
     url(./fonts/AndroclesOpti-Regular.ttf.svg#AndroclesOpti-Regular)
-      format("svg"),
+      format('svg'),
     url(./fonts/AndroclesOpti-Regular.ttf.eot),
     url(./fonts/AndroclesOpti-Regular.ttf.eot?#iefix)
-      format("embedded-opentype");
+      format('embedded-opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "AndroclesOpti-Heavy";
-  src: url(./fonts/AndroclesOpti-Heavy.ttf.woff) format("woff"),
-    url(./fonts/AndroclesOpti-Heavy.ttf.svg#AndroclesOpti-Heavy) format("svg"),
+  font-family: 'AndroclesOpti-Heavy';
+  src: url(./fonts/AndroclesOpti-Heavy.ttf.woff) format('woff'),
+    url(./fonts/AndroclesOpti-Heavy.ttf.svg#AndroclesOpti-Heavy) format('svg'),
     url(./fonts/AndroclesOpti-Heavy.ttf.eot),
-    url(./fonts/AndroclesOpti-Heavy.ttf.eot?#iefix) format("embedded-opentype");
+    url(./fonts/AndroclesOpti-Heavy.ttf.eot?#iefix) format('embedded-opentype');
   font-weight: normal;
   font-style: normal;
 }

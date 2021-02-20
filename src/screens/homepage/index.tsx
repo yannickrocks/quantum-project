@@ -1,18 +1,22 @@
-import React from "react";
-import FadeIn from "react-fade-in";
-import OuterWildsLogo from "../../assets/Misc/Outerwilds-Logo_web.png";
-import { HomePageText } from "../../utils/Constants";
-import "./homepage.css";
+import React from 'react';
+import FadeIn from 'react-fade-in';
+import OuterWildsLogo from '../../assets/Misc/Outerwilds-Logo_web.png';
+import { HomePageText } from '../../utils/Constants';
+import styles from './homepage.styles';
 
 const HomePage = () => {
   return (
     <FadeIn delay={600} transitionDuration={2000}>
-      <div className="homepage">
-        <figure className="figureLogo">
-          <img className="figureLogo__logo" src={OuterWildsLogo} alt="logo" />
+      <div className={styles.homepage}>
+        <figure className={styles.figureLogo}>
+          <img
+            className={styles.figureLogo__logo}
+            src={OuterWildsLogo}
+            alt='logo'
+          />
         </figure>
-        <h2 className="welcomeText">Welcome, Astronaut</h2>
-        <p className="description">
+        <h2 className={styles.welcomeText}>Welcome, Astronaut</h2>
+        <p className={styles.description}>
           <br />
           {HomePageText.map((item) => (
             <>
@@ -22,8 +26,8 @@ const HomePage = () => {
             </>
           ))}
         </p>
-        <div className="launch">
-          <a className="launchButton" href="/22minutes">
+        <div className={styles.launch}>
+          <a className={styles.launchButton} href='/22minutes'>
             Launch
           </a>
         </div>
