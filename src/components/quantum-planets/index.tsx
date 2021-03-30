@@ -15,7 +15,7 @@ type QuantumPlanetProps = {
   onPlanetCodeChange(index: string): void;
 };
 
-const Planet: React.FC<QuantumPlanetProps> = ({
+const Planet = ({
   src,
   answerSrc,
   planetId,
@@ -24,7 +24,7 @@ const Planet: React.FC<QuantumPlanetProps> = ({
   purpleQuantumMoon,
   pageAorB,
   onPlanetCodeChange,
-}) => {
+}: QuantumPlanetProps) => {
   const handleChange = (event: React.MouseEvent<HTMLElement>) => {
     onPlanetCodeChange((event.currentTarget as any).index);
   };

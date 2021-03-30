@@ -49,14 +49,6 @@ export default stylesheet({
       },
     },
   },
-  puzzle1__video: {
-    display: 'flex',
-    justifyContent: 'center',
-    marginTop: '-60px',
-  },
-  iframe: {
-    border: 'none',
-  },
   T2minutes__ul: {
     display: 'flex',
     flexDirection: 'row',

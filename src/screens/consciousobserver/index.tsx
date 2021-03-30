@@ -1,5 +1,6 @@
 import React from 'react';
 import FadeIn from 'react-fade-in';
+import VideoPlayer from '../../components/videoplayer';
 import Background from '../../assets/Misc/background.png';
 import styles from './consciousObserver.styles';
 
@@ -9,18 +10,12 @@ const ConsciousObserver = () => {
       <img className={styles.background} src={Background} alt='Background' />
       <FadeIn delay={1500} transitionDuration={2000}>
         <div className={styles.congratulations}>
-          <div className={styles.congratulations__video}>
-            <iframe
-              className={styles.iframe}
-              title='congratulations'
-              width='950'
-              height='500'
-              src='https://www.youtube.com/embed/OOjbSrUIAe4?autoplay=1'
-              allow='accelerometer1; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-            />
-          </div>
-          {/* 165000 */}
-          <FadeIn delay={200} transitionDuration={2000}>
+          <VideoPlayer
+            width={950}
+            height={500}
+            url='https://www.youtube.com/embed/OOjbSrUIAe4?autoplay=1'
+          />
+          <FadeIn delay={165000} transitionDuration={2000}>
             <div className={styles.credits__mvps}>
               <div className='credits__josh'>
                 <h2 className={styles.credits__josh__title}>

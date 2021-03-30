@@ -26,15 +26,6 @@ export default stylesheet({
   figure_img: {
     width: '100%',
   },
-  video: {
-    display: 'flex',
-    justifyContent: 'center',
-    marginTop: '-60px',
-  },
-  iframe: {
-    border: 'none',
-    marginTop: '50px',
-  },
   quantumPlanets_ul: {
     display: 'flex',
     flexDirection: 'row',

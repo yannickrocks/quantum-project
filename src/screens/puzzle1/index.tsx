@@ -7,6 +7,7 @@ import { Minutes22Text } from '../../utils/Constants';
 import FadeIn from 'react-fade-in';
 import { motion } from 'framer-motion';
 import styles from './puzzle1.styles';
+import VideoPlayer from '../../components/videoplayer';
 
 const Puzzle1 = () => {
   const adjustedPlanetList = PlanetList.filter((x) => x.planet !== 'Eye');
@@ -64,18 +65,11 @@ const Puzzle1 = () => {
               />
             </figure>
           </div>
-          <div className={styles.puzzle1__video}>
-            <iframe
-              className={styles.iframe}
-              title='puzzle1'
-              width='640'
-              height='360'
-              src='https://www.youtube.com/embed/6Z5xqBUmkoI'
-              allow='accelerometer1; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-              frameBorder='0'
-              allowFullScreen
-            />
-          </div>
+          <VideoPlayer
+            width={640}
+            height={360}
+            url='https://www.youtube.com/embed/6Z5xqBUmkoI'
+          />
           <ul className={styles.T2minutes__ul}>
             {adjustedPlanetList.map((item, index) => (
               <Planet

@@ -11,6 +11,7 @@ import FadeIn from 'react-fade-in';
 import { motion } from 'framer-motion';
 import NomaiWithText from '../../../components/nomai-text';
 import styles from '../puzzle2.styles';
+import VideoPlayer from '../../../components/videoplayer';
 
 const Puzzle2 = () => {
   const adjustedPlanetList = PlanetList.filter((x) => x.planet !== 'Sun');
@@ -75,18 +76,11 @@ const Puzzle2 = () => {
               />
             </figure>
           </div>
-          <div className={styles.video}>
-            <iframe
-              className={styles.iframe}
-              title='puzzle2a'
-              width='640'
-              height='360'
-              src='https://www.youtube.com/embed/DA6TJTVH7W8'
-              allow='accelerometer1; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-              frameBorder='0'
-              allowFullScreen
-            />
-          </div>
+          <VideoPlayer
+            width={640}
+            height={360}
+            url='https://www.youtube.com/embed/DA6TJTVH7W8'
+          />
           <ul className={styles.quantumPlanets_ul}>
             {adjustedPlanetList.map((item, index) => (
               <QuantumPlanet

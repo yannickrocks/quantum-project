@@ -45,15 +45,6 @@ export default stylesheet({
     width: '100%',
     marginTop: '70px',
   },
-  puzzle3__video: {
-    display: 'flex',
-    justifyContent: 'center',
-    marginTop: '-60px',
-  },
-  iframe: {
-    marginBottom: '50px',
-    border: 'none',
-  },
   finalVoyage__ul: {
     display: 'flex',
     flexDirection: 'row',

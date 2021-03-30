@@ -20,6 +20,7 @@ import { useHistory } from 'react-router-dom';
 import { CookiesProvider } from 'react-cookie';
 import useSound from 'use-sound';
 import warpSound from '../../assets/nomaiWarp.mp3';
+import VideoPlayer from '../../components/videoplayer';
 import styles from './puzzle3.styles';
 
 const Puzzle3 = () => {
@@ -50,29 +51,23 @@ const Puzzle3 = () => {
     switch (warptype) {
       case 'Warp1': {
         const index = WarpList1.findIndex((element) => element === value) + 1;
-        if (index === WarpList1.length) {
-          setWarp1(WarpList1[0]);
-        } else {
-          setWarp1(WarpList1[index]);
-        }
+        index === WarpList1.length
+          ? setWarp1(WarpList1[0])
+          : setWarp1(WarpList1[index]);
         break;
       }
       case 'Warp2': {
         const index = WarpList2.findIndex((element) => element === value) + 1;
-        if (index === WarpList2.length) {
-          setWarp2(WarpList2[0]);
-        } else {
-          setWarp2(WarpList2[index]);
-        }
+        index === WarpList2.length
+          ? setWarp2(WarpList2[0])
+          : setWarp2(WarpList2[index]);
         break;
       }
       case 'Warp3': {
         const index = WarpList3.findIndex((element) => element === value) + 1;
-        if (index === WarpList3.length) {
-          setWarp3(WarpList3[0]);
-        } else {
-          setWarp3(WarpList3[index]);
-        }
+        index === WarpList3.length
+          ? setWarp3(WarpList3[0])
+          : setWarp3(WarpList3[index]);
         break;
       }
       default:
@@ -138,18 +133,11 @@ const Puzzle3 = () => {
               />
             </figure>
           </div>
-          <div className={styles.puzzle3__video}>
-            <iframe
-              className={styles.iframe}
-              title='puzzle3'
-              width='640'
-              height='360'
-              src='https://www.youtube.com/embed/zV2yu1X8eOw'
-              allow='accelerometer1; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;'
-              frameBorder='0'
-              allowFullScreen
-            />
-          </div>
+          <VideoPlayer
+            width={640}
+            height={360}
+            url='https://www.youtube.com/embed/zV2yu1X8eOw'
+          />
           <ul className={styles.finalVoyage__ul}>
             <li className={styles.finalVoyage__li} key='Warp1Com'>
               <Warp

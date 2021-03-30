@@ -1,39 +1,39 @@
-import moment from "moment";
-import React, { useState, useEffect } from "react";
-import { useCookies } from "react-cookie";
-import styles from "./countdown.styles";
+import moment from 'moment';
+import React, { useState, useEffect } from 'react';
+import { useCookies } from 'react-cookie';
+import styles from './countdown.styles';
 
 type CountDownProps = {
   checkTimer(value: string): void;
 };
 
-const CountDown: React.FC<CountDownProps> = ({ checkTimer }) => {
-  const [hours, setHours] = useState("22");
-  const [minutes, setMinutes] = useState("00");
-  const [seconds, setSeconds] = useState("00");
-  const [endCookie, setEndCookie] = useCookies(["CountDownCrumble"]);
+const CountDown = ({ checkTimer }: CountDownProps) => {
+  const [hours, setHours] = useState('22');
+  const [minutes, setMinutes] = useState('00');
+  const [seconds, setSeconds] = useState('00');
+  const [endCookie, setEndCookie] = useCookies(['CountDownCrumble']);
 
   const addNewCookieOrSetTimer = () => {
     if (Object.keys(endCookie).length !== 0) {
-      const cookieEnd = moment(endCookie["CountDownCrumble"]);
+      const cookieEnd = moment(endCookie['CountDownCrumble']);
       const timeRemaining = moment.duration(cookieEnd.diff(moment()));
 
       timeRemaining.hours() < 10
-        ? setHours(timeRemaining.hours().toString().padStart(2, "0"))
+        ? setHours(timeRemaining.hours().toString().padStart(2, '0'))
         : setHours(timeRemaining.hours().toString());
 
       timeRemaining.minutes() < 10
-        ? setMinutes(timeRemaining.minutes().toString().padStart(2, "0"))
+        ? setMinutes(timeRemaining.minutes().toString().padStart(2, '0'))
         : setMinutes(timeRemaining.minutes().toString());
 
       timeRemaining.seconds() < 10
-        ? setSeconds(timeRemaining.seconds().toString().padStart(2, "0"))
+        ? setSeconds(timeRemaining.seconds().toString().padStart(2, '0'))
         : setSeconds(timeRemaining.seconds().toString());
     } else {
-      const cookieExpires = moment().add(22, "h");
+      const cookieExpires = moment().add(22, 'h');
 
-      setEndCookie("CountDownCrumble", cookieExpires, {
-        path: "/finalvoyage",
+      setEndCookie('CountDownCrumble', cookieExpires, {
+        path: '/finalvoyage',
         expires: cookieExpires.toDate(),
       });
     }
@@ -48,7 +48,7 @@ const CountDown: React.FC<CountDownProps> = ({ checkTimer }) => {
         if (secondsInNumber < 11) {
           const allowZeroLead = (secondsInNumber - 1)
             .toString()
-            .padStart(2, "0");
+            .padStart(2, '0');
           setSeconds(allowZeroLead);
         } else {
           setSeconds((secondsInNumber - 1).toString());
@@ -62,14 +62,14 @@ const CountDown: React.FC<CountDownProps> = ({ checkTimer }) => {
           clearInterval(timer);
         } else {
           if (minutesInNumber === 0 && hoursInNumber > 0) {
-            setMinutes("59");
-            setHours((hoursInNumber - 1).toString().padStart(2, "0"));
+            setMinutes('59');
+            setHours((hoursInNumber - 1).toString().padStart(2, '0'));
           } else if (minutesInNumber < 11) {
-            setMinutes((minutesInNumber - 1).toString().padStart(2, "0"));
+            setMinutes((minutesInNumber - 1).toString().padStart(2, '0'));
           } else {
             setMinutes((minutesInNumber - 1).toString());
           }
-          setSeconds("59");
+          setSeconds('59');
         }
       }
     }, 1000);
