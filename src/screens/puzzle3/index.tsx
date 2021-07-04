@@ -97,7 +97,7 @@ const Puzzle3 = () => {
           : history.push({
               pathname: '/terriblefate',
             })
-      }, 8000)
+      }, 5000)
     }
   }
 
@@ -138,6 +138,12 @@ const Puzzle3 = () => {
             height={360}
             url="https://www.youtube.com/embed/zV2yu1X8eOw"
           />
+          <p
+            className={styles.puzzle3__details__p}
+            style={{ textAlign: 'center' }}
+          >
+            ** Warning: images might be a bit slow to load on this page **
+          </p>
           <ul className={styles.finalVoyage__ul}>
             <li
               className={styles.finalVoyage__li}
@@ -151,7 +157,6 @@ const Puzzle3 = () => {
               />
               <WarpCoordinates src={warp1} name="Warp 1" />
             </li>
-
             <li
               className={styles.finalVoyage__li}
               key="Warp2Com"
