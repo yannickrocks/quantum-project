@@ -36,6 +36,7 @@ const Puzzle2 = () => {
         if (code === planetCodes[index]) {
           setDisplayTrackingMessage(true);
           setDisplayIncorrectMessage(false);
+          setRefreshToggle(true);
           return true;
         } else {
           setDisplayIncorrectMessage(true);
@@ -47,7 +48,6 @@ const Puzzle2 = () => {
       setDisplayIncorrectMessage(true);
       return false;
     }
-    setRefreshToggle(true);
   };
 
   const reset = () => {
@@ -55,10 +55,6 @@ const Puzzle2 = () => {
     setDisplayTrackingMessage(false);
     setPlanetCodes([]);
     setShowMoon([]);
-  };
-
-  const refresh = () => {
-    window.location.reload(false);
   };
 
   return (
@@ -112,14 +108,14 @@ const Puzzle2 = () => {
               <></>
             )}
             {showRefreshButton ? (
-              <motion.button
+              <motion.a
                 className={styles.buttons__reset}
-                onClick={refresh}
+                href='/thewanderingmoon'
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
               >
                 Refresh
-              </motion.button>
+              </motion.a>
             ) : (
               <button className={styles.buttons__reset} onClick={reset}>
                 Reset

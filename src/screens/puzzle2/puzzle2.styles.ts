@@ -49,6 +49,8 @@ export default stylesheet({
     textAlign: 'center',
     height: '35px',
     marginTop: '5px',
+    textDecoration: 'none',
+    lineHeight: '35px',
     '&:hover': {
       backgroundColor: ' #8a2c2f',
       color: '#ffffff',

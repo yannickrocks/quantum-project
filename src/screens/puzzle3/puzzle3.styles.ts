@@ -9,12 +9,12 @@ export default stylesheet({
   },
   finalVoyage: {
     margin: '0 auto',
-    width: '60%',
+    width: '65%',
   },
   puzzle3__detailsAndImage: {
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'space-evenly',
   },
   puzzle3__details: {
     padding: '10px',
@@ -38,7 +38,7 @@ export default stylesheet({
     fontWeight: 600,
   },
   puzzle3__figure: {
-    width: '28%',
+    width: '20%',
     margin: 0,
   },
   puzzle3__figure__img: {
@@ -57,7 +57,6 @@ export default stylesheet({
   },
   puzzle3__launch__figure: {
     width: '30%',
-
     '&:hover': {
       cursor: 'pointer',
     },
@@ -66,7 +65,6 @@ export default stylesheet({
     width: '100%',
     marginTop: '-18px',
   },
-
   puzzle3__buttons: {
     display: 'flex',
     flexDirection: 'row',

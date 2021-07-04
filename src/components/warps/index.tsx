@@ -10,15 +10,13 @@ type WarpProps = {
   changeImage(img: string): void;
 };
 
-const Warp: React.FC<WarpProps> = ({ src, name, warp, changeImage }) => {
+const Warp= ({ src, name, warp, changeImage }: WarpProps) => {
   return (
     <figure
       className="puzzle3__warps__figure"
       id={name}
       onClick={() => changeImage(src)}
     >
-      <img className="puzzle3__warps__figure--back" src={warp} alt="BackWarp" />
-
       {src === "" ? (
         ""
       ) : (

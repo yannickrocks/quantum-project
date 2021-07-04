@@ -1,16 +1,17 @@
 const HomePageText1 =
   "Congratulations on becoming Outer Wild's Ventures' newest astronaut.";
 const HomePageText2 =
-  "You already have everything you need to complete your journey, using the tools you have at your disposal. Completing the Outer Wilds isn’t required for this experience, but said experience will be directly enriched if you have, and we really recommend it. This site's HTML code may contain the answers you need by necessity, but progression of that sort would rob you of the lessons you learn along the way.";
+  "If you decrypted the address of this website then you already have everything you need to finish this journey, so use the tools you have at your disposal. Completing the Outer Wilds isn’t required for this experience, but said experience will be directly enriched and far easier if you have, so we really recommend it. This site's HTML code may contain the answers you need by necessity, but progression of that sort would rob you of the lessons you learn along the way.";
 const HomePageText3 =
   "Finally, this was made by fans, for fans. We adore the Outer Wilds, but we appreciate that this project uses ideas and content that we don't own any of the rights to. We hope that those in charge enjoy this for the passion project it has been, and view it with indulgence.";
-const HomePageText4 = "Clock's ticking, hatchling. Good Luck.";
+const HomePageText4 = "Clock's ticking, hatchling. Good Luck...";
 export const HomePageText = [
   HomePageText1,
   HomePageText2,
   HomePageText3,
   HomePageText4,
 ];
+
 
 const Minutes22Text1 = "Chert's Research Notes - property of Chert!";
 const Minutes22Text2 =

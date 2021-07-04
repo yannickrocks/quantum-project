@@ -19,12 +19,15 @@ const App = () => {
         <Route path='/' exact component={HomePage} />
         <Route path='/22minutes' exact component={Puzzle1} />
         <Route path='/wakeup' exact component={Puzzle2Opener} />
-        {randomPicker > 15 ? (
-          <Route path='/wanderingmoon' exact>
+        <Route path='/wanderingmoon' exact>
+            <Puzzle2a />
+          </Route>
+        {randomPicker > 33 ? (
+          <Route path='/thewanderingmoon' exact>
             <Puzzle2a />
           </Route>
         ) : (
-          <Route path='/wanderingmoon' exact>
+          <Route path='/thewanderingmoon' exact>
             <Puzzle2b />
           </Route>
         )}
