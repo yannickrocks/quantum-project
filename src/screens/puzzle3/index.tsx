@@ -138,12 +138,6 @@ const Puzzle3 = () => {
             height={360}
             url="https://www.youtube.com/embed/zV2yu1X8eOw"
           />
-          <p
-            className={styles.puzzle3__details__p}
-            style={{ textAlign: 'center' }}
-          >
-            ** Warning: images might be a bit slow to load on this page **
-          </p>
           <ul className={styles.finalVoyage__ul}>
             <li
               className={styles.finalVoyage__li}
@@ -202,6 +196,9 @@ const Puzzle3 = () => {
             >
               Reset
             </button>
+            <p className={styles.puzzle3__details__warning}>
+              Note: images on this page may be slow to load
+            </p>
             <div className="puzzle3__countdown">
               <CountDown
                 checkTimer={(value: string) => setCountdownTimer(value)}

@@ -71,6 +71,12 @@ export default stylesheet({
     width: '100%',
     marginTop: '-18px',
   },
+  puzzle3__details__warning: {
+    textAlign: 'center',
+    color: '#D6D6D6',
+    fontWeight: 900,
+  },
+
   puzzle3__buttons: {
     display: 'flex',
     flexDirection: 'row',
