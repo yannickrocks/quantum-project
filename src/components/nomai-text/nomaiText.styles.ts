@@ -1,4 +1,4 @@
-import { stylesheet } from 'typestyle';
+import { stylesheet } from 'typestyle'
 
 export default stylesheet({
   nomai__details: {
@@ -25,4 +25,4 @@ export default stylesheet({
     marginBottom: 0,
     marginRight: '10px',
   },
-});
+})

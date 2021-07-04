@@ -1,4 +1,4 @@
-import { stylesheet } from 'typestyle';
+import { stylesheet } from 'typestyle'
 
 export default stylesheet({
   background: {
@@ -54,6 +54,12 @@ export default stylesheet({
   },
   finalVoyage__li: {
     width: '185px',
+    position: 'relative',
+  },
+  puzzle3__warps__figure__back: {
+    width: '100%',
+    position: 'absolute',
+    overflow: 'hidden',
   },
   puzzle3__launch__figure: {
     width: '30%',
@@ -89,4 +95,4 @@ export default stylesheet({
       textDecoration: 'none',
     },
   },
-});
+})

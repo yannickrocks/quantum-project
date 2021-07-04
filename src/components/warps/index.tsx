@@ -1,29 +1,21 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React from 'react'
+import { motion } from 'framer-motion'
 
-import "./warps.css";
+import styles from './warps.styles'
 
 type WarpProps = {
-  src: string;
-  name: string;
-  warp: string;
-  changeImage(img: string): void;
-};
+  src: string
+  name: string
+}
 
-const Warp= ({ src, name, warp, changeImage }: WarpProps) => {
+const WarpCoordinates = ({ src, name }: WarpProps) => {
   return (
-    <figure
-      className="puzzle3__warps__figure"
-      id={name}
-      onClick={() => changeImage(src)}
-    >
-      <img className="puzzle3__warps__figure--back" src={warp} alt="BackWarp" />
-
-      {src === "" ? (
-        ""
+    <figure className={styles.puzzle3__warps__figure} id={name}>
+      {src === '' ? (
+        ''
       ) : (
         <motion.img
-          className="puzzle3__warps__figure--coord"
+          className={styles.puzzle3__warps__figure__coord}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           src={src}
@@ -31,7 +23,7 @@ const Warp= ({ src, name, warp, changeImage }: WarpProps) => {
         />
       )}
     </figure>
-  );
-};
+  )
+}
 
-export default Warp;
+export default WarpCoordinates

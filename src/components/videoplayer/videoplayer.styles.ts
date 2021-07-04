@@ -1,4 +1,4 @@
-import { stylesheet } from 'typestyle';
+import { stylesheet } from 'typestyle'
 
 export default stylesheet({
   video: {
@@ -11,4 +11,4 @@ export default stylesheet({
     marginTop: '30px',
     marginBottom: '30px',
   },
-});
+})

@@ -1,8 +1,8 @@
-import React from 'react';
-import { WanderingMoonText } from '../../utils/Constants';
-import PurpleNomai from '../../assets/Nomai/PurpleNomai.png';
-import OrangeNomai from '../../assets/Nomai/OrangeNomai.png';
-import styles from './nomaiText.styles';
+import React from 'react'
+import { WanderingMoonText } from '../../utils/Constants'
+import PurpleNomai from '../../assets/Nomai/PurpleNomai.png'
+import OrangeNomai from '../../assets/Nomai/OrangeNomai.png'
+import styles from './nomaiText.styles'
 
 const NomaiWithText = () => {
   return (
@@ -39,7 +39,7 @@ const NomaiWithText = () => {
         <br />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default NomaiWithText;
+export default NomaiWithText

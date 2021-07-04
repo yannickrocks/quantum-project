@@ -1,19 +1,19 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import './quantumPlanets.css';
-import styles from './quantumPlanets.styles';
+import React from 'react'
+import { motion } from 'framer-motion'
+import './quantumPlanets.css'
+import styles from './quantumPlanets.styles'
 
 type QuantumPlanetProps = {
-  src: string;
-  answerSrc?: string;
-  correctCode?: string;
-  planetId: string;
-  hasBeenClickedOn: boolean;
-  greyQuantumMoon?: string;
-  purpleQuantumMoon?: string;
-  pageAorB: string;
-  onPlanetCodeChange(index: string): void;
-};
+  src: string
+  answerSrc?: string
+  correctCode?: string
+  planetId: string
+  hasBeenClickedOn: boolean
+  greyQuantumMoon?: string
+  purpleQuantumMoon?: string
+  pageAorB: string
+  onPlanetCodeChange(index: string): void
+}
 
 const Planet = ({
   src,
@@ -26,10 +26,10 @@ const Planet = ({
   onPlanetCodeChange,
 }: QuantumPlanetProps) => {
   const handleChange = (event: React.MouseEvent<HTMLElement>) => {
-    onPlanetCodeChange((event.currentTarget as any).index);
-  };
+    onPlanetCodeChange((event.currentTarget as any).index)
+  }
 
-  const isPageA = pageAorB === 'pageA';
+  const isPageA = pageAorB === 'pageA'
 
   return (
     <motion.li
@@ -45,7 +45,7 @@ const Planet = ({
             <img
               className={styles.planets__moon}
               src={greyQuantumMoon}
-              alt='QuantumMoon'
+              alt="QuantumMoon"
             />
           ) : (
             ''
@@ -70,7 +70,7 @@ const Planet = ({
         </figure>
       )}
     </motion.li>
-  );
-};
+  )
+}
 
-export default Planet;
+export default Planet

@@ -1,8 +1,8 @@
-import { stylesheet } from "typestyle";
+import { stylesheet } from 'typestyle'
 
 export default stylesheet({
   timer: {
-    color: "#ffffff",
-    fontSize: "40px",
+    color: '#ffffff',
+    fontSize: '40px',
   },
-});
+})

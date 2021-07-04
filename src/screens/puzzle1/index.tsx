@@ -1,47 +1,47 @@
-import React, { useState } from 'react';
-import Background from '../../assets/Misc/background.png';
-import TimberHeath from '../../assets/Misc/Timber-Hearth_web.png';
-import Planet from '../../components/planets';
-import { PlanetList } from '../../utils/PlanetsList';
-import { Minutes22Text } from '../../utils/Constants';
-import FadeIn from 'react-fade-in';
-import { motion } from 'framer-motion';
-import styles from './puzzle1.styles';
-import VideoPlayer from '../../components/videoplayer';
+import React, { useState } from 'react'
+import Background from '../../assets/Misc/background.png'
+import TimberHeath from '../../assets/Misc/Timber-Hearth_web.png'
+import Planet from '../../components/planets'
+import { PlanetList } from '../../utils/PlanetsList'
+import { Minutes22Text } from '../../utils/Constants'
+import FadeIn from 'react-fade-in'
+import { motion } from 'framer-motion'
+import styles from './puzzle1.styles'
+import VideoPlayer from '../../components/videoplayer'
 
 const Puzzle1 = () => {
-  const adjustedPlanetList = PlanetList.filter((x) => x.planet !== 'Eye');
+  const adjustedPlanetList = PlanetList.filter((x) => x.planet !== 'Eye')
 
   const [planetCodes, setPlanetCodes] = useState(
     Array(adjustedPlanetList.length).fill('')
-  );
+  )
 
   const handleChangePerPlanet = (value: string, indexToChange: number) => {
     setPlanetCodes(
       planetCodes.map((planetCode, index) => {
         if (index === indexToChange) {
-          return value;
+          return value
         }
-        return planetCode;
+        return planetCode
       })
-    );
-  };
+    )
+  }
 
   const showProceedButton = planetCodes.every(
     (code, index) => code === adjustedPlanetList[index].puzzle1code
-  );
+  )
 
   const resetInputs = () => {
     setPlanetCodes(
       planetCodes.map(() => {
-        return '';
+        return ''
       })
-    );
-  };
+    )
+  }
 
   return (
     <>
-      <img className={styles.background} src={Background} alt='Background' />
+      <img className={styles.background} src={Background} alt="Background" />
       <FadeIn delay={600} transitionDuration={2000}>
         <div className={styles.T2minutes}>
           <div className={styles.puzzle1__detailsAndImage}>
@@ -61,14 +61,14 @@ const Puzzle1 = () => {
               <img
                 className={styles.puzzle1__figure__img}
                 src={TimberHeath}
-                alt='Timber Heath'
+                alt="Timber Heath"
               />
             </figure>
           </div>
           <VideoPlayer
             width={640}
             height={360}
-            url='https://www.youtube.com/embed/6Z5xqBUmkoI'
+            url="https://www.youtube.com/embed/6Z5xqBUmkoI"
           />
           <ul className={styles.T2minutes__ul}>
             {adjustedPlanetList.map((item, index) => (
@@ -79,7 +79,7 @@ const Puzzle1 = () => {
                 planetCode={planetCodes[index]}
                 correctCode={item.puzzle1code}
                 onPlanetCodeChange={(value: string) => {
-                  handleChangePerPlanet(value, index);
+                  handleChangePerPlanet(value, index)
                 }}
               />
             ))}
@@ -88,7 +88,7 @@ const Puzzle1 = () => {
             {showProceedButton ? (
               <motion.a
                 className={styles.puzzle1__buttons__proceed}
-                href='/wakeup'
+                href="/wakeup"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
               >
@@ -106,7 +106,7 @@ const Puzzle1 = () => {
         </div>
       </FadeIn>
     </>
-  );
-};
+  )
+}
 
-export default Puzzle1;
+export default Puzzle1

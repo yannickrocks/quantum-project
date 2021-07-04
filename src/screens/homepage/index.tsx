@@ -1,8 +1,8 @@
-import React from 'react';
-import FadeIn from 'react-fade-in';
-import OuterWildsLogo from '../../assets/Misc/Outerwilds-Logo_web.png';
-import { HomePageText } from '../../utils/Constants';
-import styles from './homepage.styles';
+import React from 'react'
+import FadeIn from 'react-fade-in'
+import OuterWildsLogo from '../../assets/Misc/Outerwilds-Logo_web.png'
+import { HomePageText } from '../../utils/Constants'
+import styles from './homepage.styles'
 
 const HomePage = () => {
   return (
@@ -12,7 +12,7 @@ const HomePage = () => {
           <img
             className={styles.figureLogo__logo}
             src={OuterWildsLogo}
-            alt='logo'
+            alt="logo"
           />
         </figure>
         <h2 className={styles.welcomeText}>Welcome, Astronaut</h2>
@@ -27,13 +27,13 @@ const HomePage = () => {
           ))}
         </p>
         <div className={styles.launch}>
-          <a className={styles.launchButton} href='/22minutes'>
+          <a className={styles.launchButton} href="/22minutes">
             Launch
           </a>
         </div>
       </div>
     </FadeIn>
-  );
-};
+  )
+}
 
-export default HomePage;
+export default HomePage

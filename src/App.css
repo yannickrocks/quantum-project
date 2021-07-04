@@ -5,18 +5,18 @@
 }
 
 body {
-  font-family: "AndroclesOpti-Regular";
+  font-family: 'AndroclesOpti-Regular';
   margin: 0;
 }
 
 h2 {
-  font-family: "AndroclesOpti-Heavy";
+  font-family: 'AndroclesOpti-Heavy';
 }
 
 input {
-  font: 400 13.3333px "AndroclesOpti-Regular";
+  font: 400 13.3333px 'AndroclesOpti-Regular';
 }
 
 a {
-  font-family: "AndroclesOpti-Heavy";
+  font-family: 'AndroclesOpti-Heavy';
 }

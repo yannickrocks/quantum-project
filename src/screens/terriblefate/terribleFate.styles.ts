@@ -1,4 +1,4 @@
-import { stylesheet } from 'typestyle';
+import { stylesheet } from 'typestyle'
 
 export default stylesheet({
   background: {
@@ -40,4 +40,4 @@ export default stylesheet({
       textDecoration: 'none',
     },
   },
-});
+})

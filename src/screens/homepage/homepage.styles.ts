@@ -1,4 +1,4 @@
-import { stylesheet } from 'typestyle';
+import { stylesheet } from 'typestyle'
 
 export default stylesheet({
   homepage: {
@@ -58,4 +58,4 @@ export default stylesheet({
       textDecoration: 'none',
     },
   },
-});
+})

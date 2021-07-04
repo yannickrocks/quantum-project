@@ -1,4 +1,4 @@
-import { stylesheet } from 'typestyle';
+import { stylesheet } from 'typestyle'
 
 export default stylesheet({
   li: {
@@ -21,4 +21,4 @@ export default stylesheet({
       outline: 'none',
     },
   },
-});
+})

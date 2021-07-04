@@ -1,4 +1,4 @@
-import { stylesheet } from 'typestyle';
+import { stylesheet } from 'typestyle'
 
 export default stylesheet({
   li: {
@@ -16,4 +16,4 @@ export default stylesheet({
     width: '50%',
     margin: '0 auto',
   },
-});
+})
