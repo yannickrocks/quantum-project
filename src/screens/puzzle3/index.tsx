@@ -97,7 +97,7 @@ const Puzzle3 = () => {
           : history.push({
               pathname: '/terriblefate',
             })
-      }, 3000)
+      }, 8000)
     }
   }
 
