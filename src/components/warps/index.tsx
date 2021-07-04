@@ -17,6 +17,8 @@ const Warp= ({ src, name, warp, changeImage }: WarpProps) => {
       id={name}
       onClick={() => changeImage(src)}
     >
+      <img className="puzzle3__warps__figure--back" src={warp} alt="BackWarp" />
+
       {src === "" ? (
         ""
       ) : (
