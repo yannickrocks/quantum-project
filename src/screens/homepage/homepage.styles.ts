@@ -27,7 +27,6 @@ export default stylesheet({
     margin: 0,
   },
   description: {
-    marginBottom: '50px',
     margin: '0 auto',
     width: '70%',
     textAlign: 'center',
@@ -35,6 +34,18 @@ export default stylesheet({
     color: '#292b50',
     fontWeight: 500,
     fontSize: '20px',
+  },
+  disclaimer: {
+    paddingTop: '15px',
+  },
+  disclaimer__text: {
+    margin: '0 auto',
+    width: '70%',
+    textAlign: 'center',
+    letterSpacing: '0px',
+    color: '#d6d6d6 ',
+    fontWeight: 500,
+    fontSize: '15px',
   },
   launch: {
     display: 'flex',
@@ -51,7 +62,6 @@ export default stylesheet({
     fontWeight: 800,
     padding: '20px',
     textAlign: 'center',
-    marginTop: '5px',
     '&:hover': {
       backgroundColor: '#1f5c3e',
       color: '#ffffff',

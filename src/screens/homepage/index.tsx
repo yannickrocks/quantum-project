@@ -1,7 +1,7 @@
-import React from 'react'
 import FadeIn from 'react-fade-in'
-import OuterWildsLogo from '../../assets/Misc/Outerwilds-Logo_web.png'
 import { HomePageText } from '../../utils/Constants'
+import OuterWildsLogo from '../../assets/Misc/Outerwilds-Logo_web.png'
+import React from 'react'
 import styles from './homepage.styles'
 
 const HomePage = () => {
@@ -30,6 +30,16 @@ const HomePage = () => {
           <a className={styles.launchButton} href="/22minutes">
             Launch
           </a>
+        </div>
+        <div className={styles.disclaimer}>
+          <p className={styles.disclaimer__text}>
+            All rights and credit go directly to its rightful owners, no
+            copyright infringement intended.
+          </p>
+          <p className={styles.disclaimer__text}>
+            © 2020 Mobius Digital, LLC. Published by Annapurna Interactive under
+            exclusive license. All rights reserved.
+          </p>
         </div>
       </div>
     </FadeIn>
