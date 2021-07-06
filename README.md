@@ -8,7 +8,9 @@ Please enjoy the work we have created, because we know we have.
 
 Go on an adventure, and roam free...
 
-Our Puzzle website is just right [HERE](https://outerwilds1128.com/)
+There’s more to explore [here](https://imgur.com/a/7QbjPH9) ;) 
+
+Good Luck
 
 ---
 
@@ -16,3 +18,5 @@ Technologies used:
 
 - React Hooks
 - Typescript
+- Netlify
+- AWS Route 53
