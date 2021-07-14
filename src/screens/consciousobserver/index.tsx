@@ -13,7 +13,7 @@ const ConsciousObserver = () => {
           <VideoPlayer
             width={950}
             height={500}
-            url="https://www.youtube.com/embed/OOjbSrUIAe4?autoplay=1"
+            url="https://www.youtube.com/embed/X2QYfa1xNp0?autoplay=1"
           />
           <FadeIn delay={165000} transitionDuration={2000}>
             <div className={styles.credits__mvps}>

@@ -136,7 +136,7 @@ const Puzzle3 = () => {
           <VideoPlayer
             width={640}
             height={360}
-            url="https://www.youtube.com/embed/zV2yu1X8eOw"
+            url="https://www.youtube.com/embed/OREB6-fb3uw"
           />
           <ul className={styles.finalVoyage__ul}>
             <li
