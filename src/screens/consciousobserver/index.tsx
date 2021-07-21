@@ -1,7 +1,7 @@
-import React from 'react'
-import FadeIn from 'react-fade-in'
-import VideoPlayer from '../../components/videoplayer'
 import Background from '../../assets/Misc/background.png'
+import FadeIn from 'react-fade-in'
+import React from 'react'
+import VideoPlayer from '../../components/videoplayer'
 import styles from './consciousObserver.styles'
 
 const ConsciousObserver = () => {
@@ -27,14 +27,14 @@ const ConsciousObserver = () => {
                 <div className={styles.credits__details}>
                   <a
                     className={styles.credits__details__margin}
-                    href="https://www.artstation.com/joshtrumper"
+                    href="https://www.artstation.com/joshlanetrumper"
                   >
                     Artwork Portfolio
                   </a>
                   |
                   <a
                     className={styles.credits__details__margin}
-                    href="https://www.behance.net/JoshTrumper"
+                    href="https://www.behance.net/JoshLaneTrumper"
                   >
                     Design Portfolio
                   </a>
