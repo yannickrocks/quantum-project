@@ -1,14 +1,32 @@
 import { stylesheet } from 'typestyle'
 
+import {
+  mobile,
+  mobileCtaMaxWidth,
+  mobileCtaMinHeight,
+  mobilePage,
+} from '../../styles/breakpoints'
+
 export default stylesheet({
   homepage: {
     margin: '0 auto',
     width: '80%',
+    $nest: {
+      [mobile]: {
+        ...mobilePage,
+      },
+    },
   },
   figureLogo: {
     width: '400px',
     margin: '0 auto',
     marginTop: '70px',
+    $nest: {
+      [mobile]: {
+        width: 'min(400px, 70vw)',
+        marginTop: '32px',
+      },
+    },
   },
   figureLogo__logo: {
     width: '100%',
@@ -25,6 +43,11 @@ export default stylesheet({
     fontSize: '60px',
     fontWeight: 700,
     margin: 0,
+    $nest: {
+      [mobile]: {
+        fontSize: 'clamp(34px, 9vw, 60px)',
+      },
+    },
   },
   description: {
     margin: '0 auto',
@@ -34,6 +57,12 @@ export default stylesheet({
     color: '#292b50',
     fontWeight: 500,
     fontSize: '20px',
+    $nest: {
+      [mobile]: {
+        width: '100%',
+        fontSize: '18px',
+      },
+    },
   },
   disclaimer: {
     paddingTop: '15px',
@@ -46,6 +75,12 @@ export default stylesheet({
     color: '#d6d6d6 ',
     fontWeight: 500,
     fontSize: '15px',
+    $nest: {
+      [mobile]: {
+        width: '100%',
+        fontSize: '16px',
+      },
+    },
   },
   launch: {
     display: 'flex',
@@ -63,6 +98,13 @@ export default stylesheet({
     padding: '20px',
     textAlign: 'center',
     $nest: {
+      [mobile]: {
+        width: '100%',
+        maxWidth: mobileCtaMaxWidth,
+        boxSizing: 'border-box',
+        minHeight: mobileCtaMinHeight,
+        fontSize: '26px',
+      },
       '&:hover': {
         backgroundColor: '#1f5c3e',
         color: '#ffffff',
