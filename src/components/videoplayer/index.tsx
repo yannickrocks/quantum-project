@@ -15,6 +15,7 @@ const VideoPlayer = ({ width, height, url }: VideoPlayerProps) => {
         width={width}
         height={height}
         src={url}
+        loading="lazy"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         frameBorder="0"
         allowFullScreen
