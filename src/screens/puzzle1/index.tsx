@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import Background from '../../assets/Misc/background.png'
-import TimberHeath from '../../assets/Misc/Timber-Hearth_web.png'
+import Background from '../../assets/Misc/background.webp'
+import TimberHeath from '../../assets/Misc/Timber-Hearth_web.webp'
 import Planet from '../../components/planets'
 import { PlanetList } from '../../utils/PlanetsList'
 import { Minutes22Text } from '../../utils/Constants'
-import FadeIn from 'react-fade-in'
-import { motion } from 'framer-motion'
+import FadeIn from '../../components/fade-in'
+import { motion } from 'motion/react'
 import styles from './puzzle1.styles'
 import VideoPlayer from '../../components/videoplayer'
 
@@ -13,7 +13,7 @@ const Puzzle1 = () => {
   const adjustedPlanetList = PlanetList.filter((x) => x.planet !== 'Eye')
 
   const [planetCodes, setPlanetCodes] = useState(
-    Array(adjustedPlanetList.length).fill('')
+    Array(adjustedPlanetList.length).fill(''),
   )
 
   const handleChangePerPlanet = (value: string, indexToChange: number) => {
@@ -23,19 +23,19 @@ const Puzzle1 = () => {
           return value
         }
         return planetCode
-      })
+      }),
     )
   }
 
   const showProceedButton = planetCodes.every(
-    (code, index) => code === adjustedPlanetList[index].puzzle1code
+    (code, index) => code === adjustedPlanetList[index].puzzle1code,
   )
 
   const resetInputs = () => {
     setPlanetCodes(
       planetCodes.map(() => {
         return ''
-      })
+      }),
     )
   }
 
@@ -48,12 +48,12 @@ const Puzzle1 = () => {
             <div className={styles.puzzle1__details}>
               <h2 className={styles.puzzle1__details__heading}>22 Minutes</h2>
               <p className={styles.puzzle1__details_text}>
-                {Minutes22Text.map((item) => (
-                  <>
+                {Minutes22Text.map((item, index) => (
+                  <React.Fragment key={index}>
                     {item}
                     <br />
                     <br />
-                  </>
+                  </React.Fragment>
                 ))}
               </p>
             </div>
@@ -73,6 +73,7 @@ const Puzzle1 = () => {
           <ul className={styles.T2minutes__ul}>
             {adjustedPlanetList.map((item, index) => (
               <Planet
+                key={item.planet}
                 standard={item.standardImg}
                 answerSrc={item.answerSrc}
                 planetId={item.planet}

@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react'
-import Background from '../../assets/Misc/background.png'
-import Statue from '../../assets/Misc/Statue-Awakened_web.png'
-import Launch1 from '../../assets/Warp-Purples/Launch_1.png'
-import LaunchGif from '../../assets/Warp-Purples/launch.gif'
+import { Fragment, useEffect, useRef, useState } from 'react'
+import Background from '../../assets/Misc/background.webp'
+import Statue from '../../assets/Misc/Statue-Awakened_web.webp'
+import Launch1 from '../../assets/Warp-Purples/Launch_1.webp'
+import LaunchGif from '../../assets/Warp-Purples/launch.webp'
 import { FinalVoyageText } from '../../utils/Constants'
-import Warp1NotFilled from '../../assets/Warp-Purples/WarpCore_1.png'
-import Warp2NotFilled from '../../assets/Warp-Purples/WarpCore_2.png'
-import Warp3NotFilled from '../../assets/Warp-Purples/WarpCore_3.png'
+import Warp1NotFilled from '../../assets/Warp-Purples/WarpCore_1.webp'
+import Warp2NotFilled from '../../assets/Warp-Purples/WarpCore_2.webp'
+import Warp3NotFilled from '../../assets/Warp-Purples/WarpCore_3.webp'
 import CountDown from '../../components/countdown'
 import WarpCoordinates from '../../components/warps'
 import {
@@ -15,8 +15,8 @@ import {
   WarpList3,
   CorrectWarpList,
 } from '../../utils/WarpLists'
-import FadeIn from 'react-fade-in'
-import { useHistory } from 'react-router-dom'
+import FadeIn from '../../components/fade-in'
+import { useNavigate } from 'react-router'
 import { CookiesProvider } from 'react-cookie'
 import useSound from 'use-sound'
 import warpSound from '../../assets/nomaiWarp.mp3'
@@ -24,8 +24,8 @@ import VideoPlayer from '../../components/videoplayer'
 import styles from './puzzle3.styles'
 
 const Puzzle3 = () => {
-  const [showGif, setGifFlag] = useState(false)
-  const [countDownTimer, setCountdownTimer] = useState('')
+  const [isLaunching, setIsLaunching] = useState(false)
+  const launchTimeout = useRef<ReturnType<typeof setTimeout>>(undefined)
   const [warp1, setWarp1] = useState(WarpList1[0])
   const [warp2, setWarp2] = useState(WarpList2[0])
   const [warp3, setWarp3] = useState(WarpList3[0])
@@ -34,18 +34,9 @@ const Puzzle3 = () => {
     volume: 0.5,
     soundEnabled: true,
   })
-  const history = useHistory()
+  const navigate = useNavigate()
 
-  useEffect(() => {
-    const handleCountdown = (time: string) => {
-      if (parseInt(time) === 0) {
-        history.push({
-          pathname: '/failure',
-        })
-      }
-    }
-    handleCountdown(countDownTimer)
-  }, [countDownTimer, history])
+  useEffect(() => () => clearTimeout(launchTimeout.current), [])
 
   const handleWarpClick = (value: string, warptype: string) => {
     switch (warptype) {
@@ -80,23 +71,22 @@ const Puzzle3 = () => {
     const warp2Index = WarpList2.findIndex((element) => element === warp2)
     const warp3Index = WarpList3.findIndex((element) => element === warp3)
 
-    if (warp1Index !== 0 && warp2Index !== 0 && warp3Index !== 0) {
-      setGifFlag(!showGif)
+    if (
+      !isLaunching &&
+      warp1Index !== 0 &&
+      warp2Index !== 0 &&
+      warp3Index !== 0
+    ) {
+      setIsLaunching(true)
 
-      setTimeout(() => {
+      launchTimeout.current = setTimeout(() => {
         play()
         const inputArray = [warp1Index, warp2Index, warp3Index]
 
         var isCorrect = CorrectWarpList.every(
-          (code, index) => code === inputArray[index]
+          (code, index) => code === inputArray[index],
         )
-        isCorrect
-          ? history.push({
-              pathname: '/consciousobserver',
-            })
-          : history.push({
-              pathname: '/terriblefate',
-            })
+        isCorrect ? navigate('/consciousobserver') : navigate('/terriblefate')
       }, 5000)
     }
   }
@@ -116,12 +106,12 @@ const Puzzle3 = () => {
             <div className={styles.puzzle3__details}>
               <h2 className={styles.puzzle3__details__h2}>The Final Voyage</h2>
               <p className={styles.puzzle3__details__p}>
-                {FinalVoyageText.map((item) => (
-                  <>
+                {FinalVoyageText.map((item, index) => (
+                  <Fragment key={index}>
                     {item}
                     <br />
                     <br />
-                  </>
+                  </Fragment>
                 ))}
               </p>
             </div>
@@ -181,7 +171,7 @@ const Puzzle3 = () => {
               <figure className={styles.puzzle3__launch__figure}>
                 <img
                   className={styles.puzzle3__launch__figure__img}
-                  src={showGif ? LaunchGif : Launch1}
+                  src={isLaunching ? LaunchGif : Launch1}
                   alt="Launch 1"
                   onClick={checkAnswers}
                 />
@@ -200,9 +190,7 @@ const Puzzle3 = () => {
               Note: images on this page may be slow to load
             </p>
             <div className="puzzle3__countdown">
-              <CountDown
-                checkTimer={(value: string) => setCountdownTimer(value)}
-              />
+              <CountDown onExpire={() => navigate('/terriblefate')} />
             </div>
           </div>
         </div>

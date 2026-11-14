@@ -1,7 +1,6 @@
-import React from 'react'
-import FadeIn from 'react-fade-in'
-import Background from '../../../assets/Misc/backgroundZaps.png'
-import Mask from '../../../assets/Misc/Mask.png'
+import FadeIn from '../../../components/fade-in'
+import Background from '../../../assets/Misc/backgroundZaps.webp'
+import Mask from '../../../assets/Misc/Mask.webp'
 import styles from './opener2.styles'
 
 const Puzzle3Opener = () => {

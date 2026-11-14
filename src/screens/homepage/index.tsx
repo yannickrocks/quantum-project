@@ -1,6 +1,6 @@
-import FadeIn from 'react-fade-in'
+import FadeIn from '../../components/fade-in'
 import { HomePageText } from '../../utils/Constants'
-import OuterWildsLogo from '../../assets/Misc/Outerwilds-Logo_web.png'
+import OuterWildsLogo from '../../assets/Misc/Outerwilds-Logo_web.webp'
 import React from 'react'
 import styles from './homepage.styles'
 
@@ -18,12 +18,12 @@ const HomePage = () => {
         <h2 className={styles.welcomeText}>Welcome, Astronaut</h2>
         <p className={styles.description}>
           <br />
-          {HomePageText.map((item) => (
-            <>
+          {HomePageText.map((item, index) => (
+            <React.Fragment key={index}>
               {item}
               <br />
               <br />
-            </>
+            </React.Fragment>
           ))}
         </p>
         <div className={styles.launch}>

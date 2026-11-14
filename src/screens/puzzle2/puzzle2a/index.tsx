@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
-import Background from '../../../assets/Misc/background.png'
-import ArmsOutStretchNoMoon from '../../../assets/Misc/Arms-Outstretched_web.png'
+import { useState } from 'react'
+import Background from '../../../assets/Misc/background.webp'
+import ArmsOutStretchNoMoon from '../../../assets/Misc/Arms-Outstretched_web.webp'
 import QuantumPlanet from '../../../components/quantum-planets'
 import { PlanetList, correctOrderOfClicking } from '../../../utils/PlanetsList'
 import {
   WanderingMoonIncorrect,
   WanderingMoonAlmostCorrect,
 } from '../../../utils/Constants'
-import FadeIn from 'react-fade-in'
-import { motion } from 'framer-motion'
+import FadeIn from '../../../components/fade-in'
+import { motion } from 'motion/react'
 import NomaiWithText from '../../../components/nomai-text'
 import styles from '../puzzle2.styles'
 import VideoPlayer from '../../../components/videoplayer'
@@ -31,23 +31,12 @@ const Puzzle2 = () => {
   }
 
   const checkAnswers = () => {
-    if (planetCodes.length === correctOrderOfClicking.length) {
-      correctOrderOfClicking.every((code, index) => {
-        if (code === planetCodes[index]) {
-          setDisplayTrackingMessage(true)
-          setDisplayIncorrectMessage(false)
-          setRefreshToggle(true)
-          return true
-        } else {
-          setDisplayIncorrectMessage(true)
-          return false
-        }
-      })
-    } else {
-      setDisplayTrackingMessage(false)
-      setDisplayIncorrectMessage(true)
-      return false
-    }
+    const isSequenceCorrect =
+      planetCodes.length === correctOrderOfClicking.length &&
+      correctOrderOfClicking.every((code, index) => code === planetCodes[index])
+    setDisplayTrackingMessage(isSequenceCorrect)
+    setDisplayIncorrectMessage(!isSequenceCorrect)
+    setRefreshToggle(isSequenceCorrect)
   }
 
   const reset = () => {

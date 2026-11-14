@@ -37,10 +37,12 @@ export default stylesheet({
     width: '420px',
     textDecoration: 'none',
     backgroundColor: '#5341ae',
-    '&:hover': {
-      backgroundColor: '#271c5a',
-      color: '#ffffff',
-      textDecoration: 'none',
+    $nest: {
+      '&:hover': {
+        backgroundColor: '#271c5a',
+        color: '#ffffff',
+        textDecoration: 'none',
+      },
     },
   },
 })

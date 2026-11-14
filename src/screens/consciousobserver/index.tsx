@@ -1,6 +1,5 @@
-import Background from '../../assets/Misc/background.png'
-import FadeIn from 'react-fade-in'
-import React from 'react'
+import Background from '../../assets/Misc/background.webp'
+import FadeIn from '../../components/fade-in'
 import VideoPlayer from '../../components/videoplayer'
 import styles from './consciousObserver.styles'
 

@@ -1,7 +1,6 @@
-import React from 'react'
 import { WanderingMoonText } from '../../utils/Constants'
-import PurpleNomai from '../../assets/Nomai/PurpleNomai.png'
-import OrangeNomai from '../../assets/Nomai/OrangeNomai.png'
+import PurpleNomai from '../../assets/Nomai/PurpleNomai.webp'
+import OrangeNomai from '../../assets/Nomai/OrangeNomai.webp'
 import styles from './nomaiText.styles'
 
 const NomaiWithText = () => {
@@ -12,7 +11,7 @@ const NomaiWithText = () => {
         <img
           className={styles.nomai__details__img}
           src={PurpleNomai}
-          alt={PurpleNomai}
+          alt="Purple Nomai"
         />
         <br />
         {WanderingMoonText[0]}
@@ -22,7 +21,7 @@ const NomaiWithText = () => {
         <img
           className={styles.nomai__details__img}
           src={OrangeNomai}
-          alt={OrangeNomai}
+          alt="Orange Nomai"
         />
         <br />
         {WanderingMoonText[1]}
@@ -32,7 +31,7 @@ const NomaiWithText = () => {
         <img
           className={styles.nomai__details__img}
           src={PurpleNomai}
-          alt={PurpleNomai}
+          alt="Purple Nomai"
         />
         <br />
         {WanderingMoonText[2]}

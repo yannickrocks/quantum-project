@@ -38,8 +38,10 @@ export default stylesheet({
     marginRight: '5px',
     color: '#ffffff',
     fontSize: '18px',
-    '&:hover': {
-      color: '#5341ae',
+    $nest: {
+      '&:hover': {
+        color: '#5341ae',
+      },
     },
   },
   credits__details: {
@@ -56,8 +58,10 @@ export default stylesheet({
     marginRight: '5px',
     color: '#ffffff',
     fontSize: '18px',
-    '&:hover': {
-      color: '#388861',
+    $nest: {
+      '&:hover': {
+        color: '#388861',
+      },
     },
   },
 })

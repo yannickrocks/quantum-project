@@ -1,13 +1,16 @@
-import moment from 'moment'
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { useCookies } from 'react-cookie'
 import styles from './countdown.styles'
 
 type CountDownProps = {
-  checkTimer(value: string): void
+  onExpire(): void
 }
 
-const CountDown = ({ checkTimer }: CountDownProps) => {
+const countdownDurationMs = 22 * 60 * 60 * 1000
+
+const pad = (value: number) => value.toString().padStart(2, '0')
+
+const CountDown = ({ onExpire }: CountDownProps) => {
   const [hours, setHours] = useState('22')
   const [minutes, setMinutes] = useState('00')
   const [seconds, setSeconds] = useState('00')
@@ -15,26 +18,23 @@ const CountDown = ({ checkTimer }: CountDownProps) => {
 
   const addNewCookieOrSetTimer = () => {
     if (Object.keys(endCookie).length !== 0) {
-      const cookieEnd = moment(endCookie['CountDownCrumble'])
-      const timeRemaining = moment.duration(cookieEnd.diff(moment()))
+      const remainingSeconds = Math.max(
+        0,
+        Math.floor(
+          (new Date(endCookie['CountDownCrumble']).getTime() - Date.now()) /
+            1000,
+        ),
+      )
 
-      timeRemaining.hours() < 10
-        ? setHours(timeRemaining.hours().toString().padStart(2, '0'))
-        : setHours(timeRemaining.hours().toString())
-
-      timeRemaining.minutes() < 10
-        ? setMinutes(timeRemaining.minutes().toString().padStart(2, '0'))
-        : setMinutes(timeRemaining.minutes().toString())
-
-      timeRemaining.seconds() < 10
-        ? setSeconds(timeRemaining.seconds().toString().padStart(2, '0'))
-        : setSeconds(timeRemaining.seconds().toString())
+      setHours(pad(Math.floor(remainingSeconds / 3600)))
+      setMinutes(pad(Math.floor((remainingSeconds % 3600) / 60)))
+      setSeconds(pad(remainingSeconds % 60))
     } else {
-      const cookieExpires = moment().add(22, 'h')
+      const cookieExpires = new Date(Date.now() + countdownDurationMs)
 
       setEndCookie('CountDownCrumble', cookieExpires, {
         path: '/finalvoyage',
-        expires: cookieExpires.toDate(),
+        expires: cookieExpires,
       })
     }
   }
@@ -73,9 +73,9 @@ const CountDown = ({ checkTimer }: CountDownProps) => {
         }
       }
     }, 1000)
-    checkTimer(hours + minutes + seconds)
+    if (hours + minutes + seconds === '000000') onExpire()
     return () => clearInterval(timer)
-  }, [hours, minutes, seconds, checkTimer])
+  }, [hours, minutes, seconds, onExpire])
 
   return (
     <>

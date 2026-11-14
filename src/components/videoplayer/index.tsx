@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from './videoplayer.styles'
 
 type VideoPlayerProps = {
@@ -17,7 +16,7 @@ const VideoPlayer = ({ width, height, url }: VideoPlayerProps) => {
           width={width}
           height={height}
           src={url}
-          allow="accelerometer1; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           frameBorder="0"
           allowFullScreen
         />

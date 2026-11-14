@@ -72,10 +72,12 @@ export default stylesheet({
     textAlign: 'center',
     height: '35px',
     marginTop: '5px',
-    '&:hover': {
-      backgroundColor: '#8a2c2f',
-      color: '#ffffff',
-      textDecoration: 'none',
+    $nest: {
+      '&:hover': {
+        backgroundColor: '#8a2c2f',
+        color: '#ffffff',
+        textDecoration: 'none',
+      },
     },
   },
   puzzle1__buttons__proceed: {
@@ -91,10 +93,12 @@ export default stylesheet({
     marginTop: '5px',
     textDecoration: 'none',
     lineHeight: '33px',
-    '&:hover': {
-      backgroundColor: '#1f5c3e',
-      color: '#ffffff',
-      textDecoration: 'none',
+    $nest: {
+      '&:hover': {
+        backgroundColor: '#1f5c3e',
+        color: '#ffffff',
+        textDecoration: 'none',
+      },
     },
   },
 })
