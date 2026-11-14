@@ -10,21 +10,21 @@ export default stylesheet({
     height: '100vh',
     position: 'absolute',
   },
-  puzzle2__figure__mask: {
+  opener__figure__mask: {
     width: '30%',
     margin: 'auto',
     position: 'relative',
   },
-  puzzle2__figure__mask__img: {
+  opener__figure__mask__img: {
     width: '100%',
     marginTop: '150px',
   },
-  puzzle2__opener__button: {
+  opener__button: {
     display: 'flex',
     justifyContent: 'center',
     position: 'relative',
   },
-  puzzle2__opener__button__a: {
+  opener__button__a: {
     margin: '0 auto',
     textAlign: 'center',
     color: '#ffffff',

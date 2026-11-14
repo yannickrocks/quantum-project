@@ -24,7 +24,7 @@ const Planet = ({
   }
 
   return (
-    <li className={styles.li} key={planetId}>
+    <li className={styles.li}>
       <figure className={styles.puzzle1__planets__figure}>
         <img
           className={styles.puzzle1__planets__img}

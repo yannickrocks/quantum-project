@@ -2,7 +2,11 @@ import { useState } from 'react'
 import Background from '../../../assets/Misc/background.webp'
 import ArmsOutStretchWithMoon from '../../../assets/Misc/Arms-Outstretched-full_web.webp'
 import QuantumPlanet from '../../../components/quantum-planets'
-import { PlanetList, correctOrderOfClicking } from '../../../utils/PlanetsList'
+import {
+  PlanetList,
+  QuantumMoon,
+  correctOrderOfClicking,
+} from '../../../utils/PlanetsList'
 import {
   WanderingMoonIncorrect,
   WanderingMoonCorrect,
@@ -20,7 +24,6 @@ const Puzzle2 = () => {
   const [showRefreshButton2b, setRefreshToggle2b] = useState(false)
   const [displayIncorrectMessage, setDisplayIncorrectMessage] = useState(false)
   const [displayCorrectMessage, setDisplayCorrectMessage] = useState(false)
-  const page = 'pageB'
 
   const addOrRemoveFromAnswerArray = (indexToChange: number) => {
     const newArray = [...planetCodes, indexToChange]
@@ -78,8 +81,7 @@ const Puzzle2 = () => {
                 answerSrc={item.answerSrc}
                 planetId={item.planet}
                 hasBeenClickedOn={showMoon.includes(index)}
-                purpleQuantumMoon={item.QuantumMoon.Purple}
-                pageAorB={page}
+                moonSrc={QuantumMoon.Purple}
                 onPlanetCodeChange={() => {
                   addOrRemoveFromAnswerArray(index)
                 }}
@@ -89,16 +91,12 @@ const Puzzle2 = () => {
           <div className={styles.buttons}>
             {displayCorrectMessage ? (
               <p className={styles.correctText}>{WanderingMoonCorrect}</p>
-            ) : (
-              <></>
-            )}
+            ) : null}
             {displayIncorrectMessage ? (
               <p className={styles.buttons__incorrectText}>
                 {WanderingMoonIncorrect}
               </p>
-            ) : (
-              <></>
-            )}
+            ) : null}
             {showRefreshButton2b ? (
               <motion.button
                 className={styles.buttons__reset}

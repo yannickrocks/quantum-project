@@ -15,76 +15,53 @@ import PGiantsDeep from '../assets/Planets/Purple/GD-Purple_web.webp'
 import PDarkBramble from '../assets/Planets/Purple/DB-Purple_web.webp'
 import PQuantumMoon from '../assets/Planets/Purple/QM-Purple_web.webp'
 
+export const QuantumMoon = {
+  Grey: GQuantumMoon,
+  Purple: PQuantumMoon,
+}
+
 export const PlanetList = [
   {
     standardImg: GSun,
     answerSrc: PSun,
     planet: 'Sun',
     puzzle1code: '2200',
-    QuantumMoon: {
-      Grey: GQuantumMoon,
-      Purple: PQuantumMoon,
-    },
   },
   {
     standardImg: GEye,
     answerSrc: PEye,
     planet: 'Eye',
     puzzle1code: '0',
-    QuantumMoon: {
-      Grey: GQuantumMoon,
-      Purple: PQuantumMoon,
-    },
   },
   {
     standardImg: GTwins,
     answerSrc: PTwins,
     planet: 'Twins',
     puzzle1code: '1905',
-    QuantumMoon: {
-      Grey: GQuantumMoon,
-      Purple: PQuantumMoon,
-    },
   },
   {
     standardImg: GTimberHearth,
     answerSrc: PTimberHearth,
     planet: 'TimberHearth',
     puzzle1code: '1128',
-    QuantumMoon: {
-      Grey: GQuantumMoon,
-      Purple: PQuantumMoon,
-    },
   },
   {
     standardImg: GBrittleHollow,
     answerSrc: PBrittleHollow,
     planet: 'BrittleHollow',
     puzzle1code: '0431',
-    QuantumMoon: {
-      Grey: GQuantumMoon,
-      Purple: PQuantumMoon,
-    },
   },
   {
     standardImg: GGiantsDeep,
     answerSrc: PGiantsDeep,
     planet: 'GiantsDeep',
     puzzle1code: '0626',
-    QuantumMoon: {
-      Grey: GQuantumMoon,
-      Purple: PQuantumMoon,
-    },
   },
   {
     standardImg: GDarkBramble,
     answerSrc: PDarkBramble,
     planet: 'DarkBramble',
     puzzle1code: '1308',
-    QuantumMoon: {
-      Grey: GQuantumMoon,
-      Purple: PQuantumMoon,
-    },
   },
 ]
 
