@@ -18,8 +18,7 @@
     "react-cookie": "^8.1.2",
     "react-dom": "^19.3.1",
     "react-router": "^7.18.5",
-    "typestyle": "^2.4.0",
-    "use-sound": "^5.0.0"
+    "typestyle": "^2.4.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.65.1",

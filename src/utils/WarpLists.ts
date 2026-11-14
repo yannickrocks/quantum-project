@@ -29,7 +29,7 @@ import Op28 from '../assets/Warp-Purples/Warp_Options/28.webp'
 import Op29 from '../assets/Warp-Purples/Warp_Options/29.webp'
 import Op30 from '../assets/Warp-Purples/Warp_Options/30.webp'
 
-const warpCoordinatesImages = [
+export const warpCoordinatesImages = [
   '',
   Op1,
   Op2,
@@ -62,11 +62,5 @@ const warpCoordinatesImages = [
   Op29,
   Op30,
 ]
-
-export const WarpList1 = warpCoordinatesImages
-
-export const WarpList2 = warpCoordinatesImages
-
-export const WarpList3 = warpCoordinatesImages
 
 export const CorrectWarpList = [20, 26, 13]

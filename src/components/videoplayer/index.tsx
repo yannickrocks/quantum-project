@@ -8,20 +8,18 @@ type VideoPlayerProps = {
 
 const VideoPlayer = ({ width, height, url }: VideoPlayerProps) => {
   return (
-    <>
-      <div className={styles.video}>
-        <iframe
-          className={styles.iframe}
-          title="puzzle1"
-          width={width}
-          height={height}
-          src={url}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          frameBorder="0"
-          allowFullScreen
-        />
-      </div>
-    </>
+    <div className={styles.video}>
+      <iframe
+        className={styles.iframe}
+        title="puzzle1"
+        width={width}
+        height={height}
+        src={url}
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        frameBorder="0"
+        allowFullScreen
+      />
+    </div>
   )
 }
 
