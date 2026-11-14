@@ -1,4 +1,13 @@
 import { stylesheet } from 'typestyle'
+import type { NestedCSSProperties } from 'typestyle/lib/types'
+
+import { mobile, mobileButton, mobilePage } from '../../styles/breakpoints'
+
+const mobileStatusText: NestedCSSProperties = {
+  flexBasis: '100%',
+  textAlign: 'center',
+  margin: 0,
+}
 
 export default stylesheet({
   background: {
@@ -10,6 +19,11 @@ export default stylesheet({
   pWanderingmoon: {
     margin: '0 auto',
     width: '60%',
+    $nest: {
+      [mobile]: {
+        ...mobilePage,
+      },
+    },
   },
   detailsAndImageDiv: {
     display: 'flex',
@@ -19,9 +33,20 @@ export default stylesheet({
     color: '#ffffff',
     fontSize: '16px',
     fontWeight: 600,
+    $nest: {
+      [mobile]: {
+        flexDirection: 'column',
+      },
+    },
   },
   figure: {
     width: '30%',
+    $nest: {
+      [mobile]: {
+        width: 'min(70%, 320px)',
+        margin: '16px auto 0',
+      },
+    },
   },
   figure_img: {
     width: '100%',
@@ -32,11 +57,29 @@ export default stylesheet({
     justifyContent: 'space-between',
     padding: 0,
     marginTop: '25px',
+    $nest: {
+      [mobile]: {
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        gap: '12px',
+        listStyle: 'none',
+        marginTop: '16px',
+      },
+    },
   },
   buttons: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'flex-end',
+    $nest: {
+      [mobile]: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexWrap: 'wrap',
+        gap: '12px',
+        marginTop: '8px',
+      },
+    },
   },
   buttons__reset: {
     width: '15%',
@@ -52,6 +95,9 @@ export default stylesheet({
     textDecoration: 'none',
     lineHeight: '35px',
     $nest: {
+      [mobile]: {
+        ...mobileButton,
+      },
       '&:hover': {
         backgroundColor: ' #8a2c2f',
         color: '#ffffff',
@@ -73,6 +119,9 @@ export default stylesheet({
     marginTop: '5px',
     textDecoration: 'none',
     $nest: {
+      [mobile]: {
+        ...mobileButton,
+      },
       '&:hover': {
         backgroundColor: '#1f5c3e',
         color: '#ffffff',
@@ -95,6 +144,9 @@ export default stylesheet({
     textDecoration: 'none',
     lineHeight: '35px',
     $nest: {
+      [mobile]: {
+        ...mobileButton,
+      },
       '&:hover': {
         backgroundColor: '#1f5c3e',
         color: '#ffffff',
@@ -106,15 +158,30 @@ export default stylesheet({
     color: '#5341ae',
     fontWeight: 800,
     marginRight: 'auto',
+    $nest: {
+      [mobile]: {
+        ...mobileStatusText,
+      },
+    },
   },
   buttons__incorrectText: {
     color: '#b75053',
     fontWeight: 800,
     marginRight: 'auto',
+    $nest: {
+      [mobile]: {
+        ...mobileStatusText,
+      },
+    },
   },
   correctText: {
     color: '#388861',
     fontWeight: 800,
     marginRight: 'auto',
+    $nest: {
+      [mobile]: {
+        ...mobileStatusText,
+      },
+    },
   },
 })

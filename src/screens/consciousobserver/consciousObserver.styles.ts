@@ -1,5 +1,7 @@
 import { stylesheet } from 'typestyle'
 
+import { mobile, mobileGutters } from '../../styles/breakpoints'
+
 export default stylesheet({
   background: {
     position: 'fixed',
@@ -10,6 +12,12 @@ export default stylesheet({
   congratulations: {
     textAlign: 'center',
     marginTop: '200px',
+    $nest: {
+      [mobile]: {
+        marginTop: '56px',
+        ...mobileGutters,
+      },
+    },
   },
   congratulations__video: {
     width: '100%',
@@ -28,10 +36,24 @@ export default stylesheet({
     flexDirection: 'row',
     justifyContent: 'space-between',
     margin: '0 auto',
+    $nest: {
+      [mobile]: {
+        width: 'auto',
+        paddingBottom: 'calc(32px + env(safe-area-inset-bottom))',
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: '32px',
+      },
+    },
   },
   credits__josh__title: {
     color: '#5341ae',
     fontSize: '32px',
+    $nest: {
+      [mobile]: {
+        fontSize: '28px',
+      },
+    },
   },
   credits__details__margin: {
     marginLeft: '5px',
@@ -39,6 +61,12 @@ export default stylesheet({
     color: '#ffffff',
     fontSize: '18px',
     $nest: {
+      [mobile]: {
+        display: 'inline-block',
+        padding: '12px 8px',
+        marginLeft: 0,
+        marginRight: 0,
+      },
       '&:hover': {
         color: '#5341ae',
       },
@@ -48,10 +76,24 @@ export default stylesheet({
     color: '#ffffff',
     fontSize: '18px',
     textDecoration: 'none',
+    $nest: {
+      [mobile]: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        gap: '4px',
+        lineHeight: 1.4,
+      },
+    },
   },
   credits__yan__title: {
     color: '#388861',
     fontSize: '32px',
+    $nest: {
+      [mobile]: {
+        fontSize: '28px',
+      },
+    },
   },
   credits__details__marginYan: {
     marginLeft: '5px',
@@ -59,6 +101,12 @@ export default stylesheet({
     color: '#ffffff',
     fontSize: '18px',
     $nest: {
+      [mobile]: {
+        display: 'inline-block',
+        padding: '12px 8px',
+        marginLeft: 0,
+        marginRight: 0,
+      },
       '&:hover': {
         color: '#388861',
       },

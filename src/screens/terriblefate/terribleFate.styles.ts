@@ -1,5 +1,12 @@
 import { stylesheet } from 'typestyle'
 
+import {
+  mobile,
+  mobileCtaMaxWidth,
+  mobileCtaMinHeight,
+  mobileGutters,
+} from '../../styles/breakpoints'
+
 export default stylesheet({
   background: {
     position: 'fixed',
@@ -10,6 +17,12 @@ export default stylesheet({
   failure: {
     textAlign: 'center',
     marginTop: '200px',
+    $nest: {
+      [mobile]: {
+        marginTop: '56px',
+        ...mobileGutters,
+      },
+    },
   },
   failure__video: {
     width: '100%',
@@ -35,6 +48,15 @@ export default stylesheet({
     textDecoration: 'none',
     backgroundColor: '#b75053',
     $nest: {
+      [mobile]: {
+        width: 'auto',
+        flex: '1 1 auto',
+        maxWidth: mobileCtaMaxWidth,
+        boxSizing: 'border-box',
+        minHeight: mobileCtaMinHeight,
+        fontSize: '22px',
+        marginBottom: 'calc(32px + env(safe-area-inset-bottom))',
+      },
       '&:hover': {
         backgroundColor: '#6d1919',
         color: '#ffffff',

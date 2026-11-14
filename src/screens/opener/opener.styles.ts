@@ -1,5 +1,13 @@
 import { stylesheet } from 'typestyle'
 
+import {
+  mobile,
+  mobileCtaMaxWidth,
+  mobileCtaMinHeight,
+  mobileGutters,
+  shortLandscape,
+} from '../../styles/breakpoints'
+
 export default stylesheet({
   background: {
     backgroundSize: 'cover',
@@ -14,10 +22,26 @@ export default stylesheet({
     width: '30%',
     margin: 'auto',
     position: 'relative',
+    $nest: {
+      [mobile]: {
+        width: 'min(55vw, 280px)',
+      },
+      [shortLandscape]: {
+        width: 'min(55vw, 52svh)',
+      },
+    },
   },
   opener__figure__mask__img: {
     width: '100%',
     marginTop: '150px',
+    $nest: {
+      [mobile]: {
+        marginTop: '15vh',
+      },
+      [shortLandscape]: {
+        marginTop: '4svh',
+      },
+    },
   },
   opener__button: {
     display: 'flex',
@@ -38,6 +62,18 @@ export default stylesheet({
     textDecoration: 'none',
     backgroundColor: '#5341ae',
     $nest: {
+      [mobile]: {
+        width: 'auto',
+        flex: '1 1 auto',
+        maxWidth: mobileCtaMaxWidth,
+        boxSizing: 'border-box',
+        minHeight: mobileCtaMinHeight,
+        ...mobileGutters,
+        marginBottom: 'calc(24px + env(safe-area-inset-bottom))',
+      },
+      [shortLandscape]: {
+        marginTop: '16px',
+      },
       '&:hover': {
         backgroundColor: '#271c5a',
         color: '#ffffff',

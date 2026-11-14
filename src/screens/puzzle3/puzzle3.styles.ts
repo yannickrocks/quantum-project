@@ -1,5 +1,12 @@
 import { stylesheet } from 'typestyle'
 
+import {
+  mobile,
+  mobileButton,
+  mobilePage,
+  mobileTextColumn,
+} from '../../styles/breakpoints'
+
 export default stylesheet({
   background: {
     position: 'fixed',
@@ -10,11 +17,21 @@ export default stylesheet({
   finalVoyage: {
     margin: '0 auto',
     width: '65%',
+    $nest: {
+      [mobile]: {
+        ...mobilePage,
+      },
+    },
   },
   puzzle3__detailsAndImage: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-evenly',
+    $nest: {
+      [mobile]: {
+        flexDirection: 'column',
+      },
+    },
   },
   puzzle3__details: {
     padding: '10px',
@@ -23,6 +40,11 @@ export default stylesheet({
     marginTop: '30px',
     display: 'flex',
     flexDirection: 'column',
+    $nest: {
+      [mobile]: {
+        ...mobileTextColumn,
+      },
+    },
   },
   puzzle3__details__h2: {
     marginTop: '40px',
@@ -30,20 +52,43 @@ export default stylesheet({
     fontSize: '40px',
     fontWeight: 700,
     marginBottom: '15px',
+    $nest: {
+      [mobile]: {
+        marginTop: 0,
+        fontSize: '32px',
+      },
+    },
   },
   puzzle3__details__p: {
     textAlign: 'left',
     color: '#ffffff',
     fontSize: '16px',
     fontWeight: 600,
+    $nest: {
+      [mobile]: {
+        fontSize: '17px',
+        lineHeight: 1.5,
+      },
+    },
   },
   puzzle3__figure: {
     width: '20%',
     margin: 0,
+    $nest: {
+      [mobile]: {
+        width: 'min(50%, 220px)',
+        margin: '16px auto 0',
+      },
+    },
   },
   puzzle3__figure__img: {
     width: '100%',
     marginTop: '70px',
+    $nest: {
+      [mobile]: {
+        marginTop: 0,
+      },
+    },
   },
   finalVoyage__ul: {
     display: 'flex',
@@ -51,10 +96,28 @@ export default stylesheet({
     justifyContent: 'center',
     margin: '0 auto',
     marginLeft: '60px',
+    $nest: {
+      [mobile]: {
+        display: 'grid',
+        gridTemplateColumns: 'repeat(3, minmax(0, 1fr)) minmax(0, 0.7fr)',
+        gap: '8px',
+        alignItems: 'center',
+        width: '100%',
+        maxWidth: '468px',
+        marginLeft: 'auto',
+        padding: 0,
+        listStyle: 'none',
+      },
+    },
   },
   finalVoyage__li: {
     width: '185px',
     position: 'relative',
+    $nest: {
+      [mobile]: {
+        width: '100%',
+      },
+    },
   },
   puzzle3__warps__figure__back: {
     width: '100%',
@@ -64,6 +127,11 @@ export default stylesheet({
   puzzle3__launch__figure: {
     width: '30%',
     $nest: {
+      [mobile]: {
+        width: '100%',
+        minWidth: '44px',
+        margin: '0 auto',
+      },
       '&:hover': {
         cursor: 'pointer',
       },
@@ -72,11 +140,23 @@ export default stylesheet({
   puzzle3__launch__figure__img: {
     width: '100%',
     marginTop: '-18px',
+    $nest: {
+      [mobile]: {
+        marginTop: 0,
+        display: 'block',
+      },
+    },
   },
   puzzle3__details__warning: {
     textAlign: 'center',
     color: '#D6D6D6',
     fontWeight: 900,
+    $nest: {
+      [mobile]: {
+        margin: 0,
+        fontSize: '16px',
+      },
+    },
   },
 
   puzzle3__buttons: {
@@ -85,6 +165,13 @@ export default stylesheet({
     justifyContent: 'space-around',
     marginTop: '20px',
     margin: '0 auto',
+    $nest: {
+      [mobile]: {
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: '12px',
+      },
+    },
   },
   puzzle3__buttons__reset: {
     width: '140px',
@@ -98,6 +185,9 @@ export default stylesheet({
     height: '35px',
     marginTop: '5px',
     $nest: {
+      [mobile]: {
+        ...mobileButton,
+      },
       '&:hover': {
         backgroundColor: '#8a2c2f',
         color: '#ffffff',
