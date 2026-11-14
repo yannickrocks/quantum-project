@@ -62,10 +62,12 @@ export default stylesheet({
     fontWeight: 800,
     padding: '20px',
     textAlign: 'center',
-    '&:hover': {
-      backgroundColor: '#1f5c3e',
-      color: '#ffffff',
-      textDecoration: 'none',
+    $nest: {
+      '&:hover': {
+        backgroundColor: '#1f5c3e',
+        color: '#ffffff',
+        textDecoration: 'none',
+      },
     },
   },
 })

@@ -17,8 +17,10 @@ export default stylesheet({
     textAlign: 'center',
     width: '100%',
     height: '35px',
-    '&:focus': {
-      outline: 'none',
+    $nest: {
+      '&:focus': {
+        outline: 'none',
+      },
     },
   },
 })

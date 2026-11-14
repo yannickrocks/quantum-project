@@ -51,10 +51,12 @@ export default stylesheet({
     marginTop: '5px',
     textDecoration: 'none',
     lineHeight: '35px',
-    '&:hover': {
-      backgroundColor: ' #8a2c2f',
-      color: '#ffffff',
-      textDecoration: 'none',
+    $nest: {
+      '&:hover': {
+        backgroundColor: ' #8a2c2f',
+        color: '#ffffff',
+        textDecoration: 'none',
+      },
     },
   },
   buttons__checkAnswers: {
@@ -70,10 +72,12 @@ export default stylesheet({
     marginLeft: ' 35px',
     marginTop: '5px',
     textDecoration: 'none',
-    '&:hover': {
-      backgroundColor: '#1f5c3e',
-      color: '#ffffff',
-      textDecoration: 'none',
+    $nest: {
+      '&:hover': {
+        backgroundColor: '#1f5c3e',
+        color: '#ffffff',
+        textDecoration: 'none',
+      },
     },
   },
   buttons__proceed: {
@@ -90,10 +94,12 @@ export default stylesheet({
     marginTop: '5px',
     textDecoration: 'none',
     lineHeight: '35px',
-    '&:hover': {
-      backgroundColor: '#1f5c3e',
-      color: '#ffffff',
-      textDecoration: 'none',
+    $nest: {
+      '&:hover': {
+        backgroundColor: '#1f5c3e',
+        color: '#ffffff',
+        textDecoration: 'none',
+      },
     },
   },
   buttons__almostCorrectText: {

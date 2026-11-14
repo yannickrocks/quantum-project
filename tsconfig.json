@@ -1,32 +1,17 @@
 {
-  "rootDirs": [
-    "src"
-  ],
-  "extends": "./tsconfig.path.json",
   "compilerOptions": {
-    "baseUrl": "src",
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
+    "target": "ES2022",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "types": ["vite/client", "vitest/globals", "@testing-library/jest-dom"],
     "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react",
-    "sourceMap": true
+    "jsx": "react-jsx"
   },
-  "include": [
-    "src",
-    "public"
-  ]
+  "include": ["src", "e2e", "vite.config.ts", "playwright.config.ts"]
 }

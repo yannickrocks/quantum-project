@@ -1,5 +1,4 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import './quantumPlanets.css'
 import styles from './quantumPlanets.styles'
 
@@ -12,7 +11,7 @@ type QuantumPlanetProps = {
   greyQuantumMoon?: string
   purpleQuantumMoon?: string
   pageAorB: string
-  onPlanetCodeChange(index: string): void
+  onPlanetCodeChange(): void
 }
 
 const Planet = ({
@@ -25,10 +24,6 @@ const Planet = ({
   pageAorB,
   onPlanetCodeChange,
 }: QuantumPlanetProps) => {
-  const handleChange = (event: React.MouseEvent<HTMLElement>) => {
-    onPlanetCodeChange((event.currentTarget as any).index)
-  }
-
   const isPageA = pageAorB === 'pageA'
 
   return (
@@ -39,7 +34,7 @@ const Planet = ({
       whileTap={{ scale: 0.9 }}
     >
       {isPageA ? (
-        <figure className={styles.planets__figure} onClick={handleChange}>
+        <figure className={styles.planets__figure} onClick={onPlanetCodeChange}>
           <img className={styles.planets__img} src={src} alt={planetId} />
           {hasBeenClickedOn ? (
             <img
@@ -52,7 +47,7 @@ const Planet = ({
           )}
         </figure>
       ) : (
-        <figure className={styles.planets__figure} onClick={handleChange}>
+        <figure className={styles.planets__figure} onClick={onPlanetCodeChange}>
           <img
             className={styles.planets__img}
             src={hasBeenClickedOn ? answerSrc : src}

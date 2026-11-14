@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
-import Background from '../../../assets/Misc/background.png'
-import ArmsOutStretchWithMoon from '../../../assets/Misc/Arms-Outstretched-full_web.png'
+import { useState } from 'react'
+import Background from '../../../assets/Misc/background.webp'
+import ArmsOutStretchWithMoon from '../../../assets/Misc/Arms-Outstretched-full_web.webp'
 import QuantumPlanet from '../../../components/quantum-planets'
 import { PlanetList, correctOrderOfClicking } from '../../../utils/PlanetsList'
 import {
   WanderingMoonIncorrect,
   WanderingMoonCorrect,
 } from '../../../utils/Constants'
-import FadeIn from 'react-fade-in'
-import { motion } from 'framer-motion'
+import FadeIn from '../../../components/fade-in'
+import { motion } from 'motion/react'
 import NomaiWithText from '../../../components/nomai-text'
 import VideoPlayer from '../../../components/videoplayer'
 import styles from '../puzzle2.styles'
@@ -31,23 +31,12 @@ const Puzzle2 = () => {
   }
 
   const checkAnswers = () => {
-    if (planetCodes.length === correctOrderOfClicking.length) {
-      correctOrderOfClicking.every((code, index) => {
-        if (code === planetCodes[index]) {
-          setDisplayCorrectMessage(true)
-          setDisplayIncorrectMessage(false)
-          setRefreshToggle2b(true)
-          return true
-        } else {
-          setDisplayIncorrectMessage(true)
-          return false
-        }
-      })
-    } else {
-      setDisplayCorrectMessage(false)
-      setDisplayIncorrectMessage(true)
-      return false
-    }
+    const isSequenceCorrect =
+      planetCodes.length === correctOrderOfClicking.length &&
+      correctOrderOfClicking.every((code, index) => code === planetCodes[index])
+    setDisplayCorrectMessage(isSequenceCorrect)
+    setDisplayIncorrectMessage(!isSequenceCorrect)
+    setRefreshToggle2b(isSequenceCorrect)
   }
 
   const reset = () => {
@@ -58,7 +47,7 @@ const Puzzle2 = () => {
   }
 
   const refresh = () => {
-    window.location.reload(false)
+    window.location.reload()
   }
 
   return (

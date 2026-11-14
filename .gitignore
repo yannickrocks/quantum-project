@@ -11,3 +11,7 @@
 
 # Local Netlify folder
 .netlify
+/dist
+
+/test-results
+/playwright-report

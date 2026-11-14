@@ -1,7 +1,6 @@
-import React from 'react'
-import FadeIn from 'react-fade-in'
+import FadeIn from '../../components/fade-in'
 import VideoPlayer from '../../components/videoplayer'
-import Background from '../../assets/Misc/background.png'
+import Background from '../../assets/Misc/background.webp'
 import styles from './terribleFate.styles'
 
 const TerribleFate = () => {

@@ -1,21 +1,13 @@
 @font-face {
   font-family: 'AndroclesOpti-Regular';
-  src: url(./fonts/AndroclesOpti-Regular.ttf.woff) format('woff'),
-    url(./fonts/AndroclesOpti-Regular.ttf.svg#AndroclesOpti-Regular)
-      format('svg'),
-    url(./fonts/AndroclesOpti-Regular.ttf.eot),
-    url(./fonts/AndroclesOpti-Regular.ttf.eot?#iefix)
-      format('embedded-opentype');
+  src: url(./fonts/AndroclesOpti-Regular.ttf.woff) format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'AndroclesOpti-Heavy';
-  src: url(./fonts/AndroclesOpti-Heavy.ttf.woff) format('woff'),
-    url(./fonts/AndroclesOpti-Heavy.ttf.svg#AndroclesOpti-Heavy) format('svg'),
-    url(./fonts/AndroclesOpti-Heavy.ttf.eot),
-    url(./fonts/AndroclesOpti-Heavy.ttf.eot?#iefix) format('embedded-opentype');
+  src: url(./fonts/AndroclesOpti-Heavy.ttf.woff) format('woff');
   font-weight: normal;
   font-style: normal;
 }

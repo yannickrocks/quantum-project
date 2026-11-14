@@ -63,8 +63,10 @@ export default stylesheet({
   },
   puzzle3__launch__figure: {
     width: '30%',
-    '&:hover': {
-      cursor: 'pointer',
+    $nest: {
+      '&:hover': {
+        cursor: 'pointer',
+      },
     },
   },
   puzzle3__launch__figure__img: {
@@ -95,10 +97,12 @@ export default stylesheet({
     textAlign: 'center',
     height: '35px',
     marginTop: '5px',
-    '&:hover': {
-      backgroundColor: '#8a2c2f',
-      color: '#ffffff',
-      textDecoration: 'none',
+    $nest: {
+      '&:hover': {
+        backgroundColor: '#8a2c2f',
+        color: '#ffffff',
+        textDecoration: 'none',
+      },
     },
   },
 })
