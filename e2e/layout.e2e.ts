@@ -48,7 +48,7 @@ for (const width of [1024, 1100, 1300, 2560]) {
         )
       })
       const videoTop = await page
-        .locator('iframe')
+        .locator('iframe[src*="youtube"]')
         .evaluate((element) => element.getBoundingClientRect().top)
 
       expect(textBottom).toBeLessThanOrEqual(videoTop)
