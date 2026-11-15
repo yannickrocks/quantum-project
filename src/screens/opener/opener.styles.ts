@@ -16,6 +16,7 @@ export default stylesheet({
     backgroundColor: 'black',
     width: '100vw',
     height: '100vh',
+    objectFit: 'cover',
     position: 'absolute',
   },
   opener__figure__mask: {

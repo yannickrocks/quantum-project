@@ -27,9 +27,15 @@ export const mobilePage: NestedCSSProperties = {
   paddingBottom: 'calc(32px + env(safe-area-inset-bottom))',
 }
 
+export const coverViewport: NestedCSSProperties = {
+  minWidth: '100%',
+  minHeight: '100%',
+  objectFit: 'cover',
+}
+
 export const mobileTextColumn: NestedCSSProperties = {
   width: '100%',
-  height: 'auto',
+  minHeight: 0,
   maxWidth: '65ch',
   marginLeft: 'auto',
   marginRight: 'auto',

@@ -1,6 +1,7 @@
 import { stylesheet } from 'typestyle'
 
 import {
+  coverViewport,
   mobile,
   mobileCtaMaxWidth,
   mobileCtaMinHeight,
@@ -13,6 +14,7 @@ export default stylesheet({
     top: 0,
     left: 0,
     zIndex: -100,
+    ...coverViewport,
   },
   failure: {
     textAlign: 'center',

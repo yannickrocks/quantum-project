@@ -1,6 +1,7 @@
 import { stylesheet } from 'typestyle'
 
 import {
+  coverViewport,
   mobile,
   mobileButton,
   mobilePage,
@@ -13,6 +14,7 @@ export default stylesheet({
     top: 0,
     left: 0,
     zIndex: -100,
+    ...coverViewport,
   },
   T2minutes: {
     margin: '0 auto',
@@ -35,8 +37,9 @@ export default stylesheet({
   },
   puzzle1__details: {
     padding: '10px',
+    paddingBottom: '40px',
     width: '65%',
-    height: '350px',
+    minHeight: '320px',
     marginTop: '50px',
     display: 'flex',
     flexDirection: 'column',
