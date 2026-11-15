@@ -1,6 +1,6 @@
 import { stylesheet } from 'typestyle'
 
-import { mobile, mobileGutters } from '../../styles/breakpoints'
+import { coverViewport, mobile, mobileGutters } from '../../styles/breakpoints'
 
 export default stylesheet({
   background: {
@@ -8,6 +8,7 @@ export default stylesheet({
     top: 0,
     left: 0,
     zIndex: -100,
+    ...coverViewport,
   },
   congratulations: {
     textAlign: 'center',

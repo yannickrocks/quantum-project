@@ -1,7 +1,12 @@
 import { stylesheet } from 'typestyle'
 import type { NestedCSSProperties } from 'typestyle/lib/types'
 
-import { mobile, mobileButton, mobilePage } from '../../styles/breakpoints'
+import {
+  coverViewport,
+  mobile,
+  mobileButton,
+  mobilePage,
+} from '../../styles/breakpoints'
 
 const mobileStatusText: NestedCSSProperties = {
   flexBasis: '100%',
@@ -15,6 +20,7 @@ export default stylesheet({
     top: 0,
     left: 0,
     zIndex: -100,
+    ...coverViewport,
   },
   pWanderingmoon: {
     margin: '0 auto',

@@ -6,10 +6,11 @@ export default stylesheet({
   nomai__details: {
     padding: '10px',
     width: '55%',
-    height: '350px',
+    minHeight: '306px',
     display: 'flex',
     flexDirection: 'column',
     paddingTop: '50px',
+    paddingBottom: '54px',
     $nest: {
       [mobile]: {
         ...mobileTextColumn,
