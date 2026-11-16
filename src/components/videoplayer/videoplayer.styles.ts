@@ -2,6 +2,9 @@ import { stylesheet } from 'typestyle'
 
 import { mobile } from '../../styles/breakpoints'
 
+const largeVideoReserve = '300px'
+const largeVideoReserveOnMobile = '96px'
+
 export default stylesheet({
   video: {
     display: 'flex',
@@ -25,6 +28,20 @@ export default stylesheet({
         maxWidth: '100%',
         marginTop: '16px',
         marginBottom: '16px',
+      },
+    },
+  },
+  videoLarge: {
+    marginTop: 0,
+  },
+  iframeLarge: {
+    width: `min(92vw, calc((100svh - ${largeVideoReserve}) * 16 / 9))`,
+    height: 'auto',
+    aspectRatio: '16 / 9',
+    margin: 0,
+    $nest: {
+      [mobile]: {
+        width: `min(100%, calc((100svh - ${largeVideoReserveOnMobile}) * 16 / 9))`,
       },
     },
   },

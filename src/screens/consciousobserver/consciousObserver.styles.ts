@@ -12,7 +12,7 @@ export default stylesheet({
   },
   congratulations: {
     textAlign: 'center',
-    marginTop: '200px',
+    marginTop: '48px',
     $nest: {
       [mobile]: {
         marginTop: '56px',
@@ -32,7 +32,7 @@ export default stylesheet({
   },
 
   credits__mvps: {
-    width: '40%',
+    width: 'max(40%, 600px)',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
