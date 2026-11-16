@@ -112,3 +112,18 @@ for (const route of ['/wakeup', '/wakeupagain']) {
     expect(fit).toBe('cover')
   })
 }
+
+for (const route of starfieldRoutes) {
+  test(`page is dark behind the text while the starfield loads: ${route}`, async ({
+    page,
+  }) => {
+    await page.route('**/background-*.webp', () => {})
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto(route, { waitUntil: 'domcontentloaded' })
+    const starfield = background(page)
+    await expect(starfield).toHaveCSS('background-color', 'rgb(0, 0, 0)')
+    const box = (await starfield.boundingBox())!
+    expect(box.width).toBeGreaterThanOrEqual(1440)
+    expect(box.height).toBeGreaterThanOrEqual(900)
+  })
+}

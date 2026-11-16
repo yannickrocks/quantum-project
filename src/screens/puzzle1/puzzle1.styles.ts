@@ -128,6 +128,6 @@ export default stylesheet({
   puzzle1__buttons__reset: smallButton(palette.red, palette.redHover),
   puzzle1__buttons__proceed: {
     ...smallButton(palette.green, palette.greenHover),
-    lineHeight: '33px',
+    lineHeight: '35px',
   },
 })
