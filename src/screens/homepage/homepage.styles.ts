@@ -39,7 +39,7 @@ export default stylesheet({
   },
   welcomeText: {
     textAlign: 'center',
-    color: '#ff7d25',
+    color: '#ed6c00',
     fontSize: '60px',
     fontWeight: 700,
     margin: 0,
@@ -72,7 +72,7 @@ export default stylesheet({
     width: '70%',
     textAlign: 'center',
     letterSpacing: '0px',
-    color: '#d6d6d6 ',
+    color: '#757575',
     fontWeight: 500,
     fontSize: '15px',
     $nest: {

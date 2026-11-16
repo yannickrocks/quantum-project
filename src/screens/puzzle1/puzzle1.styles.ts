@@ -150,7 +150,7 @@ export default stylesheet({
     width: '15%',
     border: 'none',
     borderRadius: '6px',
-    backgroundColor: '#388861',
+    backgroundColor: '#33835c',
     color: '#ffffff',
     fontSize: '14px',
     fontWeight: 800,

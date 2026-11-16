@@ -115,7 +115,7 @@ export default stylesheet({
     width: '15%',
     border: 'none',
     borderRadius: '6px',
-    backgroundColor: '#388861',
+    backgroundColor: '#33835c',
     color: '#ffffff',
     fontSize: '14px',
     fontWeight: 800,
@@ -139,7 +139,7 @@ export default stylesheet({
     width: '15%',
     border: 'none',
     borderRadius: '6px',
-    backgroundColor: '#388861',
+    backgroundColor: '#33835c',
     color: '#ffffff',
     fontSize: '14px',
     fontWeight: 800,
@@ -161,7 +161,7 @@ export default stylesheet({
     },
   },
   buttons__almostCorrectText: {
-    color: '#5341ae',
+    color: '#7669da',
     fontWeight: 800,
     marginRight: 'auto',
     $nest: {
@@ -171,7 +171,7 @@ export default stylesheet({
     },
   },
   buttons__incorrectText: {
-    color: '#b75053',
+    color: '#c0585a',
     fontWeight: 800,
     marginRight: 'auto',
     $nest: {

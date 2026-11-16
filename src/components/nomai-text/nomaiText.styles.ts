@@ -19,7 +19,7 @@ export default stylesheet({
   },
   nomai__h2: {
     marginTop: '40px',
-    color: '#5341ae',
+    color: '#5c4cba',
     fontSize: '40px',
     fontWeight: 700,
     marginBottom: 0,

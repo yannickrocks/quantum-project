@@ -48,7 +48,7 @@ export default stylesheet({
     },
   },
   credits__josh__title: {
-    color: '#5341ae',
+    color: '#5c4cba',
     fontSize: '32px',
     $nest: {
       [mobile]: {
@@ -69,7 +69,7 @@ export default stylesheet({
         marginRight: 0,
       },
       '&:hover': {
-        color: '#5341ae',
+        color: '#7669da',
       },
     },
   },
