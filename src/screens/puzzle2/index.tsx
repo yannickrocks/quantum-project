@@ -54,7 +54,8 @@ const WanderingMoon = ({ isMoonFound = false }: WanderingMoonProps) => {
 
   return (
     <>
-      <img className={styles.background} src={Background} alt="Background" />
+      <title>The Wandering Moon · OW1128</title>
+      <img className={styles.background} src={Background} alt="" />
       <FadeIn>
         <div className={styles.pWanderingmoon}>
           <div className={styles.detailsAndImageDiv}>
@@ -77,6 +78,7 @@ const WanderingMoon = ({ isMoonFound = false }: WanderingMoonProps) => {
             width={640}
             height={360}
             url="https://www.youtube.com/embed/DA6TJTVH7W8"
+            title="The Wandering Moon video"
           />
           <ul className={styles.quantumPlanets_ul}>
             {adjustedPlanetList.map((item, index) => (

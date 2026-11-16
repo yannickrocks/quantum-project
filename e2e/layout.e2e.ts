@@ -15,12 +15,14 @@ const starfieldRoutes = [
   '/terriblefate',
 ]
 
+const background = (page: Page) => page.locator('img[src*="background"]')
+
 const expectStarfieldLoaded = (page: Page) =>
   expect
     .poll(() =>
-      page
-        .getByAltText('Background')
-        .evaluate((image: HTMLImageElement) => image.naturalWidth),
+      background(page).evaluate(
+        (image: HTMLImageElement) => image.naturalWidth,
+      ),
     )
     .toBeGreaterThan(0)
 
@@ -68,7 +70,7 @@ for (const viewport of [
       await page.goto(route)
       await expectStarfieldLoaded(page)
 
-      const box = await page.getByAltText('Background').boundingBox()
+      const box = await background(page).boundingBox()
       expect(box).not.toBeNull()
       expect(box!.x).toBeLessThanOrEqual(0)
       expect(box!.y).toBeLessThanOrEqual(0)
@@ -85,7 +87,7 @@ test('starfield keeps its natural size on a standard desktop', async ({
   await page.goto('/22minutes')
   await expectStarfieldLoaded(page)
 
-  const starfield = page.getByAltText('Background')
+  const starfield = background(page)
   const natural = await starfield.evaluate((image: HTMLImageElement) => ({
     width: image.naturalWidth,
     height: image.naturalHeight,
@@ -104,9 +106,9 @@ for (const route of ['/wakeup', '/wakeupagain']) {
     await page.setViewportSize({ width: 390, height: 844 })
     await page.goto(route)
 
-    const fit = await page
-      .getByAltText('Background')
-      .evaluate((element) => getComputedStyle(element).objectFit)
+    const fit = await background(page).evaluate(
+      (element) => getComputedStyle(element).objectFit,
+    )
     expect(fit).toBe('cover')
   })
 }
