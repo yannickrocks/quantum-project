@@ -4,12 +4,14 @@ import { MotionConfig, motion } from 'motion/react'
 type FadeInProps = {
   delay?: number
   transitionDuration?: number
+  isShown?: boolean
   children?: ReactNode
 }
 
 const FadeIn = ({
   delay = 200,
   transitionDuration = 800,
+  isShown = true,
   children,
 }: FadeInProps) => (
   <MotionConfig reducedMotion="user">
@@ -17,7 +19,9 @@ const FadeIn = ({
       {Children.map(children, (child, index) => (
         <motion.div
           initial={{ opacity: 0, y: 20, visibility: 'hidden' }}
-          animate={{ opacity: 1, y: 0, visibility: 'visible' }}
+          animate={
+            isShown ? { opacity: 1, y: 0, visibility: 'visible' } : undefined
+          }
           transition={{
             duration: transitionDuration / 1000,
             delay: (delay * (index + 1)) / 1000,

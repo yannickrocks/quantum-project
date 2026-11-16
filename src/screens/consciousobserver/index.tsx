@@ -1,9 +1,12 @@
+import { useState } from 'react'
 import Background from '../../assets/Misc/background.webp'
 import FadeIn from '../../components/fade-in'
 import VideoPlayer from '../../components/videoplayer'
 import styles from './consciousObserver.styles'
 
 const ConsciousObserver = () => {
+  const [hasVideoEnded, setHasVideoEnded] = useState(false)
+
   return (
     <>
       <title>Conscious Observer · OW1128</title>
@@ -14,8 +17,10 @@ const ConsciousObserver = () => {
             url="https://www.youtube.com/embed/X2QYfa1xNp0?autoplay=1"
             title="Conscious Observer video"
             isLarge
+            onEnded={() => setHasVideoEnded(true)}
+            fallbackEndMs={165000}
           />
-          <FadeIn delay={165000} transitionDuration={2000}>
+          <FadeIn delay={0} transitionDuration={2000} isShown={hasVideoEnded}>
             <div className={styles.credits__mvps}>
               <div>
                 <h2 className={styles.credits__josh__title}>
