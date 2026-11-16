@@ -7,6 +7,7 @@ import LaunchGif from '../../assets/Warp-Purples/launch.webp'
 const mocks = vi.hoisted(() => ({
   navigate: vi.fn(),
   play: vi.fn(),
+  mutedStateAtEachPlay: [] as boolean[],
   preloadedSources: [] as string[],
   isCountdownExpired: { current: false },
 }))
@@ -49,14 +50,21 @@ describe('Puzzle3', () => {
   beforeEach(() => {
     vi.useFakeTimers()
     mocks.navigate.mockClear()
-    mocks.play.mockClear()
+    mocks.play.mockReset()
+    mocks.play.mockResolvedValue(undefined)
+    mocks.mutedStateAtEachPlay.length = 0
     mocks.preloadedSources.length = 0
     mocks.isCountdownExpired.current = false
     vi.stubGlobal(
       'Audio',
       class {
         volume = 1
-        play = mocks.play
+        muted = false
+        currentTime = 0
+        play() {
+          mocks.mutedStateAtEachPlay.push(this.muted)
+          return mocks.play()
+        }
       },
     )
     vi.stubGlobal(
@@ -89,8 +97,32 @@ describe('Puzzle3', () => {
     act(() => {
       vi.advanceTimersByTime(5000)
     })
-    expect(mocks.play).toHaveBeenCalledTimes(1)
+    expect(
+      mocks.mutedStateAtEachPlay.filter((isMuted) => !isMuted),
+    ).toHaveLength(1)
     expect(mocks.navigate).toHaveBeenCalledTimes(1)
+  })
+
+  it('unlocks the warp sound silently inside the launch click, for iOS', () => {
+    render(<Puzzle3 />)
+    fillWarps()
+    fireEvent.click(screen.getByAltText('Launch 1'))
+    expect(mocks.mutedStateAtEachPlay).toEqual([true])
+    act(() => {
+      vi.advanceTimersByTime(5000)
+    })
+    expect(mocks.mutedStateAtEachPlay).toEqual([true, false])
+  })
+
+  it('still lands on an ending when the browser blocks the sound', async () => {
+    mocks.play.mockImplementation(() =>
+      Promise.reject(new DOMException('blocked', 'NotAllowedError')),
+    )
+    render(<Puzzle3 />)
+    fillWarps(CorrectWarpList)
+    launch()
+    await act(async () => {})
+    expect(mocks.navigate).toHaveBeenCalledWith('/consciousobserver')
   })
 
   it('keeps the launch gif after a second click', () => {
@@ -111,7 +143,7 @@ describe('Puzzle3', () => {
       vi.advanceTimersByTime(5000)
     })
     expect(mocks.navigate).not.toHaveBeenCalled()
-    expect(mocks.play).not.toHaveBeenCalled()
+    expect(mocks.mutedStateAtEachPlay).toEqual([true])
   })
 
   it('navigates to /consciousobserver when the warps are correct', () => {
