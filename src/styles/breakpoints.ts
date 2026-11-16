@@ -46,6 +46,7 @@ export const coverViewport: NestedCSSProperties = {
   minWidth: '100%',
   minHeight: '100%',
   objectFit: 'cover',
+  backgroundColor: '#000',
 }
 
 export const mobileTextColumn: NestedCSSProperties = {
