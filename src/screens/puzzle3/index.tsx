@@ -58,11 +58,15 @@ const Puzzle3 = () => {
     }
 
     setIsLaunching(true)
+    const warpSoundAudio = new Audio(warpSound)
+    warpSoundAudio.volume = 0.5
+    warpSoundAudio.muted = true
+    warpSoundAudio.play().catch(() => {})
 
     launchTimeout.current = setTimeout(() => {
-      const warpSoundAudio = new Audio(warpSound)
-      warpSoundAudio.volume = 0.5
-      warpSoundAudio.play()
+      warpSoundAudio.currentTime = 0
+      warpSoundAudio.muted = false
+      warpSoundAudio.play().catch(() => {})
       const isCorrect = warps.every(
         (warp, index) => warp === CorrectWarpList[index],
       )
