@@ -1,13 +1,15 @@
 @font-face {
   font-family: 'AndroclesOpti-Regular';
-  src: url(./fonts/AndroclesOpti-Regular.ttf.woff) format('woff');
+  src: url(./fonts/AndroclesOpti-Regular.woff2) format('woff2');
+  font-display: swap;
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'AndroclesOpti-Heavy';
-  src: url(./fonts/AndroclesOpti-Heavy.ttf.woff) format('woff');
+  src: url(./fonts/AndroclesOpti-Heavy.woff2) format('woff2');
+  font-display: swap;
   font-weight: normal;
   font-style: normal;
 }
