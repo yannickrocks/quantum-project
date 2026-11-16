@@ -4,7 +4,8 @@ import type { NestedCSSProperties } from 'typestyle/lib/types'
 import {
   coverViewport,
   mobile,
-  mobileButton,
+  palette,
+  smallButton,
   mobilePage,
 } from '../../styles/breakpoints'
 
@@ -88,77 +89,17 @@ export default stylesheet({
     },
   },
   buttons__reset: {
-    width: '15%',
-    border: 'none',
-    borderRadius: '6px',
-    backgroundColor: '#b75053',
-    color: '#ffffff',
-    fontSize: '14px',
-    fontWeight: 800,
-    textAlign: 'center',
-    height: '35px',
-    marginTop: '5px',
-    textDecoration: 'none',
+    ...smallButton(palette.red, palette.redHover),
     lineHeight: '35px',
-    $nest: {
-      [mobile]: {
-        ...mobileButton,
-      },
-      '&:hover': {
-        backgroundColor: ' #8a2c2f',
-        color: '#ffffff',
-        textDecoration: 'none',
-      },
-    },
   },
   buttons__checkAnswers: {
-    width: '15%',
-    border: 'none',
-    borderRadius: '6px',
-    backgroundColor: '#33835c',
-    color: '#ffffff',
-    fontSize: '14px',
-    fontWeight: 800,
-    textAlign: 'center',
-    height: '35px',
-    marginLeft: ' 35px',
-    marginTop: '5px',
-    textDecoration: 'none',
-    $nest: {
-      [mobile]: {
-        ...mobileButton,
-      },
-      '&:hover': {
-        backgroundColor: '#1f5c3e',
-        color: '#ffffff',
-        textDecoration: 'none',
-      },
-    },
+    ...smallButton(palette.green, palette.greenHover),
+    marginLeft: '35px',
   },
   buttons__proceed: {
-    width: '15%',
-    border: 'none',
-    borderRadius: '6px',
-    backgroundColor: '#33835c',
-    color: '#ffffff',
-    fontSize: '14px',
-    fontWeight: 800,
-    textAlign: 'center',
-    height: '35px',
+    ...smallButton(palette.green, palette.greenHover),
     marginLeft: '35px',
-    marginTop: '5px',
-    textDecoration: 'none',
     lineHeight: '35px',
-    $nest: {
-      [mobile]: {
-        ...mobileButton,
-      },
-      '&:hover': {
-        backgroundColor: '#1f5c3e',
-        color: '#ffffff',
-        textDecoration: 'none',
-      },
-    },
   },
   buttons__almostCorrectText: {
     color: '#7669da',

@@ -15,7 +15,7 @@ const ConsciousObserver = () => {
           />
           <FadeIn delay={165000} transitionDuration={2000}>
             <div className={styles.credits__mvps}>
-              <div className="credits__josh">
+              <div>
                 <h2 className={styles.credits__josh__title}>
                   Josh Lane-Trumper
                 </h2>
@@ -45,7 +45,7 @@ const ConsciousObserver = () => {
                   </a>
                 </div>
               </div>
-              <div className="credits__yan">
+              <div>
                 <h2 className={styles.credits__yan__title}>Yannick Mermet</h2>
                 <p className={styles.credits__details}>
                   Website Code and Puzzle Implementation{' '}

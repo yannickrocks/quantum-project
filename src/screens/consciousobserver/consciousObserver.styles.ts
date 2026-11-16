@@ -20,16 +20,6 @@ export default stylesheet({
       },
     },
   },
-  congratulations__video: {
-    width: '100%',
-  },
-  iframe: {
-    border: 'none',
-  },
-  failure__button: {
-    display: 'flex',
-    justifyContent: 'center',
-  },
 
   credits__mvps: {
     width: 'max(40%, 600px)',

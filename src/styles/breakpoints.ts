@@ -58,3 +58,37 @@ export const mobileTextColumn: NestedCSSProperties = {
   padding: 0,
   marginTop: '24px',
 }
+
+export const palette = {
+  red: '#b75053',
+  redHover: '#8a2c2f',
+  green: '#33835c',
+  greenHover: '#1f5c3e',
+}
+
+export const smallButton = (
+  backgroundColor: string,
+  hoverBackgroundColor: string,
+): NestedCSSProperties => ({
+  width: '15%',
+  border: 'none',
+  borderRadius: '6px',
+  backgroundColor,
+  color: '#ffffff',
+  fontSize: '14px',
+  fontWeight: 800,
+  textAlign: 'center',
+  height: '35px',
+  marginTop: '5px',
+  textDecoration: 'none',
+  $nest: {
+    [mobile]: {
+      ...mobileButton,
+    },
+    '&:hover': {
+      backgroundColor: hoverBackgroundColor,
+      color: '#ffffff',
+      textDecoration: 'none',
+    },
+  },
+})

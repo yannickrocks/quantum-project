@@ -26,12 +26,6 @@ export default stylesheet({
       },
     },
   },
-  failure__video: {
-    width: '100%',
-  },
-  iframe: {
-    border: 'none',
-  },
   failure__button: {
     display: 'flex',
     justifyContent: 'center',

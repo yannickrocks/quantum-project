@@ -31,12 +31,6 @@ export default stylesheet({
   figureLogo__logo: {
     width: '100%',
   },
-  figureMessage: {
-    width: '1500px',
-  },
-  figureMessage__message: {
-    width: '100%',
-  },
   welcomeText: {
     textAlign: 'center',
     color: '#ed6c00',

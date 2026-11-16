@@ -1,8 +1,7 @@
 import HomePage from './screens/homepage'
 import Puzzle1 from './screens/puzzle1'
-import Puzzle2a from './screens/puzzle2/puzzle2a'
+import WanderingMoon from './screens/puzzle2'
 import Opener from './screens/opener'
-import Puzzle2b from './screens/puzzle2/puzzle2b'
 import Puzzle3 from './screens/puzzle3'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router'
 import ConsciousObserver from './screens/consciousobserver'
@@ -20,10 +19,10 @@ const App = () => {
           path="/wakeup"
           element={<Opener href="/wanderingmoon" alt="Mask Puzzle 2" />}
         />
-        <Route path="/wanderingmoon" element={<Puzzle2a />} />
+        <Route path="/wanderingmoon" element={<WanderingMoon />} />
         <Route
           path="/thewanderingmoon"
-          element={randomPicker > 33 ? <Puzzle2a /> : <Puzzle2b />}
+          element={<WanderingMoon isMoonFound={randomPicker <= 33} />}
         />
         <Route
           path="/wakeupagain"

@@ -1,6 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react'
-import Puzzle2a from './puzzle2a'
-import Puzzle2b from './puzzle2b'
+import WanderingMoon from '.'
 import { PlanetList, correctOrderOfClicking } from '../../utils/PlanetsList'
 import {
   WanderingMoonAlmostCorrect,
@@ -24,9 +23,9 @@ const wrongAfterFirstClick = [
   ...correctOrderOfClicking.slice(1).map(() => 0),
 ]
 
-describe('Puzzle2a', () => {
+describe('WanderingMoon before the moon is found', () => {
   it('shows only the incorrect message when only the first click matches', () => {
-    render(<Puzzle2a />)
+    render(<WanderingMoon />)
     clickSequence(wrongAfterFirstClick)
     expect(screen.queryByRole('link', { name: 'Refresh' })).toBeNull()
     expect(screen.queryByText(WanderingMoonAlmostCorrect)).toBeNull()
@@ -34,7 +33,7 @@ describe('Puzzle2a', () => {
   })
 
   it('shows refresh link and no incorrect message for the correct sequence', () => {
-    render(<Puzzle2a />)
+    render(<WanderingMoon />)
     clickSequence(correctOrderOfClicking)
     expect(screen.getByRole('link', { name: 'Refresh' })).toBeInTheDocument()
     expect(screen.getByText(WanderingMoonAlmostCorrect)).toBeInTheDocument()
@@ -42,9 +41,9 @@ describe('Puzzle2a', () => {
   })
 })
 
-describe('Puzzle2b', () => {
+describe('WanderingMoon once the moon is found', () => {
   it('shows only the incorrect message when only the first click matches', () => {
-    render(<Puzzle2b />)
+    render(<WanderingMoon isMoonFound />)
     clickSequence(wrongAfterFirstClick)
     expect(screen.queryByRole('link', { name: 'Proceed' })).toBeNull()
     expect(screen.queryByText(WanderingMoonCorrect)).toBeNull()
@@ -52,7 +51,7 @@ describe('Puzzle2b', () => {
   })
 
   it('shows proceed link and no incorrect message for the correct sequence', () => {
-    render(<Puzzle2b />)
+    render(<WanderingMoon isMoonFound />)
     clickSequence(correctOrderOfClicking)
     expect(screen.getByRole('link', { name: 'Proceed' })).toHaveAttribute(
       'href',
@@ -60,5 +59,15 @@ describe('Puzzle2b', () => {
     )
     expect(screen.getByText(WanderingMoonCorrect)).toBeInTheDocument()
     expect(screen.queryByText(WanderingMoonIncorrect)).toBeNull()
+  })
+
+  it('reloads the page when Refresh is pressed after solving', () => {
+    const reload = vi.fn()
+    vi.stubGlobal('location', { ...window.location, reload })
+    render(<WanderingMoon isMoonFound />)
+    clickSequence(correctOrderOfClicking)
+    fireEvent.click(screen.getByRole('button', { name: 'Refresh' }))
+    expect(reload).toHaveBeenCalledTimes(1)
+    vi.unstubAllGlobals()
   })
 })
