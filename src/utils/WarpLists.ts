@@ -62,5 +62,3 @@ export const warpCoordinatesImages = [
   Op29,
   Op30,
 ]
-
-export const CorrectWarpList = [20, 26, 13]
