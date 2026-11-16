@@ -27,6 +27,21 @@ export const mobilePage: NestedCSSProperties = {
   paddingBottom: 'calc(32px + env(safe-area-inset-bottom))',
 }
 
+export const focusRing: NestedCSSProperties = {
+  outline: '2px solid #ff7d25',
+  outlineOffset: '2px',
+}
+
+export const unstyledButton: NestedCSSProperties = {
+  display: 'block',
+  padding: 0,
+  border: 'none',
+  background: 'none',
+  color: 'inherit',
+  font: 'inherit',
+  cursor: 'pointer',
+}
+
 export const coverViewport: NestedCSSProperties = {
   minWidth: '100%',
   minHeight: '100%',

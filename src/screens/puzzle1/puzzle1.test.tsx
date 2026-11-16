@@ -29,6 +29,16 @@ describe('Puzzle1', () => {
     )
   })
 
+  it('labels each planet code input and asks for a number keypad', () => {
+    render(<Puzzle1 />)
+    planets.forEach((planet) => {
+      expect(screen.getByLabelText(`${planet.planet} code`)).toHaveAttribute(
+        'inputmode',
+        'numeric',
+      )
+    })
+  })
+
   it('keeps Reset when one code is wrong', () => {
     render(<Puzzle1 />)
     const codes = planets.map((planet) => planet.puzzle1code)

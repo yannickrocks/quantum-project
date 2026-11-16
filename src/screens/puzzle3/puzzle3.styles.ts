@@ -2,10 +2,12 @@ import { stylesheet } from 'typestyle'
 
 import {
   coverViewport,
+  focusRing,
   mobile,
   mobileButton,
   mobilePage,
   mobileTextColumn,
+  unstyledButton,
 } from '../../styles/breakpoints'
 
 export default stylesheet({
@@ -122,14 +124,27 @@ export default stylesheet({
       },
     },
   },
+  puzzle3__warp__button: {
+    ...unstyledButton,
+    width: '100%',
+    aspectRatio: '1 / 1',
+    $nest: {
+      '&:focus-visible': focusRing,
+    },
+  },
   puzzle3__warps__figure__back: {
     width: '100%',
     position: 'absolute',
+    top: 0,
+    left: 0,
     overflow: 'hidden',
   },
-  puzzle3__launch__figure: {
+  puzzle3__launch__button: {
+    ...unstyledButton,
     width: '30%',
+    margin: '1em 40px',
     $nest: {
+      '&:focus-visible': focusRing,
       [mobile]: {
         width: '100%',
         minWidth: '44px',

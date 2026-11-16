@@ -19,12 +19,15 @@ const Planet = ({
   moonSrc,
   onPlanetCodeChange,
 }: QuantumPlanetProps) => (
-  <motion.li
-    className={styles.li}
-    whileHover={{ scale: 1.1 }}
-    whileTap={{ scale: 0.9 }}
-  >
-    <figure className={styles.planets__figure} onClick={onPlanetCodeChange}>
+  <li className={styles.li}>
+    <motion.button
+      type="button"
+      className={styles.planets__button}
+      aria-label={planetId}
+      onClick={onPlanetCodeChange}
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
+    >
       <img
         className={styles.planets__img}
         src={hasBeenClickedOn && answerSrc ? answerSrc : src}
@@ -33,8 +36,8 @@ const Planet = ({
       {hasBeenClickedOn && (
         <img className={styles.planets__moon} src={moonSrc} alt="QuantumMoon" />
       )}
-    </figure>
-  </motion.li>
+    </motion.button>
+  </li>
 )
 
 export default Planet

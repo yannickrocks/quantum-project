@@ -1,18 +1,13 @@
 import { stylesheet } from 'typestyle'
 
-import { mobile } from '../../styles/breakpoints'
-
 export default stylesheet({
   puzzle3__warps__figure: {
+    display: 'block',
     width: '100%',
     margin: '0 auto',
     position: 'relative',
     cursor: 'pointer',
-    $nest: {
-      [mobile]: {
-        aspectRatio: '1 / 1',
-      },
-    },
+    aspectRatio: '1 / 1',
   },
   puzzle3__warps__figure__coord: {
     position: 'absolute',

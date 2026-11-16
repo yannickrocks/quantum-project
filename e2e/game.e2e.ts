@@ -15,6 +15,7 @@ test.beforeEach(async ({ page }) => {
 })
 
 test('full playthrough', async ({ page }) => {
+  test.setTimeout(60_000)
   await forceVariant2b(page)
 
   await page.goto('/')

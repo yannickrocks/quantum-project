@@ -9,19 +9,18 @@ type WarpProps = {
 
 const WarpCoordinates = ({ src, name }: WarpProps) => {
   return (
-    <figure className={styles.puzzle3__warps__figure} id={name}>
+    <span className={styles.puzzle3__warps__figure} id={name}>
       {src === '' ? (
         ''
       ) : (
         <motion.img
           className={styles.puzzle3__warps__figure__coord}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
+          variants={{ hover: { scale: 1.1 }, tap: { scale: 0.9 } }}
           src={src}
           alt={name}
         />
       )}
-    </figure>
+    </span>
   )
 }
 

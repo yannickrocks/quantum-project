@@ -9,7 +9,7 @@ const planetCodes = {
   DarkBramble: '1308',
 }
 
-const wanderingMoonPlanets = [
+export const wanderingMoonPlanets = [
   'Eye',
   'Twins',
   'TimberHearth',
@@ -18,7 +18,7 @@ const wanderingMoonPlanets = [
   'DarkBramble',
 ]
 
-const correctOrderOfClicking = [
+export const correctOrderOfClicking = [
   4, 2, 1, 4, 3, 1, 5, 2, 4, 1, 3, 4, 2, 5, 3, 4, 2, 1, 4, 3, 5, 0,
 ]
 
@@ -51,10 +51,10 @@ export const solveWanderingMoon = (page: Page) =>
   clickPlanets(page, correctOrderOfClicking)
 
 export const setWarps = async (page: Page, counts: number[]) => {
-  const cores = page.locator('ul li')
   for (const [coreIndex, count] of counts.entries()) {
+    const warp = page.getByRole('button', { name: `Warp ${coreIndex + 1}` })
     for (let click = 0; click < count; click++) {
-      await cores.nth(coreIndex).dispatchEvent('click')
+      await warp.dispatchEvent('click')
     }
   }
 }
