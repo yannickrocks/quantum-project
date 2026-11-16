@@ -12,19 +12,23 @@ import WarpCoordinates from '../../components/warps'
 import { warpCoordinatesImages, CorrectWarpList } from '../../utils/WarpLists'
 import FadeIn from '../../components/fade-in'
 import { useNavigate } from 'react-router'
-import { motion } from 'motion/react'
+import { motion, useAnimate, useReducedMotion } from 'motion/react'
 import { CookiesProvider } from 'react-cookie'
 import warpSound from '../../assets/nomaiWarp.mp3'
 import VideoPlayer from '../../components/videoplayer'
 import styles from './puzzle3.styles'
 
 const warpCores = [Warp1NotFilled, Warp2NotFilled, Warp3NotFilled]
+const launchDelayMs = 5000
+const warpFlashLeadSeconds = 0.8
 
 const Puzzle3 = () => {
   const [isLaunching, setIsLaunching] = useState(false)
   const launchTimeout = useRef<ReturnType<typeof setTimeout>>(undefined)
   const [warps, setWarps] = useState([0, 0, 0])
   const navigate = useNavigate()
+  const isMotionReduced = useReducedMotion()
+  const [warpList, animateWarps] = useAnimate()
 
   useEffect(() => () => clearTimeout(launchTimeout.current), [])
 
@@ -41,7 +45,17 @@ const Puzzle3 = () => {
   }
 
   const checkAnswers = () => {
-    if (isLaunching || warps.includes(0)) return
+    if (isLaunching) return
+    if (warps.includes(0)) {
+      animateWarps(
+        '[data-empty="true"]',
+        isMotionReduced
+          ? { opacity: [1, 0.4, 1] }
+          : { x: [0, -6, 6, -4, 4, 0] },
+        { duration: 0.3 },
+      )
+      return
+    }
 
     setIsLaunching(true)
 
@@ -53,7 +67,7 @@ const Puzzle3 = () => {
         (warp, index) => warp === CorrectWarpList[index],
       )
       navigate(isCorrect ? '/consciousobserver' : '/terriblefate')
-    }, 5000)
+    }, launchDelayMs)
   }
 
   const resetInputs = () => {
@@ -63,7 +77,21 @@ const Puzzle3 = () => {
   return (
     <CookiesProvider>
       <img className={styles.background} src={Background} alt="Background" />
-      <FadeIn delay={600} transitionDuration={2000}>
+      {isLaunching && (
+        <motion.div
+          data-testid="warp-flash"
+          aria-hidden
+          className={isMotionReduced ? styles.warpFade : styles.warpFlash}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            delay: launchDelayMs / 1000 - warpFlashLeadSeconds,
+            duration: 0.65,
+            ease: 'easeIn',
+          }}
+        />
+      )}
+      <FadeIn>
         <div className={styles.finalVoyage}>
           <div className={styles.puzzle3__detailsAndImage}>
             <div className={styles.puzzle3__details}>
@@ -91,13 +119,14 @@ const Puzzle3 = () => {
             height={360}
             url="https://www.youtube.com/embed/OREB6-fb3uw"
           />
-          <ul className={styles.finalVoyage__ul}>
+          <ul ref={warpList} className={styles.finalVoyage__ul}>
             {warpCores.map((warpCore, index) => (
               <li key={warpCore} className={styles.finalVoyage__li}>
                 <motion.button
                   type="button"
                   className={styles.puzzle3__warp__button}
                   aria-label={`Warp ${index + 1}`}
+                  data-empty={warps[index] === 0}
                   onClick={() => handleWarpClick(index)}
                   whileHover="hover"
                   whileTap="tap"

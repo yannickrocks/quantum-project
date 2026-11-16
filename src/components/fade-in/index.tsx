@@ -8,8 +8,8 @@ type FadeInProps = {
 }
 
 const FadeIn = ({
-  delay = 50,
-  transitionDuration = 400,
+  delay = 200,
+  transitionDuration = 800,
   children,
 }: FadeInProps) => (
   <MotionConfig reducedMotion="user">
