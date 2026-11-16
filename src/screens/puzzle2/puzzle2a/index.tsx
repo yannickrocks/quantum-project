@@ -52,7 +52,7 @@ const Puzzle2 = () => {
   return (
     <>
       <img className={styles.background} src={Background} alt="Background" />
-      <FadeIn delay={600} transitionDuration={2000}>
+      <FadeIn>
         <div className={styles.pWanderingmoon}>
           <div className={styles.detailsAndImageDiv}>
             <NomaiWithText />

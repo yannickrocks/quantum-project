@@ -42,7 +42,7 @@ const Puzzle1 = () => {
   return (
     <>
       <img className={styles.background} src={Background} alt="Background" />
-      <FadeIn delay={600} transitionDuration={2000}>
+      <FadeIn>
         <div className={styles.T2minutes}>
           <div className={styles.puzzle1__detailsAndImage}>
             <div className={styles.puzzle1__details}>

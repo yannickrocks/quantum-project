@@ -1,4 +1,5 @@
 import { stylesheet } from 'typestyle'
+import type { NestedCSSProperties } from 'typestyle/lib/types'
 
 import {
   coverViewport,
@@ -10,6 +11,13 @@ import {
   unstyledButton,
 } from '../../styles/breakpoints'
 
+const warpOverlay: NestedCSSProperties = {
+  position: 'fixed',
+  inset: 0,
+  zIndex: 100,
+  pointerEvents: 'none',
+}
+
 export default stylesheet({
   background: {
     position: 'fixed',
@@ -17,6 +25,15 @@ export default stylesheet({
     left: 0,
     zIndex: -100,
     ...coverViewport,
+  },
+  warpFlash: {
+    ...warpOverlay,
+    backgroundImage:
+      'radial-gradient(circle at center, #ffffff 0%, #e4dcff 40%, #7669da 100%)',
+  },
+  warpFade: {
+    ...warpOverlay,
+    backgroundColor: '#000000',
   },
   finalVoyage: {
     margin: '0 auto',
