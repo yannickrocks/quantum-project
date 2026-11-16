@@ -1,11 +1,9 @@
 import { test, expect } from '@playwright/test'
+import { blockYoutube, forceVariant2b, wanderingMoonPlanets } from './game'
 import {
-  blockYoutube,
+  CorrectWarpList,
   correctOrderOfClicking,
-  correctWarps,
-  forceVariant2b,
-  wanderingMoonPlanets,
-} from './game'
+} from '../src/utils/PuzzleAnswers'
 
 test.beforeEach(async ({ page }) => {
   await blockYoutube(page)
@@ -69,7 +67,7 @@ test('the final voyage can be launched with the keyboard', async ({ page }) => {
   await page.keyboard.press('Tab')
   await expect(page.getByRole('button', { name: 'Warp 2' })).toBeFocused()
 
-  for (const [index, count] of correctWarps.entries()) {
+  for (const [index, count] of CorrectWarpList.entries()) {
     const warp = page.getByRole('button', { name: `Warp ${index + 1}` })
     for (let press = 0; press < count; press++) await warp.press('Enter')
   }

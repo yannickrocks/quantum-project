@@ -9,11 +9,11 @@ import Warp2NotFilled from '../../assets/Warp-Purples/WarpCore_2.webp'
 import Warp3NotFilled from '../../assets/Warp-Purples/WarpCore_3.webp'
 import CountDown from '../../components/countdown'
 import WarpCoordinates from '../../components/warps'
-import { warpCoordinatesImages, CorrectWarpList } from '../../utils/WarpLists'
+import { warpCoordinatesImages } from '../../utils/WarpLists'
+import { CorrectWarpList } from '../../utils/PuzzleAnswers'
 import FadeIn from '../../components/fade-in'
 import { useNavigate } from 'react-router'
 import { motion, useAnimate, useReducedMotion } from 'motion/react'
-import { CookiesProvider } from 'react-cookie'
 import warpSound from '../../assets/nomaiWarp.mp3'
 import VideoPlayer from '../../components/videoplayer'
 import styles from './puzzle3.styles'
@@ -79,7 +79,7 @@ const Puzzle3 = () => {
   }
 
   return (
-    <CookiesProvider>
+    <>
       <title>The Final Voyage · OW1128</title>
       <img className={styles.background} src={Background} alt="" />
       {isLaunching && (
@@ -181,7 +181,7 @@ const Puzzle3 = () => {
           </div>
         </div>
       </FadeIn>
-    </CookiesProvider>
+    </>
   )
 }
 

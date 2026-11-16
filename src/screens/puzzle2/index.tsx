@@ -3,11 +3,8 @@ import Background from '../../assets/Misc/background.webp'
 import ArmsOutStretchNoMoon from '../../assets/Misc/Arms-Outstretched_web.webp'
 import ArmsOutStretchWithMoon from '../../assets/Misc/Arms-Outstretched-full_web.webp'
 import QuantumPlanet from '../../components/quantum-planets'
-import {
-  PlanetList,
-  QuantumMoon,
-  correctOrderOfClicking,
-} from '../../utils/PlanetsList'
+import { PlanetList, QuantumMoon } from '../../utils/PlanetsList'
+import { correctOrderOfClicking } from '../../utils/PuzzleAnswers'
 import {
   WanderingMoonIncorrect,
   WanderingMoonAlmostCorrect,

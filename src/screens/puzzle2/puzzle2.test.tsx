@@ -1,6 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react'
 import WanderingMoon from '.'
-import { PlanetList, correctOrderOfClicking } from '../../utils/PlanetsList'
+import { PlanetList } from '../../utils/PlanetsList'
+import { correctOrderOfClicking } from '../../utils/PuzzleAnswers'
 import {
   WanderingMoonAlmostCorrect,
   WanderingMoonCorrect,
