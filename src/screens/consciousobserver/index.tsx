@@ -10,9 +10,8 @@ const ConsciousObserver = () => {
       <FadeIn delay={1500} transitionDuration={2000}>
         <div className={styles.congratulations}>
           <VideoPlayer
-            width={950}
-            height={500}
             url="https://www.youtube.com/embed/X2QYfa1xNp0?autoplay=1"
+            isLarge
           />
           <FadeIn delay={165000} transitionDuration={2000}>
             <div className={styles.credits__mvps}>
