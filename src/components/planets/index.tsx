@@ -34,7 +34,9 @@ const Planet = ({
       </figure>
       <input
         id={planetId}
+        aria-label={`${planetId} code`}
         className={styles.puzzle1__planets__input}
+        inputMode="numeric"
         maxLength={4}
         pattern="[0-9]*"
         placeholder="0000"

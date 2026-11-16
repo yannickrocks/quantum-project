@@ -29,7 +29,9 @@ vi.mock('../../components/countdown', async () => {
 })
 
 const fillWarps = (counts = [1, 1, 1]) => {
-  const warps = screen.getAllByRole('listitem').slice(0, 3)
+  const warps = [1, 2, 3].map((number) =>
+    screen.getByRole('button', { name: `Warp ${number}` }),
+  )
   warps.forEach((warp, index) => {
     for (let click = 0; click < counts[index]; click++) fireEvent.click(warp)
   })

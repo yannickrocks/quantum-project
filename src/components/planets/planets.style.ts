@@ -1,6 +1,6 @@
 import { stylesheet } from 'typestyle'
 
-import { mobile } from '../../styles/breakpoints'
+import { focusRing, mobile } from '../../styles/breakpoints'
 
 export default stylesheet({
   li: {
@@ -31,9 +31,7 @@ export default stylesheet({
         fontSize: '16px',
         boxSizing: 'border-box',
       },
-      '&:focus': {
-        outline: 'none',
-      },
+      '&:focus-visible': focusRing,
     },
   },
 })

@@ -12,10 +12,13 @@ import WarpCoordinates from '../../components/warps'
 import { warpCoordinatesImages, CorrectWarpList } from '../../utils/WarpLists'
 import FadeIn from '../../components/fade-in'
 import { useNavigate } from 'react-router'
+import { motion } from 'motion/react'
 import { CookiesProvider } from 'react-cookie'
 import warpSound from '../../assets/nomaiWarp.mp3'
 import VideoPlayer from '../../components/videoplayer'
 import styles from './puzzle3.styles'
+
+const warpCores = [Warp1NotFilled, Warp2NotFilled, Warp3NotFilled]
 
 const Puzzle3 = () => {
   const [isLaunching, setIsLaunching] = useState(false)
@@ -89,57 +92,41 @@ const Puzzle3 = () => {
             url="https://www.youtube.com/embed/OREB6-fb3uw"
           />
           <ul className={styles.finalVoyage__ul}>
-            <li
-              className={styles.finalVoyage__li}
-              onClick={() => handleWarpClick(0)}
-            >
-              <img
-                className={styles.puzzle3__warps__figure__back}
-                src={Warp1NotFilled}
-                alt="BackWarp"
-              />
-              <WarpCoordinates
-                src={warpCoordinatesImages[warps[0]]}
-                name="Warp 1"
-              />
-            </li>
-            <li
-              className={styles.finalVoyage__li}
-              onClick={() => handleWarpClick(1)}
-            >
-              <img
-                className={styles.puzzle3__warps__figure__back}
-                src={Warp2NotFilled}
-                alt="BackWarp"
-              />
-              <WarpCoordinates
-                src={warpCoordinatesImages[warps[1]]}
-                name="Warp 2"
-              />
-            </li>
-            <li
-              className={styles.finalVoyage__li}
-              onClick={() => handleWarpClick(2)}
-            >
-              <img
-                className={styles.puzzle3__warps__figure__back}
-                src={Warp3NotFilled}
-                alt="BackWarp"
-              />
-              <WarpCoordinates
-                src={warpCoordinatesImages[warps[2]]}
-                name="Warp 3"
-              />
-            </li>
+            {warpCores.map((warpCore, index) => (
+              <li key={warpCore} className={styles.finalVoyage__li}>
+                <motion.button
+                  type="button"
+                  className={styles.puzzle3__warp__button}
+                  aria-label={`Warp ${index + 1}`}
+                  onClick={() => handleWarpClick(index)}
+                  whileHover="hover"
+                  whileTap="tap"
+                >
+                  <img
+                    className={styles.puzzle3__warps__figure__back}
+                    src={warpCore}
+                    alt="BackWarp"
+                  />
+                  <WarpCoordinates
+                    src={warpCoordinatesImages[warps[index]]}
+                    name={`Warp ${index + 1}`}
+                  />
+                </motion.button>
+              </li>
+            ))}
             <li className={styles.finalVoyage__li}>
-              <figure className={styles.puzzle3__launch__figure}>
+              <button
+                type="button"
+                className={styles.puzzle3__launch__button}
+                aria-label="Launch"
+                onClick={checkAnswers}
+              >
                 <img
                   className={styles.puzzle3__launch__figure__img}
                   src={isLaunching ? LaunchGif : Launch1}
                   alt="Launch 1"
-                  onClick={checkAnswers}
                 />
-              </figure>
+              </button>
             </li>
           </ul>
           <div className={styles.puzzle3__buttons}>

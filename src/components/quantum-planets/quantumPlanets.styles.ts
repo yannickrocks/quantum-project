@@ -1,6 +1,6 @@
 import { stylesheet } from 'typestyle'
 
-import { mobile } from '../../styles/breakpoints'
+import { focusRing, mobile, unstyledButton } from '../../styles/breakpoints'
 
 export default stylesheet({
   li: {
@@ -12,11 +12,13 @@ export default stylesheet({
       },
     },
   },
-  planets__figure: {
+  planets__button: {
+    ...unstyledButton,
     width: '80%',
     margin: '0 auto',
     textAlign: 'center',
     $nest: {
+      '&:focus-visible': focusRing,
       [mobile]: {
         width: '100%',
         minHeight: '64px',
