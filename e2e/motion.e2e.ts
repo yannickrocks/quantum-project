@@ -1,5 +1,6 @@
 import { test, expect, type Page } from '@playwright/test'
-import { blockYoutube, correctWarps, setWarps } from './game'
+import { blockYoutube, setWarps } from './game'
+import { CorrectWarpList } from '../src/utils/PuzzleAnswers'
 
 type StyleSample = {
   opacity: number
@@ -202,7 +203,7 @@ test('launch fades into a white-to-purple warp flash before the ending', async (
 }) => {
   await page.goto('/finalvoyage')
   await waitForPageShown(page, 'The Final Voyage')
-  await setWarps(page, correctWarps)
+  await setWarps(page, CorrectWarpList)
   const [flashSamples] = await recordStyles(
     page,
     ['[data-testid="warp-flash"]'],
@@ -225,7 +226,7 @@ test('with reduced motion, launch fades to black instead of a bright flash', asy
   await page.emulateMedia({ reducedMotion: 'reduce' })
   await page.goto('/finalvoyage')
   await waitForPageShown(page, 'The Final Voyage')
-  await setWarps(page, correctWarps)
+  await setWarps(page, CorrectWarpList)
   await launch(page).click()
 
   const style = await page.getByTestId('warp-flash').evaluate((element) => {

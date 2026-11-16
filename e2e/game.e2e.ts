@@ -2,13 +2,13 @@ import { test, expect } from '@playwright/test'
 import {
   blockYoutube,
   clickPlanets,
-  correctWarps,
   forceVariant2b,
   launch,
   setWarps,
   solvePuzzle1,
   solveWanderingMoon,
 } from './game'
+import { CorrectWarpList } from '../src/utils/PuzzleAnswers'
 
 test.beforeEach(async ({ page }) => {
   await blockYoutube(page)
@@ -43,7 +43,7 @@ test('full playthrough', async ({ page }) => {
   await page.getByRole('link', { name: 'Wake up' }).click()
 
   await expect(page).toHaveURL('/finalvoyage')
-  await setWarps(page, correctWarps)
+  await setWarps(page, CorrectWarpList)
   await launch(page)
   await expect(page).toHaveURL('/consciousobserver', { timeout: 8000 })
 })

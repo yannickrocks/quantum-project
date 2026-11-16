@@ -14,6 +14,7 @@ import PBrittleHollow from '../assets/Planets/Purple/BH-Purple_web.webp'
 import PGiantsDeep from '../assets/Planets/Purple/GD-Purple_web.webp'
 import PDarkBramble from '../assets/Planets/Purple/DB-Purple_web.webp'
 import PQuantumMoon from '../assets/Planets/Purple/QM-Purple_web.webp'
+import { puzzle1Codes } from './PuzzleAnswers'
 
 export const QuantumMoon = {
   Grey: GQuantumMoon,
@@ -25,48 +26,42 @@ export const PlanetList = [
     standardImg: GSun,
     answerSrc: PSun,
     planet: 'Sun',
-    puzzle1code: '2200',
+    puzzle1code: puzzle1Codes.Sun,
   },
   {
     standardImg: GEye,
     answerSrc: PEye,
     planet: 'Eye',
-    puzzle1code: '0',
+    puzzle1code: puzzle1Codes.Eye,
   },
   {
     standardImg: GTwins,
     answerSrc: PTwins,
     planet: 'Twins',
-    puzzle1code: '1905',
+    puzzle1code: puzzle1Codes.Twins,
   },
   {
     standardImg: GTimberHearth,
     answerSrc: PTimberHearth,
     planet: 'TimberHearth',
-    puzzle1code: '1128',
+    puzzle1code: puzzle1Codes.TimberHearth,
   },
   {
     standardImg: GBrittleHollow,
     answerSrc: PBrittleHollow,
     planet: 'BrittleHollow',
-    puzzle1code: '0431',
+    puzzle1code: puzzle1Codes.BrittleHollow,
   },
   {
     standardImg: GGiantsDeep,
     answerSrc: PGiantsDeep,
     planet: 'GiantsDeep',
-    puzzle1code: '0626',
+    puzzle1code: puzzle1Codes.GiantsDeep,
   },
   {
     standardImg: GDarkBramble,
     answerSrc: PDarkBramble,
     planet: 'DarkBramble',
-    puzzle1code: '1308',
+    puzzle1code: puzzle1Codes.DarkBramble,
   },
 ]
-
-export const correctOrderOfClicking = [
-  4, 2, 1, 4, 3, 1, 5, 2, 4, 1, 3, 4, 2, 5, 3, 4, 2, 1, 4, 3, 5, 0,
-]
-// GD, Timber, Twins, GD, BH, Twins, Bramble, Timber, GD, Twins, BH, GD, Timber,
-// Bramble, BH, GD, Timber, Twins, GD, BH, Bramble, Eye.
