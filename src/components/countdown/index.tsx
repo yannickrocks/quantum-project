@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react'
-import { useCookies } from 'react-cookie'
 import styles from './countdown.styles'
 
 type CountDownProps = {
@@ -9,12 +8,34 @@ type CountDownProps = {
 const cookieName = 'CountDownCrumble'
 const countdownDurationMs = 22 * 60 * 60 * 1000
 
+const readEndTime = () => {
+  const entry = document.cookie
+    .split('; ')
+    .find((cookie) => cookie.startsWith(`${cookieName}=`))
+  if (!entry) return NaN
+  const raw = entry.slice(cookieName.length + 1)
+  try {
+    const decoded = decodeURIComponent(raw)
+    try {
+      return new Date(JSON.parse(decoded)).getTime()
+    } catch {
+      return new Date(decoded).getTime()
+    }
+  } catch {
+    return NaN
+  }
+}
+
+const writeEndTime = (endTime: number) => {
+  const expires = new Date(endTime)
+  document.cookie = `${cookieName}=${encodeURIComponent(JSON.stringify(expires))}; path=/finalvoyage; expires=${expires.toUTCString()}`
+}
+
 const pad = (value: number) => value.toString().padStart(2, '0')
 
 const CountDown = ({ onExpire }: CountDownProps) => {
-  const [endCookie, setEndCookie] = useCookies([cookieName])
   const [{ endTime, isFirstVisit }] = useState(() => {
-    const storedEndTime = new Date(endCookie.CountDownCrumble).getTime()
+    const storedEndTime = readEndTime()
     return Number.isNaN(storedEndTime)
       ? { endTime: Date.now() + countdownDurationMs, isFirstVisit: true }
       : { endTime: storedEndTime, isFirstVisit: false }
@@ -30,8 +51,7 @@ const CountDown = ({ onExpire }: CountDownProps) => {
 
   useEffect(() => {
     if (isFirstVisit) {
-      const expires = new Date(endTime)
-      setEndCookie(cookieName, expires, { path: '/finalvoyage', expires })
+      writeEndTime(endTime)
     }
   }, [])
 
