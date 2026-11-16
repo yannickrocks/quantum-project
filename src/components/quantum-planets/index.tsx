@@ -1,5 +1,4 @@
 import { motion, useReducedMotion } from 'motion/react'
-import './quantumPlanets.css'
 import styles from './quantumPlanets.styles'
 
 const flickeringMoon = {

@@ -173,7 +173,7 @@ const Puzzle3 = () => {
             <p className={styles.puzzle3__details__warning}>
               Note: images on this page may be slow to load
             </p>
-            <div className="puzzle3__countdown">
+            <div>
               <CountDown onExpire={() => navigate('/terriblefate')} />
             </div>
           </div>

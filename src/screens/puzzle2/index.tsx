@@ -1,53 +1,56 @@
 import { useState } from 'react'
-import Background from '../../../assets/Misc/background.webp'
-import ArmsOutStretchNoMoon from '../../../assets/Misc/Arms-Outstretched_web.webp'
-import QuantumPlanet from '../../../components/quantum-planets'
+import Background from '../../assets/Misc/background.webp'
+import ArmsOutStretchNoMoon from '../../assets/Misc/Arms-Outstretched_web.webp'
+import ArmsOutStretchWithMoon from '../../assets/Misc/Arms-Outstretched-full_web.webp'
+import QuantumPlanet from '../../components/quantum-planets'
 import {
   PlanetList,
   QuantumMoon,
   correctOrderOfClicking,
-} from '../../../utils/PlanetsList'
+} from '../../utils/PlanetsList'
 import {
   WanderingMoonIncorrect,
   WanderingMoonAlmostCorrect,
-} from '../../../utils/Constants'
-import FadeIn from '../../../components/fade-in'
+  WanderingMoonCorrect,
+} from '../../utils/Constants'
+import FadeIn from '../../components/fade-in'
 import { motion } from 'motion/react'
-import NomaiWithText from '../../../components/nomai-text'
-import styles from '../puzzle2.styles'
-import VideoPlayer from '../../../components/videoplayer'
+import NomaiWithText from '../../components/nomai-text'
+import VideoPlayer from '../../components/videoplayer'
+import styles from './puzzle2.styles'
 
-const Puzzle2 = () => {
+type WanderingMoonProps = {
+  isMoonFound?: boolean
+}
+
+const WanderingMoon = ({ isMoonFound = false }: WanderingMoonProps) => {
   const adjustedPlanetList = PlanetList.filter((x) => x.planet !== 'Sun')
   const [planetCodes, setPlanetCodes] = useState<Array<number>>([])
   const [showMoon, setShowMoon] = useState<Array<number>>([])
-  const [showRefreshButton, setRefreshToggle] = useState(false)
+  const [isSequenceSolved, setIsSequenceSolved] = useState(false)
   const [displayIncorrectMessage, setDisplayIncorrectMessage] = useState(false)
-  const [displayTrackingMessage, setDisplayTrackingMessage] = useState(false)
 
   const addOrRemoveFromAnswerArray = (indexToChange: number) => {
-    const newArray = [...planetCodes, indexToChange]
-    setPlanetCodes(newArray)
-
-    const moonArray = [indexToChange]
-    setShowMoon(moonArray)
+    setPlanetCodes([...planetCodes, indexToChange])
+    setShowMoon([indexToChange])
   }
 
   const checkAnswers = () => {
     const isSequenceCorrect =
       planetCodes.length === correctOrderOfClicking.length &&
       correctOrderOfClicking.every((code, index) => code === planetCodes[index])
-    setDisplayTrackingMessage(isSequenceCorrect)
+    setIsSequenceSolved(isSequenceCorrect)
     setDisplayIncorrectMessage(!isSequenceCorrect)
-    setRefreshToggle(isSequenceCorrect)
   }
 
   const reset = () => {
     setDisplayIncorrectMessage(false)
-    setDisplayTrackingMessage(false)
+    setIsSequenceSolved(false)
     setPlanetCodes([])
     setShowMoon([])
   }
+
+  const isProceedShown = isSequenceSolved && isMoonFound
 
   return (
     <>
@@ -59,8 +62,14 @@ const Puzzle2 = () => {
             <figure className={styles.figure}>
               <img
                 className={styles.figure_img}
-                src={ArmsOutStretchNoMoon}
-                alt="Arms Stretch Out No Moon"
+                src={
+                  isMoonFound ? ArmsOutStretchWithMoon : ArmsOutStretchNoMoon
+                }
+                alt={
+                  isMoonFound
+                    ? 'Arms Stretch Out with Moon'
+                    : 'Arms Stretch Out No Moon'
+                }
               />
             </figure>
           </div>
@@ -74,9 +83,10 @@ const Puzzle2 = () => {
               <QuantumPlanet
                 key={index}
                 src={item.standardImg}
+                answerSrc={isMoonFound ? item.answerSrc : undefined}
                 planetId={item.planet}
                 hasBeenClickedOn={showMoon.includes(index)}
-                moonSrc={QuantumMoon.Grey}
+                moonSrc={isMoonFound ? QuantumMoon.Purple : QuantumMoon.Grey}
                 onPlanetCodeChange={() => {
                   addOrRemoveFromAnswerArray(index)
                 }}
@@ -84,17 +94,33 @@ const Puzzle2 = () => {
             ))}
           </ul>
           <div className={styles.buttons}>
-            {displayTrackingMessage ? (
+            {isSequenceSolved && !isMoonFound ? (
               <p className={styles.buttons__almostCorrectText}>
                 {WanderingMoonAlmostCorrect}
               </p>
+            ) : null}
+            {isProceedShown ? (
+              <p className={styles.correctText}>{WanderingMoonCorrect}</p>
             ) : null}
             {displayIncorrectMessage ? (
               <p className={styles.buttons__incorrectText}>
                 {WanderingMoonIncorrect}
               </p>
             ) : null}
-            {showRefreshButton ? (
+            {!isSequenceSolved ? (
+              <button className={styles.buttons__reset} onClick={reset}>
+                Reset
+              </button>
+            ) : isMoonFound ? (
+              <motion.button
+                className={styles.buttons__reset}
+                onClick={() => window.location.reload()}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+              >
+                Refresh
+              </motion.button>
+            ) : (
               <motion.a
                 className={styles.buttons__reset}
                 href="/thewanderingmoon"
@@ -103,17 +129,24 @@ const Puzzle2 = () => {
               >
                 Refresh
               </motion.a>
+            )}
+            {isProceedShown ? (
+              <motion.a
+                className={styles.buttons__proceed}
+                href="/wakeupagain"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+              >
+                Proceed
+              </motion.a>
             ) : (
-              <button className={styles.buttons__reset} onClick={reset}>
-                Reset
+              <button
+                className={styles.buttons__checkAnswers}
+                onClick={checkAnswers}
+              >
+                Check
               </button>
             )}
-            <button
-              className={styles.buttons__checkAnswers}
-              onClick={checkAnswers}
-            >
-              Check
-            </button>
           </div>
         </div>
       </FadeIn>
@@ -121,4 +154,4 @@ const Puzzle2 = () => {
   )
 }
 
-export default Puzzle2
+export default WanderingMoon

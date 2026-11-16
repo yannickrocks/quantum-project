@@ -5,7 +5,8 @@ import {
   coverViewport,
   focusRing,
   mobile,
-  mobileButton,
+  palette,
+  smallButton,
   mobilePage,
   mobileTextColumn,
   unstyledButton,
@@ -209,25 +210,7 @@ export default stylesheet({
     },
   },
   puzzle3__buttons__reset: {
+    ...smallButton(palette.red, palette.redHover),
     width: '140px',
-    border: 'none',
-    borderRadius: '6px',
-    backgroundColor: '#b75053',
-    color: '#ffffff',
-    fontSize: '14px',
-    fontWeight: 800,
-    textAlign: 'center',
-    height: '35px',
-    marginTop: '5px',
-    $nest: {
-      [mobile]: {
-        ...mobileButton,
-      },
-      '&:hover': {
-        backgroundColor: '#8a2c2f',
-        color: '#ffffff',
-        textDecoration: 'none',
-      },
-    },
   },
 })
