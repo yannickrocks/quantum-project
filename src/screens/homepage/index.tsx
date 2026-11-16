@@ -12,10 +12,10 @@ const HomePage = () => {
           <img
             className={styles.figureLogo__logo}
             src={OuterWildsLogo}
-            alt="logo"
+            alt="Outer Wilds"
           />
         </figure>
-        <h2 className={styles.welcomeText}>Welcome, Astronaut</h2>
+        <h1 className={styles.welcomeText}>Welcome, Astronaut</h1>
         <p className={styles.description}>
           <br />
           {HomePageText.map((item, index) => (

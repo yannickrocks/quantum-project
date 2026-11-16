@@ -12,27 +12,29 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/22minutes" element={<Puzzle1 />} />
-        <Route
-          path="/wakeup"
-          element={<Opener href="/wanderingmoon" alt="Mask Puzzle 2" />}
-        />
-        <Route path="/wanderingmoon" element={<WanderingMoon />} />
-        <Route
-          path="/thewanderingmoon"
-          element={<WanderingMoon isMoonFound={randomPicker <= 33} />}
-        />
-        <Route
-          path="/wakeupagain"
-          element={<Opener href="/finalvoyage" alt="Mask Puzzle 3" />}
-        />
-        <Route path="/finalvoyage" element={<Puzzle3 />} />
-        <Route path="/consciousobserver" element={<ConsciousObserver />} />
-        <Route path="/terriblefate" element={<TerribleFate />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
+      <main>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/22minutes" element={<Puzzle1 />} />
+          <Route
+            path="/wakeup"
+            element={<Opener href="/wanderingmoon" alt="Mask Puzzle 2" />}
+          />
+          <Route path="/wanderingmoon" element={<WanderingMoon />} />
+          <Route
+            path="/thewanderingmoon"
+            element={<WanderingMoon isMoonFound={randomPicker <= 33} />}
+          />
+          <Route
+            path="/wakeupagain"
+            element={<Opener href="/finalvoyage" alt="Mask Puzzle 3" />}
+          />
+          <Route path="/finalvoyage" element={<Puzzle3 />} />
+          <Route path="/consciousobserver" element={<ConsciousObserver />} />
+          <Route path="/terriblefate" element={<TerribleFate />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </main>
     </BrowserRouter>
   )
 }

@@ -80,7 +80,8 @@ const Puzzle3 = () => {
 
   return (
     <CookiesProvider>
-      <img className={styles.background} src={Background} alt="Background" />
+      <title>The Final Voyage · OW1128</title>
+      <img className={styles.background} src={Background} alt="" />
       {isLaunching && (
         <motion.div
           data-testid="warp-flash"
@@ -99,7 +100,7 @@ const Puzzle3 = () => {
         <div className={styles.finalVoyage}>
           <div className={styles.puzzle3__detailsAndImage}>
             <div className={styles.puzzle3__details}>
-              <h2 className={styles.puzzle3__details__h2}>The Final Voyage</h2>
+              <h1 className={styles.puzzle3__details__h2}>The Final Voyage</h1>
               <p className={styles.puzzle3__details__p}>
                 {FinalVoyageText.map((item, index) => (
                   <Fragment key={index}>
@@ -122,6 +123,7 @@ const Puzzle3 = () => {
             width={640}
             height={360}
             url="https://www.youtube.com/embed/OREB6-fb3uw"
+            title="The Final Voyage video"
           />
           <ul ref={warpList} className={styles.finalVoyage__ul}>
             {warpCores.map((warpCore, index) => (
@@ -138,7 +140,7 @@ const Puzzle3 = () => {
                   <img
                     className={styles.puzzle3__warps__figure__back}
                     src={warpCore}
-                    alt="BackWarp"
+                    alt=""
                   />
                   <WarpCoordinates
                     src={warpCoordinatesImages[warps[index]]}

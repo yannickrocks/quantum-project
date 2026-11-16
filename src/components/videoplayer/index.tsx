@@ -5,15 +5,22 @@ type VideoPlayerProps = {
   width?: number
   height?: number
   url: string
+  title: string
   isLarge?: boolean
 }
 
-const VideoPlayer = ({ width, height, url, isLarge }: VideoPlayerProps) => {
+const VideoPlayer = ({
+  width,
+  height,
+  url,
+  title,
+  isLarge,
+}: VideoPlayerProps) => {
   return (
     <div className={classes(styles.video, isLarge && styles.videoLarge)}>
       <iframe
         className={classes(styles.iframe, isLarge && styles.iframeLarge)}
-        title="puzzle1"
+        title={title}
         width={width}
         height={height}
         src={url}

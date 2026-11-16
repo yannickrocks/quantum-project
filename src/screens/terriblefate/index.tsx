@@ -6,13 +6,15 @@ import styles from './terribleFate.styles'
 const TerribleFate = () => {
   return (
     <>
-      <img className={styles.background} src={Background} alt="Background" />
+      <title>Terrible Fate · OW1128</title>
+      <img className={styles.background} src={Background} alt="" />
       <div className={styles.failure}>
         <FadeIn delay={1500} transitionDuration={2000}>
           <VideoPlayer
             width={950}
             height={500}
             url="https://www.youtube.com/embed/uFjxs7ENhi4?autoplay=1"
+            title="Terrible Fate video"
           />
         </FadeIn>
         <FadeIn delay={65000} transitionDuration={2000}>

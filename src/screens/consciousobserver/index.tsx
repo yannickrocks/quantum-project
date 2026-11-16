@@ -6,11 +6,13 @@ import styles from './consciousObserver.styles'
 const ConsciousObserver = () => {
   return (
     <>
-      <img className={styles.background} src={Background} alt="Background" />
+      <title>Conscious Observer · OW1128</title>
+      <img className={styles.background} src={Background} alt="" />
       <FadeIn delay={1500} transitionDuration={2000}>
         <div className={styles.congratulations}>
           <VideoPlayer
             url="https://www.youtube.com/embed/X2QYfa1xNp0?autoplay=1"
+            title="Conscious Observer video"
             isLarge
           />
           <FadeIn delay={165000} transitionDuration={2000}>

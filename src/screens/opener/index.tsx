@@ -10,7 +10,8 @@ type OpenerProps = {
 
 const Opener = ({ href, alt }: OpenerProps) => (
   <>
-    <img className={styles.background} src={Background} alt="Background" />
+    <title>Wake Up · OW1128</title>
+    <img className={styles.background} src={Background} alt="" />
     <FadeIn delay={600} transitionDuration={1000}>
       <div>
         <figure className={styles.opener__figure__mask}>

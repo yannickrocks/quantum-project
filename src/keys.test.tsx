@@ -37,7 +37,9 @@ it('nomai images have descriptive alt text', () => {
 })
 
 it('videoplayer allow attribute has no typos', () => {
-  const { container } = render(<VideoPlayer width={1} height={1} url="x" />)
+  const { container } = render(
+    <VideoPlayer width={1} height={1} url="x" title="x" />,
+  )
   expect(container.querySelector('iframe')?.getAttribute('allow')).toContain(
     'accelerometer;',
   )

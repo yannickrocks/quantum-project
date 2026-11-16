@@ -41,12 +41,13 @@ const Puzzle1 = () => {
 
   return (
     <>
-      <img className={styles.background} src={Background} alt="Background" />
+      <title>22 Minutes · OW1128</title>
+      <img className={styles.background} src={Background} alt="" />
       <FadeIn>
         <div className={styles.T2minutes}>
           <div className={styles.puzzle1__detailsAndImage}>
             <div className={styles.puzzle1__details}>
-              <h2 className={styles.puzzle1__details__heading}>22 Minutes</h2>
+              <h1 className={styles.puzzle1__details__heading}>22 Minutes</h1>
               <p className={styles.puzzle1__details_text}>
                 {Minutes22Text.map((item, index) => (
                   <React.Fragment key={index}>
@@ -61,7 +62,7 @@ const Puzzle1 = () => {
               <img
                 className={styles.puzzle1__figure__img}
                 src={TimberHeath}
-                alt="Timber Heath"
+                alt="Timber Hearth"
               />
             </figure>
           </div>
@@ -69,6 +70,7 @@ const Puzzle1 = () => {
             width={640}
             height={360}
             url="https://www.youtube.com/embed/6Z5xqBUmkoI"
+            title="22 Minutes video"
           />
           <ul className={styles.T2minutes__ul}>
             {adjustedPlanetList.map((item, index) => (

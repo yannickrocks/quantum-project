@@ -6,7 +6,7 @@ import styles from './nomaiText.styles'
 const NomaiWithText = () => {
   return (
     <div className={styles.nomai__details}>
-      <h2 className={styles.nomai__h2}>The Wandering Moon</h2>
+      <h1 className={styles.nomai__h2}>The Wandering Moon</h1>
       <div className={styles.nomai__details__row}>
         <img
           className={styles.nomai__details__img}
