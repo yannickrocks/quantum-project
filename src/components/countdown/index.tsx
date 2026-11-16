@@ -52,7 +52,8 @@ const CountDown = ({ onExpire }: CountDownProps) => {
   return (
     <div className={styles.timer}>
       {pad(Math.floor(remainingSeconds / 3600))}:
-      {pad(Math.floor((remainingSeconds % 3600) / 60))}
+      {pad(Math.floor((remainingSeconds % 3600) / 60))}:
+      {pad(remainingSeconds % 60)}
     </div>
   )
 }

@@ -72,20 +72,20 @@ describe('CountDown', () => {
     expect(onExpire).not.toHaveBeenCalled()
   })
 
-  it('shows 22:00 and writes the end cookie on a first visit', () => {
+  it('shows 22:00:00 and writes the end cookie on a first visit', () => {
     const cookies = new Cookies()
     const setSpy = vi.spyOn(cookies, 'set')
     renderCountDown(vi.fn(), cookies)
-    expect(screen.getByText('22:00')).toBeInTheDocument()
+    expect(screen.getByText('22:00:00')).toBeInTheDocument()
     expectEndCookieWritten(setSpy)
   })
 
-  it('shows 22:00 on a first visit when a foreign cookie exists', () => {
+  it('shows 22:00:00 on a first visit when a foreign cookie exists', () => {
     document.cookie = 'foo=1; path=/'
     const cookies = new Cookies()
     const setSpy = vi.spyOn(cookies, 'set')
     renderCountDown(vi.fn(), cookies)
-    expect(screen.getByText('22:00')).toBeInTheDocument()
+    expect(screen.getByText('22:00:00')).toBeInTheDocument()
     expect(screen.queryByText(/NaN/)).toBeNull()
     expectEndCookieWritten(setSpy)
   })
@@ -95,14 +95,22 @@ describe('CountDown', () => {
     const cookies = new Cookies()
     const setSpy = vi.spyOn(cookies, 'set')
     renderCountDown(vi.fn(), cookies)
-    expect(screen.getByText('22:00')).toBeInTheDocument()
+    expect(screen.getByText('22:00:00')).toBeInTheDocument()
     expectEndCookieWritten(setSpy)
   })
 
   it('renders the remaining time from the cookie on first paint', () => {
     setEndCookie(5 * 60 * 60 * 1000 + 30 * 60 * 1000)
     renderCountDown(vi.fn())
-    expect(screen.getByText('05:30')).toBeInTheDocument()
+    expect(screen.getByText('05:30:00')).toBeInTheDocument()
+  })
+
+  it('counts down every second', () => {
+    setEndCookie(2 * 60 * 60 * 1000)
+    renderCountDown(vi.fn())
+    expect(screen.getByText('02:00:00')).toBeInTheDocument()
+    tick(1)
+    expect(screen.getByText('01:59:59')).toBeInTheDocument()
   })
 
   it('calls onExpire for an already expired cookie', () => {
@@ -116,10 +124,10 @@ describe('CountDown', () => {
   it('follows Date.now after a long gap', () => {
     setEndCookie(3 * 60 * 60 * 1000)
     renderCountDown(vi.fn())
-    expect(screen.getByText('03:00')).toBeInTheDocument()
+    expect(screen.getByText('03:00:00')).toBeInTheDocument()
     vi.setSystemTime(Date.now() + 2 * 60 * 60 * 1000)
     tick(1)
-    expect(screen.getByText('00:59')).toBeInTheDocument()
+    expect(screen.getByText('00:59:59')).toBeInTheDocument()
   })
 
   it('keeps the interval and calls the latest onExpire after a rerender', () => {
