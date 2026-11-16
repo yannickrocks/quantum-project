@@ -1,14 +1,5 @@
 import { act, render, screen } from '@testing-library/react'
-import { Cookies, CookiesProvider } from 'react-cookie'
-import {
-  afterEach,
-  beforeEach,
-  describe,
-  expect,
-  it,
-  vi,
-  type MockInstance,
-} from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import CountDown from '.'
 
 const cookieName = 'CountDownCrumble'
@@ -17,21 +8,21 @@ const setEndCookie = (msFromNow: number) => {
   document.cookie = `${cookieName}=${new Date(Date.now() + msFromNow).toISOString()}; path=/`
 }
 
-const renderCountDown = (onExpire: () => void, cookies = new Cookies()) =>
-  render(
-    <CookiesProvider cookies={cookies}>
-      <CountDown onExpire={onExpire} />
-    </CookiesProvider>,
-  )
+const renderCountDown = (onExpire: () => void) =>
+  render(<CountDown onExpire={onExpire} />)
 
-const expectEndCookieWritten = (setSpy: MockInstance) => {
-  expect(setSpy).toHaveBeenCalledTimes(1)
-  const [name, value, options] = setSpy.mock.calls[0]
-  expect(name).toBe(cookieName)
+const readEndCookie = () => {
+  const entry = document.cookie
+    .split('; ')
+    .find((cookie) => cookie.startsWith(`${cookieName}=`))
+  return entry && decodeURIComponent(entry.slice(cookieName.length + 1))
+}
+
+const expectEndCookieWritten = () => {
+  const storedEndTime = new Date(JSON.parse(readEndCookie() as string))
   expect(
-    Math.abs(value.getTime() - Date.now() - 22 * 60 * 60 * 1000),
+    Math.abs(storedEndTime.getTime() - Date.now() - 22 * 60 * 60 * 1000),
   ).toBeLessThan(5000)
-  expect(options.path).toBe('/finalvoyage')
 }
 
 const tick = (seconds: number) => {
@@ -73,36 +64,50 @@ describe('CountDown', () => {
   })
 
   it('shows 22:00 and writes the end cookie on a first visit', () => {
-    const cookies = new Cookies()
-    const setSpy = vi.spyOn(cookies, 'set')
-    renderCountDown(vi.fn(), cookies)
+    renderCountDown(vi.fn())
     expect(screen.getByText('22:00')).toBeInTheDocument()
-    expectEndCookieWritten(setSpy)
+    expectEndCookieWritten()
   })
 
   it('shows 22:00 on a first visit when a foreign cookie exists', () => {
     document.cookie = 'foo=1; path=/'
-    const cookies = new Cookies()
-    const setSpy = vi.spyOn(cookies, 'set')
-    renderCountDown(vi.fn(), cookies)
+    renderCountDown(vi.fn())
     expect(screen.getByText('22:00')).toBeInTheDocument()
     expect(screen.queryByText(/NaN/)).toBeNull()
-    expectEndCookieWritten(setSpy)
+    expectEndCookieWritten()
   })
 
   it('treats an invalid end cookie as missing', () => {
     document.cookie = `${cookieName}=garbage; path=/`
-    const cookies = new Cookies()
-    const setSpy = vi.spyOn(cookies, 'set')
-    renderCountDown(vi.fn(), cookies)
+    renderCountDown(vi.fn())
     expect(screen.getByText('22:00')).toBeInTheDocument()
-    expectEndCookieWritten(setSpy)
+    expectEndCookieWritten()
+  })
+
+  it('treats an end cookie with a malformed percent sequence as missing', () => {
+    document.cookie = `${cookieName}=%E0%A4%A; path=/`
+    renderCountDown(vi.fn())
+    expect(screen.getByText('22:00')).toBeInTheDocument()
+    expectEndCookieWritten()
   })
 
   it('renders the remaining time from the cookie on first paint', () => {
     setEndCookie(5 * 60 * 60 * 1000 + 30 * 60 * 1000)
     renderCountDown(vi.fn())
     expect(screen.getByText('05:30')).toBeInTheDocument()
+  })
+
+  it('honours an end cookie written in the old react-cookie format', () => {
+    const endTime = new Date(Date.now() + 3 * 60 * 60 * 1000).toISOString()
+    document.cookie = `${cookieName}=${encodeURIComponent(JSON.stringify(endTime))}; path=/`
+    renderCountDown(vi.fn())
+    expect(screen.getByText('03:00')).toBeInTheDocument()
+    expect(readEndCookie()).toBe(JSON.stringify(endTime))
+  })
+
+  it('writes the end cookie in the old react-cookie format', () => {
+    renderCountDown(vi.fn())
+    expect(document.cookie).toMatch(new RegExp(`${cookieName}=%22[^;]+Z%22`))
   })
 
   it('calls onExpire for an already expired cookie', () => {
@@ -130,11 +135,7 @@ describe('CountDown', () => {
     act(() => {
       vi.advanceTimersByTime(1500)
     })
-    rerender(
-      <CookiesProvider>
-        <CountDown onExpire={secondOnExpire} />
-      </CookiesProvider>,
-    )
+    rerender(<CountDown onExpire={secondOnExpire} />)
     act(() => {
       vi.advanceTimersByTime(500)
     })
