@@ -18,7 +18,7 @@ export default stylesheet({
   },
   failure: {
     textAlign: 'center',
-    marginTop: '200px',
+    marginTop: '48px',
     $nest: {
       [mobile]: {
         marginTop: '56px',

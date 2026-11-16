@@ -56,3 +56,50 @@ test('good ending video asks to autoplay', async ({ page }) => {
   await expect(video).toHaveAttribute('src', /autoplay=1/)
   await expect(video).toHaveAttribute('allow', /autoplay/)
 })
+
+for (const { viewport, minimumWidth } of [
+  { viewport: { width: 1024, height: 768 }, minimumWidth: 800 },
+  { viewport: { width: 1440, height: 900 }, minimumWidth: 1050 },
+  { viewport: { width: 390, height: 844 }, minimumWidth: 350 },
+]) {
+  test(`bad ending video is large with its button on screen at ${viewport.width}x${viewport.height}`, async ({
+    page,
+  }) => {
+    await page.setViewportSize(viewport)
+    await page.goto('/terriblefate')
+    const video = page.locator('iframe[src*="youtube"]')
+    await expect(video).toBeVisible()
+    const box = (await video.boundingBox())!
+    expect(box.width / box.height).toBeCloseTo(16 / 9, 1)
+    expect(box.width).toBeGreaterThanOrEqual(minimumWidth)
+
+    const button = await page
+      .getByRole('link', { name: 'One more loop?', includeHidden: true })
+      .boundingBox()
+    expect(button!.y + button!.height).toBeLessThanOrEqual(viewport.height)
+  })
+}
+
+test('bad ending button appears at its fallback time when the video cannot play', async ({
+  page,
+}) => {
+  await page.clock.install()
+  await page.goto('/terriblefate')
+  const button = page.getByRole('link', { name: 'One more loop?' })
+  await page.clock.runFor(60_000)
+  await expect(button).toBeHidden()
+  await page.clock.runFor(8_000)
+  await expect(button).toBeVisible()
+})
+
+test('good ending credits appear at their fallback time when the video cannot play', async ({
+  page,
+}) => {
+  await page.clock.install()
+  await page.goto('/consciousobserver')
+  const credit = page.getByRole('heading', { name: 'Yannick Mermet' })
+  await page.clock.runFor(160_000)
+  await expect(credit).toBeHidden()
+  await page.clock.runFor(8_000)
+  await expect(credit).toBeVisible()
+})
